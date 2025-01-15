@@ -10,10 +10,10 @@
                  </div>
                  <div class="row col-set-block">
                      <div class="col-lg-6 col-sm-6 m-b20">
-                         <a href=""><img width="600" height="350" src="<?= base_url() ?>public/assets/images/ads/img2.jpg" alt=""></a>
+                         <a href="<?= base_url() ?>team-registration"><img width="600" height="350" src="<?= base_url() ?>public/assets/images/ads/1.jpg" alt=""></a>
                      </div>
                      <div class="col-lg-6 col-sm-6 m-b20">
-                         <a href=""><img width="600" height="350" src="<?= base_url() ?>public/assets/images/ads/img3.jpg" alt=""></a>
+                         <a href="<?= base_url() ?>team-registration"><img width="600" height="350" src="<?= base_url() ?>public/assets/images/ads/2.jpg" alt=""></a>
                      </div>
                  </div>
                  <div class="dez-live-match bg-white">
