@@ -166,7 +166,7 @@
                                 <div class="col-lg-4 col-md-4">
                                     <div class="form-group">
                                         <span>Coach Name<span class="text-danger">*</span></span>
-                                        <input type="number" name="coach_name" class="form-control">
+                                        <input type="text" name="coach_name" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4">
