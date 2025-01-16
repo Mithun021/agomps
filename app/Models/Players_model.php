@@ -13,6 +13,9 @@
         protected $createdField  = 'created_at';
 
         public function add($data, $id = null) {
+            if ($this->doesExist($data['mobile_number'], $data['email_address'])) {
+                return 'Account already exists: Mobile number or email address already in use.';
+            }
             if ($id != null) {
                 $result = $this->update($id, $data);
                 return $result ? true : 'Data not updated: Update failed.';

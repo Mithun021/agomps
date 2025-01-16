@@ -102,7 +102,7 @@ class FrontendController extends BaseController
                 return redirect()->to('team-registration')->with(
                     'status',
                     '<div class="alert alert-danger" role="alert"> 
-            <h4>Registration failed. Please try again later. </h4>
+            <h4>'.$result.' </h4>
         </div>'
                 );
             }
