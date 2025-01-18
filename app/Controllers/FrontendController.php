@@ -108,4 +108,23 @@ class FrontendController extends BaseController
             }
         }
     }
+
+
+    public function privacy_policy(){
+        $data = ['title' => 'Privacy Policy'];
+        return view('privacy-policy',$data);
+    }
+
+    public function term_condition(){
+        $data = ['title' => 'Term Conditions'];
+        return view('term-condition',$data);
+    }
+
+    public function refund_policy(){
+        $data = ['title' => 'Refund Policy'];
+        return view('refund-policy',$data);
+    }
+
+
+
 }

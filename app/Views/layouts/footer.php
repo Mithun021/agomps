@@ -91,7 +91,22 @@
                             </ul>
                         </div>
                     </div>
-					<div class="col-lg-3 col-sm-6 footer-col-4">
+
+                    <div class="col-lg-3 col-sm-6 footer-col-4">
+                        <div class="widget widget_services">
+                            <h4 class="m-b15 text-uppercase">Legal Policies</h4>
+                            <div class="dez-separator bg-primary"></div>
+                            <ul>
+                                <li><a href="<?= base_url() ?>privacy-policy">Privacy Policy</a></li>
+                                <li><a href="<?= base_url() ?>term-condition">Terms & Conditions</a></li>
+                                <li><a href="<?= base_url() ?>refund-policy">Refund Policy</a></li>
+                                <!-- <li><a href="services-2.html">Awards & Trophies</a></li>
+                                <li><a href="services-2.html">Additional Help</a></li>
+                                <li><a href="services-2.html">Training Schedule</a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+					<!-- <div class="col-lg-3 col-sm-6 footer-col-4">
 						<div class="widget widget_gallery">
 							<h4 class="m-b15 text-uppercase">PHOTOS FROM FLICKR</h4>
 							<div class="dez-separator bg-primary"></div>
@@ -107,7 +122,7 @@
 								<li class="img-effect2"> <a href="javascript:void(0);"><img src="<?= base_url() ?>public/assets/images/gallery/small/pic9.jpg" alt=""></a> </li>
 							</ul>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
