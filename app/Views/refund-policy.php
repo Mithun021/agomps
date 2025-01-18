@@ -7,9 +7,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header p-0"><?= $title ?></div>
+                    <div class="card-header"><?= $title ?></div>
                     <!-- id="teamRegisterationForm" -->
-                    <div class="card-body">
+                    <div class="card-body p-2">
                         <p>We aim to provide a seamless and satisfactory experience to all our users. However, due to the nature of AGOMPS UPPL’s services, the following refund policy applies:</p>
 
                         <h3>1. Registration Fees</h3>
@@ -27,7 +27,7 @@
                         <h3>5. Payment Processing Fees</h3>
                         <p>Any processing fees charged by payment processors (e.g., bank or credit card fees) are non-refundable.</p>
 
-                        <p>For any refund-related queries, please contact us at <a href="mailto:support@agomps.com">support@agomps.com</a>.</p>
+                        <p>For any refund-related queries, please contact us at <a href="mailto:contact@agomps.com">contact@agomps.com</a>.</p>
                     </div>
                 </div>
             </div>

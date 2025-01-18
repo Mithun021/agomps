@@ -7,9 +7,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header p-0"><?= $title ?></div>
+                    <div class="card-header"><?= $title ?></div>
                     <!-- id="teamRegisterationForm" -->
-                    <div class="card-body">
+                    <div class="card-body p-2">
                         <p>At AGOMPS UPPL, we value your privacy and are committed to protecting your personal information. This Privacy Policy outlines the types of information we collect, how we use it, and your rights regarding your data.</p>
 
                         <h3>1. Information We Collect</h3>
@@ -46,7 +46,7 @@
                             <li>Opt-out of marketing communications.</li>
                             <li>Withdraw consent at any time, where consent is the basis for processing your data.</li>
                         </ul>
-                        <p>For any privacy-related inquiries or to exercise your rights, please contact us at <a href="mailto:privacy@agomps.com">privacy@agomps.com</a>.</p>
+                        <p>For any privacy-related inquiries or to exercise your rights, please contact us at <a href="mailto:contact@agomps.com">contact@agomps.com</a>.</p>
 
                         <h3>6. Cookies</h3>
                         <p>We use cookies to enhance your experience on our platform. Cookies are small data files stored on your device that help us remember your preferences and improve the site’s functionality.</p>
