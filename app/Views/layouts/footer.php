@@ -94,7 +94,7 @@
 
                     <div class="col-lg-3 col-sm-6 footer-col-4">
                         <div class="widget widget_services">
-                            <h4 class="m-b15 text-uppercase">Legal Policies</h4>
+                            <h4 class="m-b15 text-uppercase">Company Policies</h4>
                             <div class="dez-separator bg-primary"></div>
                             <ul>
                                 <li><a href="<?= base_url() ?>privacy-policy">Privacy Policy</a></li>
