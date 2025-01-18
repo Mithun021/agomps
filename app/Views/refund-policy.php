@@ -9,7 +9,7 @@
                 <div class="card">
                     <div class="card-header"><?= $title ?></div>
                     <!-- id="teamRegisterationForm" -->
-                    <div class="card-body p-2">
+                    <div class="card-body p-3">
                         <p>We aim to provide a seamless and satisfactory experience to all our users. However, due to the nature of AGOMPS UPPL’s services, the following refund policy applies:</p>
 
                         <h3>1. Registration Fees</h3>

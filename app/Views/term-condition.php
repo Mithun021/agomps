@@ -8,7 +8,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header"><?= $title ?></div>
-                    <div class="card-body p-2">
+                    <div class="card-body p-3">
                         <p>By accessing and using AGOMPS UPPL’s platform, you agree to comply with the following terms and conditions:</p>
 
                         <h3>1. General Terms</h3>

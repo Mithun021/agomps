@@ -9,7 +9,7 @@
                 <div class="card">
                     <div class="card-header"><?= $title ?></div>
                     <!-- id="teamRegisterationForm" -->
-                    <div class="card-body p-2">
+                    <div class="card-body p-3">
                         <p>At AGOMPS UPPL, we value your privacy and are committed to protecting your personal information. This Privacy Policy outlines the types of information we collect, how we use it, and your rights regarding your data.</p>
 
                         <h3>1. Information We Collect</h3>
