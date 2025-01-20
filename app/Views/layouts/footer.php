@@ -132,7 +132,7 @@
                 <div class="row">
                     <div class="col-lg-4 text-left"> <p class="grey">© Copyright <span class="current-year">2024</span></p></div>
 					<div class="col-lg-4 text-center"> <span> Design With <i class="fa fa-heart text-red heart"></i> By Dcode Materials </span> </div>
-					<div class="col-lg-4 text-right "> <a href="<?= base_url() ?>"> About</a> <a href="<?= base_url() ?>"> Help Desk</a> <a href="<?= base_url() ?>"> Privacy Policy</a> </div>
+					<div class="col-lg-4 text-right "> <a href="<?= base_url() ?>"> About</a> <a href="<?= base_url() ?>"> Terms & Cond.</a> <a href="<?= base_url() ?>"> Privacy Policy</a> </div>
                 </div>
             </div>
         </div>
