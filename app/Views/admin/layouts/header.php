@@ -27,8 +27,8 @@
         <!-- Top bar area -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="<?= base_url() ?>public/admin/img/core-img/logo.png" class="mr-2" alt="logo" /></a>
-                <a class="navbar-brand brand-logo-mini" href="index.html"><img src="<?= base_url() ?>public/admin/img/core-img/small-logo.png" alt="logo" /></a>
+                <a class="navbar-brand brand-logo mr-5" href="<?= base_url() ?>admin"><img src="<?= base_url() ?>public/admin/img/core-img/logo.png" class="mr-2" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="<?= base_url() ?>admin"><img src="<?= base_url() ?>public/admin/img/core-img/small-logo.png" alt="logo" /></a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
                 <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -87,7 +87,7 @@
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="<?= base_url() ?>admin">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box link-icon">
                                 <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
                                 <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
