@@ -183,6 +183,13 @@
         'use strict';
         dz_rev_slider_1();
     }); /*ready*/
+
+
+    $(document).ready(function () {
+        $('#openexampleModal').click(function () {
+            $('#exampleModal').modal('show');
+        });
+    });
 </script>
 </body>
 
