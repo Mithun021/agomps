@@ -58,7 +58,7 @@ $league_category_model = new League_category_model();
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table id="datatable-buttons" class="table table-striped dt-responsive">
+                    <table id="datatable-buttons" class="table table-striped">
                         <thead>
                             <tr>
                                 <th>#</th>
