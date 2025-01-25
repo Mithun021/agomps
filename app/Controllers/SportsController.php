@@ -11,11 +11,12 @@ class SportsController extends BaseController
         $sports_model = new Sports_model();
         $data = ['title' => 'Sports Category'];
         if ($this->request->is('get')) {
+            $data['sports'] = $sports_model->get();
             return view('admin/sports-category',$data);
         }else if ($this->request->is('post')) {
             $sportsPhoto = $this->request->getFile('sports_category_image');
             if ($sportsPhoto->isValid() && ! $sportsPhoto->hasMoved()) {
-                $sportsPhotoImageName = "admission" . $sportsPhoto->getRandomName();
+                $sportsPhotoImageName = rand(0,9999) . $sportsPhoto->getRandomName();
                 $sportsPhoto->move(ROOTPATH . 'public/admin/uploads/sports', $sportsPhotoImageName);
             } else {
                 $sportsPhotoImageName = "";

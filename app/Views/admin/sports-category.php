@@ -56,23 +56,29 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-
-
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>
-                                <a href="<?= base_url() ?>admin/delete-sports-category" class="btn btn-sm btn-circle btn-danger"><span class="fa fa-times"></span></a> &nbsp;
-                                <a href="<?= base_url() ?>admin/edit-sports-category" class="btn btn-sm btn-circle btn-primary"><span class="fa fa-pencil"></span></a>
-                            </td>
-                        </tr>
+                        <?php foreach ($sports as $key => $value): ?>
+                            <tr>
+                                <td><?= ++$key ?></td>
+                                <td>
+                                    <?php if (!empty($value['sports_image']) && file_exists('public/admin/uploads/sports/' . $value['sports_image'])): ?>
+                                        <a href="<?= base_url() ?>public/admin/uploads/sports/<?= $value['sports_image'] ?>" target="_blank"><img src="<?= base_url() ?>public/admin/uploads/sports/<?= $value['sports_image'] ?>" alt="" height="30px"></a>
+                                    <?php else: ?>
+                                        <img src="<?= base_url() ?>public/admin/uploads/sports/invalid_image.png" alt="" height="40px">
+                                    <?php endif; ?>
+                                </td>
+                                <td><?= $value['name'] ?></td>
+                                <td><?= ($value['status'] == "0") ? "<span class='badge badge-danger badge-pill'>Inactive</span>" : (($value['status'] == "1") ? "<span class='badge badge-success badge-pill'>Active</span>" : "") ?></td>
+                                <td>
+                                 
+                                    <a href="<?= base_url() ?>admin/edit-sports-category" class="btn btn-sm btn-circle btn-primary"><span class="fa fa-pencil"></span></a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 </div>
-<?= $this->endSection() ?>
+<?= $this->endSection() ?>   <a href="<?= base_url() ?>admin/delete-sports-category" class="btn btn-sm btn-circle btn-danger"><span class="fa fa-times"></span></a> &nbsp;
