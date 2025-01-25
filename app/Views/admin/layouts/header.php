@@ -27,6 +27,10 @@
         .card h4.card-title{
             font-size: 14px;
         }
+        table tr td img{
+            height: 40px !important;
+            width: auto !important;
+        }
     </style>
 </head>
 
