@@ -121,5 +121,5 @@
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="container-fluid">
-                        <div class="height-900"></div>
-                    </div>
+                        
+                    

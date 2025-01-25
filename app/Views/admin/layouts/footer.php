@@ -1,4 +1,5 @@
 
+</div> <!--End Container Fluid-->
                     <!-- Footer Area -->
                     <div class="container-fluid">
                         <div class="row">
