@@ -53,11 +53,14 @@
             font-weight: 600;
         }
         @media(max-width : 992px){
-            .loginbtn li a span#signIn, .loginbtn li a span#signIn span{
+            .loginbtn li a span#signInBtn, .loginbtn li a span#signInBtn span{
                 display: block;
                 align-items: center;
             }
-            .loginbtn li a span#signIn{
+            .social_media_btn{
+                display: none;
+            }
+            .loginbtn li a span#signInBtn{
                 width: 80px;
                 display: flex;
                 justify-content: flex-start;
@@ -84,7 +87,7 @@
                                         <li><a href="javascript:void(0);"><i class="fa fa-phone"></i> <span> (732) 803-010-03 </span> </a></li>
                                     </ul>
                                 </div>
-                                <div class="dez-topbar-right ">
+                                <div class="dez-topbar-right social_media_btn">
                                     <ul class="social-line text-center pull-right">
                                         <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
                                         <li><a href="javascript:void(0);" class="fa fa-instagram"></a></li>
