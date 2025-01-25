@@ -4,7 +4,7 @@
     <div class="col-lg-4">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title m-0">Add Sports Category</h4>
+                <h4 class="card-title m-0">Add League Category</h4>
             </div>
             <?php
             if (session()->getFlashdata('status')) {
@@ -19,7 +19,7 @@
                     </div>
                     <div class="form-group">
                         <span>Sports Category</span>
-                        <select class="form-control" name="sports_category">
+                        <select class="form-control" name="sports_category" required>
                             <option value="">Select Sports Category</option>
                             <?php foreach ($sports as $key => $value): ?>
                                 <option value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
@@ -28,11 +28,11 @@
                     </div>
                     <div class="form-group">
                         <span>Upload Image(JPG,PNG)</span>
-                        <input type="file" class="form-control" name="sports_category_image" accept=".png,.jpg" required>
+                        <input type="file" class="form-control" name="league_category_image" accept=".png,.jpg" required>
                     </div>
                     <div class="form-group">
                         <span>Status</span>
-                        <select class="form-control" name="sports_category_status" required>
+                        <select class="form-control" name="status" required>
                             <option value="1">Active</option>
                             <option value="0">Inactive</option>
                         </select>
