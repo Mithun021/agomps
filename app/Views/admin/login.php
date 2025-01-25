@@ -130,7 +130,7 @@
                 submitHandler: function(form) {
                     var requestedData = {
                         userId: $('#username').val(),
-                        userPassword: $('#userpassword').val()
+                        userPassword: $('#password').val()
                     }
                     // console.log(requestedData);
                     $.ajax({
