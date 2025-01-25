@@ -22,9 +22,9 @@ class AdminController extends BaseController
             }
             return view('admin/login', $data);
         } else if ($this->request->is('post')) {
-            $userId = $this->request->getPost('userId');
-            $userPassword = $this->request->getVar('userPassword');
-
+            echo $userId = $this->request->getPost('userId');
+            echo $userPassword = $this->request->getVar('userPassword');
+            die;
             $data = $user_model->where('email_address', $userId)
                 ->orWhere('user_phone', $userId)->first();
             if ($data) {
