@@ -6,7 +6,7 @@
             <div class="card-header">
                 <h4 class="card-title m-0">Add Sports Category</h4>
             </div>
-            <form action="">
+            <form action="<?= base_url() ?>sports-category" method="post" enctype="multipart/form-data">
                 <div class="card-body">
                     <div class="form-group">
                         <span>Sports Category Name</span>
@@ -14,7 +14,7 @@
                     </div>
                     <div class="form-group">
                         <span>Sports Category Description</span>
-                        <textarea class="form-control" placeholder="Enter sports category description" name="sports_category_description"></textarea>
+                        <textarea class="form-control" placeholder="Enter sports category description" name="sports_category_description" id="summernote"></textarea>
                     </div>
                     <div class="form-group">
                         <span>Upload Image(JPG,PNG)</span>

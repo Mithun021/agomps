@@ -51,6 +51,10 @@
     <script src="<?= base_url() ?>public/admin/js/default-assets/active.js"></script>
 
     <!-- Inject JS -->
+
+    <script src="<?= base_url() ?>public/admin/js/default-assets/summernote.min.js"></script>
+    <script src="<?= base_url() ?>public/admin/js/default-assets/summernote-active.js"></script>
+
     <script src="<?= base_url() ?>public/admin/js/default-assets/jquery.datatables.min.js"></script>
     <script src="<?= base_url() ?>public/admin/js/default-assets/datatables.bootstrap4.js"></script>
     <script src="<?= base_url() ?>public/admin/js/default-assets/datatable-responsive.min.js"></script>

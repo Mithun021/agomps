@@ -5,7 +5,7 @@
     {
         protected $table         = 'sports';
         protected $primaryKey = 'id';
-        protected $allowedFields = ['name','status'];
+        protected $allowedFields = ['name','sports_image','description','status'];
 
         public function add($data, $id = null) {
             if ($id != null) {
