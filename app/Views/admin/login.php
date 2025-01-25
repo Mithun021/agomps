@@ -55,12 +55,12 @@
 
                                 <form id="adminLoginForm">
                                     <div class="form-group">
-                                        <input class="form-control login" type="text" id="username" required="" placeholder="Enter your email">
+                                        <input class="form-control login" type="text" id="username" name="username" placeholder="Enter your email">
                                     </div>
 
                                     <div class="form-group">
                                         <a href="forget-password.html" class="text-dark float-right"></a>
-                                        <input class="form-control login" type="password" required="" id="password" placeholder="Enter your password">
+                                        <input class="form-control login" type="password" name="password" id="password" placeholder="Enter your password">
                                     </div>
 
                                     <div class="form-group d-flex justify-content-between align-items-center mb-3">
