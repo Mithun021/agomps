@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Required meta tags -->
 
-    <title>AGOMPS - Admin Login</title>
+    <title>AGOMPS - <?= $title ?? '' ?></title>
 
     <!-- Favicon -->
     <link rel="icon" href="<?= base_url() ?>public/admin/img/core-img/favicon.png">
@@ -52,7 +52,7 @@
                                 <!-- Logo -->
                                 <h4 class="font-24 mb-30">Login.</h4>
 
-                                <form action="#">
+                                <form action="<?= base_url() ?>admin/login" method="post">
                                     <div class="form-group">
                                         <input class="form-control login" type="email" id="emailaddress" required="" placeholder="Enter your email">
                                     </div>
@@ -64,8 +64,8 @@
 
                                     <div class="form-group d-flex justify-content-between align-items-center mb-3">
                                         <div class="checkbox d-inline mb-0">
-                                            <input type="checkbox" name="checkbox-1" id="checkbox-8">
-                                            <label for="checkbox-8" class="cr mb-0 font-13">Remember me</label>
+                                            <!-- <input type="checkbox" name="checkbox-1" id="checkbox-8"> -->
+                                            <!-- <label for="checkbox-8" class="cr mb-0 font-13">Remember me</label> -->
                                         </div>
                                         <span><a class="font-12 text-success" href="forget-password.html">Forgot your password?</a></span>
                                     </div>
