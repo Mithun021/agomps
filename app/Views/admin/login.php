@@ -52,9 +52,9 @@
                                 <!-- Logo -->
                                 <h4 class="font-24 mb-30">Login.</h4>
 
-                                <form action="<?= base_url() ?>admin/login" method="post">
+                                <form id="adminLoginForm">
                                     <div class="form-group">
-                                        <input class="form-control login" type="email" id="emailaddress" required="" placeholder="Enter your email">
+                                        <input class="form-control login" type="text" id="username" required="" placeholder="Enter your email">
                                     </div>
 
                                     <div class="form-group">
@@ -71,7 +71,7 @@
                                     </div>
 
                                     <div class="form-group mb-0">
-                                        <button class="btn btn-primary btn-block" type="submit"> Log In </button>
+                                        <button class="btn btn-primary btn-block" type="submit" id="submit_btn"> Log In </button>
                                     </div>
 
                                 </form>
@@ -97,7 +97,70 @@
 
     <!-- Active JS -->
     <script src="<?= base_url() ?>public/admin/js/default-assets/active.js"></script>
+    <!-- Sweet Alert  -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Jquery Validation Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#adminLoginForm").validate({
+                rules: {
+                    username: {
+                        required: true,
+                        minlength: 3
+                    },
+                    password: {
+                        required: true,
+                        minlength: 6 // Minimum length for password
+                    }
+                },
+                messages: {
+                    username: {
+                        required: "Required User ID",
+                        minlength: "Your ID must be at least 3 characters long"
+                    },
+                    password: {
+                        required: "Please enter a password",
+                        minlength: "Password must be at least 6 characters"
+                    }
+                },
+                submitHandler: function(form) {
+                    var requestedData = {
+                        userId: $('#username').val(),
+                        userPassword: $('#userpassword').val()
+                    }
+                    // console.log(requestedData);
+                    $.ajax({
+                        type: "post",
+                        url: "<?= base_url() ?>login",
+                        data: requestedData,
+                        success: function(response) {
+                            if (response == "dataMatch") {
+                                Swal.fire({
+                                    position: "top-end",
+                                    icon: "success",
+                                    title: "Account Successfully Login",
+                                    showConfirmButton: false,
+                                    timer: 2500
+                                }).then(function() {
+                                    window.location.href = "<?= base_url() ?>admin";
+                                });
 
+                            } else {
+                                Swal.fire({
+                                    position: "top-end",
+                                    icon: "error",
+                                    title: response,
+                                    showConfirmButton: false,
+                                    timer: 2500
+                                });
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
