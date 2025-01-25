@@ -81,4 +81,4 @@
         </div>
     </div>
 </div>
-<?= $this->endSection() ?>   <a href="<?= base_url() ?>admin/delete-sports-category" class="btn btn-sm btn-circle btn-danger"><span class="fa fa-times"></span></a> &nbsp;
+<?= $this->endSection() ?>

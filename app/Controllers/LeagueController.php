@@ -11,6 +11,7 @@ class LeagueController extends BaseController
         $sports_model = new Sports_model();
         $data = ['title' => 'League Session'];
         if ($this->request->is('get')) {
+            $data['sports'] = $sports_model->getActiveData();
             return view('admin/league-session', $data);
         } else if ($this->request->is('post')) {
             
