@@ -10,9 +10,9 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body p-0">
+            <div class="modal-body p-2" style="background-color: #2c4a6b;">
                 <!-- Content -->
-                <div class="page-content dez-login" style="position:relative;">
+                <div class="page-content dez-login" style="position:relative; background-color: #FFF;">
                     <div class="login-form">
                         <div class="tab-content">
                             <div id="login" class="tab-pane active text-center">
