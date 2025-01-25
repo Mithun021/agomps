@@ -1,3 +1,3 @@
-<?= view('layouts/header') ?>
+<?= view('admin/layouts/header') ?>
 <?= $this->renderSection('body-content') ?>
-<?= view('layouts/footer') ?>
+<?= view('admin/layouts/footer') ?>
