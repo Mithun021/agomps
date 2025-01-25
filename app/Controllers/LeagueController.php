@@ -21,8 +21,10 @@ class LeagueController extends BaseController
 
     public function league_category()
     {
+        $sports_model = new Sports_model();
         $data = ['title' => 'League Category'];
         if ($this->request->is('get')) {
+            $data['sports'] = $sports_model->getActiveData();
             return view('admin/league-category', $data);
         } else if ($this->request->is('post')) {
             # code...
