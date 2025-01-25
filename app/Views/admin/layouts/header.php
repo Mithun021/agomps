@@ -101,7 +101,7 @@
                         <a class="nav-link" data-toggle="collapse" href="#maps" aria-expanded="false" aria-controls="maps">
                             <i class="ti-angle-double-right"></i>
                             <span class="menu-title">Maps</span>
-                            <i class="ti-angle-right"></i>
+                            <svg class="ti-angle-right"></svg>
                         </a>
                         <div class="collapse" id="maps">
                             <ul class="nav flex-column sub-menu">
