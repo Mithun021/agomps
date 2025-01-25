@@ -6,6 +6,11 @@
             <div class="card-header">
                 <h4 class="card-title m-0">Add Sports Category</h4>
             </div>
+            <?php
+            if (session()->getFlashdata('status')) {
+                echo session()->getFlashdata('status');
+            }
+            ?>
             <form action="<?= base_url() ?>sports-category" method="post" enctype="multipart/form-data">
                 <div class="card-body">
                     <div class="form-group">
