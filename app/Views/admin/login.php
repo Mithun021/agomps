@@ -15,6 +15,7 @@
 
     <!-- Master Stylesheet CSS -->
     <link rel="stylesheet" href="<?= base_url() ?>public/admin/style.css">
+    <link rel="stylesheet" href="<?= base_url() ?>public/admin/css/default-assets/new/sweetalert-2.min.css">
 
 </head>
 
@@ -98,7 +99,9 @@
     <!-- Active JS -->
     <script src="<?= base_url() ?>public/admin/js/default-assets/active.js"></script>
     <!-- Sweet Alert  -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Inject JS -->
+    <script src="<?= base_url() ?>public/admin/js/default-assets/sweetalert2.min.js"></script>
+    <script src="<?= base_url() ?>public/admin/js/default-assets/sweetalert-init.js"></script>
     <!-- Jquery Validation Plugin -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"></script>
     <script>
