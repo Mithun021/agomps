@@ -74,8 +74,6 @@
                                         <button class="btn btn-primary btn-block" type="submit"> Log In </button>
                                     </div>
 
-                                    <div class="text-center mt-15"><span class="mr-2 font-12">Don't have an account?</span><a class="font-12" href="register.html">Sign up</a></div>
-
                                 </form>
 
                                 <!-- end card -->
