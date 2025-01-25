@@ -60,7 +60,7 @@
                             <td>Edinburgh</td>
                             <td>61</td>
                             <td>
-                                <a href="<?= base_url() ?>admin/delete-sports-category" class="btn btn-sm btn-circle btn-danger"><span class="fa fa-times"></span></a> &nbsp; &nbsp;
+                                <a href="<?= base_url() ?>admin/delete-sports-category" class="btn btn-sm btn-circle btn-danger"><span class="fa fa-times"></span></a> &nbsp;
                                 <a href="<?= base_url() ?>admin/edit-sports-category" class="btn btn-sm btn-circle btn-primary"><span class="fa fa-pencil"></span></a>
                             </td>
                         </tr>
