@@ -67,7 +67,7 @@ $league_category_model = new League_category_model();
                         </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($sports as $key => $value): ?>
+                    <?php foreach ($league_category as $key => $value): ?>
                             <tr>
                                 <td><?= ++$key ?></td>
                                 <td>
