@@ -21,10 +21,10 @@ class SportsController extends BaseController
                 $sportsPhotoImageName = "";
             }
             $data = [
-                'sports_category_name' => $this->request->getPost('sports_category_name'),
-                'sports_category_image' => $sportsPhotoImageName,
-                'sports_category_description' => $this->request->getPost('sports_category_description'),
-                'status' => $this->request->getPost('status')
+                'name' => $this->request->getPost('sports_category_name'),
+                'sports_image' => $sportsPhotoImageName,
+                'description' => $this->request->getPost('sports_category_description'),
+                'status' => $this->request->getPost('sports_category_status')
             ];
             $result = $sports_model->add($data);
             if ($result === true) {
