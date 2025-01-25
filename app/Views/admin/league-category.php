@@ -56,7 +56,7 @@ $league_category_model = new League_category_model();
             <div class="card-header">
                 <h4 class="card-title m-0">League Category List</h4>
             </div>
-            <div class="card-body">
+            <div class="card-body p-2">
                 <div class="table-responsive">
                     <table id="datatable-buttons" class="table table-striped">
                         <thead>
