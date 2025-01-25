@@ -45,7 +45,7 @@ $league_category_model = new League_category_model();
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-primary" type="submit">Add Sports Category</button>
+                    <button class="btn btn-primary" type="submit">Add League Category</button>
                 </div>
             </form>
         </div>
