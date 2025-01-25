@@ -20,6 +20,13 @@
                         <span>Upload Image(JPG,PNG)</span>
                         <input type="file" class="form-control" name="sports_category_image" accept=".png,.jpg" required>
                     </div>
+                    <div class="form-group">
+                        <span>Status</span>
+                        <select class="form-control" name="sports_category_status" required>
+                            <option value="1">Active</option>
+                            <option value="0">Inactive</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="card-footer">
                     <button class="btn btn-primary" type="submit">Add Sports Category</button>
