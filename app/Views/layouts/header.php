@@ -94,7 +94,7 @@
                                 </div>
                                 <div class="dez-topbar-left">
                                     <ul class="social-line text-center pull-right loginbtn">
-                                        <li><a href="javascript:void(0);"> <span class="btn btn-sm btn-dark rounded-pill" id="signIn"><i class="fa fa-sign-in"></i> <span>Sign In </span> </a></span></li>
+                                        <li><a href="javascript:void(0);"> <span class="btn btn-sm btn-dark rounded-pill" id="signIn" data-toggle="modal" data-target="#signInModal"><i class="fa fa-sign-in"></i> <span>Sign In </span> </a></span></li>
                                         <!-- <li><a href="javascript:void(0);"><i class="fa fa-user-plus"></i> <span>Sign Up </span> </a></li> -->
                                     </ul>
                                 </div>
