@@ -135,7 +135,7 @@
                     // console.log(requestedData);
                     $.ajax({
                         type: "post",
-                        url: "<?= base_url() ?>login",
+                        url: "<?= base_url() ?>admin/login",
                         data: requestedData,
                         success: function(response) {
                             if (response == "dataMatch") {
