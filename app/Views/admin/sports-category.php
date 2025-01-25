@@ -70,7 +70,7 @@
                                 <td><?= $value['name'] ?></td>
                                 <td><?= ($value['status'] == "0") ? "<span class='badge badge-danger badge-pill'>Inactive</span>" : (($value['status'] == "1") ? "<span class='badge badge-success badge-pill'>Active</span>" : "") ?></td>
                                 <td>
-                                 
+                                <a href="<?= base_url() ?>admin/edit-sports-category" class="btn btn-sm btn-circle btn-danger"><span class="fa fa-times"></span></a>
                                     <a href="<?= base_url() ?>admin/edit-sports-category" class="btn btn-sm btn-circle btn-primary"><span class="fa fa-pencil"></span></a>
                                 </td>
                             </tr>
