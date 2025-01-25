@@ -13,3 +13,4 @@ $routes->get('term-condition', 'FrontendController::term_condition');
 $routes->get('refund-policy', 'FrontendController::refund_policy');
 
 $routes->get('admin', 'AdminController::index');
+$routes->match(['get','post'],'admin-login', 'AdminController::admin_login');
