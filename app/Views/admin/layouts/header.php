@@ -24,12 +24,21 @@
     <link rel="stylesheet" href="<?= base_url() ?>public/admin/css/default-assets/buttons.bootstrap4.css">
     <link rel="stylesheet" href="<?= base_url() ?>public/admin/css/default-assets/select.bootstrap4.css">
     <style>
-        .card h4.card-title{
+        .card h4.card-title {
             font-size: 14px;
         }
-        table tr td img{
+
+        table tr td img {
             height: 40px !important;
             width: auto !important;
+        }
+
+        .btn.btn-circle {
+            border-radius: 50%;
+            padding: 0;
+            width: 30px !important;
+            height: 30px !important;
+            line-height: 30px !important;
         }
     </style>
 </head>
@@ -126,7 +135,7 @@
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/sports-category">Sports Category</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/league-session">League Session</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/league-category">League Category</a></li>
-                                
+
                             </ul>
                         </div>
                     </li>
@@ -137,5 +146,3 @@
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="container-fluid">
-                        
-                    
