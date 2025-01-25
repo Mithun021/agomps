@@ -12,7 +12,7 @@
             </div>
             <div class="modal-body">
                 <!-- Content -->
-                <div class="page-content dez-login">
+                <div class="page-content dez-login" style="position:relative;">
                     <div class="login-form">
                         <div class="tab-content">
                             <div id="login" class="tab-pane active text-center">
@@ -39,6 +39,10 @@
                                     <div class="form-group text-left">
                                         <button class="site-button m-r5 login-switch">login</button>
                                         <div class="m-t20 d-flex justify-content-between">
+                                            <div class="m-b0">
+                                                <input id="check1" type="checkbox">
+                                                <label for="check1">Remember me</label>
+                                            </div>
                                             <a data-bs-toggle="tab" href="#forgot-password" class="m-l10"><i class="fa fa-unlock-alt"></i> Forgot Password</a>
                                         </div>
                                     </div>
