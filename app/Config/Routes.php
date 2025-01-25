@@ -12,5 +12,7 @@ $routes->get('privacy-policy', 'FrontendController::privacy_policy');
 $routes->get('term-condition', 'FrontendController::term_condition');
 $routes->get('refund-policy', 'FrontendController::refund_policy');
 
-$routes->get('admin', 'AdminController::index');
+$routes->group('admin',['filter'=>'adminLogin'], static function($routes){
+    $routes->get('/','AdminController::index');
+});
 $routes->match(['get','post'],'login', 'AdminController::admin_login');
