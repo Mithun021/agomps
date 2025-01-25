@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-lg-4">
         <div class="card">
-            <div class="card-header"><h4 class="m-0">Add Sports Category</h4></div>
+            <div class="card-header"><h4 class="card-title m-0">Add Sports Category</h4></div>
             <form action="">
                 <div class="card-body">
                     <div class="form-group">

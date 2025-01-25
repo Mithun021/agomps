@@ -15,7 +15,11 @@
 
     <!-- Master Stylesheet CSS -->
     <link rel="stylesheet" href="<?= base_url() ?>public/admin/style.css">
-
+    <style>
+        .card h4.card-title{
+            font-size: 14px;
+        }
+    </style>
 </head>
 
 <body>
