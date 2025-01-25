@@ -208,6 +208,9 @@
         $('#signInBtn').click(function () {
             $('#signinModal').modal('show');
         });
+        $('.modal .close').click(function () {
+            $('.modal').modal('hide');
+        });
     });
 </script>
 </body>
