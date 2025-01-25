@@ -53,7 +53,7 @@
                             <td>Edinburgh</td>
                             <td>61</td>
                             <td>
-                                <a href="<?= base_url() ?>admin/delete-sports-category"><span class="fa fa-times"></span></a>
+                                <a href="<?= base_url() ?>admin/delete-sports-category"><span class="fa fa-times"></span></a> &nbsp; &nbsp;
                                 <a href="<?= base_url() ?>admin/edit-sports-category"><span class="fa fa-pencil"></span></a>
                             </td>
                         </tr>
