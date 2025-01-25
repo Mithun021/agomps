@@ -1,4 +1,3 @@
-</div>
 
                     <!-- Footer Area -->
                     <div class="container-fluid">
@@ -33,13 +32,15 @@
         </div>
     </div>
 
+    <!-- ======================================
+    ********* Page Wrapper Area End ***********
+    ======================================= -->
 
     <!-- Plugins Js -->
     <script src="<?= base_url() ?>public/admin/js/jquery.min.js"></script>
     <script src="<?= base_url() ?>public/admin/js/popper.min.js"></script>
     <script src="<?= base_url() ?>public/admin/js/bootstrap.min.js"></script>
     <script src="<?= base_url() ?>public/admin/js/bundle.js"></script>
-    <script src="<?= base_url() ?>public/admin/js/default-assets/fullscreen.js"></script>
 
     <!-- Active JS -->
     <script src="<?= base_url() ?>public/admin/js/canvas.js"></script>
@@ -47,12 +48,6 @@
     <script src="<?= base_url() ?>public/admin/js/settings.js"></script>
     <script src="<?= base_url() ?>public/admin/js/template.js"></script>
     <script src="<?= base_url() ?>public/admin/js/default-assets/active.js"></script>
-
-    <!-- Inject JS -->
-    <script src="<?= base_url() ?>public/admin/js/default-assets/mini-event-calendar.min.js"></script>
-    <script src="<?= base_url() ?>public/admin/js/default-assets/mini-calendar-active.js"></script>
-    <script src="<?= base_url() ?>public/admin/js/default-assets/apexchart.min.js"></script>
-    <script src="<?= base_url() ?>public/admin/js/default-assets/dashboard-active.js"></script>
 
 </body>
 
