@@ -37,11 +37,10 @@
                 <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
                     <thead>
                         <tr>
+                            <th>#</th>
+                            <th>File</th>
                             <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
+                            <th>Status</th>
                             <th>Salary</th>
                         </tr>
                     </thead>
@@ -49,12 +48,15 @@
 
                     <tbody>
                         <tr>
-                            <td>Tiger Nixon</td>
+                            <td>1</td>
                             <td>System Architect</td>
                             <td>Edinburgh</td>
                             <td>61</td>
                             <td>2011/04/25</td>
-                            <td>$320,800</td>
+                            <td>
+                                <a href="<?= base_url() ?>admin/delete-sports-category"><span class="fa fa-times"></span></a>
+                                <a href="<?= base_url() ?>admin/edit-sports-category"><span class="fa fa-pencil"></span></a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
