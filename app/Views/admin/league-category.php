@@ -78,7 +78,7 @@ $league_category_model = new League_category_model();
                                     <?php endif; ?>
                                 </td>
                                 <td><?= $value['name'] ?></td>
-                                <td><?= $league_category_model->getSportsName($value['sports_id'])['name'] ?? '__' ?></td>
+                                <td><?= $league_category_model->get($value['sports_id'])['name'] ?? '__' ?></td>
                                 <td><?= ($value['status'] == "0") ? "<span class='badge badge-danger badge-pill'>Inactive</span>" : (($value['status'] == "1") ? "<span class='badge badge-success badge-pill'>Active</span>" : "") ?></td>
                                 <td>
                                 <a href="<?= base_url() ?>admin/edit-league-category" class="btn btn-sm btn-circle btn-danger"><span class="fa fa-times"></span></a>
