@@ -15,6 +15,12 @@
 
     <!-- Master Stylesheet CSS -->
     <link rel="stylesheet" href="<?= base_url() ?>public/admin/style.css">
+
+    <!-- These plugins only need for the run this page -->
+    <link rel="stylesheet" href="<?= base_url() ?>public/admin/css/default-assets/datatables.bootstrap4.css">
+    <link rel="stylesheet" href="<?= base_url() ?>public/admin/css/default-assets/responsive.bootstrap4.css">
+    <link rel="stylesheet" href="<?= base_url() ?>public/admin/css/default-assets/buttons.bootstrap4.css">
+    <link rel="stylesheet" href="<?= base_url() ?>public/admin/css/default-assets/select.bootstrap4.css">
     <style>
         .card h4.card-title{
             font-size: 14px;

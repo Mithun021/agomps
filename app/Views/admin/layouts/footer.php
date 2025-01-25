@@ -50,6 +50,20 @@
     <script src="<?= base_url() ?>public/admin/js/template.js"></script>
     <script src="<?= base_url() ?>public/admin/js/default-assets/active.js"></script>
 
+    <!-- Inject JS -->
+    <script src="<?= base_url() ?>public/admin/js/default-assets/jquery.datatables.min.js"></script>
+    <script src="<?= base_url() ?>public/admin/js/default-assets/datatables.bootstrap4.js"></script>
+    <script src="<?= base_url() ?>public/admin/js/default-assets/datatable-responsive.min.js"></script>
+    <script src="<?= base_url() ?>public/admin/js/default-assets/responsive.bootstrap4.min.js"></script>
+    <script src="<?= base_url() ?>public/admin/js/default-assets/datatable-button.min.js"></script>
+    <script src="<?= base_url() ?>public/admin/js/default-assets/button.bootstrap4.min.js"></script>
+    <script src="<?= base_url() ?>public/admin/js/default-assets/button.html5.min.js"></script>
+    <script src="<?= base_url() ?>public/admin/js/default-assets/button.flash.min.js"></script>
+    <script src="<?= base_url() ?>public/admin/js/default-assets/button.print.min.js"></script>
+    <script src="<?= base_url() ?>public/admin/js/default-assets/datatables.keytable.min.js"></script>
+    <script src="<?= base_url() ?>public/admin/js/default-assets/datatables.select.min.js"></script>
+    <script src="<?= base_url() ?>public/admin/js/default-assets/demo.datatable-init.js"></script>
+
 </body>
 
 </html>
