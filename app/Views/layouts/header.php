@@ -1,7 +1,9 @@
 <?php
-    $loggedPlayerName = session()->get('loggedplayerName');
-    $loggedPlayerId = session()->get('loggedplayerId');
-    $playerLogin = session()->get('player_login');
+    $sessionData = session()->get('player_login');
+    if ($sessionData) {
+        $loggedplayerName = $sessionData['loggedplayerName'];
+        $loggedplayerId = $sessionData['loggedplayerId'];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -119,12 +121,12 @@
                                         <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
                                         <li><a href="javascript:void(0);" class="fa fa-instagram"></a></li>
                                         <li><a href="javascript:void(0);" class="fa fa-youtube"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-linkedin"></a><?= $loggedPlayerId ?></li>
+                                        <li><a href="javascript:void(0);" class="fa fa-linkedin"></a><?= $loggedplayerName ?></li>
                                     </ul>
                                 </div>
                                 <div class="dez-topbar-left">
                                     <ul class="social-line text-center pull-right loginbtn">
-                                    <?php if ($playerLogin) { ?>
+                                    <?php if ($sessionData) { ?>
                                         <li><a href="<?= base_url() ?>"> <span class="btn btn-sm btn-dark rounded-pill" id="signUpBtn"> <i class="fa fa-cog" aria-hidden="true"></i> <span>Dashboard </span> </a></span></li>
                                     <?php }else { ?>
                                         <li><a href="javascript:void(0);"> <span class="btn btn-sm btn-dark rounded-pill" id="signInBtn"><i class="fa fa-sign-in"></i> <span>Sign In </span> </a></span></li>

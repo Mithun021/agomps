@@ -19,7 +19,7 @@ class AuthController extends BaseController
             $session_data = [
                 'loggedplayerName' => $data['first_name'],
                 'loggedplayerId' => $data['id'],
-                'player_login' => true
+                'player_login' => "player_login"
             ];
 
             if (password_verify($userpassword, $data['password'])) {
