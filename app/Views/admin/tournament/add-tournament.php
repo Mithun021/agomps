@@ -40,7 +40,7 @@ $league_category_model = new League_category_model();
                                     <option value="">Select League Category</option>
                                     <?php
                                     foreach ($league_category as $league) {
-                                        echo '<option value="' . $league['id'] . '">' . $league['name'] .'-'.$league['league_for']. '</option>';
+                                        echo '<option value="' . $league['id'] . '">' . $league['name'] . '-' . $league['league_for'] . '</option>';
                                     }
                                     ?>
                                 </select>
@@ -65,6 +65,36 @@ $league_category_model = new League_category_model();
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
+                                            <th class="bg-light" colspan="3">Registration Fee Details <i class="fa fa-play" aria-hidden="true"></i></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <span>Registration Fee</span>
+                                                <input type="number" class="form-control" placeholder="Enter registration fee" name="registration_fee" required>
+                                            </td>
+                                            <td>
+                                                <span>After Discount Fee</span>
+                                                <input type="number" class="form-control" placeholder="Enter after discount fee" name="registration_fee_after_discount" required>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <span>Team Entry Fee</span>
+                                                    <input type="number" class="form-control" placeholder="Enter team entry fee" name="team_entry_fee" required>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
                                             <th class="bg-light" colspan="3">Winner Team Rank, Price & Trophy <i class="fa fa-trophy" aria-hidden="true"></i></th>
                                         </tr>
                                         <tr>
@@ -80,41 +110,12 @@ $league_category_model = new League_category_model();
                                                 <input type="text" class="form-control mt-1" placeholder="Enter trophy type" name="first_rank_trophy" required>
                                             </td>
                                             <td>
-                                            <input type="number" class="form-control" placeholder="Enter 2nd rank price" name="second_rank_price" required>
-                                            <input type="text" class="form-control mt-1" placeholder="Enter trophy type" name="second_rank_trophy" required>
+                                                <input type="number" class="form-control" placeholder="Enter 2nd rank price" name="second_rank_price" required>
+                                                <input type="text" class="form-control mt-1" placeholder="Enter trophy type" name="second_rank_trophy" required>
                                             </td>
                                             <td>
-                                            <input type="number" class="form-control" placeholder="Enter 3rd rank price" name="third_rank_price" required>
-                                            <input type="text" class="form-control mt-1" placeholder="Enter trophy type" name="third_rank_trophy" required>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-
-                        <div class="col-lg-12">
-                            <div class="table-responsive">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th class="bg-light" colspan="3">Registration Fee Details <i class="fa fa-play" aria-hidden="true"></i></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <span>Registration Fee</span>
-                                                <input type="number" class="form-control" placeholder="Enter registration fee" name="registration_fee" required>
-                                            </td>
-                                            <td>
-                                                <span>After Discount Fee</span>
-                                                <input type="number" class="form-control" placeholder="Enter after discount fee" name="registration_fee_after_discount" required>
-                                            </td>
-                                            <td>
-                                                <span>Team Entry Fee</span>
-                                                <input type="number" class="form-control" placeholder="Enter team entry fee" name="team_entry_fee" required>
+                                                <input type="number" class="form-control" placeholder="Enter 3rd rank price" name="third_rank_price" required>
+                                                <input type="text" class="form-control mt-1" placeholder="Enter trophy type" name="third_rank_trophy" required>
                                             </td>
                                         </tr>
                                     </tbody>
