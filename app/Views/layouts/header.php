@@ -68,7 +68,7 @@
                 display: flex;
                 justify-content: center;
                 text-align: center;
-                margin-top: 10px;
+                margin-top: 8px;
             }
 
             .social_media_btn {
@@ -113,7 +113,7 @@
                                 <div class="dez-topbar-left">
                                     <ul class="social-line text-center pull-right loginbtn">
                                         <li><a href="javascript:void(0);"> <span class="btn btn-sm btn-dark rounded-pill" id="signInBtn"><i class="fa fa-sign-in"></i> <span>Sign In </span> </a></span></li>
-                                        <li><a href="<?= base_url() ?>user-registration"> <span class="btn btn-sm btn-dark rounded-pill" id="signUpBtn"><i class="fa fa-sign-up"></i> <span>Sign Up </span> </a></span></li>
+                                        <li><a href="<?= base_url() ?>user-registration"> <span class="btn btn-sm btn-dark rounded-pill" id="signUpBtn"><i class="fa fa-user-plus"></i> <span>Sign Up </span> </a></span></li>
                                     </ul>
                                 </div>
                             </div>
