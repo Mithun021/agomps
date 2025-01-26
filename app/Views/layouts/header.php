@@ -53,7 +53,7 @@
             font-weight: 600;
         }
 
-        .dez-topbar-left.loginbtn .social-line li a {
+        .dez-topbar-left .social-line.loginbtn li a {
             padding-left: 0;
             padding-right: 0px;
         }
