@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card registerFormBody">
-                    <form id="teamRegisterationForm" method="post" action="<?= base_url() ?>team-registration" enctype="multipart/form-data">
+                    <form id="userRegisterationForm" method="post" action="<?= base_url() ?>user-registration" enctype="multipart/form-data">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-lg-4 col-md-4">
@@ -112,5 +112,78 @@
         </div>
     </div>
 </div>
+<!-- Load jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Load jQuery Validation Plugin -->
+<script src="https://cdn.rawgit.com/jzaefferer/jquery-validation/1.19.3/dist/jquery.validate.min.js"></script>
+<script>
+    $(document).ready(function() {
+        
+        // Initialize form validation
+        $("#userRegisterationForm").validate({
+            rules: {
+                first_name: {
+                    required: true,
+                    minlength: 2
+                },
+                last_name: {
+                    required: true,
+                    minlength: 2
+                },
+                mobile_number: {
+                    required: true,
+                    digits: true,
+                    minlength: 10,
+                    maxlength: 10
+                },
+                whatsapp_number: {
+                    required: true,
+                    digits: true,
+                    minlength: 10,
+                    maxlength: 10
+                },
+                email_address: {
+                    required: true,
+                    email: true
+                },
+                age: {
+                    required: true,
+                    digits: true,
+                    min: 18
+                },
+                gender: {
+                    required: true
+                },
+                aadhar: {
+                    required: true,
+                    digits: true,
+                    minlength: 12,
+                    maxlength: 12
+                },
+                state: {
+                    required: true
+                },
+                city: {
+                    required: true
+                },
+                pincode: {
+                    required: true,
+                    digits: true,
+                    minlength: 6,
+                    maxlength: 6
+                },
+                full_address: {
+                    required: true
+                }
+            },
+            submitHandler: function(form) {
+                // Only if the form is valid, it will submit to PHP
+                form.submit();
+            }
+        });
+
+
+    });
+</script>
 
 <?= $this->endSection() ?>
