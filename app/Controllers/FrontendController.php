@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\Enroll_players_model;
 use App\Models\Enroll_sports_model;
+use App\Models\League_category_model;
 use App\Models\Players_model;
 use App\Models\Sports_model;
 
@@ -73,7 +74,9 @@ class FrontendController extends BaseController
 
     public function select_league($id)
     {
+        $league_category_model = new League_category_model();
         $data = ['title' => 'Select League', 'sports_id' => $id];
+        $data['leagues'] = $league_category_model->getActiveData();
         return view('select-league', $data);
     }
 
