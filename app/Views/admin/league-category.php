@@ -23,15 +23,6 @@ $sports_model = new Sports_model();
                         <input type="text" class="form-control" placeholder="Enter league category name" name="league_category_name" required>
                     </div>
                     <div class="form-group">
-                        <span>Sports Category</span>
-                        <select class="form-control" name="sports_category" required>
-                            <option value="">Select Sports Category</option>
-                            <?php foreach ($sports as $key => $value): ?>
-                                <option value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
                         <span>Upload Image(JPG,PNG)</span>
                         <input type="file" class="form-control" name="league_category_image" accept=".png,.jpg" required>
                     </div>
@@ -63,7 +54,6 @@ $sports_model = new Sports_model();
                                 <th>#</th>
                                 <th>File</th>
                                 <th>Name</th>
-                                <th>Sports Category</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -80,7 +70,6 @@ $sports_model = new Sports_model();
                                         <?php endif; ?>
                                     </td>
                                     <td><?= $value['name'] ?></td>
-                                    <td><?= $sports_model->get($value['sports_id'])['name'] ?? '__' ?></td>
                                     <td><?= ($value['status'] == "0") ? "<span class='badge badge-danger badge-pill'>Inactive</span>" : (($value['status'] == "1") ? "<span class='badge badge-success badge-pill'>Active</span>" : "") ?></td>
                                     <td>
                                         <a href="<?= base_url() ?>admin/edit-league-category" class="btn btn-sm btn-circle btn-danger"><span class="fa fa-times"></span></a>
