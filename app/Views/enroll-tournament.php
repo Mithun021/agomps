@@ -81,6 +81,7 @@ if($league['name'] == "Individual Games"){
                                     <p class="m-0">League Category : <b><?= $sports['name'] ?></b></p>
                                     <p class="m-0">Sports : <b><?= $league['name']."(".$league['league_for'].")" ?></b></p>
                                     <p class="site-button button-sm radius-sm m-t5"><b>Registration fee : Rs. <?= $tournament_price ?></b></p>
+                                    <?= $tournaments['description'] ?? '' ?>
                                     <h4>Winner Team Rank, Price & Trophy</h4>
                                     <table>
                                         <thead>
