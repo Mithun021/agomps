@@ -9,6 +9,18 @@ use App\Models\Sports_model;
 
 class FrontendController extends BaseController
 {
+
+    public function user_registration()
+    {
+        $players_model = new Players_model();
+        $data = ['title' => 'User Registration'];
+        if ($this->request->is('get')) {
+            return view('user-registration', $data);
+        } else if ($this->request->is('post')) {
+
+        }
+    }
+
     public function team_registration()
     {
         $sports_model = new Sports_model();
