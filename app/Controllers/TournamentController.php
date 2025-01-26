@@ -14,7 +14,7 @@ class TournamentController extends BaseController
         }
     }
 
-    public function touranment_list()
+    public function tournament_list()
     {
         $data = ['title' => 'Tournament List'];
         if($this->request->is('get')){
