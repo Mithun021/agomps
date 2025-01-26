@@ -79,10 +79,8 @@ $league_category_model = new League_category_model();
                                                 <input type="number" class="form-control" placeholder="Enter after discount fee" name="registration_fee_after_discount" required>
                                             </td>
                                             <td>
-                                                <div class="form-group">
-                                                    <span>Team Entry Fee</span>
-                                                    <input type="number" class="form-control" placeholder="Enter team entry fee" name="team_entry_fee" required>
-                                                </div>
+                                                <span>Team Entry Fee</span>
+                                                <input type="number" class="form-control" placeholder="Enter team entry fee" name="team_entry_fee" required>
                                             </td>
                                         </tr>
                                     </tbody>
