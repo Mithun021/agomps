@@ -59,6 +59,45 @@ $league_category_model = new League_category_model();
                                 </select>
                             </div>
                         </div>
+
+                        <div class="col-lg-12">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <td colspan="3">Team Rank, Price & Trophy</td>
+                                        </tr>
+                                        <tr>
+                                            <th>1st Rank Details</th>
+                                            <th>2nd Ranck Details</th>
+                                            <th>3rd Rank Details</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="team_list">
+                                        <tr>
+                                            <td>
+                                                <input type="text" class="form-control" placeholder="Enter team name" name="team_name[]" required>
+                                            </td>
+                                            <td>
+                                                <input type="file" class="form-control" name="team_logo[]" required>
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control" placeholder="Enter team captain name" name="team_captain[]" required>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="4">
+                                                <button type="button" class="btn btn-primary" id="add_team">Add Team</button>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+
+                                </table>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="form-group">
                         <span>League Session Name</span>
