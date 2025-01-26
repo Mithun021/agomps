@@ -65,7 +65,7 @@ $league_category_model = new League_category_model();
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
-                                            <td colspan="3">Team Rank, Price & Trophy</td>
+                                            <th class="bg-light" colspan="3">Team Rank, Price & Trophy</th>
                                         </tr>
                                         <tr>
                                             <th>1st Rank Details</th>
@@ -86,14 +86,6 @@ $league_category_model = new League_category_model();
                                             </td>
                                         </tr>
                                     </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <td colspan="4">
-                                                <button type="button" class="btn btn-primary" id="add_team">Add Team</button>
-                                            </td>
-                                        </tr>
-                                    </tfoot>
-
                                 </table>
                             </div>
                         </div>
