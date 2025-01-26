@@ -13,14 +13,14 @@ $sports = $sports_model->get($sports_id);
 $league = $league_category_model->get($league_id);
 
 if($league['name'] == "Individual Games"){
-    $tournament_price = $tournaments['team_entry_fee'];
-}else{
     $registration_fee = $tournaments['registration_fee'];
     $discount_registration_fee = $tournaments['discount_registration_fee'];
     $tournament_price = $registration_fee;
     if (!empty($discount_registration_fee) && $discount_registration_fee < $registration_fee) {
         $tournament_price = $discount_registration_fee;
     }
+}else{
+    $tournament_price = $tournaments['team_entry_fee'];
 }
 
 ?>
