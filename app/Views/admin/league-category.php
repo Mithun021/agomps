@@ -61,6 +61,7 @@ $sports_model = new Sports_model();
                                 <th>#</th>
                                 <th>File</th>
                                 <th>Name</th>
+                                <th>League for</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -77,6 +78,7 @@ $sports_model = new Sports_model();
                                         <?php endif; ?>
                                     </td>
                                     <td><?= $value['name'] ?></td>
+                                    <td><?= $value['league_for'] ?></td>
                                     <td><?= ($value['status'] == "0") ? "<span class='badge badge-danger badge-pill'>Inactive</span>" : (($value['status'] == "1") ? "<span class='badge badge-success badge-pill'>Active</span>" : "") ?></td>
                                     <td>
                                         <a href="<?= base_url() ?>admin/edit-league-category" class="btn btn-sm btn-circle btn-danger"><span class="fa fa-times"></span></a>
