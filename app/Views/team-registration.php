@@ -20,7 +20,7 @@
                             </div>
                             <div class="dez-info p-t20 text-center">
                                 <h4 class="dez-title m-t0 m-b10 text-capitalize"><a href="<?= base_url() ?>select-league/<?= $value['id'] ?>"><?= $value['name'] ?></a></h4>
-                                <p><?= $value['description'] ?></p>
+                                <?php if(isset($value['description'])){ ?><p><?= $value['description'] ?></p><?php } ?>
                             </div>
                         </div>
                     </div>
