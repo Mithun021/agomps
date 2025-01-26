@@ -17,14 +17,9 @@
                                 <?php else: ?>
                                     <img src="<?= base_url() ?>public/admin/uploads/sports/invalid_image.png" alt="">
                                 <?php endif; ?>
-                                <div class="overlay-bx">
-                                    <div class="overlay-icon"> <a href="javascript:void(0)"> <i class="fa fa-cart-plus icon-bx-xs"></i> </a> <a href="javascript:void(0)"> <i class="fa fa-search icon-bx-xs"></i> </a> <a href="javascript:void(0)"> <i class="fa fa-heart icon-bx-xs"></i> </a> </div>
-                                </div>
                             </div>
                             <div class="dez-info p-t20 text-center">
                                 <h4 class="dez-title m-t0 m-b10 text-capitalize"><a href="javascript:void(0);">first heading</a></h4>
-                                <h2 class="m-tb0">$20.00 </h2>
-                                <a href="javascript:void(0)" class="site-button  m-t15">Add To Cart</a>
                             </div>
                         </div>
                     </div>
