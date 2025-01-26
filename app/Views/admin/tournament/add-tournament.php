@@ -51,6 +51,11 @@ $league_category_model = new League_category_model();
                                 <span>Sports Category</span>
                                 <select class="form-control" name="sports_category" id="sports_category" required>
                                     <option value="">Select Sports Category</option>
+                                    <?php
+                                    foreach ($sports as $sports) {
+                                        echo '<option value="' . $sports['id'] . '">' . $sports['name'] . '</option>';
+                                    }
+                                    ?>
                                 </select>
                             </div>
                         </div>
@@ -80,30 +85,5 @@ $league_category_model = new League_category_model();
 </div>
 
 <script src="<?= base_url() ?>public/admin/js/jquery.min.js"></script>
-
-<script>
-    $(document).ready(function() {
-        $('#league_category').change(function() {
-            var league_id = $(this).val();
-            $.ajax({
-                url: '<?= base_url() ?>get-sports-category',
-                type: 'post',
-                data: {
-                    league_id: league_id
-                },
-                dataType: 'json',
-                success: function(response) {
-                    var len = response.length;
-                    $("#sports_category").empty();
-                    for (var i = 0; i < len; i++) {
-                        var id = response[i]['id'];
-                        var name = response[i]['name'];
-                        $("#sports_category").append("<option value='" + id + "'>" + name + "</option>");
-                    }
-                }
-            });
-        });
-    });
-</script>
 
 <?= $this->endSection() ?>
