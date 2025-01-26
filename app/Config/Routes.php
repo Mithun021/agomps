@@ -8,6 +8,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 
 $routes->post('userlogin', 'AuthController::userlogin');
+$routes->post('userlogout', 'AuthController::userlogout');
 
 $routes->match(['get','post'],'user-registration', 'FrontendController::user_registration');
 $routes->match(['get','post'],'team-registration', 'FrontendController::team_registration');
