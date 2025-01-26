@@ -234,6 +234,7 @@
 <script src="<?= base_url() ?>public/assets/plugins/revolution/revolution/js/extensions/revolution.extension.video.min.js"></script>
 <script src="<?= base_url() ?>public/assets/js/rev.slider.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!-- Load jQuery Validation Plugin -->
 <script src="https://cdn.rawgit.com/jzaefferer/jquery-validation/1.19.3/dist/jquery.validate.min.js"></script>
 <script>
@@ -272,12 +273,27 @@
                         username: username,
                         userpassword: userpassword
                     },
-                    dataType : "JSON",
+                    dataType: "JSON",
                     success: function(response) {
                         if (response == true) {
-                            window.location.href = "<?= base_url() ?>team-registration"
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Login Successful!',
+                                text: 'Redirecting to Team Registration...',
+                                timer: 1000, // Auto close after 1 second
+                                showConfirmButton: false,
+                            }).then(function() {
+                                // Redirect after SweetAlert closes
+                                window.location.href = "<?= base_url() ?>team-registration";
+                            });
                         } else {
-                            alert(response);
+                            Swal.fire({
+                                icon: 'error',
+                                title: response,
+                                text: 'Please try again...',
+                                timer: 1000, // Auto close after 1 second
+                                showConfirmButton: false,
+                            });
                         }
                     }
                 });
