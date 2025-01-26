@@ -17,8 +17,49 @@ $league_category_model = new League_category_model();
                 echo session()->getFlashdata('status');
             }
             ?>
-            <form action="<?= base_url() ?>admin/league-session" method="post" enctype="multipart/form-data">
+            <form action="<?= base_url() ?>admin/add-tournament" method="post" enctype="multipart/form-data">
                 <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <span>League Session Name</span>
+                                <select class="form-control" name="league_category_name" required>
+                                    <option value="">Select League Name</option>
+                                    <?php
+                                    foreach ($league_session as $session) {
+                                        echo '<option value="' . $session['id'] . '">' . $session['league_name'] . '</option>';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <span>Sports Category</span>
+                                <select class="form-control" name="sports_category_name" required>
+                                    <option value="">Select Category</option>
+                                    <?php
+                                    foreach ($sports as $sports) {
+                                        echo '<option value="' . $sports['id'] . '">' . $sports['name'] . '</option>';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <span>League Session Name</span>
+                                <select class="form-control" name="league_category_name" required>
+                                    <option value="">Select League Name</option>
+                                    <?php
+                                    foreach ($league_session as $session) {
+                                        echo '<option value="' . $session['id'] . '">' . $session['league_name'] . '</option>';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <span>League Session Name</span>
                         <input type="text" class="form-control" placeholder="Enter league session name" name="league_session_name" required>
