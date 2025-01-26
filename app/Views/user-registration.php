@@ -1,6 +1,21 @@
 <?= $this->extend("layouts/master") ?>
 <?= $this->section("body-content"); ?>
 <?= view('layouts/breadcumbs') ?>
+<style>
+    form span {
+        font-weight: 600;
+    }
+
+    form input,
+    form select {
+        width: 100%;
+        height: 40px !important;
+    }
+
+    .registerFormBody {
+        border: 5px solid #ffc107;
+    }
+</style>
 
 <div class="section-full content-inner contact-style-1">
     <div class="container">
