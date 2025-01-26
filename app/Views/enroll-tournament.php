@@ -75,13 +75,14 @@
                                             </table>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-md-4">
+
+                                    <div class="col-lg-6 col-md-6">
                                     <div class="form-group">
                                         <span>Coach Name<span class="text-danger">*</span></span>
                                         <input type="text" name="coach_name" class="form-control">
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4">
+                                <div class="col-lg-6 col-md-6">
                                     <div class="form-group">
                                         <span>Coach Mobile Number<span class="text-danger">*</span></span>
                                         <input type="tel" name="coach_number" class="form-control" maxlength="10">
@@ -91,6 +92,7 @@
                                 <div class="col-lg-6 col-md-6">
                                     <button type="submit" class="btn site-button">Submit</button>
                                 </div>
+
                                 </div>
                             </div>
                         </form>
