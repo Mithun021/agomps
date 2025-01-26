@@ -121,13 +121,14 @@
                                         <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
                                         <li><a href="javascript:void(0);" class="fa fa-instagram"></a></li>
                                         <li><a href="javascript:void(0);" class="fa fa-youtube"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-linkedin"></a><?php if ($sessionData) { echo $loggedplayerName; }?></li>
+                                        <li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
                                     </ul>
                                 </div>
                                 <div class="dez-topbar-left">
                                     <ul class="social-line text-center pull-right loginbtn">
                                     <?php if ($sessionData) { ?>
-                                        <li><a href="<?= base_url() ?>"> <span class="btn btn-sm btn-dark rounded-pill" id="signUpBtn"> <i class="fa fa-cog" aria-hidden="true"></i> <span>Dashboard </span> </a></span></li>
+                                        <li><a href="<?= base_url() ?>"> <span class="btn btn-sm btn-dark rounded-pill" id="signUpBtn"> <i class="fa fa-cog"></i> <span>Dashboard </span> </a></span></li>
+                                        <li><a href="<?= base_url() ?>userlogout"> <span class="btn btn-sm btn-dark rounded-pill" id="signInBtn"><i class="fa fa-sign-out"></i> <span>LogOut </span> </a></span></li>
                                     <?php }else { ?>
                                         <li><a href="javascript:void(0);"> <span class="btn btn-sm btn-dark rounded-pill" id="signInBtn"><i class="fa fa-sign-in"></i> <span>Sign In </span> </a></span></li>
                                         <li><a href="<?= base_url() ?>user-registration"> <span class="btn btn-sm btn-dark rounded-pill" id="signUpBtn"><i class="fa fa-user-plus"></i> <span>Sign Up </span> </a></span></li>
