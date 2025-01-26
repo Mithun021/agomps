@@ -11,6 +11,13 @@ $league_session_model = new League_session_model();
 $active_league = $league_session_model->currectSession();
 $sports = $sports_model->get($sports_id);
 $league = $league_category_model->get($league_id);
+
+if($league['name'] == "Individual Games"){
+    $tournament_price = 100;
+}else{
+    $tournament_price = 50;
+}
+
 ?>
 <style>
     form span {
@@ -212,16 +219,22 @@ $league = $league_category_model->get($league_id);
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-6 col-md-6">
+                                    <div class="col-lg-4 col-md-4">
                                         <div class="form-group">
                                             <span>Coach Name<span class="text-danger">*</span></span>
                                             <input type="text" name="coach_name" class="form-control">
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-6">
+                                    <div class="col-lg-4 col-md-4">
                                         <div class="form-group">
                                             <span>Coach Mobile Number<span class="text-danger">*</span></span>
                                             <input type="tel" name="coach_number" class="form-control" maxlength="10">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4">
+                                        <div class="form-group">
+                                            <span>Registration Payment<span class="text-danger">*</span></span>
+                                            <input type="tel" name="coach_number" class="form-control" value="<?= $tournament_price ?>">
                                         </div>
                                     </div>
 
