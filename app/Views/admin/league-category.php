@@ -23,6 +23,13 @@ $sports_model = new Sports_model();
                         <input type="text" class="form-control" placeholder="Enter league category name" name="league_category_name" required>
                     </div>
                     <div class="form-group">
+                        <span>Feague for</span>
+                        <select class="form-control" name="league_for" required>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <span>Upload Image(JPG,PNG)</span>
                         <input type="file" class="form-control" name="league_category_image" accept=".png,.jpg" required>
                     </div>

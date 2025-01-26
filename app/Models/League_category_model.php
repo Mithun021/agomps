@@ -5,7 +5,7 @@
     {
         protected $table         = 'league_category';
         protected $primaryKey = 'id';
-        protected $allowedFields = ['sports_id','name','featured_image','status'];
+        protected $allowedFields = ['sports_id','name','league_for','featured_image','status'];
 
         public function add($data, $id = null) {
             if ($id != null) {

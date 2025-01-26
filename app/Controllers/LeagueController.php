@@ -50,7 +50,7 @@ class LeagueController extends BaseController
             $data = [
                 'name' => $this->request->getPost('league_category_name'),
                 'featured_image' => $sportsPhotoImageName,
-                // 'sports_id' => $this->request->getPost('sports_category'),
+                'league_for' => $this->request->getPost('league_for'),
                 'status' => $this->request->getPost('status')
             ];
             $result = $league_category_model->add($data);
