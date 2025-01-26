@@ -60,8 +60,10 @@ class TournamentController extends BaseController
 
     public function tournament_list()
     {
+        $tournament_model = new Tournament_model();
         $data = ['title' => 'Tournament List'];
         if($this->request->is('get')){
+            $data['tournament'] = $tournament_model->get();
             return view('admin/tournament/tournament-list',$data);
         }else if($this->request->is('post')){
             
