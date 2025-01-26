@@ -80,7 +80,7 @@ $league_category_model = new League_category_model();
                                             </td>
                                             <td>
                                                 <span>Team Entry Fee</span>
-                                                <input type="number" class="form-control" placeholder="Enter team entry fee" name="team_entry_fee" required>
+                                                <input type="number" class="form-control" placeholder="Enter team entry fee" name="team_entry_fee">
                                             </td>
                                         </tr>
                                     </tbody>
