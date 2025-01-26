@@ -71,6 +71,12 @@ class FrontendController extends BaseController
         }
     }
 
+    public function select_league($id)
+    {
+        $data = ['title' => 'Select League', 'sports_id' => $id];
+        return view('select-league', $data);
+    }
+
 
     public function privacy_policy()
     {

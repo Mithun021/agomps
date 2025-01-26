@@ -9,6 +9,7 @@ $routes->get('/', 'Home::index');
 
 $routes->match(['get','post'],'user-registration', 'FrontendController::user_registration');
 $routes->match(['get','post'],'team-registration', 'FrontendController::team_registration');
+$routes->get('select-league/(:num)', 'FrontendController::select_league/$1');
 $routes->get('privacy-policy', 'FrontendController::privacy_policy');
 $routes->get('term-condition', 'FrontendController::term_condition');
 $routes->get('refund-policy', 'FrontendController::refund_policy');
