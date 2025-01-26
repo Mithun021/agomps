@@ -275,12 +275,12 @@
                     },
                     dataType: "JSON",
                     success: function(response) {
-                        if (response == true) {
+                        if (response.status === true) {
                             Swal.fire({
                                 icon: 'success',
                                 title: 'Login Successful!',
                                 text: 'Redirecting to Team Registration...',
-                                timer: 1000, // Auto close after 1 second
+                                timer: 1500, // Auto close after 1 second
                                 showConfirmButton: false,
                             }).then(function() {
                                 // Redirect after SweetAlert closes
@@ -289,9 +289,9 @@
                         } else {
                             Swal.fire({
                                 icon: 'error',
-                                title: response,
+                                title: response.message,
                                 text: 'Please try again...',
-                                timer: 1000, // Auto close after 1 second
+                                timer: 1500, // Auto close after 1 second
                                 showConfirmButton: false,
                             });
                         }

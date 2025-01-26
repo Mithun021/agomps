@@ -24,9 +24,9 @@ class AuthController extends BaseController
 
             if (password_verify($userpassword, $data['password'])) {
                 $this->session->set('loggedPlayerData', $session_data);
-                return $this->response->setJSON(true);
+                return $this->response->setJSON(['status' => true]); 
             } else {
-                return $this->response->setJSON('Invalid login credentials');
+                return $this->response->setJSON(['status' => false, 'message' => 'Invalid login credentials']);
             }
         }
     }
