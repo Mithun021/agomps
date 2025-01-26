@@ -188,7 +188,7 @@
 </div>
 
 <script>
-    document.getElementById('teamForm').addEventListener('submit', function(event) {
+    document.getElementById('teamRegisterationForm').addEventListener('submit', function(event) {
         let isValid = true;
 
         // Check if there are exactly 11 player names
