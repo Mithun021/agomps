@@ -1,3 +1,9 @@
+<?php
+    $loggedPlayerName = session()->get('loggedplayerName');
+    $loggedPlayerId = session()->get('loggedplayerId');
+    $playerLogin = session()->get('player_login');
+?>
+
 <!DOCTYPE html>
 <!-- Meta -->
 <html lang="en">
@@ -118,8 +124,12 @@
                                 </div>
                                 <div class="dez-topbar-left">
                                     <ul class="social-line text-center pull-right loginbtn">
+                                    <?php if ($playerLogin) { ?>
+                                        <li><a href="<?= base_url() ?>"> <span class="btn btn-sm btn-dark rounded-pill" id="signUpBtn"> <i class="fa fa-cog" aria-hidden="true"></i> <span>Dashboard </span> </a></span></li>
+                                    <?php }else { ?>
                                         <li><a href="javascript:void(0);"> <span class="btn btn-sm btn-dark rounded-pill" id="signInBtn"><i class="fa fa-sign-in"></i> <span>Sign In </span> </a></span></li>
                                         <li><a href="<?= base_url() ?>user-registration"> <span class="btn btn-sm btn-dark rounded-pill" id="signUpBtn"><i class="fa fa-user-plus"></i> <span>Sign Up </span> </a></span></li>
+                                    <?php } ?>
                                     </ul>
                                 </div>
                             </div>
