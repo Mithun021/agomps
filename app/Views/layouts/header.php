@@ -1,5 +1,5 @@
 <?php
-    $sessionData = session()->get('player_login');
+    $sessionData = session()->get('loggedPlayerData');
     if ($sessionData) {
         $loggedplayerName = $sessionData['loggedplayerName'];
         $loggedplayerId = $sessionData['loggedplayerId'];
