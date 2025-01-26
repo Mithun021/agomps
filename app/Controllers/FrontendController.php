@@ -79,6 +79,15 @@ class FrontendController extends BaseController
         $data['leagues'] = $league_category_model->getActiveData();
         return view('select-league', $data);
     }
+    public function enroll_tournament($sports_id,$league_id){
+        $enroll_sports_model = new Enroll_sports_model();
+        $data = ['title' => 'Enroll Tournament', 'sports_id' => $sports_id, 'league_id' => $league_id];
+        if ($this->request->is('get')) {
+            return view('enroll-tournament', $data);
+        } else if ($this->request->is('post')) {
+            
+        }
+    }
 
 
     public function privacy_policy()
