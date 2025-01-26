@@ -37,42 +37,50 @@
         border: 5px solid #ffc107;
     }
 </style>
-<div class="row">
-    <div class="col-lg-12">
-        <div class="card registerFormBody">
-            <div class="card-header p-0"><img src="<?= base_url() ?>public/assets/images/background/registration.jpg" alt=""></div>
-            <!-- id="teamRegisterationForm" -->
+<!-- contact area -->
+<div class="clearfix">
+    <!-- Product -->
+    <div class="section-full content-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card registerFormBody">
+                        <div class="card-header p-0"><img src="<?= base_url() ?>public/assets/images/background/registration.jpg" alt=""></div>
+                        <!-- id="teamRegisterationForm" -->
 
-            <form id="teamRegisterationForm" method="post" action="<?= base_url() ?>team-registration" enctype="multipart/form-data">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12">
-                            <hr>
-                            <div class="form-group">
-                                <h3>Team Details<span class="text-danger">*</span></h3>
-                                <table id="addTeamTable">
-                                    <thead>
-                                        <tr>
-                                            <td>Name</td>
-                                            <td>Age</td>
-                                            <td>Jersey No.</td>
-                                            <td><span class="fa fa-plus btn btn-sm btn-primary" id="addNewTeam"></span></td>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="teamBody">
-                                        <tr id="teamRow">
-                                            <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
-                                            <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
-                                            <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Jersey no."></td>
-                                            <td><span class="fa fa-minus btn btn-sm btn-danger" id="removeTeam"></span></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        <form id="teamRegisterationForm" method="post" action="<?= base_url() ?>team-registration" enctype="multipart/form-data">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12">
+                                        <hr>
+                                        <div class="form-group">
+                                            <h3>Team Details<span class="text-danger">*</span></h3>
+                                            <table id="addTeamTable">
+                                                <thead>
+                                                    <tr>
+                                                        <td>Name</td>
+                                                        <td>Age</td>
+                                                        <td>Jersey No.</td>
+                                                        <td><span class="fa fa-plus btn btn-sm btn-primary" id="addNewTeam"></span></td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="teamBody">
+                                                    <tr id="teamRow">
+                                                        <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
+                                                        <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
+                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Jersey no."></td>
+                                                        <td><span class="fa fa-minus btn btn-sm btn-danger" id="removeTeam"></span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
