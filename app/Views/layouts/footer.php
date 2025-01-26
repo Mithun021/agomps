@@ -257,21 +257,30 @@
 
             var username = $('#username').val();
             var userpassword = $('#userpassword').val();
-
-            // Clear previous error messages
             $('#username_error').text('');
             $('#user_pass_error').text('');
 
-            // Validate the inputs
             if (username == "") {
                 $('#username_error').text('Required username');
             } else if (userpassword == "") {
                 $('#user_pass_error').text('Required Password');
             } else {
-                // If both fields are filled, you can proceed with form submission or other actions
-                // For example, you can submit the form via AJAX or directly
-                alert("Form is valid, proceed with submission.");
-                // $("#userLoginForm").submit(); // Uncomment to actually submit the form
+                $.ajax({
+                    type: "post",
+                    url: "<?= base_url() ?>userlogin",
+                    data: {
+                        username: username,
+                        userpassword: userpassword
+                    },
+                    dataType : "JSON",
+                    success: function(response) {
+                        if (response == true) {
+                            window.location.href = "<?= base_url() ?>team-registration"
+                        } else {
+                            alert(response);
+                        }
+                    }
+                });
             }
         });
 
