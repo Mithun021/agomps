@@ -237,7 +237,9 @@ if ($league['name'] == "Individual Games") {
                                                 </table>
                                             </div>
                                         </div>
-
+                                        <div class="col-lg-12 col-md-12">
+                                            <button type="submit" class="btn site-button">Submit</button>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
@@ -253,7 +255,7 @@ if ($league['name'] == "Individual Games") {
                                         </div>
 
                                         <div class="col-lg-12 col-md-12">
-                                            <button type="submit" class="btn site-button">Submit</button>
+                                            <button type="submit" class="btn site-button">Pay</button>
                                         </div>
                                     </div>
                                 </div>
