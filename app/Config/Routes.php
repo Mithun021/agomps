@@ -16,8 +16,8 @@ $routes->get('refund-policy', 'FrontendController::refund_policy');
 $routes->match(['get','post'],'admin/login', 'AdminController::admin_login');
 $routes->group('admin',['filter'=>'adminLogin'], static function($routes){
     $routes->get('/','AdminController::index');
-    $routes->match(['get','post'],'add-touranment','SportsController::add_touranment');
-    $routes->match(['get','post'],'touranment-list','SportsController::touranment_list');
+    $routes->match(['get','post'],'add-tournament','TournamentController::add_tournament');
+    $routes->match(['get','post'],'tournament-list','TournamentController::tournament_list');
 
     $routes->match(['get','post'],'sports-category','SportsController::sports_category');
     $routes->match(['get','post'],'league-session','LeagueController::league_session');

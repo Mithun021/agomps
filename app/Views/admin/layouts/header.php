@@ -132,8 +132,8 @@
                         </a>
                         <div class="collapse" id="maps">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/add-touranment">Add Touranments</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/touranment-list">Touranments List</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/add-tournament">Add Touranments</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/tournament-list">Touranments List</a></li>
 
                             </ul>
                         </div>
