@@ -67,77 +67,77 @@
                                                     <tr id="teamRow">
                                                         <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
                                                         <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
-                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Jersey no."></td>
+                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Mobile no."></td>
                                                     </tr>
                                                     <tr id="teamRow">
                                                         <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
                                                         <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
-                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Jersey no."></td>
+                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Mobile no."></td>
                                                     </tr>
                                                     <tr id="teamRow">
                                                         <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
                                                         <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
-                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Jersey no."></td>
+                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Mobile no."></td>
                                                     </tr>
                                                     <tr id="teamRow">
                                                         <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
                                                         <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
-                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Jersey no."></td>
+                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Mobile no."></td>
                                                     </tr>
                                                     <tr id="teamRow">
                                                         <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
                                                         <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
-                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Jersey no."></td>
+                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Mobile no."></td>
                                                     </tr>
                                                     <tr id="teamRow">
                                                         <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
                                                         <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
-                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Jersey no."></td>
+                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Mobile no."></td>
                                                     </tr>
                                                     <tr id="teamRow">
                                                         <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
                                                         <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
-                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Jersey no."></td>
+                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Mobile no."></td>
                                                     </tr>
                                                     <tr id="teamRow">
                                                         <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
                                                         <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
-                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Jersey no."></td>
+                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Mobile no."></td>
                                                     </tr>
                                                     <tr id="teamRow">
                                                         <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
                                                         <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
-                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Jersey no."></td>
+                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Mobile no."></td>
                                                     </tr>
                                                     <tr id="teamRow">
                                                         <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
                                                         <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
-                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Jersey no."></td>
+                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Mobile no."></td>
                                                     </tr>
                                                     <tr id="teamRow">
                                                         <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
                                                         <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
-                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Jersey no."></td>
+                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Mobile no."></td>
                                                     </tr>
                                                     <tr id="teamRow">
                                                         <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
                                                         <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
-                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Jersey no."></td>
+                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Mobile no."></td>
                                                     </tr>
                                                     <tr id="teamRow">
                                                         <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
                                                         <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
-                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Jersey no."></td>
+                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Mobile no."></td>
                                                     </tr>
                                                     <tr id="teamRow">
                                                         <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
                                                         <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
-                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Jersey no."></td>
+                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Mobile no."></td>
                                                     </tr>
                                                     <tr id="teamRow">
                                                         <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
                                                         <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
-                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Jersey no."></td>
+                                                        <td><input type="number" name="player_jersey[]" class="form-control" placeholder="Player Mobile no."></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
