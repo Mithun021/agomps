@@ -93,14 +93,43 @@ $league_category_model = new League_category_model();
                             </div>
                         </div>
 
+
+                        <div class="col-lg-12">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th class="bg-light" colspan="3">Registration Fee Details <i class="fa fa-play" aria-hidden="true"></i></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <span>Registration Fee</span>
+                                                <input type="number" class="form-control" placeholder="Enter registration fee" name="registration_fee" required>
+                                            </td>
+                                            <td>
+                                                <span>After Discount Fee</span>
+                                                <input type="number" class="form-control" placeholder="Enter after discount fee" name="registration_fee_after_discount" required>
+                                            </td>
+                                            <td>
+                                                <span>Team Entry Fee</span>
+                                                <input type="number" class="form-control" placeholder="Enter team entry fee" name="team_entry_fee" required>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="form-group">
-                        <span>League Session Name</span>
-                        <input type="text" class="form-control" placeholder="Enter league session name" name="league_session_name" required>
+                        <span>Description</span>
+                        <textarea class="form-control" name="description" id="summernote"></textarea>
                     </div>
                     <div class="form-group">
-                        <span>League Session Notes</span>
-                        <input type="text" class="form-control" placeholder="Enter league session notes" name="league_session_notes" required>
+                        <span>Featured Image</span>
+                        <input type="file" class="form-control" name="featured_image" required>
                     </div>
                     <div class="form-group">
                         <span>Status</span>
@@ -111,7 +140,7 @@ $league_category_model = new League_category_model();
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-primary" type="submit">Add League Category</button>
+                    <button class="btn btn-primary" type="submit">Add Tournament</button>
                 </div>
             </form>
         </div>
