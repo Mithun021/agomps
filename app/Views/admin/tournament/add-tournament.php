@@ -77,15 +77,15 @@ $league_category_model = new League_category_model();
                                         <tr>
                                             <td>
                                                 <input type="number" class="form-control" placeholder="Enter 1st rank price" name="first_rank_price" required>
-                                                <input type="text" class="form-control" placeholder="Enter trophy type" name="first_rank_trophy" required>
+                                                <input type="text" class="form-control mt-1" placeholder="Enter trophy type" name="first_rank_trophy" required>
                                             </td>
                                             <td>
                                             <input type="number" class="form-control" placeholder="Enter 2nd rank price" name="second_rank_price" required>
-                                            <input type="text" class="form-control" placeholder="Enter trophy type" name="second_rank_trophy" required>
+                                            <input type="text" class="form-control mt-1" placeholder="Enter trophy type" name="second_rank_trophy" required>
                                             </td>
                                             <td>
                                             <input type="number" class="form-control" placeholder="Enter 3rd rank price" name="third_rank_price" required>
-                                            <input type="text" class="form-control" placeholder="Enter trophy type" name="third_rank_trophy" required>
+                                            <input type="text" class="form-control mt-1" placeholder="Enter trophy type" name="third_rank_trophy" required>
                                             </td>
                                         </tr>
                                     </tbody>
