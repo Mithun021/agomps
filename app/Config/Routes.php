@@ -24,3 +24,5 @@ $routes->group('admin',['filter'=>'adminLogin'], static function($routes){
     $routes->match(['get','post'],'league-category','LeagueController::league_category');
 });
 $routes->get('admin/logout', 'AdminController::admin_logout');
+
+$routes->post('get-sports-category', 'UniversalController::get_sports_category');
