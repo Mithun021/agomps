@@ -65,7 +65,7 @@ $league_category_model = new League_category_model();
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
-                                            <th class="bg-light" colspan="3">Team Rank, Price & Trophy <i class="fa fa-trophy" aria-hidden="true"></i></th>
+                                            <th class="bg-light" colspan="3">Winner Team Rank, Price & Trophy <i class="fa fa-trophy" aria-hidden="true"></i></th>
                                         </tr>
                                         <tr>
                                             <th>1st Rank Details</th>
@@ -76,13 +76,16 @@ $league_category_model = new League_category_model();
                                     <tbody id="team_list">
                                         <tr>
                                             <td>
-                                                <input type="text" class="form-control" placeholder="Enter team name" name="team_name[]" required>
+                                                <input type="number" class="form-control" placeholder="Enter 1st rank price" name="first_rank_price" required>
+                                                <input type="text" class="form-control" placeholder="Enter trophy type" name="first_rank_trophy" required>
                                             </td>
                                             <td>
-                                                <input type="file" class="form-control" name="team_logo[]" required>
+                                            <input type="number" class="form-control" placeholder="Enter 2nd rank price" name="second_rank_price" required>
+                                            <input type="text" class="form-control" placeholder="Enter trophy type" name="second_rank_trophy" required>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" placeholder="Enter team captain name" name="team_captain[]" required>
+                                            <input type="number" class="form-control" placeholder="Enter 3rd rank price" name="third_rank_price" required>
+                                            <input type="text" class="form-control" placeholder="Enter trophy type" name="third_rank_trophy" required>
                                             </td>
                                         </tr>
                                     </tbody>
