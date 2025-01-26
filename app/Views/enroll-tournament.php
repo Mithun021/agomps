@@ -243,15 +243,17 @@ if ($league['name'] == "Individual Games") {
                             </form>
 
                             <form action="">
-                                <div class="col-lg-4 col-md-4">
-                                    <div class="form-group">
-                                        <span>Registration Payment<span class="text-danger">*</span></span>
-                                        <input type="tel" name="coach_number" class="form-control" value="<?= $tournament_price ?>">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4">
+                                        <div class="form-group">
+                                            <span>Registration Payment<span class="text-danger">*</span></span>
+                                            <input type="tel" name="coach_number" class="form-control" value="<?= $tournament_price ?>">
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="col-lg-12 col-md-12">
-                                    <button type="submit" class="btn site-button">Submit</button>
+                                    <div class="col-lg-12 col-md-12">
+                                        <button type="submit" class="btn site-button">Submit</button>
+                                    </div>
                                 </div>
                             </form>
 
