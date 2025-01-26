@@ -29,6 +29,9 @@
         public function getActiveData() {
             return $this->where('status', 1)->findAll();
         }
+        public function currectSession(){
+            return $this->where('status', 1)->first();
+        }
         
     }
 ?>

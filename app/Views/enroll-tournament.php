@@ -1,6 +1,15 @@
 <?= $this->extend("layouts/master") ?>
 <?= $this->section("body-content"); ?>
 <?= view('layouts/breadcumbs') ?>
+<?php
+use App\Models\League_category_model;
+use App\Models\League_session_model;
+use App\Models\Sports_model;
+$sports_model = new Sports_model();
+$league_category_model = new League_category_model();
+$league_session_model = new League_session_model();
+$active_league = $league_session_model->currectSession();
+?>
 <style>
     form span {
         font-weight: 600;
@@ -54,8 +63,9 @@
                             <div class="row">
                                 <div class="col-lg-12 col-md-12">
                                     <h3>Tournament Details</h3><hr>
-                                    <p class="m-0">League Category : </p>
-                                    <p class="m-0">Sports : </p>
+                                    <p class="m-0">League : <b><?= $active_league['league_name'] ?></b></p>
+                                    <p class="m-0">League Category : <b></b></p>
+                                    <p class="m-0">Sports : <b></b></p>
                                     <h4>Winner Team Rank, Price & Trophy</h4>
                                     <table>
                                         <thead>
