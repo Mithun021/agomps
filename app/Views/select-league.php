@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row">
                 <?php foreach ($leagues as $value) { ?>
-                    <div class="col-lg-4 col-sm-6 m-b30">
+                    <div class="col-lg-3 col-sm-6 m-b30">
                         <div class="dez-box p-a20 border-1 bg-gray">
                             <div class="dez-thum-bx dez-img-overlay1 dez-img-effect zoom">
                                 <?php if (!empty($value['featured_image']) && file_exists('public/admin/uploads/league/' . $value['featured_image'])): ?>
