@@ -48,28 +48,40 @@
         /* .loginbtn li a i#mobileicon{
             display: none;
         }*/
-        .error{
+        .error {
             color: red;
             font-weight: 600;
         }
-        @media(max-width : 992px){
-            .loginbtn li a span#signInBtn, .loginbtn li a span#signInBtn span, .loginbtn li a span#signUpBtn, .loginbtn li a span#signUpBtn span{
+
+        @media(max-width : 992px) {
+
+            .loginbtn li a span#signInBtn,
+            .loginbtn li a span#signInBtn span,
+            .loginbtn li a span#signUpBtn,
+            .loginbtn li a span#signUpBtn span {
                 display: block;
                 align-items: center;
             }
-            .loginbtn li a span#signInBtn {
-                width: 220px;
+
+            .loginbtn li a span#signInBtn,.loginbtn li a span#signUpBtn {
+                width: 90px;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                margin-top: 10px;
             }
-            .social_media_btn{
+
+            .social_media_btn {
                 display: none;
             }
-            .loginbtn li a span#signInBtn .loginbtn li a span#signInBtn#signUpBtn{
+
+            .loginbtn li a span#signInBtn .loginbtn li a span#signInBtn#signUpBtn {
                 width: 80px;
                 display: flex;
                 justify-content: flex-start;
                 margin-top: 8px;
             }
-        } 
+        }
     </style>
 </head>
 
