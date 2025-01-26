@@ -9,6 +9,8 @@ $sports_model = new Sports_model();
 $league_category_model = new League_category_model();
 $league_session_model = new League_session_model();
 $active_league = $league_session_model->currectSession();
+$sports = $sports_id->get($sports_id);
+$league = $league_category_model->get($league_id);
 ?>
 <style>
     form span {
@@ -64,8 +66,8 @@ $active_league = $league_session_model->currectSession();
                                 <div class="col-lg-12 col-md-12">
                                     <h3>Tournament Details</h3><hr>
                                     <p class="m-0">League : <b><?= $active_league['league_name'] ?></b></p>
-                                    <p class="m-0">League Category : <b></b></p>
-                                    <p class="m-0">Sports : <b></b></p>
+                                    <p class="m-0">League Category : <b><?= $sports['name'] ?></b></p>
+                                    <p class="m-0">Sports : <b><?= $league['name']."(".$league['league_for'].")" ?></b></p>
                                     <h4>Winner Team Rank, Price & Trophy</h4>
                                     <table>
                                         <thead>
