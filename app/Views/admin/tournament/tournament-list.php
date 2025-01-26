@@ -6,7 +6,7 @@ use App\Models\League_session_model;
 use App\Models\Sports_model;
 
 $league_category_model = new League_category_model();
-$lports_model = new Sports_model();
+$sports_model = new Sports_model();
 $league_session_model = new League_session_model();
 ?>
 <div class="row">
