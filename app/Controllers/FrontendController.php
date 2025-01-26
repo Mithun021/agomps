@@ -35,7 +35,7 @@ class FrontendController extends BaseController
                 'pincode' => $this->request->getPost('pincode'),
                 'full_address' => $this->request->getPost('full_address'),
                 'password' => password_hash($password, PASSWORD_DEFAULT),
-                'status' => 0
+                'status' => 1
             ];
             $result = $players_model->add($data);
             if ($result == true) {
