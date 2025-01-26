@@ -30,6 +30,9 @@
         public function getActiveData() {
             return $this->where('status', 1)->findAll();
         }
+        public function getBySportsLeague($sports_id,$league_id){
+            return $this->where('sports_id', $sports_id)->where('league_category_id', $league_id)->first();
+        }
         
     }
 ?>

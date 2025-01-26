@@ -48,6 +48,46 @@
                         <div class="card-header p-0"><img src="<?= base_url() ?>public/assets/images/background/registration.jpg" alt=""></div>
                         <!-- id="teamRegisterationForm" -->
 
+                        <?php if(isset($tournaments)){ ?>
+
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12">
+                                    <h3>Tournament Details</h3><hr>
+                                    <p>League Category : </p>
+                                    <p>Sports : </p>
+                                    <h4>Winner Team Rank, Price & Trophy</h4>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <td>Rank</td>
+                                                <td>Price</td>
+                                                <td>Trophy</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1st</td>
+                                                <td>Rs. 10000</td>
+                                                <td>Gold</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2nd</td>
+                                                <td>Rs. 5000</td>
+                                                <td>Silver</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3rd</td>
+                                                <td>Rs. 3000</td>
+                                                <td>Bronze</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
                         <form id="teamRegisterationForm" method="post" action="<?= base_url() ?>team-registration" enctype="multipart/form-data">
                             <div class="card-body">
                                 <div class="row">
@@ -180,6 +220,17 @@
                                 </div>
                             </div>
                         </form>
+
+                        <?php } else { ?>
+
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12">
+                                    <h3>No Tournaments Available</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
