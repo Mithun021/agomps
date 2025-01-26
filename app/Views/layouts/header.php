@@ -57,6 +57,9 @@
                 display: block;
                 align-items: center;
             }
+            .loginbtn li a span#signInBtn {
+                width: 220px;
+            }
             .social_media_btn{
                 display: none;
             }
