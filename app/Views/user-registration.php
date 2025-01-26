@@ -12,6 +12,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card registerFormBody">
+                <div class="card-header p-0"><img src="<?= base_url() ?>public/assets/images/background/user_registration.jpg" alt=""></div>
+                <!-- id="teamRegisterationForm" -->
                     <form id="userRegisterationForm" method="post" action="<?= base_url() ?>user-registration" enctype="multipart/form-data">
                         <div class="card-body">
                             <div class="row">
