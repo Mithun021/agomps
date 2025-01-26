@@ -65,7 +65,7 @@ $league_category_model = new League_category_model();
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
-                                            <th class="bg-light" colspan="3">Team Rank, Price & Trophy</th>
+                                            <th class="bg-light" colspan="3">Team Rank, Price & Trophy <i class="fa fa-trophy" aria-hidden="true"></i></th>
                                         </tr>
                                         <tr>
                                             <th>1st Rank Details</th>
