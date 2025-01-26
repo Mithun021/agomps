@@ -40,7 +40,7 @@ $league_category_model = new League_category_model();
                                     <option value="">Select League Category</option>
                                     <?php
                                     foreach ($league_category as $league) {
-                                        echo '<option value="' . $league['id'] . '">' . $league['name'] . '</option>';
+                                        echo '<option value="' . $league['id'] . '">' . $league['name'] .'-'.$league['league_for']. '</option>';
                                     }
                                     ?>
                                 </select>
