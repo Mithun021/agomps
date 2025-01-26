@@ -20,7 +20,7 @@ if($league['name'] == "Individual Games"){
         $tournament_price = $discount_registration_fee;
     }
 }else{
-    $tournament_price = $tournaments['team_entry_fee'];
+    $tournament_price = $tournaments['team_entry_fee'] ?? '';
 }
 
 ?>
