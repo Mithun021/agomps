@@ -53,6 +53,11 @@
             font-weight: 600;
         }
 
+        .dez-topbar-left.loginbtn .social-line li a {
+            padding-left: 0;
+            padding-right: 0px;
+        }
+
         @media(max-width : 992px) {
 
             .loginbtn li a span#signInBtn,
@@ -63,7 +68,8 @@
                 align-items: center;
             }
 
-            .loginbtn li a span#signInBtn,.loginbtn li a span#signUpBtn {
+            .loginbtn li a span#signInBtn,
+            .loginbtn li a span#signUpBtn {
                 width: 90px;
                 display: flex;
                 justify-content: center;
