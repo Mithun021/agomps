@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-lg-4 col-sm-6 m-b30">
                     <div class="dez-box p-a20 border-1 bg-gray">
-                        <div class="dez-thum-bx dez-img-overlay1 dez-img-effect zoom"> <img src="images/product/pic1.jpg" alt="">
+                        <div class="dez-thum-bx dez-img-overlay1 dez-img-effect zoom"> <img src="<?= base_url() ?>public/assets/images/product/pic1.jpg" alt="">
                             <div class="overlay-bx">
                                 <div class="overlay-icon"> <a href="javascript:void(0)"> <i class="fa fa-cart-plus icon-bx-xs"></i> </a> <a href="javascript:void(0)"> <i class="fa fa-search icon-bx-xs"></i> </a> <a href="javascript:void(0)"> <i class="fa fa-heart icon-bx-xs"></i> </a> </div>
                             </div>
