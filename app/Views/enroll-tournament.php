@@ -54,8 +54,8 @@
                             <div class="row">
                                 <div class="col-lg-12 col-md-12">
                                     <h3>Tournament Details</h3><hr>
-                                    <p>League Category : </p>
-                                    <p>Sports : </p>
+                                    <p class="m-0">League Category : </p>
+                                    <p class="m-0">Sports : </p>
                                     <h4>Winner Team Rank, Price & Trophy</h4>
                                     <table>
                                         <thead>
