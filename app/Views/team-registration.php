@@ -19,7 +19,8 @@
                                 <?php endif; ?>
                             </div>
                             <div class="dez-info p-t20 text-center">
-                                <h4 class="dez-title m-t0 m-b10 text-capitalize"><a href="<?= base_url() ?>select-league/<?= $value['id'] ?>">first heading</a></h4>
+                                <h4 class="dez-title m-t0 m-b10 text-capitalize"><a href="<?= base_url() ?>select-league/<?= $value['id'] ?>"><?= $value['name'] ?></a></h4>
+                                <p><?= $value['description'] ?></p>
                             </div>
                         </div>
                     </div>
