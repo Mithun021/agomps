@@ -39,7 +39,7 @@
                                         <span id="user_pass_error"></span>
                                     </div>
                                     <div class="form-group text-left">
-                                        <button class="site-button m-r5 login-switch"  type="submit" id="userLoginBtn">login</button>
+                                        <button class="site-button m-r5 login-switch" type="submit" id="userLoginBtn">login</button>
                                         <div class="m-t20 d-flex justify-content-between">
                                             <div class="m-b0">
                                                 <!-- <input id="check1" type="checkbox">
@@ -252,16 +252,29 @@
         });
 
 
-        $('#userLoginBtn').on('click', function (param) { 
-            param.preventDefault();
+        $('#userLoginBtn').on('click', function(param) {
+            param.preventDefault(); // Prevent the form from submitting
+
             var username = $('#username').val();
             var userpassword = $('#userpassword').val();
-            if(username == ""){
+
+            // Clear previous error messages
+            $('#username_error').text('');
+            $('#user_pass_error').text('');
+
+            // Validate the inputs
+            if (username == "") {
                 $('#username_error').text('Required username');
-            }else if (userpassword == "") {
+            } else if (userpassword == "") {
                 $('#user_pass_error').text('Required Password');
+            } else {
+                // If both fields are filled, you can proceed with form submission or other actions
+                // For example, you can submit the form via AJAX or directly
+                alert("Form is valid, proceed with submission.");
+                // $("#userLoginForm").submit(); // Uncomment to actually submit the form
             }
-         })
+        });
+
 
     });
 </script>
