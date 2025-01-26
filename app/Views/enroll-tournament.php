@@ -131,6 +131,14 @@ if($league['name'] == "Individual Games"){
                                                     </tr>
                                                 </thead>
                                                 <tbody id="teamBody">
+                                                    <?php if($league['name'] == "Individual Games"){ ?>
+                                                    <tr id="teamRow">
+                                                        <td>1</td>
+                                                        <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
+                                                        <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
+                                                        <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
+                                                    </tr>
+                                                    <?php } ?>
                                                     <tr id="teamRow">
                                                         <td>1</td>
                                                         <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
