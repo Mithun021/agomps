@@ -121,7 +121,7 @@
                                         <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
                                         <li><a href="javascript:void(0);" class="fa fa-instagram"></a></li>
                                         <li><a href="javascript:void(0);" class="fa fa-youtube"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-linkedin"></a><?= $loggedplayerName ?></li>
+                                        <li><a href="javascript:void(0);" class="fa fa-linkedin"></a><?php if ($sessionData) { echo $loggedplayerName; }?></li>
                                     </ul>
                                 </div>
                                 <div class="dez-topbar-left">
