@@ -19,7 +19,7 @@
                             </div>
                             <div class="dez-info p-t20 text-center">
                                 <h4 class="dez-title m-t0 m-b10 text-capitalize"><a href="<?= base_url() ?>select-league/<?= $value['id'] ?>"><?= $value['name'] ?></a></h4>
-                                <?php if(!empty($value['league_for'])){ ?><p><?= $value['league_for'] ?></p><?php } ?>
+                                <?php if(!empty($value['league_for'])){ ?><p class="site-button button-sm radius-sm m-t5"><?= $value['league_for'] ?></p><?php } ?>
                             </div>
                         </div>
                     </div>
