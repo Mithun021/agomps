@@ -53,15 +53,25 @@ $league_category_model = new League_category_model();
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>File</th>
                                 <th>Name</th>
-                                <th>Sports Category</th>
+                                <th>Notes</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            <?php foreach ($league_session as $key => $value) { ?>
+                                <tr>
+                                    <td><?= ++$key ?></td>
+                                    <td><?= $value['league_name'] ?></td>
+                                    <td><?= $value['notes'] ?></td>
+                                    <td><?= ($value['status'] == "0") ? "<span class='badge badge-danger badge-pill'>Inactive</span>" : (($value['status'] == "1") ? "<span class='badge badge-success badge-pill'>Active</span>" : "") ?></td>
+                                    <td>
+                                        <a href="<?= base_url() ?>admin/edit-league-category" class="btn btn-sm btn-circle btn-danger"><span class="fa fa-times"></span></a>
+                                        <a href="<?= base_url() ?>admin/edit-league-category" class="btn btn-sm btn-circle btn-primary"><span class="fa fa-pencil"></span></a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>

@@ -3,19 +3,30 @@
 namespace App\Controllers;
 
 use App\Models\League_category_model;
+use App\Models\League_session_model;
 use App\Models\Sports_model;
 
 class LeagueController extends BaseController
 {
     public function league_session()
     {
-        $league_category_model = new League_category_model();
-        $sports_model = new Sports_model();
+        $league_session_model = new League_session_model();
         $data = ['title' => 'League Session'];
         if ($this->request->is('get')) {
-            $data['sports'] = $sports_model->getActiveData();
+            $data['league_session'] = $league_session_model->get();
             return view('admin/league-session', $data);
         } else if ($this->request->is('post')) {
+            $data = [
+                'league_name' => $this->request->getPost('league_session_name'),
+                'notes' => $this->request->getPost('league_session_notes'),
+                'status' => $this->request->getPost('status') 
+            ];
+            $result = $league_session_model->add($data);
+            if ($result === true) {
+                return redirect()->to('admin/league-session')->with('status', '<div class="alert alert-success" role="alert"> Data Add Successful </div>');
+            } else {
+                return redirect()->to('admin/league-session')->with('status', '<div class="alert alert-danger" role="alert"> ' . $result . ' </div>');
+            }
         }
     }
 
