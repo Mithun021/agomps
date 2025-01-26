@@ -9,7 +9,7 @@ $sports_model = new Sports_model();
 $league_category_model = new League_category_model();
 $league_session_model = new League_session_model();
 $active_league = $league_session_model->currectSession();
-$sports = $sports_id->get($sports_id);
+$sports = $sports_model->get($sports_id);
 $league = $league_category_model->get($league_id);
 ?>
 <style>
