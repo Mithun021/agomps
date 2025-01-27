@@ -16,7 +16,7 @@ $current_session = $league_session_model->currectSession();
             <div class="row">
                 <?php foreach ($leagues as $value) { ?>
 
-                    <?php $tournaments = $tournament_model->getBySportsLeague($sports_id,$value['id'],$current_session['id']); print_r($tournaments); ?>
+                    <?php $tournaments = $tournament_model->getBySportsLeague($sports_id,$value['id'],$current_session['id']); ?>
 
                     <div class="col-lg-3 col-sm-6 m-b30">
                         <div class="dez-box p-a20 border-1 bg-gray">
@@ -27,7 +27,7 @@ $current_session = $league_session_model->currectSession();
                                     <img src="<?= base_url() ?>public/admin/uploads/league/invalid_image.png" alt="">
                                 <?php endif; ?>
                             </div>
-                            
+                            <?php echo "<pre>"; print_r($tournaments); ?>
                         </div>
                     </div>
                 <?php } ?>
