@@ -268,13 +268,15 @@ if ($tournaments) {
                                                     </table>
                                                 </div>
                                             </div>
+                                            <?php if(!$enroll_tournament_players) { ?>
                                             <div class="col-lg-12 col-md-12">
                                                 <button type="submit" class="btn site-button">Submit</button>
                                             </div>
+                                            <?php } ?>
                                         </div>
                                     </div>
                                 </form>
-
+                                <?php if($enroll_tournament_players) { ?>
                                 <form action="">
                                     <div class="card-body">
                                         <div class="row">
@@ -291,6 +293,7 @@ if ($tournaments) {
                                         </div>
                                     </div>
                                 </form>
+                                <?php } ?>
 
                             <?php } else { ?>
 
