@@ -1,3 +1,15 @@
+<?= $this->extend("layouts/master") ?>
+<?= $this->section("body-content"); ?>
+<?= view('layouts/breadcumbs') ?>
+
+<?php
+
+use App\Models\Sports_model;
+
+$sports_model = new Sports_model();
+$sports = $sports_model->getActiveData();
+?>
+
 <!-- Our Achievements -->
 <div class="section-full bg-white content-inner our-achievements">
     <div class="container">
@@ -34,3 +46,6 @@
         </div>
     </div>
 </div>
+<!-- Team member END -->
+
+<?= $this->endSection() ?>
