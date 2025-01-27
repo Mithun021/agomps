@@ -142,7 +142,7 @@ if ($tournaments) {
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12">
-                                                <input type="text" class="form-controller" name="player_id" value="<?= $loggedplayerId ?>">
+                                                <input type="hidden" class="form-controller" name="player_id" value="<?= $loggedplayerId ?>">
                                                 <input type="hidden" class="form-controller" name="leaguename" value="<?= $active_league['id'] ?>">
                                                 <hr>
                                                 <div class="form-group">
