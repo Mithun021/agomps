@@ -8,7 +8,7 @@ class AuthController extends BaseController
 {
     public function userlogin()
     {
-        session()->destroy();
+        // session()->destroy();
         $players_model =  new Players_model();
         $username = $this->request->getVar('username');
         $userpassword = $this->request->getVar('userpassword');
