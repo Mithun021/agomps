@@ -96,9 +96,6 @@ if ($tournaments) {
                         <!-- id="teamRegisterationForm" -->
                         <?php if ($sessionData) { ?>
                             <?php if (isset($tournaments)) { ?>
-                                <?php 
-                                    print_r($enroll_tournament);
-                                ?>
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12">
@@ -160,6 +157,7 @@ if ($tournaments) {
                                                             </tr>
                                                         </thead>
                                                         <tbody id="teamBody">
+                                                        <?php  if(!$enroll_tournament){ ?>
                                                             <?php if ($league['name'] == "Individual Games") { ?>
                                                                 <tr id="teamRow">
                                                                     <td>1</td>
@@ -258,7 +256,7 @@ if ($tournaments) {
                                                                     <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
                                                                     <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." pattern="^[6-9][0-9]{9}$"></td>
                                                                 </tr>
-                                                            <?php } ?>
+                                                            <?php } } ?>
                                                         </tbody>
                                                     </table>
                                                 </div>
