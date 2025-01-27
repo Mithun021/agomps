@@ -69,7 +69,6 @@ class FrontendController extends BaseController
             $data['sports'] = $sports_model->getActiveData();
             return view('team-registration', $data);
         } else if ($this->request->is('post')) {
-            
         }
     }
 
@@ -80,15 +79,25 @@ class FrontendController extends BaseController
         $data['leagues'] = $league_category_model->getActiveData();
         return view('select-league', $data);
     }
-    public function enroll_tournament($sports_id,$league_id){
+    public function enroll_tournament($sports_id, $league_id)
+    {
         $tournament_model = new Tournament_model();
         $enroll_tournament_model = new Enroll_tournament_model();
         $enroll_tournament_players_model = new Enroll_tournament_players_model();
         $data = ['title' => 'Enroll Tournament', 'sports_id' => $sports_id, 'league_id' => $league_id];
+        $sessionData = session()->get('loggedPlayerData');
+        if ($sessionData) {
+            $loggedplayerId = $sessionData['loggedplayerId'];
+        }
         if ($this->request->is('get')) {
+            echo $loggedplayerId; die;
             $data['tournaments'] = $tournament_model->getBySportsLeague($sports_id, $league_id);
+            $data['enroll_tournament'] = $enroll_tournament_model->get_by_player_sport_league($loggedplayerId, $sports_id, $league_id);
             return view('enroll-tournament', $data);
         } else if ($this->request->is('post')) {
+            if (empty($loggedplayerId)) {
+                return redirect()->back()->with('status', '<div class="alert alert-danger" role="alert">Login first Your Account with valid username and password</div>');
+            }
             $teamPlayers = $this->request->getPost('player_name');
             $teamAges = $this->request->getPost('player_age');
             $player_mobileno = $this->request->getPost('player_mobileno');
@@ -97,10 +106,11 @@ class FrontendController extends BaseController
                 'sports_category' => $sports_id,
                 'league_category_id' => $league_id,
                 'league_session_id' => $this->request->getPost('leaguename'),
+                'registration_status' => 1
             ];
             // print_r($data);
             $result = $enroll_tournament_model->add($data);
-            if($result === true){
+            if ($result === true) {
                 $insert_id = $enroll_tournament_model->getInsertID();
                 if (!empty($teamPlayers)) {
                     foreach ($teamPlayers as $key => $value) {
@@ -113,9 +123,9 @@ class FrontendController extends BaseController
                         $enroll_tournament_players_model->add($data2);
                     }
                 }
-                return redirect()->to('enroll-tournament/'.$sports_id."/".$league_id)->with('status', '<div class="alert alert-success" role="alert"> Thank you for registering! Your team registration has been successfully completed. You can now proceed with the payment to enroll your team in AGOMPS UPPL. </div>');
-            }else{
-                return redirect()->to('enroll-tournament/'.$sports_id."/".$league_id)->with('status', '<div class="alert alert-danger" role="alert"> ' . $result . ' </div>');
+                return redirect()->to('enroll-tournament/' . $sports_id . "/" . $league_id)->with('status', '<div class="alert alert-success" role="alert"> Thank you for registering! Your team registration has been successfully completed. You can now proceed with the payment to enroll your team in AGOMPS UPPL. </div>');
+            } else {
+                return redirect()->to('enroll-tournament/' . $sports_id . "/" . $league_id)->with('status', '<div class="alert alert-danger" role="alert"> ' . $result . ' </div>');
             }
         }
     }
