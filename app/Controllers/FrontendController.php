@@ -94,8 +94,7 @@ class FrontendController extends BaseController
         if ($this->request->is('get')) {
             $active_league = $league_session_model->currectSession();
             $data['tournaments'] = $tournament_model->getBySportsLeague($sports_id, $league_id);
-            $enroll_tournament = $enroll_tournament_model->get_by_player_sport_league($loggedplayerId, $sports_id, $league_id,$active_league['id']);
-           echo "<pre>"; print_r($enroll_tournament); die;
+            $data['enroll_tournament'] = $enroll_tournament_model->get_by_player_sport_league($loggedplayerId, $sports_id, $league_id,$active_league['id']);
             return view('enroll-tournament', $data);
         } else if ($this->request->is('post')) {
             if (empty($loggedplayerId)) {
