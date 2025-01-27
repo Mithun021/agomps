@@ -160,7 +160,7 @@
                                 data-paddingright="[0,0,0,0]"
                                 data-paddingbottom="[10,10,10,10]"
                                 data-paddingleft="[0,0,0,0]"
-                                style="z-index: 6; white-space: normal;text-transform:left; font-weight:600; line-height:80px; font-family:Oswald; color:#fff;">NFL IN WORLD CUP <span class="text-primary">2017</span>
+                                style="z-index: 6; white-space: normal;text-transform:left; font-weight:600; line-height:80px; font-family:Oswald; color:#fff;">UPPL IN WORLD CUP <span class="text-primary">2025</span>
                             </div>
 
                             <!-- LAYER NR. 3 -->
