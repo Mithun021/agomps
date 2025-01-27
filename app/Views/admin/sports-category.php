@@ -32,6 +32,14 @@
                             <option value="0">Inactive</option>
                         </select>
                     </div>
+                    <div class="form-group">
+                        <span>Winning Amount</span>
+                        <input type="number" class="form-control" placeholder="Enter winning amount" name="winning_amount" required>
+                    </div>
+                    <div class="form-group">
+                        <span>Joining Amount Start</span>
+                        <input type="number" class="form-control" placeholder="Enter joining amount" name="joining_amount" required>
+                    </div>
                 </div>
                 <div class="card-footer">
                     <button class="btn btn-primary" type="submit">Add Sports Category</button>
