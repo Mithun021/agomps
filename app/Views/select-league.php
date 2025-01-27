@@ -51,7 +51,7 @@ $current_session = $league_session_model->currectSession();
                                         ?>
                                     </h5>
                                 <?php } ?>
-                                <?php if ($tournaments) { ?><h5 class="text-primary text-center"><i class="fa fa-trophy"></i> Win : <i class="fa fa-rupee"></i> <?= $tournaments['first_rank_price'] ?></h5> <?php }else { echo "Tournament not availbale"; } ?>
+                                <?php if ($tournaments) { ?><h5 class="text-primary text-center"><i class="fa fa-trophy"></i> Win : <i class="fa fa-rupee"></i> <?= $tournaments['first_rank_price'] ?></h5> <?php }else { echo "<h5 class='text-danger'>Tournament not availbale</h5>"; } ?>
                             </div>
                         </div>
                     </div>
