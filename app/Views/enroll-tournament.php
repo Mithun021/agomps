@@ -14,6 +14,7 @@ $active_league = $league_session_model->currectSession();
 $sports = $sports_model->get($sports_id);
 $league = $league_category_model->get($league_id);
 
+if($tournaments){
 if ($league['name'] == "Individual Games") {
     $registration_fee = $tournaments['registration_fee'];
     $discount_registration_fee = $tournaments['discount_registration_fee'];
@@ -23,6 +24,7 @@ if ($league['name'] == "Individual Games") {
     }
 } else {
     $tournament_price = $tournaments['team_entry_fee'] ?? '';
+}
 }
 
 ?>
