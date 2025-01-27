@@ -25,6 +25,9 @@
             }
             return $result;
         }
+        public function get_by_tournament_id($id){
+            return $this->where('enroll_tournament_id',$id)->findAll();
+        }
         
     }
 ?>

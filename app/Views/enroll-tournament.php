@@ -256,9 +256,14 @@ if ($tournaments) {
                                                                     <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
                                                                     <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." pattern="^[6-9][0-9]{9}$"></td>
                                                                 </tr>
-                                                            <?php } }else { ?>
-
-                                                            <?php } ?>
+                                                            <?php } }else { if($enroll_tournament_players) { foreach ($enroll_tournament_players as $key => $players_list) { ?>
+                                                                <tr id="teamRow">
+                                                                    <td><?= ++$key ?></td>
+                                                                    <td><?= $players_list['enroll_player_name'] ?></td>
+                                                                    <td><?= $players_list['enroll_player_age'] ?></td>
+                                                                    <td><?= $players_list['enroll_player_mobile_number'] ?></td>
+                                                                </tr>
+                                                            <?php } } }?>
                                                         </tbody>
                                                     </table>
                                                 </div>
