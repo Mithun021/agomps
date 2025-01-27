@@ -134,13 +134,12 @@ if ($league['name'] == "Individual Games") {
                             </div>
 
 
-                            <form id="teamRegisterationForm" method="post" action="<?= base_url() ?>team-registration" enctype="multipart/form-data">
+                            <form id="teamRegisterationForm" method="post" action="<?= base_url() ?>enroll-tournament/<?= $sports_id ?>/<?= $league_id ?>" enctype="multipart/form-data">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12">
-                                            <input type="text" class="form-controller" name="leaguename" value="<?= $active_league['id'] ?>">
-                                            <input type="text" class="form-controller" name="sportsname" value="<?= $sports_id ?>">
-                                            <input type="text" class="form-controller" name="leaguecategory" value="<?= $league_id ?>">
+                                            <input type="text" class="form-controller" name="player_id" value="<?= $loggedplayerId ?>">
+                                            <input type="hidden" class="form-controller" name="leaguename" value="<?= $active_league['id'] ?>">
                                             <hr>
                                             <div class="form-group">
                                                 <h3>Team Details<span class="text-danger">*</span></h3>

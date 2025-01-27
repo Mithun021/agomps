@@ -2,8 +2,8 @@
 
 namespace App\Controllers;
 
-use App\Models\Enroll_players_model;
-use App\Models\Enroll_sports_model;
+use App\Models\Enroll_tournament_model;
+use App\Models\Enroll_tournament_players_model;
 use App\Models\League_category_model;
 use App\Models\Players_model;
 use App\Models\Sports_model;
@@ -81,14 +81,21 @@ class FrontendController extends BaseController
         return view('select-league', $data);
     }
     public function enroll_tournament($sports_id,$league_id){
-        $enroll_sports_model = new Enroll_sports_model();
         $tournament_model = new Tournament_model();
+        $enroll_tournament_model = new Enroll_tournament_model();
+        $enroll_tournament_players_model = new Enroll_tournament_players_model();
         $data = ['title' => 'Enroll Tournament', 'sports_id' => $sports_id, 'league_id' => $league_id];
         if ($this->request->is('get')) {
             $data['tournaments'] = $tournament_model->getBySportsLeague($sports_id, $league_id);
             return view('enroll-tournament', $data);
         } else if ($this->request->is('post')) {
-            
+            $data = [
+                'player_id' => $this->request->getPost('player_id'),
+                'sports_category' => $sports_id,
+                'league_category_id' => $league_id,
+                'league_session_id' => $this->request->getPost('leaguename'),
+            ];
+            print_r($data);
         }
     }
 

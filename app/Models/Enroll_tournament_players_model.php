@@ -1,11 +1,11 @@
 <?php
     namespace App\Models;
     use CodeIgniter\Model;
-    class Enroll_players_model extends Model
+    class Enroll_tournament_players_model extends Model
     {
-        protected $table         = 'enrolled_players';
+        protected $table         = 'enrolled_tournament_players';
         protected $primaryKey = 'id';
-        protected $allowedFields = ['player_id','enroll_player_name','enroll_player_age','enroll_player_jersey_no','enroll_player_mobile_number'];
+        protected $allowedFields = ['enroll_tournament_id','enroll_player_name','enroll_player_age','enroll_player_jersey_no','enroll_player_mobile_number'];
 
         public function add($data, $id = null) {
             if ($id != null) {
