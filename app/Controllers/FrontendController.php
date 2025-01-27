@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\Enroll_tournament_model;
 use App\Models\Enroll_tournament_players_model;
 use App\Models\League_category_model;
+use App\Models\League_session_model;
 use App\Models\Players_model;
 use App\Models\Sports_model;
 use App\Models\Tournament_model;
@@ -84,15 +85,17 @@ class FrontendController extends BaseController
         $tournament_model = new Tournament_model();
         $enroll_tournament_model = new Enroll_tournament_model();
         $enroll_tournament_players_model = new Enroll_tournament_players_model();
+        $league_session_model = new League_session_model();
         $data = ['title' => 'Enroll Tournament', 'sports_id' => $sports_id, 'league_id' => $league_id];
         $sessionData = session()->get('loggedPlayerData');
         if ($sessionData) {
             $loggedplayerId = $sessionData['loggedplayerId'];
         }
         if ($this->request->is('get')) {
-            echo $loggedplayerId; die;
+            $active_league = $league_session_model->currectSession();
             $data['tournaments'] = $tournament_model->getBySportsLeague($sports_id, $league_id);
-            $data['enroll_tournament'] = $enroll_tournament_model->get_by_player_sport_league($loggedplayerId, $sports_id, $league_id);
+            $enroll_tournament = $enroll_tournament_model->get_by_player_sport_league($loggedplayerId, $sports_id, $league_id,$active_league['id']);
+           echo "<pre>"; print_r($enroll_tournament); die;
             return view('enroll-tournament', $data);
         } else if ($this->request->is('post')) {
             if (empty($loggedplayerId)) {

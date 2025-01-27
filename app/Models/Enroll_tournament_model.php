@@ -25,6 +25,14 @@
             }
             return $result;
         }
+
+        public function get_by_player_sport_league($loggedplayerId, $sports_id, $league_id, $active_league){
+            $this->where('player_id',$loggedplayerId)
+            ->where('sports_category',$sports_id)
+            ->where('league_category_id',$league_id)
+            ->where('registration_status',1)
+            ->where('league_session_id',$active_league)->findAll();
+        }
         
     }
 ?>
