@@ -16,7 +16,7 @@ $current_session = $league_session_model->currectSession();
             <div class="row">
                 <?php foreach ($leagues as $value) { ?>
 
-                    <?php $tournaments = $tournament_model->getBySportsLeagueCurrentSession($sports_id,$value['id'],$current_session['id']) ?>
+                    <?php $tournaments = $tournament_model->getBySportsLeague($sports_id,$current_session['id']) ?>
 
                     <div class="col-lg-3 col-sm-6 m-b30">
                         <div class="dez-box p-a20 border-1 bg-gray">
