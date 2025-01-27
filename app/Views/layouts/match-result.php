@@ -19,7 +19,7 @@
                  <div class="dez-live-match bg-white">
                      <div class="m-b20 blog-grid date-style-2">
                          <div class="dez-post-media dez-img-effect zoom-slow">
-                             <img width="960" height="342" src="<?= base_url() ?>public/assets/images/gallery/img6.jpg" alt="">
+                             <img width="960" height="342" src="<?= base_url() ?>public/assets/images/gallery/agomps_bg.jpg" alt="">
                          </div>
                          <div class="dez-post-info border-1 p-a20 border-light ">
                              <div class="dez-post-title ">
