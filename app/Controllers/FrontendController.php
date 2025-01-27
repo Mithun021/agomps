@@ -89,13 +89,34 @@ class FrontendController extends BaseController
             $data['tournaments'] = $tournament_model->getBySportsLeague($sports_id, $league_id);
             return view('enroll-tournament', $data);
         } else if ($this->request->is('post')) {
+            $teamPlayers = $this->request->getPost('player_name');
+            $teamAges = $this->request->getPost('player_age');
+            $player_mobileno = $this->request->getPost('player_mobileno');
             $data = [
                 'player_id' => $this->request->getPost('player_id'),
                 'sports_category' => $sports_id,
                 'league_category_id' => $league_id,
                 'league_session_id' => $this->request->getPost('leaguename'),
             ];
-            print_r($data);
+            // print_r($data);
+            $result = $enroll_tournament_model->add($data);
+            if($result === true){
+                $insert_id = $enroll_tournament_model->getInsertID();
+                if (!empty($teamPlayers)) {
+                    foreach ($teamPlayers as $key => $value) {
+                        $data2 = [
+                            'enroll_tournament_id' => $insert_id,
+                            'enroll_player_name' => $value,
+                            'enroll_player_age' => $teamAges[$key],
+                            'enroll_player_mobile_number' => $player_mobileno[$key],
+                        ];
+                        $enroll_tournament_players_model->add($data2);
+                    }
+                }
+                return redirect()->to('admin/league-category')->with('status', '<div class="alert alert-success" role="alert"> Thank you for registering! Your team registration has been successfully completed. You can now proceed with the payment to enroll your team in AGOMPS UPPL. </div>');
+            }else{
+                return redirect()->to('admin/league-category')->with('status', '<div class="alert alert-danger" role="alert"> ' . $result . ' </div>');
+            }
         }
     }
 
