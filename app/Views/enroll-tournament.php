@@ -298,7 +298,7 @@ if ($league['name'] == "Individual Games") {
 </div>
 
 <script>
-    <?php if ($league['name'] == "Individual Games") { ?>
+    <?php if ($league['name'] == "Team Games") { ?>
     document.getElementById('teamRegisterationForm').addEventListener('submit', function(event) {
         let isValid = true;
 
