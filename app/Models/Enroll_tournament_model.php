@@ -31,7 +31,7 @@
             ->where('sports_category',$sports_id)
             ->where('league_category_id',$league_id)
             ->where('registration_status',1)
-            ->where('league_session_id',$active_league)->findAll();
+            ->where('league_session_id',$active_league)->first();
         }
         
     }

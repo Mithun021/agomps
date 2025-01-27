@@ -256,7 +256,9 @@ if ($tournaments) {
                                                                     <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
                                                                     <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." pattern="^[6-9][0-9]{9}$"></td>
                                                                 </tr>
-                                                            <?php } } ?>
+                                                            <?php } }else { ?>
+
+                                                            <?php } ?>
                                                         </tbody>
                                                     </table>
                                                 </div>
