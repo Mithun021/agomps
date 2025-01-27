@@ -81,7 +81,7 @@ if ($league['name'] == "Individual Games") {
                         ?>
                             <div class="card-body p-2 text-danger">
                                 <h3>You have login first to fill the registration form</h3>
-                                <p class="m-0">Click here to login <span id="signInBtn">Login Now</span></p>
+                                <p class="m-0">Click here to login <a href="javascript:void(0);"> <span class="btn btn-sm btn-dark rounded-pill" id="signInBtn"><i class="fa fa-sign-in"></i> <span>Sign In </span> </a></span></p>
                             </div>
                         <?php
                         }
