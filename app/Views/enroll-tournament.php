@@ -80,7 +80,7 @@ if ($league['name'] == "Individual Games") {
                         if(!isset($sessionData)){
                         ?>
                             <div class="card-body p-2 text-danger">
-                                <h3>You must <b>log in</b> first to complete the registration form.</h3>
+                                <h3>You must <span class="text-primary">log in</span> first to complete the registration form.</h3>
                             </div>
                         <?php
                         }
