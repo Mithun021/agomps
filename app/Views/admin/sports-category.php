@@ -7,7 +7,7 @@
     }
 </style>
 <div class="row">
-    <div class="col-lg-4">
+    <div class="col-lg-4 g-0">
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title m-0">Add Sports Category</h4>
@@ -54,7 +54,7 @@
         </div>
     </div>
 
-    <div class="col-lg-8">
+    <div class="col-lg-8 g-0">
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title m-0">Sports Category List</h4>
