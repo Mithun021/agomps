@@ -2,7 +2,7 @@
 <?= $this->section('body-content') ?>
 <style>
     table tr td, tr th{
-        padding: 10px;
+        padding: 5px;
         font-size: 120px;
     }
 </style>
