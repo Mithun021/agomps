@@ -96,7 +96,9 @@ if ($tournaments) {
                         <!-- id="teamRegisterationForm" -->
                         <?php if ($sessionData) { ?>
                             <?php if (isset($tournaments)) { ?>
-
+                                <?php 
+                                    print_r($enroll_tournament);
+                                ?>
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12">
