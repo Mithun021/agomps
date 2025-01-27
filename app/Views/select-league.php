@@ -34,7 +34,7 @@ $current_session = $league_session_model->currectSession();
                             </div>
                             <?php ""; //echo "<pre>"; print_r($tournaments); 
                             ?>
-                            <div class="price_details">
+                            <div class="price_details text-center">
                                 <?php if ($tournaments) { ?><h5 class="text-info"><i class="fa fa-hand-o-right"></i> Join : <i class="fa fa-rupee"></i>
                                         <?php
                                         if ($value['name'] == "Individual Games") {
