@@ -181,7 +181,7 @@
                                 data-paddingright="[0,0,0,0]"
                                 data-paddingbottom="[10,10,10,10]"
                                 data-paddingleft="[0,0,0,0]"
-                                style="z-index: 6; white-space: normal;text-transform:left; line-height:80px; color:#fff; font-family:roboto">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                style="z-index: 6; white-space: normal;text-transform:left; line-height:80px; color:#fff; font-family:roboto">The football tournament gathers teams from different regions, competing through group stages and knockout rounds, with the ultimate goal of winning the championship title in an exciting, action-packed final match.
                             </div>
 
                             <!-- LAYER NR. 4 -->
