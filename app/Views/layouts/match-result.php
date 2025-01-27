@@ -27,8 +27,8 @@
                              </div>
                              <div class="dez-post-meta ">
                                  <ul>
-                                     <li class=""> <i class="fa fa-calendar"></i><strong>10 Dec</strong> <span> <span>2024</span></span> </li>
-                                     <li class="post-author"><i class="fa fa-user"></i>By <a href="javascript:void(0);">demongo</a> </li>
+                                     <li class=""> <i class="fa fa-calendar"></i><strong>30 Jan</strong> <span> <span>2025</span></span> </li>
+                                     <li class="post-author"><i class="fa fa-user"></i>By <a href="javascript:void(0);">AGOMPS</a> </li>
                                      <li class="post-comment"><i class="fa fa-comments"></i> <a href="javascript:void(0);">0 Comments</a> </li>
                                  </ul>
                              </div>
