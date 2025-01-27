@@ -86,6 +86,7 @@ if ($league['name'] == "Individual Games") {
                                 <p class="m-0">Click here to login <span id="signInBtn">Login Now</span></p>
                             </div>
                         <?php
+                        die;
                         }
                         ?>
 
