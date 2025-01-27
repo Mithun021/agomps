@@ -35,8 +35,8 @@ $sports = $sports_model->getActiveData();
                             <div class="dez-title-bx bg-gray p-a20 text-left skew-triangle left-top">
                                 <h4 class="m-a0 text-capitalize"> <?= $value['name'] ?></h4>
                                 <div class="d-flex justify-content-between">
-                                    <span>Join :</span>
-                                    <span>Win : </span>
+                                    <span><i class="fa fa-hand-o-right"></i> Join : <i class="fa fa-rupee"></i> <?= $value['joining_amount'] ?></span>
+                                    <span><i class="fa fa-trophy"></i> Win : <i class="fa fa-rupee"></i> <?= $value['winning_amount'] ?></span>
                                 </div>
                             </div>
                         </div>
