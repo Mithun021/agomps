@@ -115,7 +115,7 @@ class FrontendController extends BaseController
                 }
                 return redirect()->to('enroll-tournament'.$sports_id."/".$league_id)->with('status', '<div class="alert alert-success" role="alert"> Thank you for registering! Your team registration has been successfully completed. You can now proceed with the payment to enroll your team in AGOMPS UPPL. </div>');
             }else{
-                return redirect()->to('enroll-tournament'.$sports_id."/".$league_id)->with('status', '<div class="alert alert-danger" role="alert"> ' . $result . ' </div>');
+                return redirect()->to('enroll-tournament/'.$sports_id."/".$league_id)->with('status', '<div class="alert alert-danger" role="alert"> ' . $result . ' </div>');
             }
         }
     }
