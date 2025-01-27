@@ -84,12 +84,11 @@ if ($league['name'] == "Individual Games") {
                                 <p class="m-0">Click here to login <span id="signInBtn">Login Now</span></p>
                             </div>
                         <?php
-                        die;
                         }
                         ?>
                         <div class="card-header p-0"><img src="<?= base_url() ?>public/assets/images/background/registration.jpg" alt=""></div>
                         <!-- id="teamRegisterationForm" -->
-
+                        <?php if($sessionData){ ?>
                         <?php if (isset($tournaments)) { ?>
 
                             <div class="card-body">
@@ -287,7 +286,7 @@ if ($league['name'] == "Individual Games") {
                                     </div>
                                 </div>
                             </div>
-                        <?php } ?>
+                        <?php } }?>
                     </div>
                 </div>
             </div>
