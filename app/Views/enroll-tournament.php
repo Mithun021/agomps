@@ -70,9 +70,7 @@ if ($league['name'] == "Individual Games") {
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card registerFormBody">
-                        <div class="card-header p-0"><img src="<?= base_url() ?>public/assets/images/background/registration.jpg" alt=""></div>
-                        <!-- id="teamRegisterationForm" -->
-                        <?php
+                    <?php
                         $sessionData = session()->get('loggedPlayerData');
                         if ($sessionData) {
                             $loggedplayerName = $sessionData['loggedplayerName'];
@@ -81,16 +79,17 @@ if ($league['name'] == "Individual Games") {
                         
                         if(!isset($sessionData)){
                         ?>
-                            <div class="card-body text-danger">
+                            <div class="card-body p-2 text-danger">
                                 <h3>You have login first to fill the registration form</h3>
                                 <p class="m-0">Click here to login <span id="signInBtn">Login Now</span></p>
                             </div>
                         <?php
-                        die;
                         }
                         ?>
+                        <div class="card-header p-0"><img src="<?= base_url() ?>public/assets/images/background/registration.jpg" alt=""></div>
+                        <!-- id="teamRegisterationForm" -->
 
-                        <?php if (isset($tournaments)) { ?>
+                        <?php if (isset($tournaments) && $sessionData) { ?>
 
                             <div class="card-body">
                                 <div class="row">
