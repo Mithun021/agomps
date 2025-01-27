@@ -30,7 +30,7 @@ $current_session = $league_session_model->currectSession();
                                 <?php endif; ?>
                             </div>
                             <div class="dez-info p-t20 text-center">
-                                <h4 class="dez-title m-t0 m-b10 text-capitalize"><a href="<?= base_url() ?>enroll-tournament/<?= $sports_id ?>/<?= $value['id'] ?>"><?= $value['name'] ?> <?php if (!empty($value['league_for'])) { ?><p class="site-button button-sm radius-sm m-t5"><?= $value['league_for'] ?></p><?php } ?> </a></h4>
+                                <h4 class="dez-title m-t0 m-b0 text-capitalize"><a href="<?= base_url() ?>enroll-tournament/<?= $sports_id ?>/<?= $value['id'] ?>"><?= $value['name'] ?> <?php if (!empty($value['league_for'])) { ?><p class="site-button button-sm radius-sm m-t5"><?= $value['league_for'] ?></p><?php } ?> </a></h4>
                             </div>
                             <?php ""; //echo "<pre>"; print_r($tournaments); 
                             ?>
