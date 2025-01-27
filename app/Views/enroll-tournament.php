@@ -77,10 +77,12 @@ if ($league['name'] == "Individual Games") {
                         if ($sessionData) {
                             $loggedplayerName = $sessionData['loggedplayerName'];
                             $loggedplayerId = $sessionData['loggedplayerId'];
-                        }else{
+                        }
+                        
+                        if(!isset($sessionData)){
                         ?>
                             <div class="card-body text-danger">
-                                <h3>YOu have login first to fill the registration form</h3>
+                                <h3>You have login first to fill the registration form</h3>
                                 <p class="m-0">Click here to login <span id="signInBtn">Login Now</span></p>
                             </div>
                         <?php
