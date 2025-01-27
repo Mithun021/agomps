@@ -34,8 +34,8 @@ $current_session = $league_session_model->currectSession();
                             </div>
                             <?php ""; //echo "<pre>"; print_r($tournaments); 
                             ?>
-                            <div class="price_details text-center">
-                                <?php if ($tournaments) { ?><h5 class="text-info"><i class="fa fa-hand-o-right"></i> Join : <i class="fa fa-rupee"></i>
+                            <div class="price_details">
+                                <?php if ($tournaments) { ?><h5 class="text-info text-center"><i class="fa fa-hand-o-right"></i> Join : <i class="fa fa-rupee"></i>
                                         <?php
                                         if ($value['name'] == "Individual Games") {
                                             $registration_fee = $tournaments['registration_fee'];
@@ -51,7 +51,7 @@ $current_session = $league_session_model->currectSession();
                                         ?>
                                     </h5>
                                 <?php } ?>
-                                <?php if ($tournaments) { ?><h5 class="text-primary"><i class="fa fa-trophy"></i> Win : <i class="fa fa-rupee"></i> <?= $tournaments['first_rank_price'] ?></h5> <?php } ?>
+                                <?php if ($tournaments) { ?><h5 class="text-primary text-center"><i class="fa fa-trophy"></i> Win : <i class="fa fa-rupee"></i> <?= $tournaments['first_rank_price'] ?></h5> <?php } ?>
                             </div>
                         </div>
                     </div>
