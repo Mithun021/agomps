@@ -33,7 +33,7 @@ $sports = $sports_model->getActiveData();
                                 <div class="m-tb30"><a href="<?= base_url() ?>select-league/<?= $value['id'] ?>" class="site-button outline white border-1">Read More</a></div>
                             </div>
                             <div class="dez-title-bx bg-gray p-a20 text-left skew-triangle left-top">
-                                <h4 class="m-a0 text-capitalize"> <?= $value['name'] ?></h4>
+                                <h4 class="m-a0 text-capitalize"> <?= $value['name'] ?></h4> <hr>
                                 <div class="d-flex justify-content-between">
                                     <span><i class="fa fa-hand-o-right"></i> Join : <i class="fa fa-rupee"></i> <?= $value['joining_amount'] ?></span>
                                     <span><i class="fa fa-trophy"></i> Win : <i class="fa fa-rupee"></i> <?= $value['winning_amount'] ?></span>
