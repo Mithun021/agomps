@@ -6,7 +6,7 @@
         font-size: 120px;
     }
 </style>
-<div class="row">
+<div class="row g-0">
     <div class="col-lg-4 g-0">
         <div class="card">
             <div class="card-header">
