@@ -59,17 +59,17 @@
             <div class="card-header">
                 <h4 class="card-title m-0">Sports Category List</h4>
             </div>
-            <div class="card-body">
+            <div class="card-body p-2">
                 <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>File</th>
-                            <th>Name</th>
+                            <td>#</td>
+                            <td>File</td>
+                            <td>Name</td>
                             <td>Joining Amt.</td>
                             <td>Winning Amt.</td>
-                            <th>Status</th>
-                            <th>Action</th>
+                            <td>Status</td>
+                            <td>Action</td>
                         </tr>
                     </thead>
                     <tbody>
