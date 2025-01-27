@@ -283,7 +283,7 @@ if ($tournaments) {
                                             <div class="col-lg-4 col-md-4">
                                                 <div class="form-group">
                                                     <span>Registration Payment<span class="text-danger">*</span></span>
-                                                    <input type="tel" name="coach_number" class="form-control" value="<?= $tournament_price ?>">
+                                                    <input type="tel" name="coach_number" class="form-control" value="<?= $tournament_price ?>" readonly>
                                                 </div>
                                             </div>
 
