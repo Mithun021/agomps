@@ -9,6 +9,11 @@ use App\Models\Sports_model;
 $sports_model = new Sports_model();
 $sports = $sports_model->getActiveData();
 ?>
+<style>
+    .enrollprice span{
+        font-weight: 600;
+    }
+</style>
 
 <!-- Our Achievements -->
 <div class="section-full bg-white content-inner our-achievements">
@@ -38,6 +43,10 @@ $sports = $sports_model->getActiveData();
                             </div>
                             <div class="dez-title-bx bg-gray p-a20 text-left skew-triangle left-top">
                                 <h4 class="m-a0 text-capitalize"> <?= $value['name'] ?></h4>
+                                <div class="enrollprice d-flex justify-content-between">
+                                    <span class="text-info"><i class="fa fa-hand-o-right"></i> Join : <i class="fa fa-rupee"></i> <?= $value['joining_amount'] ?></span>
+                                    <span class="text-primary"><i class="fa fa-trophy"></i> Win : <i class="fa fa-rupee"></i> <?= $value['winning_amount'] ?></span>
+                                </div>
                             </div>
                         </div>
                     </div>
