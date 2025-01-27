@@ -138,6 +138,9 @@ if ($league['name'] == "Individual Games") {
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12">
+                                            <input type="text" class="form-controller" name="leaguename" value="<?= $active_league['id'] ?>">
+                                            <input type="text" class="form-controller" name="sportsname" value="<?= $sports_id ?>">
+                                            <input type="text" class="form-controller" name="leaguecategory" value="<?= $league_id ?>">
                                             <hr>
                                             <div class="form-group">
                                                 <h3>Team Details<span class="text-danger">*</span></h3>
