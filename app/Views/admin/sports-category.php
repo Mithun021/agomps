@@ -66,6 +66,8 @@
                             <th>#</th>
                             <th>File</th>
                             <th>Name</th>
+                            <td>Joining Amt.</td>
+                            <td>Winning Amt.</td>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
@@ -82,6 +84,8 @@
                                     <?php endif; ?>
                                 </td>
                                 <td><?= $value['name'] ?></td>
+                                <td><?= $value['joining_amount'] ?></td>
+                                <td><?= $value['winning_amount'] ?></td>
                                 <td><?= ($value['status'] == "0") ? "<span class='badge badge-danger badge-pill'>Inactive</span>" : (($value['status'] == "1") ? "<span class='badge badge-success badge-pill'>Active</span>" : "") ?></td>
                                 <td>
                                 <a href="<?= base_url() ?>admin/edit-sports-category" class="btn btn-sm btn-circle btn-danger"><span class="fa fa-times"></span></a>
