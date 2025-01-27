@@ -3,7 +3,7 @@
 <?= view('layouts/slider') ?>
 
 <!-- Next Match -->
-<div class="row bg-gray-middle m-lr0">
+<!-- <div class="row bg-gray-middle m-lr0">
     <div class="col-lg-6 bg-primary p-tb30 text-center next-match-count">
         <h2 class="m-a0 m-b15 text-black">Next Match</h2>
         <div class="countdown dez-style-3 text-center m-b10">
@@ -40,10 +40,10 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
+<?= view('layouts/sports') ?>
 <!-- Next Match -->
 <?= view('layouts/match-result') ?>
 <?= view('layouts/about') ?>
-<?= view('layouts/sports') ?>
 
 <?= $this->endSection() ?>
