@@ -15,7 +15,7 @@ class AuthController extends BaseController
         $data = $players_model->where('email_address', $username)
             ->orWhere('mobile_number', $username)->first();
         if ($data) {
-            // session()->destroy();
+            session()->destroy();
             $session_data = [
                 'loggedplayerName' => $data['first_name'],
                 'loggedplayerId' => $data['id'],
