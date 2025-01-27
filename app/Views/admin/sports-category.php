@@ -1,5 +1,11 @@
 <?= $this->extend('admin/layouts/master') ?>
 <?= $this->section('body-content') ?>
+<style>
+    table tr td, tr th{
+        padding: 10px;
+        font-size: 120px;
+    }
+</style>
 <div class="row">
     <div class="col-lg-4">
         <div class="card">
