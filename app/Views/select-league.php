@@ -18,8 +18,11 @@
                                 <?php endif; ?>
                             </div>
                             <div class="dez-info p-t20 text-center">
-                                <h4 class="dez-title m-t0 m-b10 text-capitalize"><a href="<?= base_url() ?>enroll-tournament/<?= $sports_id ?>/<?= $value['id'] ?>"><?= $value['name'] ?></a></h4>
-                                <?php if(!empty($value['league_for'])){ ?><p class="site-button button-sm radius-sm m-t5"><?= $value['league_for'] ?></p><?php } ?>
+                                <h4 class="dez-title m-t0 m-b10 text-capitalize"><a href="<?= base_url() ?>enroll-tournament/<?= $sports_id ?>/<?= $value['id'] ?>"><?= $value['name'] ?> <?php if(!empty($value['league_for'])){ ?><p class="site-button button-sm radius-sm m-t5"><?= $value['league_for'] ?></p><?php } ?> </a></h4>
+                                <div class="price_details">
+                                <h5 class="text-info"><i class="fa fa-hand-o-right"></i> Join : <i class="fa fa-rupee"></i> _____</h5>
+                                <h5 class="text-primary"><i class="fa fa-trophy"></i> Win : <i class="fa fa-rupee"></i> ____</h5>
+                                </div>
                             </div>
                         </div>
                     </div>
