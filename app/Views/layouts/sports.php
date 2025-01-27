@@ -34,6 +34,10 @@ $sports = $sports_model->getActiveData();
                             </div>
                             <div class="dez-title-bx bg-gray p-a20 text-left skew-triangle left-top">
                                 <h4 class="m-a0 text-capitalize"> <?= $value['name'] ?></h4>
+                                <div class="d-flex justify-content-between">
+                                    <span>Join :</span>
+                                    <span>Win : </span>
+                                </div>
                             </div>
                         </div>
                     </div>
