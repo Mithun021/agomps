@@ -16,7 +16,7 @@ $current_session = $league_session_model->currectSession();
             <div class="row">
                 <?php foreach ($leagues as $value) { ?>
 
-                    <?php $tournaments = $tournament_model->getBySportsLeague($sports_id,$current_session['id']) ?>
+                    <?php $tournaments = $tournament_model->getBySportsLeague($sports_id,$value['id'],$current_session['id']); print_r($tournaments); ?>
 
                     <div class="col-lg-3 col-sm-6 m-b30">
                         <div class="dez-box p-a20 border-1 bg-gray">
@@ -27,28 +27,7 @@ $current_session = $league_session_model->currectSession();
                                     <img src="<?= base_url() ?>public/admin/uploads/league/invalid_image.png" alt="">
                                 <?php endif; ?>
                             </div>
-                            <div class="dez-info p-t20 text-center">
-                                <h4 class="dez-title m-t0 m-b10 text-capitalize"><a href="<?= base_url() ?>enroll-tournament/<?= $sports_id ?>/<?= $value['id'] ?>"><?= $value['name'] ?> <?php if(!empty($value['league_for'])){ ?><p class="site-button button-sm radius-sm m-t5"><?= $value['league_for'] ?></p><?php } ?> </a></h4>
-                                <div class="price_details">
-                                <?php if ($tournaments) { ?><h5 class="text-info"><i class="fa fa-hand-o-right"></i> Join : <i class="fa fa-rupee"></i> 
-                                    <?php
-                                            if ($value['name'] == "Individual Games") {
-                                                $registration_fee = $tournaments['registration_fee'];
-                                                $discount_registration_fee = $tournaments['discount_registration_fee'];
-                                                $tournament_price = $registration_fee;
-                                                if (!empty($discount_registration_fee) && $discount_registration_fee < $registration_fee) {
-                                                    $tournament_price = $discount_registration_fee;
-                                                }
-                                            } else {
-                                                $tournament_price = $tournaments['team_entry_fee'] ?? '';
-                                            }
-                                            echo $tournament_price;
-                                    ?>
-                                </h5>
-                                <?php } ?>
-                                <?php if($tournaments){ ?><h5 class="text-primary"><i class="fa fa-trophy"></i> Win : <i class="fa fa-rupee"></i> <?= $tournaments['first_rank_price'] ?></h5> <?php } ?>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 <?php } ?>
