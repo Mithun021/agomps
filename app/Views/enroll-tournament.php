@@ -321,9 +321,9 @@ if ($tournaments) {
                                             </div>
                                         </div>
                                     </form>
-                                <?php } }else{ ?>
+                                <?php } else{ ?>
                                     <div class="card-body"><button type="button" class="btn site-button">Tournament Already Enrolled</button></div>
-                                <?php } ?>
+                                <?php } } ?>
 
                             <?php } else { ?>
 
