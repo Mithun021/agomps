@@ -8,6 +8,7 @@ use App\Models\League_category_model;
 use App\Models\League_session_model;
 use App\Models\Players_model;
 use App\Models\Sports_model;
+use App\Models\State_city_model;
 use App\Models\Tournament_model;
 
 class FrontendController extends BaseController
@@ -15,9 +16,11 @@ class FrontendController extends BaseController
 
     public function user_registration()
     {
+        $state_city_model = new State_city_model();
         $players_model = new Players_model();
         $data = ['title' => 'User Registration'];
         if ($this->request->is('get')) {
+            $data['state'] = $state_city_model->get_state();
             return view('user-registration', $data);
         } else if ($this->request->is('post')) {
             $userid = $this->request->getPost('mobile_number');

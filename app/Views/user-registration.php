@@ -93,8 +93,9 @@
                                     <div class="form-group">
                                         <span>State<span class="text-danger">*</span></span>
                                         <select name="state" class="form-control">
-                                            <option value="Bihar">Bihar</option>
-                                            <option value="Jharkhand">Jharkhand</option>
+                                        <?php foreach ($state as $key => $value) { ?>
+                                            <option value="<?= $value['state'] ?>"><?= ucwords($value['state']) ?></option>
+                                        <?php } ?>
                                         </select>
                                     </div>
                                 </div>
