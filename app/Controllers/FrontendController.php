@@ -44,21 +44,21 @@ class FrontendController extends BaseController
                 'status' => 1
             ];
             $result = $players_model->add($data);
-            if ($result == true) {
-                return redirect()->to('user-registration')->with(
-                    'status',
+            if ($result === true) {
+                // Assuming the user ID is generated after insertion, so you can fetch it like this (if auto-incremented).
+                $userid = $players_model->getInsertID();  // Or however you retrieve the user ID
+                return redirect()->to('user-registration')->with('status', 
                     '<div class="alert alert-success" role="alert"> 
-            <h4>Thank you for registering. <br> Below are your login credentials: <br> 
-            User ID: ' . $userid . '<br> 
-            Password: ' . $password . ' </h4>
-        </div>'
+                        <h4>Thank you for registering. <br> Below are your login credentials: <br> 
+                        User ID: ' . $userid . '<br> 
+                        Password: ' . $password . ' </h4>
+                    </div>'
                 );
             } else {
-                return redirect()->to('user-registration')->with(
-                    'status',
+                return redirect()->to('user-registration')->with('status', 
                     '<div class="alert alert-danger" role="alert"> 
-            <h4>' . $result . ' </h4>
-        </div>'
+                        <h4>' . $result . ' </h4>
+                    </div>'
                 );
             }
         }

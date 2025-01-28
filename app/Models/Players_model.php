@@ -36,6 +36,7 @@ class Players_model extends Model
             $result = $this->update($id, $data);
             return $result ? true : 'Data not updated: Update failed.';
         } else {
+            // Check if the player exists using mobile number or aadhar
             $existingPlayer = $this->where('mobile_number', $data['mobile_number'])
                 ->orWhere('aadhar', $data['aadhar'])
                 ->first();
@@ -43,11 +44,13 @@ class Players_model extends Model
             if ($existingPlayer) {
                 return 'Already account created: Mobile number or Aadhar already exists.';
             } else {
+                // Insert the new player into the database
                 $result = $this->insert($data);
                 return $result ? true : 'Data not inserted: Insertion failed.';
             }
         }
     }
+
 
     public function get($id = null)
     {
