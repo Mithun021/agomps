@@ -292,7 +292,7 @@ if ($tournaments) {
                                         </div>
                                     </div>
                                 </form>
-                                <?php if ($enroll_tournament_players) { ?>
+                                <?php if ($enroll_tournament_players) { if(empty($find_tournament_id['id'])){ ?>
                                     <form action="<?= base_url() ?>enroll_tournament_payment/<?= $sports_id ?>/<?= $league_id ?>" method="post" enctype="multipart/form-data">
                                         <div class="card-body">
                                             <div class="row">
@@ -321,7 +321,7 @@ if ($tournaments) {
                                             </div>
                                         </div>
                                     </form>
-                                <?php } ?>
+                                <?php } } ?>
 
                             <?php } else { ?>
 
