@@ -304,7 +304,7 @@ if ($tournaments) {
                                                 <div class="col-lg-4 col-md-4">
                                                     <div class="form-group">
                                                         <label for="team_name">Attached Payment Screenshot after pay</label>
-                                                        <input type="text" name="tournament_id" value="<?= $find_tournament_id['id']; ?>" class="form-control">
+                                                        <input type="hidden" name="tournament_id" value="<?= $find_tournament_id['id']; ?>" class="form-control">
                                                         <input type="file" class="form-control" name="payment_screenshot" required>
                                                     </div>
                                                 </div>
