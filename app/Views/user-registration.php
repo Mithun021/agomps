@@ -27,8 +27,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card registerFormBody">
-                <div class="card-header p-0"><img src="<?= base_url() ?>public/assets/images/background/user_registration.jpg" alt=""></div>
-                <!-- id="teamRegisterationForm" -->
+                    <div class="card-header p-0"><img src="<?= base_url() ?>public/assets/images/background/user_registration.jpg" alt=""></div>
+                    <!-- id="teamRegisterationForm" -->
                     <form id="userRegisterationForm" method="post" action="<?= base_url() ?>user-registration" enctype="multipart/form-data">
                         <div class="card-body">
                             <div class="row">
@@ -92,17 +92,19 @@
                                 <div class="col-lg-4 col-md-4">
                                     <div class="form-group">
                                         <span>State<span class="text-danger">*</span></span>
-                                        <select name="state" class="form-control">
-                                        <?php foreach ($state as $key => $value) { ?>
-                                            <option value="<?= $value['state'] ?>"><?= ucwords($value['state']) ?></option>
-                                        <?php } ?>
+                                        <select name="state" id="state" class="form-control">
+                                            <?php foreach ($state as $key => $value) { ?>
+                                                <option value="<?= $value['state'] ?>"><?= ucwords($value['state']) ?></option>
+                                            <?php } ?>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4">
                                     <div class="form-group">
                                         <span>City<span class="text-danger">*</span></span>
-                                        <input type="text" name="city" class="form-control">
+                                        <select name="city" id="city" class="form-control">
+                                            <option value="">--Select--</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4">
@@ -136,7 +138,32 @@
 <script src="https://cdn.rawgit.com/jzaefferer/jquery-validation/1.19.3/dist/jquery.validate.min.js"></script>
 <script>
     $(document).ready(function() {
-        
+
+        $('#state').on('chnage', function() {
+            var state = $(this).val();
+            $.ajax({
+                type: "post",
+                url: "<?= base_url() ?>findcity",
+                data: {
+                    state: state
+                },
+                dataType: "json",
+                success: function(response) {
+                    // console.log(response);
+                    $('#city').html('<option value="">Select City</option>');
+
+                    // If cities are found, populate them in the city dropdown
+                    if (data.length > 0) {
+                        $.each(data, function(index, city) {
+                            $('#city').append('<option value="' + city.city + '">' + city.city + '</option>');
+                        });
+                    } else {
+                        $('#city').html('<option value="">No cities available</option>');
+                    }
+                }
+            });
+        });
+
         // Initialize form validation
         $("#userRegisterationForm").validate({
             rules: {

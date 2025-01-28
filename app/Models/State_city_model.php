@@ -36,4 +36,11 @@ class State_city_model extends Model
     {
         return $this->distinct()->select('state')->findAll();
     }
+    public function find_city($state)
+    {
+        return $this->where('state', $state)
+            ->select('city')
+            ->distinct()
+            ->findAll();
+    }
 }
