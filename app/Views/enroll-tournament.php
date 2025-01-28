@@ -287,7 +287,7 @@ if ($tournaments) {
                                             <div class="row">
                                                 <div class="col-lg-4 col-md-4">
                                                     <div class="form-group">
-                                                        <img src="<?= base_url() ?>public/assets/images/background/payemnt_qr.jpg" alt="" height="250px">
+                                                        <img src="<?= base_url() ?>public/assets/images/background/payment_qr.jpg" alt="" height="250px">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4 col-md-4">
