@@ -142,6 +142,7 @@
 
         $('#state').on('chnage', function() {
             var state = $(this).val();
+            alert(state);
             $.ajax({
                 type: "post",
                 url: "<?= base_url() ?>findcity",
