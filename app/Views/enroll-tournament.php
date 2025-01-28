@@ -157,142 +157,158 @@ if ($tournaments) {
                                                             </tr>
                                                         </thead>
                                                         <tbody id="teamBody">
-                                                        <?php  if(!$enroll_tournament){ ?>
-                                                            <?php if ($league['name'] == "Individual Games") { ?>
-                                                                <tr id="teamRow">
-                                                                    <td>1</td>
-                                                                    <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
-                                                                    <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
-                                                                    <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
-                                                                </tr>
-                                                            <?php } else { ?>
-                                                                <tr id="teamRow">
-                                                                    <td>1</td>
-                                                                    <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
-                                                                    <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
-                                                                    <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
-                                                                </tr>
-                                                                <tr id="teamRow">
-                                                                    <td>2</td>
-                                                                    <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
-                                                                    <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
-                                                                    <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
-                                                                </tr>
-                                                                <tr id="teamRow">
-                                                                    <td>3</td>
-                                                                    <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
-                                                                    <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
-                                                                    <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
-                                                                </tr>
-                                                                <tr id="teamRow">
-                                                                    <td>4</td>
-                                                                    <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
-                                                                    <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
-                                                                    <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
-                                                                </tr>
-                                                                <tr id="teamRow">
-                                                                    <td>5</td>
-                                                                    <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
-                                                                    <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
-                                                                    <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
-                                                                </tr>
-                                                                <tr id="teamRow">
-                                                                    <td>6</td>
-                                                                    <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
-                                                                    <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
-                                                                    <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
-                                                                </tr>
-                                                                <tr id="teamRow">
-                                                                    <td>7</td>
-                                                                    <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
-                                                                    <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
-                                                                    <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
-                                                                </tr>
-                                                                <tr id="teamRow">
-                                                                    <td>8</td>
-                                                                    <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
-                                                                    <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
-                                                                    <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
-                                                                </tr>
-                                                                <tr id="teamRow">
-                                                                    <td>9</td>
-                                                                    <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
-                                                                    <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
-                                                                    <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
-                                                                </tr>
-                                                                <tr id="teamRow">
-                                                                    <td>10</td>
-                                                                    <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
-                                                                    <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
-                                                                    <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
-                                                                </tr>
-                                                                <tr id="teamRow">
-                                                                    <td>11</td>
-                                                                    <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
-                                                                    <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
-                                                                    <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
-                                                                </tr>
-                                                                <tr id="teamRow">
-                                                                    <td>12</td>
-                                                                    <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
-                                                                    <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
-                                                                    <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." pattern="^[6-9][0-9]{9}$"></td>
-                                                                </tr>
-                                                                <tr id="teamRow">
-                                                                    <td>13</td>
-                                                                    <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
-                                                                    <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
-                                                                    <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." pattern="^[6-9][0-9]{9}$"></td>
-                                                                </tr>
-                                                                <tr id="teamRow">
-                                                                    <td>14</td>
-                                                                    <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
-                                                                    <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
-                                                                    <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." pattern="^[6-9][0-9]{9}$"></td>
-                                                                </tr>
-                                                                <tr id="teamRow">
-                                                                    <td>15</td>
-                                                                    <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
-                                                                    <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
-                                                                    <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." pattern="^[6-9][0-9]{9}$"></td>
-                                                                </tr>
-                                                            <?php } }else { if($enroll_tournament_players) { foreach ($enroll_tournament_players as $key => $players_list) { ?>
-                                                                <tr id="teamRow">
-                                                                    <td><?= ++$key ?></td>
-                                                                    <td><?= $players_list['enroll_player_name'] ?></td>
-                                                                    <td><?= $players_list['enroll_player_age'] ?></td>
-                                                                    <td><?= $players_list['enroll_player_mobile_number'] ?></td>
-                                                                </tr>
-                                                            <?php } } }?>
+                                                            <?php if (!$enroll_tournament) { ?>
+                                                                <?php if ($league['name'] == "Individual Games") { ?>
+                                                                    <tr id="teamRow">
+                                                                        <td>1</td>
+                                                                        <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
+                                                                        <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
+                                                                        <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
+                                                                    </tr>
+                                                                <?php } else { ?>
+                                                                    <tr id="teamRow">
+                                                                        <td>1</td>
+                                                                        <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
+                                                                        <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
+                                                                        <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
+                                                                    </tr>
+                                                                    <tr id="teamRow">
+                                                                        <td>2</td>
+                                                                        <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
+                                                                        <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
+                                                                        <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
+                                                                    </tr>
+                                                                    <tr id="teamRow">
+                                                                        <td>3</td>
+                                                                        <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
+                                                                        <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
+                                                                        <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
+                                                                    </tr>
+                                                                    <tr id="teamRow">
+                                                                        <td>4</td>
+                                                                        <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
+                                                                        <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
+                                                                        <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
+                                                                    </tr>
+                                                                    <tr id="teamRow">
+                                                                        <td>5</td>
+                                                                        <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
+                                                                        <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
+                                                                        <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
+                                                                    </tr>
+                                                                    <tr id="teamRow">
+                                                                        <td>6</td>
+                                                                        <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
+                                                                        <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
+                                                                        <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
+                                                                    </tr>
+                                                                    <tr id="teamRow">
+                                                                        <td>7</td>
+                                                                        <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
+                                                                        <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
+                                                                        <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
+                                                                    </tr>
+                                                                    <tr id="teamRow">
+                                                                        <td>8</td>
+                                                                        <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
+                                                                        <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
+                                                                        <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
+                                                                    </tr>
+                                                                    <tr id="teamRow">
+                                                                        <td>9</td>
+                                                                        <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
+                                                                        <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
+                                                                        <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
+                                                                    </tr>
+                                                                    <tr id="teamRow">
+                                                                        <td>10</td>
+                                                                        <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
+                                                                        <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
+                                                                        <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
+                                                                    </tr>
+                                                                    <tr id="teamRow">
+                                                                        <td>11</td>
+                                                                        <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
+                                                                        <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age" required></td>
+                                                                        <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
+                                                                    </tr>
+                                                                    <tr id="teamRow">
+                                                                        <td>12</td>
+                                                                        <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
+                                                                        <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
+                                                                        <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." pattern="^[6-9][0-9]{9}$"></td>
+                                                                    </tr>
+                                                                    <tr id="teamRow">
+                                                                        <td>13</td>
+                                                                        <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
+                                                                        <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
+                                                                        <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." pattern="^[6-9][0-9]{9}$"></td>
+                                                                    </tr>
+                                                                    <tr id="teamRow">
+                                                                        <td>14</td>
+                                                                        <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
+                                                                        <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
+                                                                        <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." pattern="^[6-9][0-9]{9}$"></td>
+                                                                    </tr>
+                                                                    <tr id="teamRow">
+                                                                        <td>15</td>
+                                                                        <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name"></td>
+                                                                        <td><input type="number" name="player_age[]" class="form-control" placeholder="Player Age"></td>
+                                                                        <td><input type="number" name="player_mobileno[]" class="form-control" placeholder="Player Mobile no." pattern="^[6-9][0-9]{9}$"></td>
+                                                                    </tr>
+                                                                    <?php }
+                                                            } else {
+                                                                if ($enroll_tournament_players) {
+                                                                    foreach ($enroll_tournament_players as $key => $players_list) { ?>
+                                                                        <tr id="teamRow">
+                                                                            <td><?= ++$key ?></td>
+                                                                            <td><?= $players_list['enroll_player_name'] ?></td>
+                                                                            <td><?= $players_list['enroll_player_age'] ?></td>
+                                                                            <td><?= $players_list['enroll_player_mobile_number'] ?></td>
+                                                                        </tr>
+                                                            <?php }
+                                                                }
+                                                            } ?>
                                                         </tbody>
                                                     </table>
                                                 </div>
                                             </div>
-                                            <?php if(!$enroll_tournament_players) { ?>
-                                            <div class="col-lg-12 col-md-12">
-                                                <button type="submit" class="btn site-button">Submit</button>
-                                            </div>
+                                            <?php if (!$enroll_tournament_players) { ?>
+                                                <div class="col-lg-12 col-md-12">
+                                                    <button type="submit" class="btn site-button">Submit</button>
+                                                </div>
                                             <?php } ?>
                                         </div>
                                     </div>
                                 </form>
-                                <?php if($enroll_tournament_players) { ?>
-                                <form action="">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-lg-4 col-md-4">
-                                                <div class="form-group">
-                                                    <span>Registration Payment<span class="text-danger">*</span></span>
-                                                    <input type="tel" name="coach_number" class="form-control" value="<?= $tournament_price ?>" readonly>
+                                <?php if ($enroll_tournament_players) { ?>
+                                    <form action="">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4">
+                                                    <div class="form-group">
+                                                        <img src="<?= base_url() ?>public/assets/images/background/payemnt_qr.jpg" alt="" height="250px">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="team_name">Attached Payment Screenshot after pay</label>
+                                                        <input type="file" class="form-control" name="payment_screenshot">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4">
+                                                    <div class="form-group">
+                                                        <span>Registration Payment<span class="text-danger">*</span></span>
+                                                        <input type="tel" name="coach_number" class="form-control" value="<?= $tournament_price ?>" readonly>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-12 col-md-12">
+                                                    <button type="submit" class="btn site-button">Pay</button>
                                                 </div>
                                             </div>
-
-                                            <div class="col-lg-12 col-md-12">
-                                                <button type="submit" class="btn site-button">Pay</button>
-                                            </div>
                                         </div>
-                                    </div>
-                                </form>
+                                    </form>
                                 <?php } ?>
 
                             <?php } else { ?>
