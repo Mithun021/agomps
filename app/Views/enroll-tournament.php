@@ -2,7 +2,11 @@
 <?= $this->section("body-content"); ?>
 <?= view('layouts/breadcumbs') ?>
 <?php
-
+$sessionData = session()->get('loggedPlayerData');
+if ($sessionData) {
+    $loggedplayerId = $sessionData['loggedplayerId'];
+}
+use App\Models\Enroll_tournament_model;
 use App\Models\League_category_model;
 use App\Models\League_session_model;
 use App\Models\Sports_model;
@@ -10,9 +14,11 @@ use App\Models\Sports_model;
 $sports_model = new Sports_model();
 $league_category_model = new League_category_model();
 $league_session_model = new League_session_model();
+$enroll_tournament_model = new Enroll_tournament_model();
 $active_league = $league_session_model->currectSession();
 $sports = $sports_model->get($sports_id);
 $league = $league_category_model->get($league_id);
+$find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayerId,$sports_id,$league_id,$active_league['id']);
 
 if ($tournaments) {
     if ($league['name'] == "Individual Games") {
@@ -298,6 +304,7 @@ if ($tournaments) {
                                                 <div class="col-lg-4 col-md-4">
                                                     <div class="form-group">
                                                         <label for="team_name">Attached Payment Screenshot after pay</label>
+                                                        <input type="text" name="tournament_id" value="<?= $find_tournament_id['id']; ?>" class="form-control">
                                                         <input type="file" class="form-control" name="payment_screenshot">
                                                     </div>
                                                 </div>
