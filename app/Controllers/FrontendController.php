@@ -144,6 +144,27 @@ class FrontendController extends BaseController
         }
     }
 
+    public function enroll_tournament_payment($sports_id, $league_id){
+        $enroll_tournament_model = new Enroll_tournament_model();
+        $tournament_id = $this->request->getPost('tournament_id');
+        $payment_screenshot = $this->request->getFile('payment_screenshot');
+        if ($payment_screenshot->isValid() && ! $payment_screenshot->hasMoved()) {
+            $payment_screenshotImageName = "payment".$payment_screenshot->getRandomName();
+            $payment_screenshot->move(ROOTPATH . 'public/assets/images/payment', $payment_screenshotImageName);    
+        }else{
+         $payment_screenshotImageName = "";
+        }
+        $data = [
+            'payment_screenshot' => $payment_screenshotImageName,
+            'enroll_payment' => $this->request->getPost('tournament_payment')
+        ];
+        $result = $enroll_tournament_model->add($data,$tournament_id);
+        if ($result === true) {
+            return redirect()->to('enroll-tournament/' . $sports_id . "/" . $league_id)->with('status', '<div class="alert alert-success" role="alert"> Thank you for registering! Your team registration has been successfully completed. You can now proceed with the payment to enroll your team in AGOMPS UPPL. </div>');
+        } else {
+            return redirect()->to('enroll-tournament/' . $sports_id . "/" . $league_id)->with('status', '<div class="alert alert-danger" role="alert"> ' . $result . ' </div>');
+        }
+    }
 
     public function privacy_policy()
     {

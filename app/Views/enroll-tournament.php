@@ -293,7 +293,7 @@ if ($tournaments) {
                                     </div>
                                 </form>
                                 <?php if ($enroll_tournament_players) { ?>
-                                    <form action="">
+                                    <form action="<?= base_url() ?>admin/enroll_tournament_payment/<?= $sports_id ?>/<?= $league_id ?>" method="post" enctype="multipart/form-data">
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-lg-4 col-md-4">
@@ -305,13 +305,13 @@ if ($tournaments) {
                                                     <div class="form-group">
                                                         <label for="team_name">Attached Payment Screenshot after pay</label>
                                                         <input type="text" name="tournament_id" value="<?= $find_tournament_id['id']; ?>" class="form-control">
-                                                        <input type="file" class="form-control" name="payment_screenshot">
+                                                        <input type="file" class="form-control" name="payment_screenshot" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4 col-md-4">
                                                     <div class="form-group">
                                                         <span>Registration Payment<span class="text-danger">*</span></span>
-                                                        <input type="tel" name="coach_number" class="form-control" value="<?= $tournament_price ?>" readonly>
+                                                        <input type="tel" name="tournament_payment" class="form-control" value="<?= $tournament_price ?>" required readonly>
                                                     </div>
                                                 </div>
 
