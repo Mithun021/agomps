@@ -65,6 +65,7 @@ if ($tournaments) {
     }
     img.payment_qrcode{
         width: 100% !important;
+        height: 240px !important;
     }
 </style>
 <!-- contact area -->
