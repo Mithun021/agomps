@@ -93,6 +93,7 @@
                                     <div class="form-group">
                                         <span>State<span class="text-danger">*</span></span>
                                         <select name="state" id="state" class="form-control">
+                                        <option value="">--Select--</option>
                                             <?php foreach ($state as $key => $value) { ?>
                                                 <option value="<?= $value['state'] ?>"><?= ucwords($value['state']) ?></option>
                                             <?php } ?>
@@ -149,7 +150,7 @@
                 },
                 dataType: "json",
                 success: function(response) {
-                    // console.log(response);
+                    console.log(response);
                     $('#city').html('<option value="">Select City</option>');
 
                     // If cities are found, populate them in the city dropdown
