@@ -63,6 +63,9 @@ if ($tournaments) {
     .registerFormBody {
         border: 5px solid #ffc107;
     }
+    img.payment_qrcode{
+        width: 100% !important;
+    }
 </style>
 <!-- contact area -->
 <div class="clearfix">
@@ -287,7 +290,7 @@ if ($tournaments) {
                                             <div class="row">
                                                 <div class="col-lg-4 col-md-4">
                                                     <div class="form-group">
-                                                        <img src="<?= base_url() ?>public/assets/images/background/payment_qr.jpg" alt="" height="250px">
+                                                        <img src="<?= base_url() ?>public/assets/images/background/payment_qr.jpg" alt="" class="payment_qrcode">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4 col-md-4">
