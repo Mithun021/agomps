@@ -156,7 +156,8 @@ class FrontendController extends BaseController
         }
         $data = [
             'payment_screenshot' => $payment_screenshotImageName,
-            'enroll_payment' => $this->request->getPost('tournament_payment')
+            'enroll_payment' => $this->request->getPost('tournament_payment'),
+            'payment_status' => 1
         ];
         $result = $enroll_tournament_model->add($data,$tournament_id);
         if ($result === true) {
