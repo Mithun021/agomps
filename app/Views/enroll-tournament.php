@@ -348,15 +348,15 @@ if ($tournaments) {
             }
 
             // Check if all mobile numbers are valid (starting with 6-9 and being 10 digits long)
-            const mobileNumbers = document.querySelectorAll('input[name="player_mobileno[]"]');
-            mobileNumbers.forEach(function(input) {
-                const mobileValue = input.value;
-                const regex = /^[6-9][0-9]{9}$/; // Mobile number should start with 6-9 and be 10 digits long
-                if (!regex.test(mobileValue)) {
-                    alert("Invalid mobile number: " + mobileValue);
-                    isValid = false;
-                }
-            });
+            // const mobileNumbers = document.querySelectorAll('input[name="player_mobileno[]"]');
+            // mobileNumbers.forEach(function(input) {
+            //     const mobileValue = input.value;
+            //     const regex = /^[6-9][0-9]{9}$/; // Mobile number should start with 6-9 and be 10 digits long
+            //     if (!regex.test(mobileValue)) {
+            //         alert("Invalid mobile number: " + mobileValue);
+            //         isValid = false;
+            //     }
+            // });
 
             // If not valid, prevent form submission
             if (!isValid) {
