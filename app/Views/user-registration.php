@@ -93,7 +93,7 @@
                                     <div class="form-group">
                                         <span>State<span class="text-danger">*</span></span>
                                         <select name="state" id="state" class="form-control">
-                                        <option value="">--Select--</option>
+                                            <option value="">--Select--</option>
                                             <?php foreach ($state as $key => $value) { ?>
                                                 <option value="<?= $value['state'] ?>"><?= ucwords($value['state']) ?></option>
                                             <?php } ?>
@@ -140,7 +140,7 @@
 <script>
     $(document).ready(function() {
 
-        $('#state').on('chnage', function() {
+        $('#state').on('change', function() { // Corrected 'chnage' to 'change'
             var state = $(this).val();
             alert(state);
             $.ajax({
@@ -150,13 +150,13 @@
                     state: state
                 },
                 dataType: "json",
-                success: function(response) {
+                success: function(response) { // Use 'response' instead of 'data'
                     console.log(response);
                     $('#city').html('<option value="">Select City</option>');
 
                     // If cities are found, populate them in the city dropdown
-                    if (data.length > 0) {
-                        $.each(data, function(index, city) {
+                    if (response.length > 0) { // Changed 'data' to 'response'
+                        $.each(response, function(index, city) {
                             $('#city').append('<option value="' + city.city + '">' + city.city + '</option>');
                         });
                     } else {
