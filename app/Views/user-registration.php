@@ -53,13 +53,13 @@
                                 <div class="col-lg-4 col-md-4">
                                     <div class="form-group">
                                         <span>Mobile Number<span class="text-danger">*</span></span>
-                                        <input type="text" name="mobile_number" class="form-control">
+                                        <input type="text" name="mobile_number" class="form-control" maxlength="10">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4">
                                     <div class="form-group">
                                         <span>WhatsApp Number<span class="text-danger">*</span></span>
-                                        <input type="text" name="whatsapp_number" class="form-control">
+                                        <input type="text" name="whatsapp_number" class="form-control" maxlength="10">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4">
@@ -86,7 +86,7 @@
                                 <div class="col-lg-4 col-md-4">
                                     <div class="form-group">
                                         <span>Aadhar Number<span class="text-danger">*</span></span>
-                                        <input type="text" name="aadhar" class="form-control">
+                                        <input type="text" name="aadhar" class="form-control" maxlength="12">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4">
