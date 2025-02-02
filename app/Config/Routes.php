@@ -29,6 +29,7 @@ $routes->group('admin',['filter'=>'adminLogin'], static function($routes){
     $routes->match(['get','post'],'sports-category','SportsController::sports_category');
     $routes->match(['get','post'],'league-session','LeagueController::league_session');
     $routes->match(['get','post'],'league-category','LeagueController::league_category');
+    $routes->match(['get','post'],'teams','AdminController::teams');
 });
 $routes->get('admin/logout', 'AdminController::admin_logout');
 

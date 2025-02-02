@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\Teams_model;
 use App\Models\User_model;
 
 class AdminController extends BaseController
@@ -42,6 +43,35 @@ class AdminController extends BaseController
                 }
             } else {
                 echo "Given Username or Phone Number not found";
+            }
+        }
+    }
+
+    public function teams()
+    {
+        $teams_model = new Teams_model();
+        $data = ['title' => 'Teams'];
+        if ($this->request->is('get')) {
+            $data['teams'] = $teams_model->get();
+            return view('admin/teams', $data);
+        } else if ($this->request->is('post')) {
+            $logo = $this->request->getFile('team_logo');
+            if ($logo->isValid() && ! $logo->hasMoved()) {
+                $logoImageName = rand(0, 9999) . $logo->getRandomName();
+                $logo->move(ROOTPATH . 'public/assets/sports-logo', $logoImageName);
+            } else {
+                $logoImageName = "";
+            }
+            $data = [
+                'name' => $this->request->getPost('league_category_name'),
+                'logo' => $logoImageName,
+                'status' => $this->request->getPost('status')
+            ];
+            $result = $teams_model->add($data);
+            if ($result === true) {
+                return redirect()->to('admin/teams')->with('status', '<div class="alert alert-success" role="alert"> Data Add Successful </div>');
+            } else {
+                return redirect()->to('admin/teams')->with('status', '<div class="alert alert-danger" role="alert"> ' . $result . ' </div>');
             }
         }
     }

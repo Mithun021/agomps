@@ -152,6 +152,7 @@
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/sports-category">Sports Category</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/league-category">League Category</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/league-session">League Session</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/teams">Teams</a></li>
 
                             </ul>
                         </div>
