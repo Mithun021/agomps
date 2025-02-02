@@ -1,6 +1,7 @@
 <?= $this->extend('admin/layouts/master') ?>
 <?= $this->section('body-content') ?>
 <?php
+
 use App\Models\Sports_model;
 
 $sports_model = new Sports_model();
@@ -9,7 +10,7 @@ $sports_model = new Sports_model();
     <div class="col-lg-4">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title m-0">Add League Category</h4>
+                <h4 class="card-title m-0">Add Team</h4>
             </div>
             <?php
             if (session()->getFlashdata('status')) {
@@ -44,7 +45,7 @@ $sports_model = new Sports_model();
     <div class="col-lg-8">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title m-0">League Category List</h4>
+                <h4 class="card-title m-0">Team List</h4>
             </div>
             <div class="card-body p-2">
                 <div class="table-responsive">
@@ -59,7 +60,24 @@ $sports_model = new Sports_model();
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            <?php foreach ($teams as $key => $value) { ?>
+                                <tr>
+                                    <td><?= $key + 1 ?></td>
+                                    <td>
+                                        <?php if (!empty($value['logo']) && file_exists('public/assets/sports-logo/' . $value['logo'])): ?>
+                                            <a href="<?= base_url() ?>public/assets/sports-logo/<?= $value['logo'] ?>" target="_blank"><img src="<?= base_url() ?>public/assets/sports-logo/<?= $value['logo'] ?>" alt="" height="30px"></a>
+                                        <?php else: ?>
+                                            <img src="<?= base_url() ?>public/assets/sports-logo/invalid_image.png" alt="" height="40px">
+                                        <?php endif; ?>
+                                    </td>
+                                    <td><?= $value['name'] ?></td>
+                                    <td><?= ($value['status'] == "0") ? "<span class='badge badge-danger badge-pill'>Inactive</span>" : (($value['status'] == "1") ? "<span class='badge badge-success badge-pill'>Active</span>" : "") ?></td>
+                                    <td>
+                                        <a href="<?= base_url() ?>admin/delete-teams" class="btn btn-sm btn-circle btn-danger"><span class="fa fa-times"></span></a>
+                                        <a href="<?= base_url() ?>admin/edit-teams" class="btn btn-sm btn-circle btn-primary"><span class="fa fa-pencil"></span></a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
