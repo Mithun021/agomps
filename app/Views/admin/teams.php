@@ -17,7 +17,7 @@ $sports_model = new Sports_model();
                 echo session()->getFlashdata('status');
             }
             ?>
-            <form action="<?= base_url() ?>admin/team" method="post" enctype="multipart/form-data">
+            <form action="<?= base_url() ?>admin/teams" method="post" enctype="multipart/form-data">
                 <div class="card-body">
                     <div class="form-group">
                         <span>Team Name</span>
