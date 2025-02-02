@@ -63,7 +63,7 @@ class AdminController extends BaseController
                 $logoImageName = "";
             }
             $data = [
-                'name' => $this->request->getPost('league_category_name'),
+                'name' => $this->request->getPost('team_name'),
                 'logo' => $logoImageName,
                 'status' => $this->request->getPost('status')
             ];
