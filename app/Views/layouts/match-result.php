@@ -1,3 +1,9 @@
+<?php
+use App\Models\Teams_model;
+$teams_model = new Teams_model();
+$teams = $teams_model->getActiveData();
+?>
+ 
  <!-- Latest Result -->
  <div class="section-full bg-gray content-inner">
      <div class="container">
@@ -62,55 +68,20 @@
                              </tr>
                          </thead>
                          <tbody>
-                             <tr>
-                                 <th scope="row">1</th>
-                                 <td><span class="team-thumb"><img width="30" height="30" src="<?= base_url() ?>public/assets/images/sports-logo/small/logo1.png" alt=""></span>Liverpool</td>
-                                 <td>10</td>
-                                 <td>12</td>
-                                 <td>08</td>
+                        <?php foreach ($teams as $key => $value) { ?>
+                            <tr>
+                                 <th scope="row"><?= ++$key ?></th>
+                                 <td><span class="team-thumb">
+                                 <?php if (!empty($value['logo']) && file_exists('public/assets/sports-logo/' . $value['logo'])): ?>
+                                            <img src="<?= base_url() ?>public/assets/sports-logo/<?= $value['logo'] ?>" alt="" height="30px" width="30">
+                                        <?php else: ?>
+                                            <img src="<?= base_url() ?>public/assets/sports-logo/invalid_image.png" alt=""  height="30px" width="30">
+                                        <?php endif; ?></span><?= $value['name'] ?></td>
+                                 <td>0</td>
+                                 <td>0</td>
+                                 <td>0</td>
                              </tr>
-                             <tr>
-                                 <th scope="row">2</th>
-                                 <td><span class="team-thumb"><img width="30" height="30" src="<?= base_url() ?>public/assets/images/sports-logo/small/logo2.png" alt=""></span>Chelsea</td>
-                                 <td>10</td>
-                                 <td>12</td>
-                                 <td>08</td>
-                             </tr>
-                             <tr>
-                                 <th scope="row">3</th>
-                                 <td><span class="team-thumb"><img width="30" height="30" src="<?= base_url() ?>public/assets/images/sports-logo/small/logo3.png" alt=""></span> Norwich City</td>
-                                 <td>10</td>
-                                 <td>12</td>
-                                 <td>08</td>
-                             </tr>
-                             <tr>
-                                 <th scope="row">4</th>
-                                 <td><span class="team-thumb"><img width="30" height="30" src="<?= base_url() ?>public/assets/images/sports-logo/small/logo1.png" alt=""></span>West Brom</td>
-                                 <td>10</td>
-                                 <td>12</td>
-                                 <td>08</td>
-                             </tr>
-                             <tr>
-                                 <th scope="row">5</th>
-                                 <td><span class="team-thumb"><img width="30" height="30" src="<?= base_url() ?>public/assets/images/sports-logo/small/logo2.png" alt=""></span>sunderland</td>
-                                 <td>10</td>
-                                 <td>12</td>
-                                 <td>08</td>
-                             </tr>
-                             <tr>
-                                 <th scope="row">6</th>
-                                 <td><span class="team-thumb"><img width="30" height="30" src="<?= base_url() ?>public/assets/images/sports-logo/small/logo3.png" alt=""></span>Chelsea</td>
-                                 <td>10</td>
-                                 <td>12</td>
-                                 <td>08</td>
-                             </tr>
-                             <tr>
-                                 <th scope="row">7</th>
-                                 <td><span class="team-thumb"><img width="30" height="30" src="<?= base_url() ?>public/assets/images/sports-logo/small/logo1.png" alt=""></span> Liverpool</td>
-                                 <td>10</td>
-                                 <td>12</td>
-                                 <td>08</td>
-                             </tr>
+                        <?php } ?>
                          </tbody>
                      </table>
                  </div>
