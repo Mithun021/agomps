@@ -58,8 +58,6 @@
                             <td>#</td>
                             <td>File</td>
                             <td>Name</td>
-                            <td>Joining Amt.</td>
-                            <td>Winning Amt.</td>
                             <td>Status</td>
                             <td>Action</td>
                         </tr>
