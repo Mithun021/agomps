@@ -25,7 +25,8 @@
                     </div>
                     <div class="form-group">
                         <span>Sports Category Description</span>
-                        <textarea class="form-control" placeholder="Enter sports category description" name="sports_category_description" id="summernote"></textarea>
+                        <!-- <textarea class="form-control" placeholder="Enter sports category description" name="sports_category_description" id="summernote"></textarea> -->
+                        <textarea class="form-control" placeholder="Enter sports category description" name="sports_category_description"></textarea>
                     </div>
                     <div class="form-group">
                         <span>Upload Image(JPG,PNG)</span>
