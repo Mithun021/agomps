@@ -9,6 +9,9 @@ $sports = $sports_model->getActiveData();
     .enrollprice span {
         font-weight: 600;
     }
+    img.sports_icon{
+        height: 25px !important;
+    }
 </style>
 <!-- Our Achievements -->
 <div class="section-full bg-white content-inner our-achievements">
@@ -38,7 +41,7 @@ $sports = $sports_model->getActiveData();
                                     type="button" role="tab"
                                     aria-controls="sports-<?= $value['id'] ?>"
                                     aria-selected="<?= $isFirst ? 'true' : 'false' ?>">
-                                    <!--<i class="fa fa-globe"></i>--><img src="<?= base_url() ?>public/admin/uploads/sports/<?= $value['sports_image'] ?>" alt="<?= $value['name'] ?> Icon" height="30px">
+                                    <!--<i class="fa fa-globe"></i>--><img src="<?= base_url() ?>public/admin/uploads/sports/<?= $value['sports_image'] ?>" alt="<?= $value['name'] ?> Icon" class="sports_icon">
                                     <span class="title-head"><?= $value['name'] ?></span>
                                 </button>
                             </li>
