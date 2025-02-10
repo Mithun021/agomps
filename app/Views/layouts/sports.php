@@ -25,18 +25,12 @@ $sports = $sports_model->getActiveData();
                 <div class="dez-tabs border bg-tabs">
 
                     <ul class="nav nav-tabs" id="myTabContent" role="tablist">
+                        <?php foreach ($sports as $value) { ?>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="web-design4" data-bs-toggle="tab" data-bs-target="#web-design-4" type="button" role="tab" aria-controls="web-design-4" aria-selected="true"><i class="fa fa-globe"></i> <span class="title-head">Web design</span>
+                            <button class="nav-link active" id="web-design4" data-bs-toggle="tab" data-bs-target="#web-design-4" type="button" role="tab" aria-controls="web-design-4" aria-selected="true"><i class="fa fa-globe"></i> <span class="title-head"><?= $value['name'] ?></span>
                             </button>
                         </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="graphic-design4" data-bs-toggle="tab" data-bs-target="#graphic-design-4" type="button" role="tab" aria-controls="graphic-design-4" aria-selected="false"><i class="fa fa-photo"></i> <span class="title-head">Graphic Design</span>
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="developement4" data-bs-toggle="tab" data-bs-target="#developement-4" type="button" role="tab" aria-controls="developement-4" aria-selected="false"><i class="fa fa-cog"></i> <span class="title-head">developement</span>
-                            </button>
-                        </li>
+                        <?php } ?>
                     </ul>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="web-design-4" role="tabpanel" aria-labelledby="web-design4" tabindex="0">
