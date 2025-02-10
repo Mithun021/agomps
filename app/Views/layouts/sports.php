@@ -6,7 +6,7 @@ $sports_model = new Sports_model();
 $sports = $sports_model->getActiveData();
 ?>
 <style>
-    .enrollprice span{
+    .enrollprice span {
         font-weight: 600;
     }
 </style>
@@ -22,30 +22,49 @@ $sports = $sports_model->getActiveData();
         </div>
         <div class="section-content text-center ">
             <div class="row m-lr0">
-                <?php foreach ($sports as $value) { ?>
-                    <div class="col-lg-3 col-sm-6 p-a0 m-b30">
-                        <div class="dez-box dez-media">
-                            <?php if (!empty($value['sports_image']) && file_exists('public/admin/uploads/sports/' . $value['sports_image'])): ?>
-                                <img width="292" height="292" src="<?= base_url() ?>public/admin/uploads/sports/<?= $value['sports_image'] ?>" alt="">
-                            <?php else: ?>
-                                <img width="292" height="292" src="<?= base_url() ?>public/admin/uploads/sports/invalid_image.png" alt="">
-                            <?php endif; ?>
-                            <!-- <img width="292" height="292" src="<?= base_url() ?>public/assets/images/sports/pic1.jpg" alt=""> -->
-                            <div class="dez-info-has p-a20 bg-primary text-left skew-triangle right-top text-center">
-                                <h4 class="text-capitalize"> <?= $value['name'] ?></h4>
-                                <div class="dez-info-has-text"><?php if(!empty($value['description'])){  echo $value['description']; } ?></div>
-                                <div class="m-tb30"><a href="<?= base_url() ?>select-league/<?= $value['id'] ?>" class="site-button outline white border-1">Read More</a></div>
-                            </div>
-                            <div class="dez-title-bx bg-gray p-a20 text-left skew-triangle left-top">
-                                <h4 class="m-a0 text-capitalize"> <?= $value['name'] ?></h4> <hr class="my-1">
-                                <div class="enrollprice d-flex justify-content-between">
-                                    <span class="text-info"><i class="fa fa-hand-o-right"></i> Join : <i class="fa fa-rupee"></i> <?= $value['joining_amount'] ?></span>
-                                    <span class="text-primary"><i class="fa fa-trophy"></i> Win : <i class="fa fa-rupee"></i> <?= $value['winning_amount'] ?></span>
-                                </div>
-                            </div>
+                <div class="dez-tabs border bg-tabs">
+
+                    <ul class="nav nav-tabs" id="myTabContent" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="web-design4" data-bs-toggle="tab" data-bs-target="#web-design-4" type="button" role="tab" aria-controls="web-design-4" aria-selected="true"><i class="fa fa-globe"></i> <span class="title-head">Web design</span>
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="graphic-design4" data-bs-toggle="tab" data-bs-target="#graphic-design-4" type="button" role="tab" aria-controls="graphic-design-4" aria-selected="false"><i class="fa fa-photo"></i> <span class="title-head">Graphic Design</span>
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="developement4" data-bs-toggle="tab" data-bs-target="#developement-4" type="button" role="tab" aria-controls="developement-4" aria-selected="false"><i class="fa fa-cog"></i> <span class="title-head">developement</span>
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="web-design-4" role="tabpanel" aria-labelledby="web-design4" tabindex="0">
+                            <p class="m-b0"><strong><em>Web design lorem ipsum dolor sit amet, consectetuer adipiscing elit.</em></strong><br>
+                                Suspendisse et justo.
+                                Praesent mattis commyolk augue Aliquam ornare hendrerit augue Cras tellus In pulvinar lectus a est Curabitur eget orci Cras laoreet.
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et justo. Praesent mattis
+                                commyolk augue aliquam ornare augue.
+                            </p>
+                        </div>
+                        <div class="tab-pane fade" id="graphic-design-4" role="tabpanel" aria-labelledby="graphic-design4" tabindex="0">
+                            <p class="m-b0"><strong><em>Graphic Design lorem ipsum dolor sit amet, consectetuer adipiscing elit.</em></strong><br>
+                                Praesent Suspendisse
+                                et justo. mattis commyolk augue Aliquam ornare hendrerit augue Cras tellus In pulvinar lectus a est Curabitur eget orci Cras laoreet.
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et justo. Praesent mattis
+                                commyolk augue aliquam ornare augue.
+                            </p>
+                        </div>
+                        <div class="tab-pane fade" id="developement-4" role="tabpanel" aria-labelledby="developement4" tabindex="0">
+                            <p class="m-b0"><strong><em>Developement lorem ipsum dolor sit amet, consectetuer adipiscing elit.</em></strong><br>
+                                Commyolk Suspendisse
+                                et justo. Praesent mattis augue Aliquam ornare hendrerit augue Cras tellus In pulvinar lectus a est Curabitur eget orci Cras laoreet.
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et justo. Praesent mattis
+                                commyolk augue aliquam ornare augue.
+                            </p>
                         </div>
                     </div>
-                <?php } ?>
+                </div>
             </div>
         </div>
     </div>
