@@ -26,6 +26,7 @@ $routes->group('admin',['filter'=>'adminLogin'], static function($routes){
     $routes->match(['get','post'],'add-tournament','TournamentController::add_tournament');
     $routes->match(['get','post'],'tournament-list','TournamentController::tournament_list');
 
+    $routes->match(['get','post'],'game-category','SportsController::game_category');
     $routes->match(['get','post'],'sports-category','SportsController::sports_category');
     $routes->match(['get','post'],'league-session','LeagueController::league_session');
     $routes->match(['get','post'],'league-category','LeagueController::league_category');
