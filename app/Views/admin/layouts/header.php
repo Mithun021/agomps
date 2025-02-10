@@ -109,7 +109,7 @@
 
         <div class="container-fluid page-body-wrapper">
             <!-- Side Menu area -->
-            <?= view('admin/layouts/siderbar') ?>
+            <?= view('admin/layouts/sidebar') ?>
 
             <!-- Main Page -->
             <div class="main-panel">
