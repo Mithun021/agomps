@@ -38,7 +38,7 @@ $sports = $sports_model->getActiveData();
                                     type="button" role="tab"
                                     aria-controls="sports-<?= $value['id'] ?>"
                                     aria-selected="<?= $isFirst ? 'true' : 'false' ?>">
-                                    <i class="fa fa-globe"></i><img src="<?= base_url() ?>public/admin/uploads/sports/<?= $value['sports_image'] ?>" alt="">
+                                    <!--<i class="fa fa-globe"></i>--><img src="<?= base_url() ?>public/admin/uploads/sports/<?= $value['sports_image'] ?>" alt="<?= $value['name'] ?> Icon" height="30px">
                                     <span class="title-head"><?= $value['name'] ?></span>
                                 </button>
                             </li>
