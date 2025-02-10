@@ -10,7 +10,7 @@ $sports = $sports_model->getActiveData();
         font-weight: 600;
     }
     img.sports_icon{
-        height: 25px !important;
+        height: 18px !important;
     }
 </style>
 <!-- Our Achievements -->
