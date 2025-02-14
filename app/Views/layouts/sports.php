@@ -40,7 +40,7 @@ $sports_subcategory_model = new Sports_subcategory_model();
     }
     .divider{
         border: 1px solid rgb(175, 175, 175);
-        padding: 4px 0px;
+        margin: 4px 0px;
     }
     h5.card-title{
         font-size: 18px;
