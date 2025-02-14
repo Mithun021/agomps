@@ -203,13 +203,17 @@ $league_category_model = new League_category_model();
             var game_type = $(this).val();
             if (game_type == "Team") {
                 $('.individual_fee').prop("disabled",true);
+                $('.individual_fee').val("");
                 $('.team_fee').prop("disabled",false);
             }else if (game_type == "Individual") {
                 $('.individual_fee').prop("disabled",false);
                 $('.team_fee').prop("disabled",true);
+                $('.team_fee').val("");
             }else{
                 $('.individual_fee').prop("disabled",false);
                 $('.team_fee').prop("disabled",false);
+                $('.team_fee').val("");
+                $('.individual_fee').val("");
             }
         });
 
