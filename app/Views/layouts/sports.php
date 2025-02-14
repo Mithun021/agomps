@@ -23,6 +23,21 @@ $sports_subcategory_model = new Sports_subcategory_model();
     img.sports_icon {
         height: 18px !important;
     }
+    .joinColor{
+        color: #0559db;
+        font-weight: bold;
+        font-style: italic;
+    }
+    .tournamentDateColor{
+        color: #f42b0c;
+        font-weight: bold;
+        font-style: italic;
+    }
+    .winColor{
+        color: #20d307;
+        font-weight: bold;
+        font-style: italic;
+    }
 </style>
 <!-- Our Achievements -->
 <div class="section-full bg-white content-inner our-achievements">
@@ -84,10 +99,11 @@ $sports_subcategory_model = new Sports_subcategory_model();
                                                     <?php endif; ?>
                                                     <div class="card-body py-1">
                                                         <div class="d-flex justify-content-between">
-                                                            <p>Join : </p>
-                                                            <p>End : </p>
-                                                            <p>Win : </p>
+                                                            <p class="joinColor m-0">Join : </p>
+                                                            <p class="tournamentDateColor m-0">End : </p>
+                                                            <p class="winColor m-0">Win : </p>
                                                         </div>
+                                                        <hr class="m-0">
                                                         <h5 class="card-title text-center"><?= $tournament['league_for'] ?? '#NA' ?> <?= $sports_subcategory_model->get($tournament['sport_subcategory'])['sub_category_name'] ?? '' ?>  <?= $value['name'] ?></h5>
                                                     </div>
                                                 </div>
