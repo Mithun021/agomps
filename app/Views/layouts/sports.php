@@ -42,8 +42,9 @@ $sports_subcategory_model = new Sports_subcategory_model();
         border: 1px solid rgb(81, 80, 80);
     }
     h5.card-title{
-        font-size: 18px;
+        font-size: 24px;
         font-weight: bold;
+        margin-top: 5px;
     }
 </style>
 <!-- Our Achievements -->
