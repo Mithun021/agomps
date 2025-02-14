@@ -26,8 +26,8 @@ $league_category_model = new League_category_model();
                                 <select class="form-control" name="league_category_name" required>
                                     <option value="">Select League Name</option>
                                     <?php
-                                    foreach ($game as $value) {
-                                        echo '<option value="' . $value['game_category'] . '">' . $value['game_category'] . '</option>';
+                                    foreach ($league_session as $session) {
+                                        echo '<option value="' . $session['id'] . '">' . $session['league_name'] . '</option>';
                                     }
                                     ?>
                                 </select>
@@ -35,12 +35,12 @@ $league_category_model = new League_category_model();
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
-                                <span>League Session Name</span>
+                                <span>Game Type</span>
                                 <select class="form-control" name="league_category_name" required>
-                                    <option value="">Select League Name</option>
+                                    <option value="">Select Game Type</option>
                                     <?php
-                                    foreach ($league_session as $session) {
-                                        echo '<option value="' . $session['id'] . '">' . $session['league_name'] . '</option>';
+                                    foreach ($game as $value) {
+                                        echo '<option value="' . $value['game_category'] . '">' . $value['game_category'] . '</option>';
                                     }
                                     ?>
                                 </select>
