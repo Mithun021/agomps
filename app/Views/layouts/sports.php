@@ -73,8 +73,8 @@ $tournament_model = new Tournament_model();
                                         echo "<div class='row'>";
                                         foreach ($tournament as $key => $tournament) { ?>
                                             <div class="col-lg-3 col-md-6 card">
-                                            <?php if (!empty($tournament['featured_image']) && file_exists('ppublic/admin/uploads/tournament/' . $tournament['featured_image'])): ?>
-                                            <img src="<?= base_url() ?>ppublic/admin/uploads/tournament/<?= $tournament['featured_image'] ?>" alt="" class="card-img-top">
+                                            <?php if (!empty($tournament['featured_image']) && file_exists('public/admin/uploads/tournament/' . $tournament['featured_image'])): ?>
+                                            <img src="<?= base_url() ?>public/admin/uploads/tournament/<?= $tournament['featured_image'] ?>" alt="" class="card-img-top">
                                         <?php else: ?>
                                             <img src="<?= base_url() ?>public/admin/uploads/invalid_image.jpg" alt="" class="card-img-top">
                                         <?php endif; ?>
