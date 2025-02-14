@@ -69,7 +69,7 @@ $sports_model = new Sports_model();
                         </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($sports as $key => $value): ?>
+                    <?php foreach ($sports_subcat as $key => $value): ?>
                         <tr>
                             <td><?= ++$key ?></td>
                             <td><?= $sports_model->get($value['id'])['name'] ?? ""  ?></td>
