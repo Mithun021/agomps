@@ -20,7 +20,20 @@ $league_category_model = new League_category_model();
             <form action="<?= base_url() ?>admin/add-tournament" method="post" enctype="multipart/form-data">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-lg-4">
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <span>League Session Name</span>
+                                <select class="form-control" name="league_category_name" required>
+                                    <option value="">Select League Name</option>
+                                    <?php
+                                    foreach ($game as $value) {
+                                        echo '<option value="' . $value['game_category'] . '">' . $value['game_category'] . '</option>';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
                             <div class="form-group">
                                 <span>League Session Name</span>
                                 <select class="form-control" name="league_category_name" required>
@@ -33,7 +46,7 @@ $league_category_model = new League_category_model();
                                 </select>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-3">
                             <div class="form-group">
                                 <span>Sports Category</span>
                                 <select class="form-control" name="sports_category" id="sports_category" required>
@@ -46,7 +59,7 @@ $league_category_model = new League_category_model();
                                 </select>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-3">
                             <div class="form-group">
                                 <span>Sub Category</span>
                                 <select class="form-control" name="sport_subcategory" id="sport_subcategory" required>
@@ -155,7 +168,7 @@ $league_category_model = new League_category_model();
                     data: {sports_id:sports_id},
                     dataType: "json",
                     success: function (response) {
-                        console.log(response);
+                        // console.log(response);
                         $('#sport_subcategory').empty();
                         $('#sport_subcategory').html('<option value="">Select Subcategory</option>');
                         if (response.length > 0) {

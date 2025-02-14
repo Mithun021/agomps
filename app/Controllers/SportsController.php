@@ -64,9 +64,11 @@ class SportsController extends BaseController
     {
         $sports_subcategory_model = new Sports_subcategory_model();
         $sports_model = new Sports_model();
+        $game_category_model = new Game_category_model();
         $data = ['title' => 'Sports Sub Category'];
         if ($this->request->is('get')) {
             $data['sports'] = $sports_model->get();
+            $data['game'] = $game_category_model->get();
             $data['sports_subcat'] = $sports_subcategory_model->get();
             return view('admin/sports-sub-category',$data);
         }else if ($this->request->is('post')) {
