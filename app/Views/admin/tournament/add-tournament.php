@@ -35,19 +35,6 @@ $league_category_model = new League_category_model();
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <span>League Category</span>
-                                <select class="form-control" name="league_category" id="league_category" required>
-                                    <option value="">Select League Category</option>
-                                    <?php
-                                    foreach ($league_category as $league) {
-                                        echo '<option value="' . $league['id'] . '">' . $league['name'] . '-' . $league['league_for'] . '</option>';
-                                    }
-                                    ?>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="form-group">
                                 <span>Sports Category</span>
                                 <select class="form-control" name="sports_category" id="sports_category" required>
                                     <option value="">Select Sports Category</option>
@@ -56,6 +43,15 @@ $league_category_model = new League_category_model();
                                         echo '<option value="' . $sports['id'] . '">' . $sports['name'] . '</option>';
                                     }
                                     ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <span>Sub Category</span>
+                                <select class="form-control" name="sport_subcategory" id="sport_subcategory" required>
+                                    <option value="">Select League Category</option>
+                                   
                                 </select>
                             </div>
                         </div>
