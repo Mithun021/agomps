@@ -36,7 +36,7 @@ $league_category_model = new League_category_model();
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <span>League For</span>
-                                <select class="form-control" name="league_category_name" required>
+                                <select class="form-control" name="league_for" required>
                                     <option value="">Select League Name</option>
                                     <option value="Men">Men</option>
                                     <option value="Women">Women</option>
@@ -46,7 +46,7 @@ $league_category_model = new League_category_model();
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <span>Game Type</span>
-                                <select class="form-control" name="league_category_name" required>
+                                <select class="form-control" name="game_type"  id="game_type" required>
                                     <option value="">Select Game Type</option>
                                     <?php
                                     foreach ($game as $value) {
@@ -116,19 +116,19 @@ $league_category_model = new League_category_model();
                                         <tr>
                                             <td>
                                                 <span>Individual Entry Fee</span>
-                                                <input type="number" class="form-control" placeholder="Enter registration fee" name="registration_fee" required>
+                                                <input type="number" class="form-control individual_fee" placeholder="Enter registration fee" name="registration_fee" required>
                                             </td>
                                             <td>
                                                 <span>After Discount Individual Entry Fee</span>
-                                                <input type="number" class="form-control" placeholder="Enter after discount fee" name="registration_fee_after_discount" required>
+                                                <input type="number" class="form-control individual_fee" placeholder="Enter after discount fee" name="registration_fee_after_discount" required>
                                             </td>
                                             <td>
                                                 <span>Team Entry Fee</span>
-                                                <input type="number" class="form-control" placeholder="Enter team entry fee" name="team_entry_fee">
+                                                <input type="number" class="form-control team_fee" placeholder="Enter team entry fee" name="team_entry_fee">
                                             </td>
                                             <td>
                                                 <span>Afer Dis. Team Entry Fee</span>
-                                                <input type="number" class="form-control" placeholder="Enter team entry fee" name="team_entry_fee">
+                                                <input type="number" class="form-control team_fee" placeholder="Enter team entry fee" name="team_entry_fee">
                                             </td>
                                         </tr>
                                     </tbody>
@@ -198,6 +198,21 @@ $league_category_model = new League_category_model();
 
 <script>
     $(document).ready(function () {
+
+        $('#game_type').on('change',function () { 
+            var game_type = $(this).val();
+            if (game_type == "Team") {
+                $('.individual_fee').prop("disabled",true);
+                $('.team_fee').prop("disabled",false);
+            }else if (game_type == "Individual") {
+                $('.individual_fee').prop("disabled",false);
+                $('.team_fee').prop("disabled",true);
+            }else{
+                $('.individual_fee').prop("disabled",false);
+                $('.team_fee').prop("disabled",false);
+            }
+        });
+
         $('#sports_category').on('change', function () { 
             var sports_id = $(this).val();
             if(sports_id!==""){
