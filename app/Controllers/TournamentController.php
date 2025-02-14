@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controllers;
-
+use App\Models\Game_category_model;
 use App\Models\League_category_model;
 use App\Models\League_session_model;
 use App\Models\Sports_model;
@@ -15,8 +15,10 @@ class TournamentController extends BaseController
         $sports_model = new Sports_model();
         $league_session_model = new League_session_model();
         $league_category_model = new League_category_model();
+        $game_category_model = new Game_category_model();
         $data = ['title' => 'Add Tournament'];
         if($this->request->is('get')){
+            $data['game'] = $game_category_model->get();
             $data['sports'] = $sports_model->getActiveData();
             $data['league_session'] = $league_session_model->getActiveData();
             $data['league_category'] = $league_category_model->getActiveData();
