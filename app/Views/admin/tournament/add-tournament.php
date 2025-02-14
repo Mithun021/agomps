@@ -148,7 +148,19 @@ $league_category_model = new League_category_model();
     $(document).ready(function () {
         $('#sports_category').on('change', function () { 
             var sports_id = $(this).val();
-            alert(sports_id);
+            if(sports_id!==""){
+                $.ajax({
+                    type: "post",
+                    url: "<?= base_url() ?>fetch_sports_subcategory",
+                    data: {sports_id:sports_id},
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response);
+                    }
+                });
+            }else{
+                $('#sports_subcategory').empty();
+            }
          })
     });
 </script>

@@ -36,3 +36,4 @@ $routes->group('admin',['filter'=>'adminLogin'], static function($routes){
 $routes->get('admin/logout', 'AdminController::admin_logout');
 
 $routes->post('findcity', 'UniversalController::findcity');
+$routes->post('fetch_sports_subcategory', 'UniversalController::fetch_sports_subcategory');

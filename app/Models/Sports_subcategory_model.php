@@ -25,6 +25,10 @@
             }
             return $result;
         }
+
+        public function find_sports($id){
+           return $this->where('sports_id',$id)->findAll();
+        }
         
     }
 ?>
