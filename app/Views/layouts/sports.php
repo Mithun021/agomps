@@ -1,9 +1,11 @@
 <?php
 
 use App\Models\Sports_model;
-
+use App\Models\Game_category_model;
 $sports_model = new Sports_model();
 $sports = $sports_model->getActiveData();
+$game_category_model = new Game_category_model();
+$game_category = $game_category_model->get();
 ?>
 <style>
     .enrollprice span {
@@ -56,12 +58,20 @@ $sports = $sports_model->getActiveData();
                         ?>
 
                             <div class="tab-pane fade <?php echo $isFirst ? 'show active' : ''; ?>" id="sports-<?= $value['id'] ?>" role="tabpanel" aria-labelledby="sportsCat<?= $value['id'] ?>" tabindex="0">
-                                <p class="m-b0"><strong><em>Web design lorem ipsum dolor sit amet, consectetuer adipiscing elit.</em></strong><br>
-                                    Suspendisse et justo.
-                                    Praesent mattis commyolk augue Aliquam ornare hendrerit augue Cras tellus In pulvinar lectus a est Curabitur eget orci Cras laoreet.
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et justo. Praesent mattis
-                                    commyolk augue aliquam ornare augue.
-                                </p>
+                                
+                                <!-- Game Category  -->
+
+                                <?php if($game_category){
+                                    foreach ($game_category as $key => $game_category) {
+                                        echo "<h1>".$game_category['game_category ']."</h1>";
+                                    }
+                                }
+
+
+                                ?>
+
+
+
                             </div>
                         <?php $isFirst = false;
                         } ?>

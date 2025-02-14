@@ -1,7 +1,10 @@
 <?php
+
+use App\Models\Game_category_model;
 use App\Models\Teams_model;
 $teams_model = new Teams_model();
 $teams = $teams_model->getActiveData();
+$game_category_model = new Game_category_model();
 ?>
  
  <!-- Latest Result -->
