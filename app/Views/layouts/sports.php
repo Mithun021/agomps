@@ -17,7 +17,8 @@ $tournament_model = new Tournament_model();
     .enrollprice span {
         font-weight: 600;
     }
-    img.sports_icon{
+
+    img.sports_icon {
         height: 18px !important;
     }
 </style>
@@ -64,27 +65,29 @@ $tournament_model = new Tournament_model();
                         ?>
 
                             <div class="tab-pane fade <?php echo $isFirst ? 'show active' : ''; ?>" id="sports-<?= $value['id'] ?>" role="tabpanel" aria-labelledby="sportsCat<?= $value['id'] ?>" tabindex="0">
-                                
+
                                 <!-- Game Category  -->
-                               <?php if($game_category){
+                                <?php if ($game_category) {
                                     foreach ($game_category as $key => $gcat) {
-                                        echo "<h1>".$gcat['game_category']."</h1>";
-                                        $tournament = $tournament_model->get_by_category($league_session['id'],$value['id'],$gcat['game_category']);
+                                        echo "<h1>" . $gcat['game_category'] . "</h1>";
+                                        $tournament = $tournament_model->get_by_category($league_session['id'], $value['id'], $gcat['game_category']);
                                         echo "<div class='row'>";
                                         foreach ($tournament as $key => $tournament) { ?>
-                                            <div class="col-lg-3 col-md-6 card p-0">
-                                            <?php if (!empty($tournament['featured_image']) && file_exists('public/admin/uploads/tournament/' . $tournament['featured_image'])): ?>
-                                            <img src="<?= base_url() ?>public/admin/uploads/tournament/<?= $tournament['featured_image'] ?>" alt="" class="card-img-top">
-                                        <?php else: ?>
-                                            <img src="<?= base_url() ?>public/admin/uploads/invalid_image.jpg" alt="" class="card-img-top">
-                                        <?php endif; ?>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Card title</h5>
-                                                    <?= $tournament['featured_image'] ?>
+                                            <div class="col-lg-3 col-md-6">
+                                                <div class="card p-0">
+                                                    <?php if (!empty($tournament['featured_image']) && file_exists('public/admin/uploads/tournament/' . $tournament['featured_image'])): ?>
+                                                        <img src="<?= base_url() ?>public/admin/uploads/tournament/<?= $tournament['featured_image'] ?>" alt="" class="card-img-top">
+                                                    <?php else: ?>
+                                                        <img src="<?= base_url() ?>public/admin/uploads/invalid_image.jpg" alt="" class="card-img-top">
+                                                    <?php endif; ?>
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Card title</h5>
+                                                        <?= $tournament['featured_image'] ?>
+                                                    </div>
                                                 </div>
                                             </div>
-                                       <?php }
-                                       echo "</div>";
+                                <?php }
+                                        echo "</div>";
 
                                         // echo "<pre>"; print_r($tournament);
                                     }
