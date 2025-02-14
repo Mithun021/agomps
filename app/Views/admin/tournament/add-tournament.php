@@ -72,25 +72,25 @@ $league_category_model = new League_category_model();
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <span>Required Player(min)</span>
-                                <input type="number" class="form-control" name="min_players" id="min_players" required>
+                                <input type="number" class="form-control" name="min_players" id="min_players" placeholder="Min. Players" min="1" required>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <span>Required Player(max)</span>
-                                <input type="number" class="form-control" name="max_players" id="max_players" required>
+                                <input type="number" class="form-control" name="max_players" id="max_players" placeholder="Max. Players" required>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <span>Required Age(min)</span>
-                                <input type="number" class="form-control" name="min_age" id="min_age" required>
+                                <input type="number" class="form-control" name="min_age" id="min_age" placeholder="Min. Players Age" min="6" required>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <span>Required Age(max)</span>
-                                <input type="number" class="form-control" name="max_age" id="max_age" required>
+                                <input type="number" class="form-control" name="max_age" id="max_age" placeholder="Max Players Age" required>
                             </div>
                         </div>
 
