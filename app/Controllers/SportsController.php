@@ -69,8 +69,8 @@ class SportsController extends BaseController
         }else if ($this->request->is('post')) {
             
             $data = [
-                'name' => $this->request->getPost('sports_category_name'),
-                'description' => $this->request->getPost('sports_category_description'),
+                'sports_id' => $this->request->getPost('sports_category_name'),
+                'sub_category_name' => $this->request->getPost('sports_sub_category_name'),
                 'status' => $this->request->getPost('sports_category_status')
             ];
             $result = $sports_model->add($data);

@@ -1,5 +1,10 @@
 <?= $this->extend('admin/layouts/master') ?>
 <?= $this->section('body-content') ?>
+<?php
+
+use App\Models\Sports_model;
+$sports_model = new Sports_model();
+?>
 <style>
     table tr td, tr th{
         padding: 5px;
@@ -30,7 +35,7 @@
                     </div>
                     <div class="form-group">
                         <span>Sports Sub Category Name</span>
-                        <input type="text" class="form-control" placeholder="Enter sports category name" name="sports_category_name" required>
+                        <input type="text" class="form-control" placeholder="Enter sports category name" name="sports_sub_category_name" required>
                     </div>
                     <div class="form-group">
                         <span>Status</span>
@@ -57,14 +62,25 @@
                     <thead>
                         <tr>
                             <td>#</td>
-                            <td>File</td>
-                            <td>Name</td>
+                            <td>Sports</td>
+                            <td>Sub Category</td>
                             <td>Status</td>
                             <td>Action</td>
                         </tr>
                     </thead>
                     <tbody>
-                        
+                    <?php foreach ($sports as $key => $value): ?>
+                        <tr>
+                            <td><?= ++$key ?></td>
+                            <td><?= $sports_model->get($value['id'])['name'] ?? ""  ?></td>
+                            <td><?= $value['sub_category_name'] ?></td>
+                            <td><?= ($value['status'] == "0") ? "<span class='badge badge-danger badge-pill'>Inactive</span>" : (($value['status'] == "1") ? "<span class='badge badge-success badge-pill'>Active</span>" : "") ?></td>
+                            <td>
+                                <a href="<?= base_url() ?>admin/edit-sports-sub-category" class="btn btn-sm btn-circle btn-danger"><span class="fa fa-times"></span></a>
+                                <a href="<?= base_url() ?>admin/delete-sports-sub-category" class="btn btn-sm btn-circle btn-primary"><span class="fa fa-pencil"></span></a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?> 
                     </tbody>
                 </table>
             </div>
