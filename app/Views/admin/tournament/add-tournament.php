@@ -20,7 +20,7 @@ $league_category_model = new League_category_model();
             <form action="<?= base_url() ?>admin/add-tournament" method="post" enctype="multipart/form-data">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-lg-3">
+                        <div class="col-lg-12">
                             <div class="form-group">
                                 <span>League Session Name</span>
                                 <select class="form-control" name="league_category_name" required>
@@ -30,6 +30,16 @@ $league_category_model = new League_category_model();
                                         echo '<option value="' . $session['id'] . '">' . $session['league_name'] . '</option>';
                                     }
                                     ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <span>League For</span>
+                                <select class="form-control" name="league_category_name" required>
+                                    <option value="">Select League Name</option>
+                                    <option value="Men">Men</option>
+                                    <option value="Women">Women</option>
                                 </select>
                             </div>
                         </div>
