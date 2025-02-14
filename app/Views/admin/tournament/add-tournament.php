@@ -156,6 +156,15 @@ $league_category_model = new League_category_model();
                     dataType: "json",
                     success: function (response) {
                         console.log(response);
+                        $('#sports_subcategory').empty();
+                        $('#sports_subcategory').html('<option value="">Select Subcategory</option>');
+                        if (response.length > 0) {
+                            $.each(response, function(index, subcat) {
+                                $('#sports_subcategory').append('<option value="' + subcat.id + '">' + subcat.sub_category_name + '</option>');
+                            });
+                        } else {
+                            $('#sports_subcategory').html('<option value="">No cities available</option>');
+                        }
                     }
                 });
             }else{
