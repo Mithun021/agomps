@@ -17,20 +17,20 @@
                 echo session()->getFlashdata('status');
             }
             ?>
-            <form action="<?= base_url() ?>admin/sports-category" method="post" enctype="multipart/form-data">
+            <form action="<?= base_url() ?>admin/sports-sub-category" method="post" enctype="multipart/form-data">
                 <div class="card-body">
                     <div class="form-group">
                         <span>Sports Category Name</span>
+                        <select class="form-control" placeholder="Enter sports category name" name="sports_category_name" required>
+                            <option value="">--Select--</option>
+                        <?php foreach ($sports as $key => $value): ?>
+                            <option value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
+                        <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <span>Sports Sub Category Name</span>
                         <input type="text" class="form-control" placeholder="Enter sports category name" name="sports_category_name" required>
-                    </div>
-                    <div class="form-group">
-                        <span>Sports Category Description</span>
-                        <!-- <textarea class="form-control" placeholder="Enter sports category description" name="sports_category_description" id="summernote"></textarea> -->
-                        <textarea class="form-control" placeholder="Enter sports category description" name="sports_category_description"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <span>Upload Image(JPG,PNG)</span>
-                        <input type="file" class="form-control" name="sports_category_image" accept=".png,.jpg" required>
                     </div>
                     <div class="form-group">
                         <span>Status</span>
@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-primary" type="submit">Add Sports Category</button>
+                    <button class="btn btn-primary" type="submit">Add Category</button>
                 </div>
             </form>
         </div>
