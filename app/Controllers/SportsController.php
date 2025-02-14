@@ -58,4 +58,28 @@ class SportsController extends BaseController
         }
     }
 
+
+    public function sports_sub_category()
+    {
+        $sports_model = new Sports_model();
+        $data = ['title' => 'Sports Sub Category'];
+        if ($this->request->is('get')) {
+            $data['sports'] = $sports_model->get();
+            return view('admin/sports-sub-category',$data);
+        }else if ($this->request->is('post')) {
+            
+            $data = [
+                'name' => $this->request->getPost('sports_category_name'),
+                'description' => $this->request->getPost('sports_category_description'),
+                'status' => $this->request->getPost('sports_category_status')
+            ];
+            $result = $sports_model->add($data);
+            if ($result === true) {
+                return redirect()->to('admin/sports-sub-category')->with('status','<div class="alert alert-success" role="alert"> Data Add Successful </div>');
+            } else {
+                return redirect()->to('admin/sports-sub-category')->with('status','<div class="alert alert-danger" role="alert"> '.$result.' </div>');
+            }
+        }
+    }
+
 }

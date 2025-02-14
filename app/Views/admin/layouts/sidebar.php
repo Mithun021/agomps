@@ -40,6 +40,7 @@
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/game-category">Game Category</a></li>
                     <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/sports-category">Sports Category</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/sports-sub-category">Sports Sub Category</a></li>
                     <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/league-category">League Category</a></li>
                     <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/league-session">League Session</a></li>
                     <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/teams">Teams</a></li>
