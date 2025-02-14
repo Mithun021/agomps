@@ -62,7 +62,14 @@ $game_category = $game_category_model->get();
                                 <!-- Game Category  -->
 
                                <?php print_r($game_category); ?>
+                               <?php if($game_category){
+                                    foreach ($game_category as $key => $gcat) {
+                                        print_r($gcat);
+                                    }
+                                }
 
+
+                                ?>
 
 
                             </div>
