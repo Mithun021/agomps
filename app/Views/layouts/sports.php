@@ -83,7 +83,12 @@ $sports_subcategory_model = new Sports_subcategory_model();
                                                         <img src="<?= base_url() ?>public/admin/uploads/invalid_image.jpg" alt="" class="card-img-top">
                                                     <?php endif; ?>
                                                     <div class="card-body py-1">
-                                                        <h5 class="card-title"><?= $tournament['league_for'] ?? '#NA' ?> <?= $sports_subcategory_model->get($tournament['sport_subcategory'])['sub_category_name'] ?? '' ?>  <?= $value['name'] ?></h5>
+                                                        <div class="d-flex justify-content-between">
+                                                            <p>Join : </p>
+                                                            <p>End : </p>
+                                                            <p>Win : </p>
+                                                        </div>
+                                                        <h5 class="card-title text-center"><?= $tournament['league_for'] ?? '#NA' ?> <?= $sports_subcategory_model->get($tournament['sport_subcategory'])['sub_category_name'] ?? '' ?>  <?= $value['name'] ?></h5>
                                                     </div>
                                                 </div>
                                             </div>
