@@ -60,11 +60,9 @@ $game_category = $game_category_model->get();
                             <div class="tab-pane fade <?php echo $isFirst ? 'show active' : ''; ?>" id="sports-<?= $value['id'] ?>" role="tabpanel" aria-labelledby="sportsCat<?= $value['id'] ?>" tabindex="0">
                                 
                                 <!-- Game Category  -->
-
-                               <?php print_r($game_category); ?>
                                <?php if($game_category){
                                     foreach ($game_category as $key => $gcat) {
-                                        print_r($gcat);
+                                        echo "<h1>".$gcat['game_category']."</h1>";
                                     }
                                 }
 
