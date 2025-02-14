@@ -38,6 +38,12 @@ $sports_subcategory_model = new Sports_subcategory_model();
         font-weight: bold;
         font-style: italic;
     }
+    .divider{
+        border: 1px solid rgb(175, 175, 175);
+    }
+    h5.card-title{
+        font-size: 16px;
+    }
 </style>
 <!-- Our Achievements -->
 <div class="section-full bg-white content-inner our-achievements">
@@ -103,7 +109,7 @@ $sports_subcategory_model = new Sports_subcategory_model();
                                                             <p class="tournamentDateColor m-0"><i class="fa fa-calendar"></i> End : </p>
                                                             <p class="winColor m-0"><i class="fa fa-trophy"></i> Win : </p>
                                                         </div>
-                                                        <hr class="m-0">
+                                                        <hr class="divider m-0">
                                                         <h5 class="card-title text-center"><?= $tournament['league_for'] ?? '#NA' ?> <?= $sports_subcategory_model->get($tournament['sport_subcategory'])['sub_category_name'] ?? '' ?>  <?= $value['name'] ?></h5>
                                                     </div>
                                                 </div>
