@@ -61,14 +61,7 @@ $game_category = $game_category_model->get();
                                 
                                 <!-- Game Category  -->
 
-                                <?php if($game_category){
-                                    foreach ($game_category as $key => $game_category) {
-                                        echo "<h1>".$game_category['game_category ']."</h1>";
-                                    }
-                                }
-
-
-                                ?>
+                               <?php print_r($game_category); ?>
 
 
 
