@@ -5,7 +5,7 @@
     {
         protected $table         = 'tournament_detail';
         protected $primaryKey = 'id';
-        protected $allowedFields = ['league_session_id','league_category_id','sports_id','registration_fee','discount_registration_fee','team_entry_fee','first_rank_price','first_rank_trophy','second_rank_price','second_rank_trophy','third_rank_price','third_rank_trophy','description','featured_image','status'];
+        protected $allowedFields = ['league_session_id','league_for','game_type','sports_id','sport_subcategory','min_players','max_players','min_age','max_age','registration_fee','discount_registration_fee','team_entry_fee','team_entry_fee_discount','first_rank_price','first_rank_trophy','second_rank_price','second_rank_trophy','third_rank_price','third_rank_trophy','description','featured_image','status'];
         protected $createdField  = 'created_at';
 
         public function add($data, $id = null) {
