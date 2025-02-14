@@ -110,9 +110,9 @@ $sports_subcategory_model = new Sports_subcategory_model();
                                                     <?php endif; ?>
                                                     <div class="card-body py-1">
                                                         <div class="d-flex justify-content-between mb-1">
-                                                            <p class="joinColor m-0"><i class="fa fa-user-plus"></i> Join : </p>
+                                                            <p class="joinColor m-0"><i class="fa fa-user-plus"></i> Join : <i class="fa fa-inr"></i> </p>
                                                             <p class="tournamentDateColor m-0"><i class="fa fa-calendar"></i> End : </p>
-                                                            <p class="winColor m-0"><i class="fa fa-trophy"></i> Win : </p>
+                                                            <p class="winColor m-0"><i class="fa fa-trophy"></i> Win : <i class="fa fa-inr"></i> <?= $tournament['first_rank_price'] ?></p>
                                                         </div>
                                                         <hr class="divider m-0">
                                                         <h5 class="card-title text-center"><?= $tournament['league_for'] ?? '#NA' ?> <?= $sports_subcategory_model->get($tournament['sport_subcategory'])['sub_category_name'] ?? '' ?>  <?= $value['name'] ?></h5>
