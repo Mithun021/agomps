@@ -3,6 +3,7 @@
 use App\Models\Sports_model;
 use App\Models\Game_category_model;
 use App\Models\League_session_model;
+use App\Models\Sports_subcategory_model;
 use App\Models\Tournament_model;
 
 $sports_model = new Sports_model();
@@ -12,6 +13,7 @@ $game_category = $game_category_model->get();
 $league_session_model = new League_session_model();
 $league_session = $league_session_model->currectSession();
 $tournament_model = new Tournament_model();
+$sports_subcategory_model = new Sports_subcategory_model();
 ?>
 <style>
     .enrollprice span {
@@ -81,7 +83,7 @@ $tournament_model = new Tournament_model();
                                                         <img src="<?= base_url() ?>public/admin/uploads/invalid_image.jpg" alt="" class="card-img-top">
                                                     <?php endif; ?>
                                                     <div class="card-body py-1">
-                                                        <h5 class="card-title"><?= $tournament['league_for'] ?? '#NA' ?> <?= $value['name'] ?></h5>
+                                                        <h5 class="card-title"><?= $tournament['league_for'] ?? '#NA' ?> <?= $sports_subcategory_model->get($tournament['sport_subcategory'])['sub_category_name'] ?? '' ?>  <?= $value['name'] ?></h5>
                                                     </div>
                                                 </div>
                                             </div>
