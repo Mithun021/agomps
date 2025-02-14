@@ -5,7 +5,7 @@
     {
         protected $table         = 'league_session';
         protected $primaryKey = 'id';
-        protected $allowedFields = ['league_name','notes','status'];
+        protected $allowedFields = ['league_name','notes','end_date','status'];
 
         public function add($data, $id = null) {
             if ($id != null) {
