@@ -69,6 +69,31 @@ $league_category_model = new League_category_model();
                             </div>
                         </div>
 
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <span>Required Player(min)</span>
+                                <input type="number" class="form-control" name="min_players" id="min_players" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <span>Required Player(max)</span>
+                                <input type="number" class="form-control" name="max_players" id="max_players" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <span>Required Age(min)</span>
+                                <input type="number" class="form-control" name="min_age" id="min_age" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <span>Required Age(max)</span>
+                                <input type="number" class="form-control" name="max_age" id="max_age" required>
+                            </div>
+                        </div>
+
                         <div class="col-lg-12">
                             <div class="table-responsive">
                                 <table class="table table-bordered">
