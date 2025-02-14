@@ -90,7 +90,7 @@ $sports_subcategory_model = new Sports_subcategory_model();
                                         $tournament = $tournament_model->get_by_category($league_session['id'], $value['id'], $gcat['game_category']);
                                         echo "<div class='row'>";
                                         foreach ($tournament as $key => $tournament) { ?>
-                                            <div class="col-lg-3 col-md-6">
+                                            <div class="col-lg-4 col-md-6">
                                                 <div class="card p-0">
                                                     <?php if (!empty($tournament['featured_image']) && file_exists('public/admin/uploads/tournament/' . $tournament['featured_image'])): ?>
                                                         <img src="<?= base_url() ?>public/admin/uploads/tournament/<?= $tournament['featured_image'] ?>" alt="" class="card-img-top">
