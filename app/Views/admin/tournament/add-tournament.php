@@ -144,4 +144,13 @@ $league_category_model = new League_category_model();
 
 <script src="<?= base_url() ?>public/admin/js/jquery.min.js"></script>
 
+<script>
+    $(document).ready(function () {
+        $('#sports_category').on('change', function () { 
+            var sports_id = $(this).val();
+            alert(sports_id);
+         })
+    });
+</script>
+
 <?= $this->endSection() ?>
