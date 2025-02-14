@@ -27,19 +27,16 @@ $sports_subcategory_model = new Sports_subcategory_model();
         color: #0559db;
         font-weight: bold;
         font-style: italic;
-        margin-bottom: 3px;
     }
     .tournamentDateColor{
         color: #f42b0c;
         font-weight: bold;
         font-style: italic;
-        margin-bottom: 3px;
     }
     .winColor{
         color: #20d307;
         font-weight: bold;
         font-style: italic;
-        margin-bottom: 3px;
     }
     .divider{
         border: 1px solid rgb(81, 80, 80);
@@ -108,7 +105,7 @@ $sports_subcategory_model = new Sports_subcategory_model();
                                                         <img src="<?= base_url() ?>public/admin/uploads/invalid_image.jpg" alt="" class="card-img-top">
                                                     <?php endif; ?>
                                                     <div class="card-body py-1">
-                                                        <div class="d-flex justify-content-between">
+                                                        <div class="d-flex justify-content-between mb-1">
                                                             <p class="joinColor m-0"><i class="fa fa-user-plus"></i> Join : </p>
                                                             <p class="tournamentDateColor m-0"><i class="fa fa-calendar"></i> End : </p>
                                                             <p class="winColor m-0"><i class="fa fa-trophy"></i> Win : </p>
