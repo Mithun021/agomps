@@ -80,9 +80,8 @@ $tournament_model = new Tournament_model();
                                                     <?php else: ?>
                                                         <img src="<?= base_url() ?>public/admin/uploads/invalid_image.jpg" alt="" class="card-img-top">
                                                     <?php endif; ?>
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Card title</h5>
-                                                        <?= $tournament['featured_image'] ?>
+                                                    <div class="card-body py-1">
+                                                        <h5 class="card-title"><?= $tournament['league_for'] ?? '#NA' ?> <?= $value['name'] ?></h5>
                                                     </div>
                                                 </div>
                                             </div>
