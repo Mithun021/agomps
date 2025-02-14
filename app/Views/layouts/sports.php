@@ -27,16 +27,19 @@ $sports_subcategory_model = new Sports_subcategory_model();
         color: #0559db;
         font-weight: bold;
         font-style: italic;
+        font-size: 12px;
     }
     .tournamentDateColor{
         color: #f42b0c;
         font-weight: bold;
         font-style: italic;
+        font-size: 12px;
     }
     .winColor{
         color: #20d307;
         font-weight: bold;
         font-style: italic;
+        font-size: 12px;
     }
     .divider{
         border: 1px solid rgb(81, 80, 80);
