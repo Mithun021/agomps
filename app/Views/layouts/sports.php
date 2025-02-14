@@ -25,7 +25,7 @@ $game_category = $game_category_model->get();
             </div>
             <p>Well-managed sports leagues ensure fair competition, seamless organization, and a professional environment, providing athletes with opportunities to thrive.</p>
         </div>
-        <div class="section-content text-center ">
+        <div class="section-content ">
             <div class="row m-lr0">
 
                 <div class="dez-tabs border bg-tabs">
