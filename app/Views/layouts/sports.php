@@ -80,6 +80,7 @@ $tournament_model = new Tournament_model();
                                         <?php endif; ?>
                                                 <div class="card-body">
                                                     <h5 class="card-title">Card title</h5>
+                                                    <?= $tournament['featured_image'] ?>
                                                 </div>
                                             </div>
                                        <?php }
