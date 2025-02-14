@@ -111,7 +111,7 @@ $sports_subcategory_model = new Sports_subcategory_model();
                                                     <div class="card-body py-1">
                                                         <div class="d-flex justify-content-between mb-1">
                                                             <p class="joinColor m-0"><i class="fa fa-user-plus"></i> Join : <i class="fa fa-inr"></i> </p>
-                                                            <p class="tournamentDateColor m-0"><i class="fa fa-calendar"></i> End : <?php print_r($league_session['end_date']) ?></p>
+                                                            <p class="tournamentDateColor m-0"><i class="fa fa-calendar"></i> End : <?php echo $league_session['end_date']; ?></p>
                                                             <p class="winColor m-0"><i class="fa fa-trophy"></i> Win : <i class="fa fa-inr"></i> <?= $tournament['first_rank_price'] ?></p>
                                                         </div>
                                                         <hr class="divider m-0">
