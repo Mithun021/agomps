@@ -38,7 +38,7 @@
         }
 
         public function get_by_category($league_id,$sports_id,$game_type){
-            return $this->where('sports_id', $sports_id)->where('league_session_id', $league_id)->where('game_type',$game_type)->first();
+            return $this->where('sports_id', $sports_id)->where('league_session_id', $league_id)->where('game_type',$game_type)->findAll();
         }
         
     }
