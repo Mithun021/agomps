@@ -2,10 +2,16 @@
 
 use App\Models\Sports_model;
 use App\Models\Game_category_model;
+use App\Models\League_session_model;
+use App\Models\Tournament_model;
+
 $sports_model = new Sports_model();
 $sports = $sports_model->getActiveData();
 $game_category_model = new Game_category_model();
 $game_category = $game_category_model->get();
+$league_session_model = new League_session_model();
+$league_session = $league_session_model->currectSession();
+$tournament_model = new Tournament_model();
 ?>
 <style>
     .enrollprice span {
@@ -32,7 +38,7 @@ $game_category = $game_category_model->get();
 
                     <ul class="nav nav-tabs" id="myTabContent" role="tablist">
                         <?php
-                        $isFirst = true; // Flag to set the first tab as active by default
+                        $isFirst = true;
                         foreach ($sports as $value) {
                         ?>
                             <li class="nav-item" role="presentation">
@@ -43,7 +49,7 @@ $game_category = $game_category_model->get();
                                     type="button" role="tab"
                                     aria-controls="sports-<?= $value['id'] ?>"
                                     aria-selected="<?= $isFirst ? 'true' : 'false' ?>">
-                                    <!--<i class="fa fa-globe"></i>--><img src="<?= base_url() ?>public/admin/uploads/sports/<?= $value['sports_image'] ?>" alt="<?= $value['name'] ?> Icon" class="sports_icon">
+                                    <img src="<?= base_url() ?>public/admin/uploads/sports/<?= $value['sports_image'] ?>" alt="<?= $value['name'] ?> Icon" class="sports_icon">
                                     <span class="title-head"><?= $value['name'] ?></span>
                                 </button>
                             </li>
@@ -63,6 +69,9 @@ $game_category = $game_category_model->get();
                                <?php if($game_category){
                                     foreach ($game_category as $key => $gcat) {
                                         echo "<h1>".$gcat['game_category']."</h1>";
+                                        $tournament = $tournament_model->get_by_category($league_session['id'],$value['id'],$gcat['game_category']);
+
+                                        echo"<pre>"; "print_r($tournament);
                                     }
                                 }
 

@@ -36,6 +36,10 @@
         public function getBySportsLeagueCurrentSession($sports_id,$league_id,$session_id){
             return $this->where('sports_id', $sports_id)->where('league_category_id', $league_id)->where('league_category_id',$session_id)->first();
         }
+
+        public function get_by_category($league_id,$sports_id,$game_type){
+            return $this->where('sports_id', $sports_id)->where('league_session_id', $league_id)->where('game_type',$game_type)->first();
+        }
         
     }
 ?>
