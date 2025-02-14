@@ -71,7 +71,7 @@ $tournament_model = new Tournament_model();
                                         echo "<h1>".$gcat['game_category']."</h1>";
                                         $tournament = $tournament_model->get_by_category($league_session['id'],$value['id'],$gcat['game_category']);
 
-                                        echo"<pre>"; "print_r($tournament);
+                                        echo "<pre>"; print_r($tournament);
                                     }
                                 }
 
