@@ -99,7 +99,7 @@ $league_category_model = new League_category_model();
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
-                                            <th class="bg-light" colspan="3">Registration Fee Details <i class="fa fa-play" aria-hidden="true"></i></th>
+                                            <th class="bg-light" colspan="4">Registration Fee Details <i class="fa fa-play" aria-hidden="true"></i></th>
                                         </tr>
                                     </thead>
                                     <tbody>
