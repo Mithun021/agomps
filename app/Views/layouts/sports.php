@@ -27,20 +27,22 @@ $sports_subcategory_model = new Sports_subcategory_model();
         color: #0559db;
         font-weight: bold;
         font-style: italic;
+        margin-bottom: 3px;
     }
     .tournamentDateColor{
         color: #f42b0c;
         font-weight: bold;
         font-style: italic;
+        margin-bottom: 3px;
     }
     .winColor{
         color: #20d307;
         font-weight: bold;
         font-style: italic;
+        margin-bottom: 3px;
     }
     .divider{
-        border: 1px solid rgb(175, 175, 175);
-        margin: 4px 0px;
+        border: 1px solid rgb(81, 80, 80);
     }
     h5.card-title{
         font-size: 18px;
