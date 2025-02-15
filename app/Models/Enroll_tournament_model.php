@@ -5,7 +5,7 @@
     {
         protected $table         = 'enroll_tournament';
         protected $primaryKey = 'id';
-        protected $allowedFields = ['player_id','sports_category','league_category_id','league_session_id','registration_status','payment_status','enroll_payment','payment_screenshot'];
+        protected $allowedFields = ['player_id','tournament_id','team_name','registration_status','payment_status','enroll_payment','payment_screenshot'];
 
         public function add($data, $id = null) {
             if ($id != null) {

@@ -88,18 +88,49 @@ class FrontendController extends BaseController
     public function enroll_tournament($tournament_id)
     {
         $tournament_model = new Tournament_model();
-        $league_session_model = new League_session_model();
+        $enroll_tournament_model = new Enroll_tournament_model();
+        $enroll_tournament_players_model = new Enroll_tournament_players_model();
         $data = ['title' => 'Enroll Tournament', 'tournament_id' => $tournament_id];
         $sessionData = session()->get('loggedPlayerData');
         if ($sessionData) {
             $loggedplayerId = $sessionData['loggedplayerId'];
         }
         if ($this->request->is('get')) {
-            $active_league = $league_session_model->currectSession();
             $data['tournaments'] = $tournament_model->get($tournament_id);
             // print_r($data['enroll_tournament']); die;
             return view('enroll-tournament', $data);
         } else if ($this->request->is('post')) {
+            $data = [
+                'tournament_id' => $tournament_id,
+                'player_id' => $this->request->getPost('player_id'),
+                'team_name' => $this->request->getPost('team_name'),
+                'registration_status' => 1
+            ];
+            $teamPlayers = $this->request->getPost('player_name');
+            $teamAges = $this->request->getPost('player_age');
+            $player_mobileno = $this->request->getPost('player_mobileno');
+            $result = $enroll_tournament_model->add($data);
+            if ($result === true) {
+                $insert_id = $enroll_tournament_model->getInsertID();
+                $maxPlayers = count($teamPlayers);  // Get dynamic length of player names input
+                $teamPlayers = array_slice($teamPlayers, 0, $maxPlayers);
+                $teamAges = array_slice($teamAges, 0, $maxPlayers);
+                $player_mobileno = array_slice($player_mobileno, 0, $maxPlayers);
+        
+                foreach ($teamPlayers as $key => $value) {
+                    $data2 = [
+                        'enroll_tournament_id' => $insert_id,
+                        'enroll_player_name' => $value,
+                        'enroll_player_age' => $teamAges[$key],
+                        'enroll_player_mobile_number' => $player_mobileno[$key],
+                    ];
+                    $enroll_tournament_players_model->add($data2);
+                }
+                return redirect()->to('enroll-tournament/' . $tournament_id)->with('status', '<div class="alert alert-success" role="alert"> Thank you for registering! Your team registration has been successfully completed. You can now proceed with the payment to enroll your team in AGOMPS UPPL. </div>');
+            }else{
+                return redirect()->to('enroll-tournament/' . $tournament_id)->with('status', '<div class="alert alert-danger" role="alert"> ' . $result . ' </div>');
+            }
+
         }
     }
 

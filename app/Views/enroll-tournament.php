@@ -165,7 +165,6 @@ if ($sessionData) {
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12">
                                                 <input type="text" class="form-controller" name="player_id" value="<?= $loggedplayerId ?>">
-                                                <input type="text" class="form-controller" name="leaguename" value="<?= $tournaments['league_session_id'] ?>">
                                                 <hr>
                                                 <?php if($tournaments['game_type'] == "Team"){ ?>
                                                 <div class="form-group col-md-12">
@@ -192,7 +191,7 @@ if ($sessionData) {
                                                             <?php for ($i = 1; $i <= $tournaments['max_players']; $i++) { ?>
                                                                 <tr id="teamRow<?= $i ?>">
                                                                     <td><?= $i ?></td>
-                                                                    <td><input type="text" class="form-control player_name" name="player_name[]" placeholder="Enter Player Name"></td>
+                                                                    <td><input type="text" class="form-control player_name" name="player_name[]" placeholder="Enter Player Name" maxlength="3"></td>
                                                                     <td><input type="number" name="player_age[]" class="form-control player_age" placeholder="Player Age"></td>
                                                                     <td><input type="text" name="player_mobileno[]" class="form-control player_mobileno" placeholder="Player Mobile no." maxlength="10" pattern="^[6-9][0-9]{9}$"></td>
                                                                 </tr>
