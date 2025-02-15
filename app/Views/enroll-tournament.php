@@ -178,7 +178,7 @@ if ($sessionData) {
                                                             </tr>
                                                         </thead>
                                                         <tbody id="teamBody">
-                                                        <?php for ($i=1; $i < $tournaments['max_age']; $i++) { ?>
+                                                        <?php for ($i=1; $i < $tournaments['max_players']; $i++) { ?>
                                                             <tr id="teamRow">
                                                                 <td><?= $i ?></td>
                                                                 <td><input type="text" class="form-control" name="player_name[]" placeholder="Enter Player Name" required></td>
