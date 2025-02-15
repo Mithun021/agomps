@@ -14,7 +14,7 @@ $routes->match(['get','post'],'user-registration', 'FrontendController::user_reg
 $routes->match(['get','post'],'team-registration', 'FrontendController::team_registration');
 $routes->get('select-league/(:num)', 'FrontendController::select_league/$1');
 $routes->match(['get','post'],'enroll-tournament/(:num)', 'FrontendController::enroll_tournament/$1');
-$routes->post('enroll_tournament_payment/(:num)/(:num)','FrontendController::enroll_tournament_payment/$1/$2');
+$routes->post('enroll_tournament_payment/(:num)','FrontendController::enroll_tournament_payment/$1');
 $routes->get('privacy-policy', 'FrontendController::privacy_policy');
 $routes->get('term-condition', 'FrontendController::term_condition');
 $routes->get('refund-policy', 'FrontendController::refund_policy');

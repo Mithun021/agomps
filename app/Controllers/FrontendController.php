@@ -104,7 +104,8 @@ class FrontendController extends BaseController
                 'tournament_id' => $tournament_id,
                 'player_id' => $this->request->getPost('player_id'),
                 'team_name' => $this->request->getPost('team_name'),
-                'registration_status' => 1
+                'registration_status' => 1,
+                'payment_screenshot' => "invalid.png"
             ];
             $teamPlayers = $this->request->getPost('player_name');
             $teamAges = $this->request->getPost('player_age');
@@ -131,14 +132,14 @@ class FrontendController extends BaseController
         }
     }
 
-    public function enroll_tournament_payment($sports_id, $league_id)
+    public function enroll_tournament_payment($enroll_tournament_id)
     {
         $enroll_tournament_model = new Enroll_tournament_model();
-        $tournament_id = $this->request->getPost('tournament_id');
+        $find_tournament_id = $enroll_tournament_id->get($enroll_tournament_id);
         $payment_screenshot = $this->request->getFile('payment_screenshot');
         if ($payment_screenshot->isValid() && ! $payment_screenshot->hasMoved()) {
             $payment_screenshotImageName = "payment" . $payment_screenshot->getRandomName();
-            $payment_screenshot->move(ROOTPATH . 'public/assets/images/payment', $payment_screenshotImageName);
+            $payment_screenshot->move(ROOTPATH . 'public/admin/uploads/payment', $payment_screenshotImageName);
         } else {
             $payment_screenshotImageName = "";
         }
@@ -147,11 +148,11 @@ class FrontendController extends BaseController
             'enroll_payment' => $this->request->getPost('tournament_payment'),
             'payment_status' => 1
         ];
-        $result = $enroll_tournament_model->add($data, $tournament_id);
+        $result = $enroll_tournament_model->add($data, $enroll_tournament_id);
         if ($result === true) {
-            return redirect()->to('enroll-tournament/' . $sports_id . "/" . $league_id)->with('status', '<div class="alert alert-success" role="alert"> Thank you for successfully completing your payment and enrolling in the tournament. Your registration has been confirmed, and our team will be in touch with you shortly. </div>');
+            return redirect()->to('enroll-tournament/' . $find_tournament_id['tournament_id'])->with('status', '<div class="alert alert-success" role="alert"> Thank you for successfully completing your payment and enrolling in the tournament. Your registration has been confirmed, and our team will be in touch with you shortly. </div>');
         } else {
-            return redirect()->to('enroll-tournament/' . $sports_id . "/" . $league_id)->with('status', '<div class="alert alert-danger" role="alert"> ' . $result . ' </div>');
+            return redirect()->to('enroll-tournament/' . $find_tournament_id['tournament_id'])->with('status', '<div class="alert alert-danger" role="alert"> ' . $result . ' </div>');
         }
     }
 
