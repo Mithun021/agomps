@@ -171,12 +171,12 @@ $find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayer
                                             <div class="col-lg-12 col-md-12">
                                                 <input type="text" class="form-controller" name="player_id" value="<?= $loggedplayerId ?>">
                                                 <hr>
-                                                <?php if ($tournaments['game_type'] == "Team") { ?>
+                                                <?php if ($tournaments['game_type'] == "Team") { if (!$find_tournament_id) { ?>
                                                     <div class="form-group col-md-12">
                                                         <span>Team Name<span class="text-danger">*</span></span>
                                                         <input type="text" class="form-controller" name="team_name" required>
                                                     </div>
-                                                <?php } ?>
+                                                <?php } } ?>
                                                 <!-- <div class="form-group col-md-6">
                                                     <span></span>
                                                     <input type="text">
