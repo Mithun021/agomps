@@ -4,6 +4,7 @@
 <?php
 
 use App\Models\Enroll_tournament_model;
+use App\Models\Enroll_tournament_players_model;
 use App\Models\League_category_model;
 use App\Models\League_session_model;
 use App\Models\Sports_model;
@@ -18,6 +19,7 @@ $league_category_model = new League_category_model();
 $league_session_model = new League_session_model();
 $enroll_tournament_model = new Enroll_tournament_model();
 $sports_subcategory_model = new Sports_subcategory_model();
+$enroll_tournament_players_model = new Enroll_tournament_players_model();
 $find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayerId, $tournament_id);
 $enroll_tournament_players = $enroll_tournament_players_model->get_by_tournament_id($find_tournament_id['id']);
 
