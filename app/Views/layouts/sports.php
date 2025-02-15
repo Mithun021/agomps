@@ -119,11 +119,7 @@ $sports_subcategory_model = new Sports_subcategory_model();
                                                                             echo $tournament['registration_fee'];
                                                                         }
                                                                     }else if($tournament['game_type'] == "Team"){
-                                                                        if (($tournament['team_entry_fee_discount'] !== 0 || $tournament['team_entry_fee_discount'] !== null)) {
-                                                                            echo $tournament['team_entry_fee_discount'];
-                                                                        }else{
-                                                                            echo $tournament['team_entry_fee'];
-                                                                        }
+                                                                        echo $tournament['team_entry_fee'];
                                                                     }
                                                                 ?>
                                                             </p>
