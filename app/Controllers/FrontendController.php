@@ -25,6 +25,7 @@ class FrontendController extends BaseController
         } else if ($this->request->is('post')) {
             $userid = $this->request->getPost('mobile_number');
             $password = strtoupper($this->request->getPost('first_name')) . '123456';
+            $email_address = $this->request->getPost('email_address');
 
             $data = [
                 'first_name' => $this->request->getPost('first_name'),
@@ -45,6 +46,30 @@ class FrontendController extends BaseController
             ];
             $result = $players_model->add($data);
             if ($result === true) {
+
+                $email = \Config\Services::email();
+                $email->setFrom('contact@agomps.com', 'AGOMPS');
+                $email->setTo($email_address);
+                $email->setSubject('Welcome to AGOMPS!');
+                $email->setMessage('
+                    <html>
+                    <body>
+                        <h1>Welcome to AGOMPS!</h1>
+                        <p>Dear User,</p>
+                        <p>Thank you for successfully creating your account with <strong>AGOMPS INDIA</strong>! We are excited to have you with us.</p>
+                        <p><strong>Your Account Details:</strong></p>
+                        <p><strong>User ID:</strong> ' . $userid . '</p>
+                        <p><strong>Password:</strong> ' . $password . '</p>
+                        <p>For security purposes, we recommend updating your password after logging in for the first time.</p>
+                        <p>If you have any questions or need assistance, please do not hesitate to contact us. We are here to help!</p>
+                        <p>Thank you for choosing AGOMPS INDIA, and we look forward to serving you!</p>
+                        <br>
+                        <p>Best regards,</p>
+                        <p><strong>AGOMPS Team</strong></p>
+                    </body>
+                    </html>
+                ');                
+
                 // Assuming the user ID is generated after insertion, so you can fetch it like this (if auto-incremented).
                 //$userid = $players_model->getInsertID();  // Or however you retrieve the user ID
                 return redirect()->to('user-registration')->with(
