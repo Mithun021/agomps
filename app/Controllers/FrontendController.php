@@ -137,7 +137,7 @@ class FrontendController extends BaseController
             $player_email = $player['email_address'];
             $sport = $sports_model->get($tournaments['sports_id'])['name'] ?? '';
             $sport_subcat = $sports_subcategory_model->get($tournaments['sport_subcategory'])['sub_category_name'] ?? '';
-            $game_for = $tournaments['game_type'];
+            $game_for = $tournaments['league_for'];
             $data = [
                 'tournament_id' => $tournament_id,
                 'player_id' => $this->request->getPost('player_id'),
@@ -198,6 +198,8 @@ class FrontendController extends BaseController
 
     public function enroll_tournament_payment($enroll_tournament_id)
     {
+        $sports_model = new Sports_model();
+        $sports_subcategory_model = new Sports_subcategory_model();
         $players_model = new Players_model();
         $enroll_tournament_model = new Enroll_tournament_model();
 
@@ -205,11 +207,16 @@ class FrontendController extends BaseController
         if ($sessionData) {
             $loggedplayerId = $sessionData['loggedplayerId'];
         }
+        
+        $find_tournament_id = $enroll_tournament_model->get($enroll_tournament_id);
+
         $player = $players_model->get($loggedplayerId);
         $player_name = $player['first_name'];
         $player_email = $player['email_address'];
+        $sport = $sports_model->get($find_tournament_id['sports_id'])['name'] ?? '';
+        $sport_subcat = $sports_subcategory_model->get($find_tournament_id['sport_subcategory'])['sub_category_name'] ?? '';
+        $game_for = $find_tournament_id['league_for'];
 
-        $find_tournament_id = $enroll_tournament_model->get($enroll_tournament_id);
         $payment_screenshot = $this->request->getFile('payment_screenshot');
         if ($payment_screenshot->isValid() && ! $payment_screenshot->hasMoved()) {
             $payment_screenshotImageName = "payment" . $payment_screenshot->getRandomName();
@@ -235,9 +242,9 @@ class FrontendController extends BaseController
             $email->setMessage('
                 <html>
                 <body>
-                    <h1>Team Enrollment Confirmation</h1>
+                    <h6>Team Enrollment Confirmation</h6>
                     <p>Dear '.$player_name.',</p>
-                    <p>We are happy to confirm that your payment has been successfully processed, and your team has been officially enrolled in the <strong>AGOMPS Cricket T20 Tournament for Men</strong>!</p>
+                    <p>We are happy to confirm that your payment has been successfully processed, and your team has been officially enrolled in the <strong>AGOMPS '.$sport. ' ' . $sport_subcat .'Tournament for ' . $game_for .'</strong>!</p>
                     <p>Our team is currently reviewing your provided details. We will verify everything shortly and notify you once everything is confirmed. We aim to ensure all details are accurate to provide a smooth tournament experience.</p>
                     <p>If you have any questions or concerns in the meantime, feel free to contact us. Thank you for your cooperation and participation!</p>
                     <br>
