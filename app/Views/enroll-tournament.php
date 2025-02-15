@@ -2,6 +2,7 @@
 <?= $this->section("body-content"); ?>
 <?= view('layouts/breadcumbs') ?>
 <?php
+
 use App\Models\Enroll_tournament_model;
 use App\Models\League_category_model;
 use App\Models\League_session_model;
@@ -55,7 +56,8 @@ if ($sessionData) {
     .registerFormBody {
         border: 5px solid #ffc107;
     }
-    img.payment_qrcode{
+
+    img.payment_qrcode {
         width: 100% !important;
         height: 240px !important;
         object-fit: cover;
@@ -94,6 +96,25 @@ if ($sessionData) {
                         <!-- id="teamRegisterationForm" -->
                         <?php if ($sessionData) { ?>
                             <?php if (isset($tournaments)) { ?>
+
+                                <?php
+                                if ($tournaments['game_type'] == "Individual") {
+                                    $registration_fee = $tournaments['registration_fee'];
+                                    $discount_registration_fee = $tournaments['discount_registration_fee'];
+                                    $tournament_price = $registration_fee;
+                                    if (!empty($discount_registration_fee) && $discount_registration_fee < $registration_fee) {
+                                        $tournament_price = $discount_registration_fee;
+                                    }
+                                } else if ($tournaments['game_type'] == "Team") {
+                                    $registration_fee = $tournaments['team_entry_fee'];
+                                    $discount_registration_fee = $tournaments['team_entry_fee_discount'];
+                                    $tournament_price = $registration_fee;
+                                    if (!empty($discount_registration_fee) && $discount_registration_fee < $registration_fee) {
+                                        $tournament_price = $discount_registration_fee;
+                                    }
+                                }
+                                ?>
+
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12">
@@ -102,7 +123,7 @@ if ($sessionData) {
                                             <p class="m-0">League : <b><?= $league_session_model->get($tournaments['league_session_id'])['league_name'] ?? '' ?></b></p>
                                             <p class="m-0">Sports : <b><?= $sports_model->get($tournaments['sports_id'])['name'] ?? '' ?></b></p>
                                             <p class="m-0">Tournament : <b><?= $tournaments['league_for'] ?> <?= $sports_subcategory_model->get($tournaments['sport_subcategory'])['sub_category_name'] ?? '' ?></b></p>
-                                            <p class="site-button button-sm radius-sm m-t5"><b>Registration fee : Rs. <?= $tournaments['registration_fee'] ?></b></p>
+                                            <p class="site-button button-sm radius-sm m-t5"><b>Registration fee : Rs. <?= $tournament_price ?></b></p>
                                             <?= $tournaments['description'] ?? '' ?>
                                             <h4>Winner Team Rank, Price & Trophy</h4>
                                             <table>
