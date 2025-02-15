@@ -118,6 +118,7 @@ $sports_subcategory_model = new Sports_subcategory_model();
                                         foreach ($tournament as $key => $tournament) { ?>
                                             <div class="col-lg-4 col-md-6">
                                                 <div class="card p-0 mb-3">
+                                                    <a href="<?= base_url() ?>enroll-tournament">
                                                     <div class="image_with_price">
                                                         <?php if (!empty($tournament['featured_image']) && file_exists('public/admin/uploads/tournament/' . $tournament['featured_image'])): ?>
                                                             <img src="<?= base_url() ?>public/admin/uploads/tournament/<?= $tournament['featured_image'] ?>" alt="" class="card-img-top">
@@ -156,6 +157,7 @@ $sports_subcategory_model = new Sports_subcategory_model();
                                                         <hr class="divider m-0">
                                                         <h5 class="card-title text-center"><?= $tournament['league_for'] ?? '#NA' ?> <?= $sports_subcategory_model->get($tournament['sport_subcategory'])['sub_category_name'] ?? '' ?> <?= $value['name'] ?></h5>
                                                     </div>
+                                                    </a>
                                                 </div>
                                             </div>
                                 <?php }
