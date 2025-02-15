@@ -103,7 +103,7 @@ class FrontendController extends BaseController
             $data = [
                 'tournament_id' => $tournament_id,
                 'player_id' => $this->request->getPost('player_id'),
-                'team_name' => $this->request->getPost('team_name'),
+                'team_name' => $this->request->getPost('team_name') ?? '',
                 'registration_status' => 1,
                 'payment_screenshot' => "invalid.png"
             ];
