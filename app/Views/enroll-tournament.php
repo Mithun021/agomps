@@ -211,42 +211,30 @@ if ($sessionData) {
 
 <script src="<?= base_url() ?>public/assets/js/jquery.min.js"></script>
 <script>
-    $(document).ready(function() {
-        $("#teamRegisterationForm").on("submit", function(event) {
-            let valid = true;
-            for (let i = 0; i < <?= $tournaments['min_players'] ?>; i++) {
-                let playerName = $("input[name='player_name[]']").eq(i);
-                let playerAge = $("input[name='player_age[]']").eq(i);
-                let playerMobileNo = $("input[name='player_mobileno[]']").eq(i);
+    document.getElementById('teamRegisterationForm').addEventListener('submit', function(e) {
+        var minPlayers = parseInt(document.getElementById('enroll-min-players').textContent); // Get minimum players
+        var maxPlayers = <?= $tournaments['max_players'] ?>; // Get maximum players
 
-                // Validate Player Name
-                if (playerName.val().trim() === "") {
-                    alert("Player " + (i + 1) + " - Name is required.");
-                    valid = false;
-                    break;
-                }
+        var playerRows = document.querySelectorAll('tr[id^="teamRow"]');
+        var playerCount = 0;
 
-                // Validate Player Age
-                if (playerAge.val().trim() === "" || playerAge.val() <= 0) {
-                    alert("Player " + (i + 1) + " - Valid age is required.");
-                    valid = false;
-                    break;
-                }
+        // Count the filled player rows
+        playerRows.forEach(function(row) {
+            var nameInput = row.querySelector('.player_name').value.trim();
+            var ageInput = row.querySelector('.player_age').value.trim();
+            var mobileInput = row.querySelector('.player_mobileno').value.trim();
 
-                // Validate Player Mobile No.
-                let mobilePattern = /^[6-9][0-9]{9}$/;
-                if (!mobilePattern.test(playerMobileNo.val())) {
-                    alert("Player " + (i + 1) + " - Invalid mobile number.");
-                    valid = false;
-                    break;
-                }
-            }
-
-            // If validation fails, prevent form submission
-            if (!valid) {
-                event.preventDefault(); // This stops the form from submitting
+            // If all required fields are filled, count this row
+            if (nameInput && ageInput && mobileInput) {
+                playerCount++;
             }
         });
+
+        // If the number of players is less than the minimum, show an error
+        if (playerCount < minPlayers) {
+            alert('You must enter at least ' + minPlayers + ' players.');
+            e.preventDefault(); // Prevent form submission
+        }
     });
 </script>
 
