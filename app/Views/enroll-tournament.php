@@ -224,7 +224,7 @@ $find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayer
                                                 
                                             </form>
                                             </div>
-                                            <?php if(empty($find_tournament_id['payment_status'])){ ?>
+                                            <?php if ($find_tournament_id) { if(empty($find_tournament_id['payment_status'])){ ?>
                                                 <form action="<?= base_url() ?>enroll_tournament_payment/<?= $find_tournament_id['id'] ?> ?>" method="post" enctype="multipart/form-data">
                                                     <div class="card-body">
                                                         <div class="row">
@@ -252,7 +252,7 @@ $find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayer
                                                         </div>
                                                     </div>
                                                 </form>
-                                            <?php }else{ ?> <div class="card-body"><button type="button" class="btn site-button">Tournament Already Enrolled</button></div> <?php } ?>
+                                            <?php }else{ ?> <div class="card-body"><button type="button" class="btn site-button">Tournament Already Enrolled</button></div> <?php } } ?>
                                         </div>
                                     </div>
 
