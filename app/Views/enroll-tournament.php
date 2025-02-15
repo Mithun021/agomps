@@ -156,7 +156,7 @@ if ($sessionData) {
                                     </div>
                                 </div>
 
-                                <form id="teamRegisterationForm" method="post" action="<?= base_url() ?>enroll-tournament/<?= $sports_id ?>/<?= $league_id ?>" enctype="multipart/form-data">
+                                <form id="teamRegisterationForm" method="post" action="<?= base_url() ?>enroll-tournament/<?= $tournament_id ?>" enctype="multipart/form-data">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12">
