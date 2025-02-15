@@ -118,11 +118,13 @@ $sports_subcategory_model = new Sports_subcategory_model();
                                                             <p class="joinColor m-0"><i class="fa fa-user-plus"></i> Join : <i class="fa fa-inr"></i>
                                                                 <?php
                                                                 if ($tournament['game_type'] == "Individual") {
-                                                                    if (($tournament['discount_registration_fee'] !== 0 || $tournament['discount_registration_fee'] !== null)) {
-                                                                        echo $tournament['discount_registration_fee'];
-                                                                    } else {
-                                                                        echo $tournament['registration_fee'];
+                                                                    $registration_fee = $tournament['registration_fee'];
+                                                                    $discount_registration_fee = $tournament['discount_registration_fee'];
+                                                                    $tournament_price = $registration_fee;
+                                                                    if (!empty($discount_registration_fee) && $discount_registration_fee < $registration_fee) {
+                                                                        $tournament_price = $discount_registration_fee;
                                                                     }
+                                                                    echo $tournament_price;
                                                                 } else if ($tournament['game_type'] == "Team") {
                                                                     $registration_fee = $tournament['team_entry_fee'];
                                                                     $discount_registration_fee = $tournament['team_entry_fee_discount'];
