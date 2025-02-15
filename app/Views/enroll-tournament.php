@@ -21,7 +21,6 @@ $enroll_tournament_model = new Enroll_tournament_model();
 $sports_subcategory_model = new Sports_subcategory_model();
 $enroll_tournament_players_model = new Enroll_tournament_players_model();
 $find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayerId, $tournament_id);
-$enroll_tournament_players = $enroll_tournament_players_model->get_by_tournament_id($find_tournament_id['id']);
 
 ?>
 
@@ -203,7 +202,7 @@ $enroll_tournament_players = $enroll_tournament_players_model->get_by_tournament
                                                                         <td><input type="text" name="player_mobileno[]" class="form-control player_mobileno" placeholder="Player Mobile no." maxlength="10" pattern="^[6-9][0-9]{9}$"></td>
                                                                     </tr>
                                                                 <?php } ?>
-                                                            <?php } else { ?>
+                                                            <?php } else { $enroll_tournament_players = $enroll_tournament_players_model->get_by_tournament_id($find_tournament_id['id']); ?>
                                                                 <?php if ($enroll_tournament_players) {
                                                                     foreach ($enroll_tournament_players as $key => $players_list) { ?>
                                                                         <tr id="teamRow">
