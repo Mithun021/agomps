@@ -68,7 +68,8 @@ class FrontendController extends BaseController
                         <p><strong>AGOMPS Team</strong></p>
                     </body>
                     </html>
-                ');                
+                ');        
+                $email->send();        
 
                 // Assuming the user ID is generated after insertion, so you can fetch it like this (if auto-incremented).
                 //$userid = $players_model->getInsertID();  // Or however you retrieve the user ID
