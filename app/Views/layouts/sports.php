@@ -38,7 +38,16 @@ $sports_subcategory_model = new Sports_subcategory_model();
         font-size: 12px;
     }
 
+    .image_with_price{
+        position: relative;
+    }
+    .image_with_price
     .winColor {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: #FFF;
+        width: 100%;
         color: #20d307;
         font-weight: bold;
         font-style: italic;
