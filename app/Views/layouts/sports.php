@@ -23,28 +23,33 @@ $sports_subcategory_model = new Sports_subcategory_model();
     img.sports_icon {
         height: 18px !important;
     }
-    .joinColor{
+
+    .joinColor {
         color: #0559db;
         font-weight: bold;
         font-style: italic;
         font-size: 12px;
     }
-    .tournamentDateColor{
+
+    .tournamentDateColor {
         color: #f42b0c;
         font-weight: bold;
         font-style: italic;
         font-size: 12px;
     }
-    .winColor{
+
+    .winColor {
         color: #20d307;
         font-weight: bold;
         font-style: italic;
         font-size: 12px;
     }
-    .divider{
+
+    .divider {
         border: 1px solid rgb(81, 80, 80);
     }
-    h5.card-title{
+
+    h5.card-title {
         font-size: 24px;
         font-weight: bold;
         margin-top: 5px;
@@ -110,17 +115,22 @@ $sports_subcategory_model = new Sports_subcategory_model();
                                                     <?php endif; ?>
                                                     <div class="card-body py-1">
                                                         <div class="d-flex justify-content-between mb-1">
-                                                            <p class="joinColor m-0"><i class="fa fa-user-plus"></i> Join : <i class="fa fa-inr"></i> 
-                                                                <?php 
-                                                                    if($tournament['game_type'] == "Individual"){
-                                                                        if (($tournament['discount_registration_fee'] !== 0 || $tournament['discount_registration_fee'] !== null)) {
-                                                                            echo $tournament['discount_registration_fee'];
-                                                                        }else{
-                                                                            echo $tournament['registration_fee'];
-                                                                        }
-                                                                    }else if($tournament['game_type'] == "Team"){
-                                                                        echo $tournament['team_entry_fee'];
+                                                            <p class="joinColor m-0"><i class="fa fa-user-plus"></i> Join : <i class="fa fa-inr"></i>
+                                                                <?php
+                                                                if ($tournament['game_type'] == "Individual") {
+                                                                    if (($tournament['discount_registration_fee'] !== 0 || $tournament['discount_registration_fee'] !== null)) {
+                                                                        echo $tournament['discount_registration_fee'];
+                                                                    } else {
+                                                                        echo $tournament['registration_fee'];
                                                                     }
+                                                                } else if ($tournament['game_type'] == "Team") {
+                                                                    $registration_fee = $tournaments['team_entry_fee'];
+                                                                    $discount_registration_fee = $tournaments['team_entry_fee_discount'];
+                                                                    $tournament_price = $registration_fee;
+                                                                    if (!empty($discount_registration_fee) && $discount_registration_fee < $registration_fee) {
+                                                                        $tournament_price = $discount_registration_fee;
+                                                                    }
+                                                                }
                                                                 ?>
                                                             </p>
 
@@ -129,7 +139,7 @@ $sports_subcategory_model = new Sports_subcategory_model();
                                                             <p class="winColor m-0"><i class="fa fa-trophy"></i> Win : <i class="fa fa-inr"></i> <?= $tournament['first_rank_price'] ?></p>
                                                         </div>
                                                         <hr class="divider m-0">
-                                                        <h5 class="card-title text-center"><?= $tournament['league_for'] ?? '#NA' ?> <?= $sports_subcategory_model->get($tournament['sport_subcategory'])['sub_category_name'] ?? '' ?>  <?= $value['name'] ?></h5>
+                                                        <h5 class="card-title text-center"><?= $tournament['league_for'] ?? '#NA' ?> <?= $sports_subcategory_model->get($tournament['sport_subcategory'])['sub_category_name'] ?? '' ?> <?= $value['name'] ?></h5>
                                                     </div>
                                                 </div>
                                             </div>
