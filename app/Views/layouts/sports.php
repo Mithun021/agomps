@@ -124,8 +124,8 @@ $sports_subcategory_model = new Sports_subcategory_model();
                                                                         echo $tournament['registration_fee'];
                                                                     }
                                                                 } else if ($tournament['game_type'] == "Team") {
-                                                                    $registration_fee = $tournaments['team_entry_fee'];
-                                                                    $discount_registration_fee = $tournaments['team_entry_fee_discount'];
+                                                                    $registration_fee = $tournament['team_entry_fee'];
+                                                                    $discount_registration_fee = $tournament['team_entry_fee_discount'];
                                                                     $tournament_price = $registration_fee;
                                                                     if (!empty($discount_registration_fee) && $discount_registration_fee < $registration_fee) {
                                                                         $tournament_price = $discount_registration_fee;
