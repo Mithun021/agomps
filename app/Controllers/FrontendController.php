@@ -210,6 +210,8 @@ class FrontendController extends BaseController
         
         $find_tournament_id = $enroll_tournament_model->get($enroll_tournament_id);
 
+        print_r($find_tournament_id); die;
+
         $player = $players_model->get($loggedplayerId);
         $player_name = $player['first_name'];
         $player_email = $player['email_address'];
