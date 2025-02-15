@@ -124,7 +124,7 @@ if ($sessionData) {
                                             <p class="m-0">Sports : <b><?= $sports_model->get($tournaments['sports_id'])['name'] ?? '' ?></b></p>
                                             <p class="m-0">Tournament : <b><?= $tournaments['league_for'] ?> <?= $sports_subcategory_model->get($tournaments['sport_subcategory'])['sub_category_name'] ?? '' ?></b></p>
                                             <p class="m-0">Minimum Players : <b><?= $tournaments['min_players'] ?></b></p>
-                                            <p class="m-0">Maximum Players : <b><?= $tournaments['max_players'] ?></b></p>
+                                            <p class="m-0">Maximum Players : <b><span id="enroll-max-players"><?= $tournaments['max_players'] ?></span></b></p>
                                             <p class="m-0">Age Limits : <b><?= $tournaments['min_age'] ?> - <?= $tournaments['max_age'] ?></b></p>
                                             <p class="site-button button-sm radius-sm m-t5"><b>Registration fee : Rs. <?= $tournament_price ?></b></p>
                                             <?= $tournaments['description'] ?? '' ?>
@@ -155,6 +155,9 @@ if ($sessionData) {
                                                     </tr>
                                                 </tbody>
                                             </table>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12">
+                                            <button type="submit" class="btn site-button">Submit</button>
                                         </div>
                                     </div>
                                 </div>
@@ -203,5 +206,47 @@ if ($sessionData) {
         </div>
     </div>
 </div>
+
+
+<script src="<?= base_url() ?>public/assets/js/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#teamRegisterationForm").on("submit", function(event) {
+            let valid = true;
+            for (let i = 0; i < <?= $tournaments['max_players'] ?>; i++) {
+                let playerName = $("input[name='player_name[]']").eq(i);
+                let playerAge = $("input[name='player_age[]']").eq(i);
+                let playerMobileNo = $("input[name='player_mobileno[]']").eq(i);
+
+                // Validate Player Name
+                if (playerName.val().trim() === "") {
+                    alert("Player " + (i + 1) + " - Name is required.");
+                    valid = false;
+                    break;
+                }
+
+                // Validate Player Age
+                if (playerAge.val().trim() === "" || playerAge.val() <= 0) {
+                    alert("Player " + (i + 1) + " - Valid age is required.");
+                    valid = false;
+                    break;
+                }
+
+                // Validate Player Mobile No.
+                let mobilePattern = /^[6-9][0-9]{9}$/;
+                if (!mobilePattern.test(playerMobileNo.val())) {
+                    alert("Player " + (i + 1) + " - Invalid mobile number.");
+                    valid = false;
+                    break;
+                }
+            }
+
+            // If validation fails, prevent form submission
+            if (!valid) {
+                event.preventDefault(); // This stops the form from submitting
+            }
+        });
+    });
+</script>
 
 <?= $this->endSection() ?>
