@@ -156,9 +156,7 @@ if ($sessionData) {
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <div class="col-lg-12 col-md-12">
-                                            <button type="submit" class="btn site-button">Submit</button>
-                                        </div>
+                                        
                                     </div>
                                 </div>
 
@@ -192,6 +190,9 @@ if ($sessionData) {
                                                         </tbody>
                                                     </table>
                                                 </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12">
+                                                <button type="submit" class="btn site-button">Submit</button>
                                             </div>
                                         </div>
                                     </div>
