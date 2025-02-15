@@ -184,7 +184,7 @@ if ($sessionData) {
                                                                     <td><?= $i ?></td>
                                                                     <td><input type="text" class="form-control player_name" name="player_name[]" placeholder="Enter Player Name" required></td>
                                                                     <td><input type="number" name="player_age[]" class="form-control player_age" placeholder="Player Age" required></td>
-                                                                    <td><input type="text" name="player_mobileno[]" class="form-control player_mobileno" placeholder="Player Mobile no." required pattern="^[6-9][0-9]{9}$"></td>
+                                                                    <td><input type="text" name="player_mobileno[]" class="form-control player_mobileno" placeholder="Player Mobile no." maxlength="10" required pattern="^[6-9][0-9]{9}$"></td>
                                                                 </tr>
                                                             <?php } ?>
                                                         </tbody>
