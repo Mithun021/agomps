@@ -170,7 +170,7 @@ if ($sessionData) {
                                                 <?php if($tournaments['game_type'] == "Team"){ ?>
                                                 <div class="form-group col-md-12">
                                                     <span>Team Name<span class="text-danger">*</span></span>
-                                                    <input type="text" class="form-controller" name="Team Name" required>
+                                                    <input type="text" class="form-controller" name="team_name" required>
                                                 </div>
                                                 <?php } ?>
                                                 <!-- <div class="form-group col-md-6">
