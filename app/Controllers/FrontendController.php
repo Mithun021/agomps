@@ -134,6 +134,7 @@ class FrontendController extends BaseController
 
     public function enroll_tournament_payment($enroll_tournament_id)
     {
+        echo "ok"; die;
         $enroll_tournament_model = new Enroll_tournament_model();
         $find_tournament_id = $enroll_tournament_id->get($enroll_tournament_id);
         $payment_screenshot = $this->request->getFile('payment_screenshot');

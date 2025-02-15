@@ -234,7 +234,7 @@ $find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayer
                                                             <div class="col-lg-4 col-md-4">
                                                                 <div class="form-group">
                                                                     <label for="team_name">Attached Payment Screenshot after pay</label>
-                                                                    <input type="file" class="form-control" name="payment_screenshot" required>
+                                                                    <input type="file" class="form-control" name="payment_screenshot">
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-4 col-md-4">
