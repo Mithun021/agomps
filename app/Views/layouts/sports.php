@@ -113,13 +113,13 @@ $sports_subcategory_model = new Sports_subcategory_model();
                                                             <p class="joinColor m-0"><i class="fa fa-user-plus"></i> Join : <i class="fa fa-inr"></i> 
                                                                 <?php 
                                                                     if($tournament['game_type'] == "Individual"){
-                                                                        if (($tournament['discount_registration_fee'] !== 0 && $tournament['discount_registration_fee'] !== null)) {
+                                                                        if (($tournament['discount_registration_fee'] !== 0 || $tournament['discount_registration_fee'] !== null)) {
                                                                             echo $tournament['discount_registration_fee'];
                                                                         }else{
                                                                             echo $tournament['registration_fee'];
                                                                         }
                                                                     }else if($tournament['game_type'] == "Team"){
-                                                                        if (($tournament['team_entry_fee_discount'] !== 0 && $tournament['team_entry_fee_discount'] !== null)) {
+                                                                        if (($tournament['team_entry_fee_discount'] !== 0 || $tournament['team_entry_fee_discount'] !== null)) {
                                                                             echo $tournament['team_entry_fee_discount'];
                                                                         }else{
                                                                             echo $tournament['team_entry_fee'];
