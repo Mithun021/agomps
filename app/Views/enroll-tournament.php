@@ -8,6 +8,7 @@ use App\Models\League_category_model;
 use App\Models\League_session_model;
 use App\Models\Sports_model;
 use App\Models\Sports_subcategory_model;
+
 $sessionData = session()->get('loggedPlayerData');
 if ($sessionData) {
     $loggedplayerId = $sessionData['loggedplayerId'];
@@ -17,8 +18,8 @@ $league_category_model = new League_category_model();
 $league_session_model = new League_session_model();
 $enroll_tournament_model = new Enroll_tournament_model();
 $sports_subcategory_model = new Sports_subcategory_model();
-$find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayerId,$tournament_id);
-
+$find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayerId, $tournament_id);
+$enroll_tournament_players = $enroll_tournament_players_model->get_by_tournament_id($find_tournament_id['id']);
 
 ?>
 
@@ -119,7 +120,9 @@ $find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayer
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12">
-                                            <h3>Tournament Details <?php if($find_tournament_id){ echo $find_tournament_id['id']; } ?></h3>
+                                            <h3>Tournament Details <?php if ($find_tournament_id) {
+                                                                        echo $find_tournament_id['id'];
+                                                                    } ?></h3>
                                             <hr>
                                             <p class="m-0">League : <b><?= $league_session_model->get($tournaments['league_session_id'])['league_name'] ?? '' ?></b></p>
                                             <p class="m-0">Sports : <b><?= $sports_model->get($tournaments['sports_id'])['name'] ?? '' ?></b></p>
@@ -167,11 +170,11 @@ $find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayer
                                             <div class="col-lg-12 col-md-12">
                                                 <input type="text" class="form-controller" name="player_id" value="<?= $loggedplayerId ?>">
                                                 <hr>
-                                                <?php if($tournaments['game_type'] == "Team"){ ?>
-                                                <div class="form-group col-md-12">
-                                                    <span>Team Name<span class="text-danger">*</span></span>
-                                                    <input type="text" class="form-controller" name="team_name" required>
-                                                </div>
+                                                <?php if ($tournaments['game_type'] == "Team") { ?>
+                                                    <div class="form-group col-md-12">
+                                                        <span>Team Name<span class="text-danger">*</span></span>
+                                                        <input type="text" class="form-controller" name="team_name" required>
+                                                    </div>
                                                 <?php } ?>
                                                 <!-- <div class="form-group col-md-6">
                                                     <span></span>
@@ -189,16 +192,27 @@ $find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayer
                                                             </tr>
                                                         </thead>
                                                         <tbody id="teamBody">
-                                                        <?php if(!$find_tournament_id){ ?>
-                                                            <?php for ($i = 1; $i <= $tournaments['max_players']; $i++) { ?>
-                                                                <tr id="teamRow<?= $i ?>">
-                                                                    <td><?= $i ?></td>
-                                                                    <td><input type="text" class="form-control player_name" name="player_name[]" placeholder="Enter Player Name" minlength="3"></td>
-                                                                    <td><input type="number" name="player_age[]" class="form-control player_age" placeholder="Player Age"></td>
-                                                                    <td><input type="text" name="player_mobileno[]" class="form-control player_mobileno" placeholder="Player Mobile no." maxlength="10" pattern="^[6-9][0-9]{9}$"></td>
-                                                                </tr>
+                                                            <?php if (!$find_tournament_id) { ?>
+                                                                <?php for ($i = 1; $i <= $tournaments['max_players']; $i++) { ?>
+                                                                    <tr id="teamRow<?= $i ?>">
+                                                                        <td><?= $i ?></td>
+                                                                        <td><input type="text" class="form-control player_name" name="player_name[]" placeholder="Enter Player Name" minlength="3"></td>
+                                                                        <td><input type="number" name="player_age[]" class="form-control player_age" placeholder="Player Age"></td>
+                                                                        <td><input type="text" name="player_mobileno[]" class="form-control player_mobileno" placeholder="Player Mobile no." maxlength="10" pattern="^[6-9][0-9]{9}$"></td>
+                                                                    </tr>
+                                                                <?php } ?>
+                                                            <?php } else { ?>
+                                                                <?php if ($enroll_tournament_players) {
+                                                                    foreach ($enroll_tournament_players as $key => $players_list) { ?>
+                                                                        <tr id="teamRow">
+                                                                            <td><?= ++$key ?></td>
+                                                                            <td><?= $players_list['enroll_player_name'] ?></td>
+                                                                            <td><?= $players_list['enroll_player_age'] ?></td>
+                                                                            <td><?= $players_list['enroll_player_mobile_number'] ?></td>
+                                                                        </tr>
+                                                                <?php }
+                                                                } ?>
                                                             <?php } ?>
-                                                        <?php } ?>
                                                         </tbody>
                                                     </table>
                                                 </div>
