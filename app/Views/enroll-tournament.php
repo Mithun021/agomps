@@ -123,10 +123,10 @@ if ($sessionData) {
                                             <p class="m-0">League : <b><?= $league_session_model->get($tournaments['league_session_id'])['league_name'] ?? '' ?></b></p>
                                             <p class="m-0">Sports : <b><?= $sports_model->get($tournaments['sports_id'])['name'] ?? '' ?></b></p>
                                             <p class="m-0">Tournament : <b><?= $tournaments['league_for'] ?> <?= $sports_subcategory_model->get($tournaments['sport_subcategory'])['sub_category_name'] ?? '' ?></b></p>
+                                            <p class="m-t5">Minimum Players : <b><?= $tournaments['min_players'] ?></b></p>
+                                            <p class="m-t5">Maximum Players : <b><?= $tournaments['max_players'] ?></b></p>
+                                            <p class="m-t5">Age Limits : <b><?= $tournaments['min_age'] ?> - <?= $tournaments['max_age'] ?></b></p>
                                             <p class="site-button button-sm radius-sm m-t5"><b>Registration fee : Rs. <?= $tournament_price ?></b></p>
-                                            <p class="m-t5"><b>Minimum Players : <?= $tournaments['min_players'] ?></b></p>
-                                            <p class="m-t5"><b>Maximum Players : <?= $tournaments['max_players'] ?></b></p>
-                                            <p class="m-t5"><b>Age Limits : <?= $tournaments['min_age'] ?> - <?= $tournaments['max_age'] ?></b></p>
                                             <?= $tournaments['description'] ?? '' ?>
                                             <h4>Winner Team Rank, Price & Trophy</h4>
                                             <table>
