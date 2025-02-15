@@ -245,7 +245,7 @@ class FrontendController extends BaseController
             $email->setMessage('
                 <html>
                 <body>
-                    <h6>Team Enrollment Confirmation</h6>
+                    <strong>Team Enrollment Confirmation</strong>
                     <p>Dear '.$player_name.',</p>
                     <p>We are happy to confirm that your payment has been successfully processed, and your team has been officially enrolled in the <strong>AGOMPS '.$sport. ' ' . $sport_subcat .'Tournament for ' . $game_for .'</strong>!</p>
                     <p>Our team is currently reviewing your provided details. We will verify everything shortly and notify you once everything is confirmed. We aim to ensure all details are accurate to provide a smooth tournament experience.</p>
