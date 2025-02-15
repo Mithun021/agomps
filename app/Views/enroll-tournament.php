@@ -97,7 +97,7 @@ if ($sessionData) {
                                             <h3>Tournament Details</h3>
                                             <hr>
                                             <p class="m-0">League : <b><?= $league_session_model->get($tournaments['league_session_id'])['league_name'] ?? '' ?></b></p>
-                                            <p class="m-0">Sports : <b><?= $sports_model->get($tournaments['sports_id'])['sports'] ?? '' ?></b></p>
+                                            <p class="m-0">Sports : <b><?= $sports_model->get($tournaments['sports_id'])['name'] ?? '' ?></b></p>
                                             <p class="m-0">League Category : <b></b></p>
                                             <p class="site-button button-sm radius-sm m-t5"><b>Registration fee : Rs. <?= $tournaments['registration_fee'] ?></b></p>
                                             <?= $tournaments['description'] ?? '' ?>
