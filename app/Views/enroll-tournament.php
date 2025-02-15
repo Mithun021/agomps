@@ -155,8 +155,38 @@ if ($sessionData) {
                                         </div>
                                     </div>
                                 </div>
-                            <?php } ?>
-                        <?php } ?>
+
+                                <form id="teamRegisterationForm" method="post" action="<?= base_url() ?>enroll-tournament/<?= $sports_id ?>/<?= $league_id ?>" enctype="multipart/form-data">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12">
+                                                <input type="text" class="form-controller" name="player_id" value="<?= $loggedplayerId ?>">
+                                                <input type="text" class="form-controller" name="leaguename" value="<?= $tournaments['league_session_id'] ?>">
+                                                <hr>
+                                                <div class="form-group">
+                                                    <h3>Team Details<span class="text-danger">*</span></h3>
+                                                    <table id="addTeamTable">
+                                                        <thead>
+                                                            <tr>
+                                                                <td>Sn no.</td>
+                                                                <td>Name</td>
+                                                                <td>Age</td>
+                                                                <td>Mobile No.</td>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="teamBody">
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+
+                            <?php } ?> <!-- end check tournament condition -->
+                        <?php } ?> <!-- end session check -->
                     </div>
                 </div>
             </div>
