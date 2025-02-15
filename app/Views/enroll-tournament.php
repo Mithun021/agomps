@@ -114,6 +114,21 @@ if ($sessionData) {
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                    <tr>
+                                                        <td>1st</td>
+                                                        <td>Rs. <?= $tournaments['first_rank_price'] ?></td>
+                                                        <td><?= $tournaments['first_rank_trophy'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2nd</td>
+                                                        <td>Rs. <?= $tournaments['second_rank_price'] ?></td>
+                                                        <td><?= $tournaments['second_rank_trophy'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3rd</td>
+                                                        <td>Rs. <?= $tournaments['third_rank_price'] ?></td>
+                                                        <td><?= $tournaments['third_rank_trophy'] ?></td>
+                                                    </tr>
                                                 </tbody>
                                             </table>
                                         </div>
