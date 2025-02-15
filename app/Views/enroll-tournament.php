@@ -167,6 +167,16 @@ if ($sessionData) {
                                                 <input type="text" class="form-controller" name="player_id" value="<?= $loggedplayerId ?>">
                                                 <input type="text" class="form-controller" name="leaguename" value="<?= $tournaments['league_session_id'] ?>">
                                                 <hr>
+                                                <?php if($tournaments['game_type'] == "Team"){ ?>
+                                                <div class="form-group col-md-12">
+                                                    <span>Team Name</span>
+                                                    <input type="text" class="form-controller" name="Team Name">
+                                                </div>
+                                                <?php } ?>
+                                                <!-- <div class="form-group col-md-6">
+                                                    <span></span>
+                                                    <input type="text">
+                                                </div> -->
                                                 <div class="form-group">
                                                     <h3>Team Details<span class="text-danger">*</span></h3>
                                                     <table id="addTeamTable">
