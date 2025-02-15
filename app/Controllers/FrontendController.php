@@ -112,19 +112,16 @@ class FrontendController extends BaseController
             $result = $enroll_tournament_model->add($data);
             if ($result === true) {
                 $insert_id = $enroll_tournament_model->getInsertID();
-                $maxPlayers = count($teamPlayers);  // Get dynamic length of player names input
-                $teamPlayers = array_slice($teamPlayers, 0, $maxPlayers);
-                $teamAges = array_slice($teamAges, 0, $maxPlayers);
-                $player_mobileno = array_slice($player_mobileno, 0, $maxPlayers);
-        
-                foreach ($teamPlayers as $key => $value) {
-                    $data2 = [
-                        'enroll_tournament_id' => $insert_id,
-                        'enroll_player_name' => $value,
-                        'enroll_player_age' => $teamAges[$key],
-                        'enroll_player_mobile_number' => $player_mobileno[$key],
-                    ];
-                    $enroll_tournament_players_model->add($data2);
+                if (!empty($teamPlayers)) {
+                    foreach ($teamPlayers as $key => $value) {
+                        $data2 = [
+                            'enroll_tournament_id' => $insert_id,
+                            'enroll_player_name' => $value,
+                            'enroll_player_age' => $teamAges[$key],
+                            'enroll_player_mobile_number' => $player_mobileno[$key],
+                        ];
+                        $enroll_tournament_players_model->add($data2);
+                    }
                 }
                 return redirect()->to('enroll-tournament/' . $tournament_id)->with('status', '<div class="alert alert-success" role="alert"> Thank you for registering! Your team registration has been successfully completed. You can now proceed with the payment to enroll your team in AGOMPS UPPL. </div>');
             }else{
