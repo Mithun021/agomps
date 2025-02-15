@@ -8,6 +8,7 @@ use App\Models\League_category_model;
 use App\Models\League_session_model;
 use App\Models\Players_model;
 use App\Models\Sports_model;
+use App\Models\Sports_subcategory_model;
 use App\Models\State_city_model;
 use App\Models\Tournament_model;
 
@@ -113,6 +114,9 @@ class FrontendController extends BaseController
     }
     public function enroll_tournament($tournament_id)
     {
+        $sports_model = new Sports_model();
+        $sports_subcategory_model = new Sports_subcategory_model();
+        $players_model = new Players_model();
         $tournament_model = new Tournament_model();
         $enroll_tournament_model = new Enroll_tournament_model();
         $enroll_tournament_players_model = new Enroll_tournament_players_model();
@@ -126,6 +130,13 @@ class FrontendController extends BaseController
             // print_r($data['enroll_tournament']); die;
             return view('enroll-tournament', $data);
         } else if ($this->request->is('post')) {
+            $player = $players_model->get($loggedplayerId);
+            $tournaments = $tournament_model->get($tournament_id);
+            
+            $player_name = $player['first_name'];
+            $sport = $sports_model->get($tournaments['sports_id'])['name'] ?? '';
+            $sport_subcat = $sports_subcategory_model->get($tournaments['sport_subcategory'])['sub_category_name'] ?? '';
+            $game_for = $tournaments['game_type'];
             $data = [
                 'tournament_id' => $tournament_id,
                 'player_id' => $this->request->getPost('player_id'),
@@ -150,6 +161,32 @@ class FrontendController extends BaseController
                         $enroll_tournament_players_model->add($data2);
                     }
                 }
+
+                // ------------ Mail Integration -----------------------------
+                $email = \Config\Services::email();
+                $email->setFrom('contact@agomps.com', 'AGOMPS');
+                $email->setTo('mithunkr79038@gmail.com');
+                $email->setSubject('Successful Enrollment in AGOMPS '.$sport. ' ' . $sport_subcat .' Tournament');
+
+                // HTML message with embedded content
+                $email->setMessage('
+                    <html>
+                    <body>
+                        <h1>Successful Enrollment in AGOMPS '.$sport. ' ' . $sport_subcat .' for ' . $game_for .' Tournament</h1>
+                        <p>Dear '.$player_name.',</p>
+                        <p>We are excited to inform you that your team has successfully enrolled in the <strong>AGOMPS '.$sport. ' ' . $sport_subcat .' Tournament for ' . $game_for .'</strong>!</p>
+                        <p>To confirm your team’s participation, please proceed with the payment at your earliest convenience through our portal. Once the payment is made, kindly confirm by completing the process on our portal.</p>
+                        <p>If you need any assistance with the payment process or have any questions, please don’t hesitate to reach out to our team. We are here to help!</p>
+                        <p>Thank you for being part of this exciting event, and we look forward to seeing your team compete!</p>
+                        <br>
+                        <p>Best regards,</p>
+                        <p><strong>AGOMPS Team</strong></p>
+                    </body>
+                    </html>
+                ');
+
+                $email->send();
+
                 return redirect()->to('enroll-tournament/' . $tournament_id)->with('status', '<div class="alert alert-success" role="alert"> Thank you for registering! Your team registration has been successfully completed. You can now proceed with the payment to enroll your team in AGOMPS UPPL. </div>');
             }else{
                 return redirect()->to('enroll-tournament/' . $tournament_id)->with('status', '<div class="alert alert-danger" role="alert"> ' . $result . ' </div>');
