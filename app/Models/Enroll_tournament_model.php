@@ -35,11 +35,9 @@
                         ->first(); 
         }
 
-        public function find_tournament_id($playerId,$sports_id,$league_id,$session_id){
+        public function find_tournament_id($playerId,$tournament_id){
             return $this->where('player_id', $playerId)
-                        ->where('sports_category', $sports_id)
-                        ->where('league_category_id', $league_id)
-                        ->where('league_session_id',$session_id)
+                        ->where('tournament_id', $tournament_id)
                         ->where('registration_status',1)
                         ->first();
         }

@@ -8,16 +8,17 @@ use App\Models\League_category_model;
 use App\Models\League_session_model;
 use App\Models\Sports_model;
 use App\Models\Sports_subcategory_model;
-
+$sessionData = session()->get('loggedPlayerData');
+if ($sessionData) {
+    $loggedplayerId = $sessionData['loggedplayerId'];
+}
 $sports_model = new Sports_model();
 $league_category_model = new League_category_model();
 $league_session_model = new League_session_model();
 $enroll_tournament_model = new Enroll_tournament_model();
 $sports_subcategory_model = new Sports_subcategory_model();
-$sessionData = session()->get('loggedPlayerData');
-if ($sessionData) {
-    $loggedplayerId = $sessionData['loggedplayerId'];
-}
+$find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayerId,$tournament_id);
+
 
 ?>
 
@@ -118,7 +119,7 @@ if ($sessionData) {
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12">
-                                            <h3>Tournament Details</h3>
+                                            <h3>Tournament Details <?= $find_tournament_id['id'] ?></h3>
                                             <hr>
                                             <p class="m-0">League : <b><?= $league_session_model->get($tournaments['league_session_id'])['league_name'] ?? '' ?></b></p>
                                             <p class="m-0">Sports : <b><?= $sports_model->get($tournaments['sports_id'])['name'] ?? '' ?></b></p>
