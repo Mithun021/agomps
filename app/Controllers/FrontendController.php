@@ -136,7 +136,7 @@ class FrontendController extends BaseController
     {
         // echo "ok"; die;
         $enroll_tournament_model = new Enroll_tournament_model();
-        $find_tournament_id = $enroll_tournament_id->get($enroll_tournament_id);
+        $find_tournament_id = $enroll_tournament_model->get($enroll_tournament_id);
         $payment_screenshot = $this->request->getFile('payment_screenshot');
         if ($payment_screenshot->isValid() && ! $payment_screenshot->hasMoved()) {
             $payment_screenshotImageName = "payment" . $payment_screenshot->getRandomName();
