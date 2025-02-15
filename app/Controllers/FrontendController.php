@@ -134,6 +134,7 @@ class FrontendController extends BaseController
             $tournaments = $tournament_model->get($tournament_id);
             
             $player_name = $player['first_name'];
+            $player_email = $player['email_address'];
             $sport = $sports_model->get($tournaments['sports_id'])['name'] ?? '';
             $sport_subcat = $sports_subcategory_model->get($tournaments['sport_subcategory'])['sub_category_name'] ?? '';
             $game_for = $tournaments['game_type'];
@@ -165,14 +166,14 @@ class FrontendController extends BaseController
                 // ------------ Mail Integration -----------------------------
                 $email = \Config\Services::email();
                 $email->setFrom('contact@agomps.com', 'AGOMPS');
-                $email->setTo('mithunkr79038@gmail.com');
+                $email->setTo($player_email);
                 $email->setSubject('Successful Enrollment in AGOMPS '.$sport. ' ' . $sport_subcat .' Tournament');
 
                 // HTML message with embedded content
                 $email->setMessage('
                     <html>
                     <body>
-                        <h1>Successful Enrollment in AGOMPS '.$sport. ' ' . $sport_subcat .' for ' . $game_for .' Tournament</h1>
+                        <h5>Successful Enrollment in AGOMPS '.$sport. ' ' . $sport_subcat .' for ' . $game_for .' Tournament</h5>
                         <p>Dear '.$player_name.',</p>
                         <p>We are excited to inform you that your team has successfully enrolled in the <strong>AGOMPS '.$sport. ' ' . $sport_subcat .' Tournament for ' . $game_for .'</strong>!</p>
                         <p>To confirm your team’s participation, please proceed with the payment at your earliest convenience through our portal. Once the payment is made, kindly confirm by completing the process on our portal.</p>
@@ -197,8 +198,17 @@ class FrontendController extends BaseController
 
     public function enroll_tournament_payment($enroll_tournament_id)
     {
-        // echo "ok"; die;
+        $players_model = new Players_model();
         $enroll_tournament_model = new Enroll_tournament_model();
+
+        $sessionData = session()->get('loggedPlayerData');
+        if ($sessionData) {
+            $loggedplayerId = $sessionData['loggedplayerId'];
+        }
+        $player = $players_model->get($loggedplayerId);
+        $player_name = $player['first_name'];
+        $player_email = $player['email_address'];
+
         $find_tournament_id = $enroll_tournament_model->get($enroll_tournament_id);
         $payment_screenshot = $this->request->getFile('payment_screenshot');
         if ($payment_screenshot->isValid() && ! $payment_screenshot->hasMoved()) {
@@ -214,6 +224,28 @@ class FrontendController extends BaseController
         ];
         $result = $enroll_tournament_model->add($data, $enroll_tournament_id);
         if ($result === true) {
+            $email = \Config\Services::email();
+
+            // Set SMTP configuration (if not configured globally)
+            $email->setFrom('contact@agomps.com', 'AGOMPS');
+            $email->setTo($player_email);
+            $email->setSubject('Successfully Payment - Team Enrollment Confirmation');
+
+            // HTML message with embedded content
+            $email->setMessage('
+                <html>
+                <body>
+                    <h1>Team Enrollment Confirmation</h1>
+                    <p>Dear '.$player_name.',</p>
+                    <p>We are happy to confirm that your payment has been successfully processed, and your team has been officially enrolled in the <strong>AGOMPS Cricket T20 Tournament for Men</strong>!</p>
+                    <p>Our team is currently reviewing your provided details. We will verify everything shortly and notify you once everything is confirmed. We aim to ensure all details are accurate to provide a smooth tournament experience.</p>
+                    <p>If you have any questions or concerns in the meantime, feel free to contact us. Thank you for your cooperation and participation!</p>
+                    <br>
+                    <p>Best regards,</p>
+                    <p><strong>AGOMPS Team</strong></p>
+                </body>
+                </html>
+            ');
             return redirect()->to('enroll-tournament/' . $find_tournament_id['tournament_id'])->with('status', '<div class="alert alert-success" role="alert"> Thank you for successfully completing your payment and enrolling in the tournament. Your registration has been confirmed, and our team will be in touch with you shortly. </div>');
         } else {
             return redirect()->to('enroll-tournament/' . $find_tournament_id['tournament_id'])->with('status', '<div class="alert alert-danger" role="alert"> ' . $result . ' </div>');
