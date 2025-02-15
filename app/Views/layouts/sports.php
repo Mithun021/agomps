@@ -46,12 +46,13 @@ $sports_subcategory_model = new Sports_subcategory_model();
         position: absolute;
         left: 0;
         bottom: 0;
-        background-color: #FFF;
+        background-color:rgba(255, 255, 255, 0.58);
         width: 100%;
         color: #20d307;
         font-weight: bold;
         font-style: italic;
         font-size: 12px;
+        text-align: center;
     }
 
     .divider {
@@ -124,7 +125,7 @@ $sports_subcategory_model = new Sports_subcategory_model();
                                                             <img src="<?= base_url() ?>public/admin/uploads/invalid_image.jpg" alt="" class="card-img-top">
                                                         <?php endif; ?>
 
-                                                        <p class="winColor m-0"><i class="fa fa-trophy"></i> Win : <i class="fa fa-inr"></i> <?= $tournament['first_rank_price'] ?></p>
+                                                        <p class="winColor m-0"><i class="fa fa-trophy"></i> Winning Guarantee : <i class="fa fa-inr"></i> <?= $tournament['first_rank_price'] ?></p>
                                                     </div>
                                                     <div class="card-body py-1">
                                                         <div class="d-flex justify-content-between mb-1">
