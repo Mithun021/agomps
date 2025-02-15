@@ -6,10 +6,13 @@ use App\Models\Enroll_tournament_model;
 use App\Models\League_category_model;
 use App\Models\League_session_model;
 use App\Models\Sports_model;
+use App\Models\Sports_subcategory_model;
+
 $sports_model = new Sports_model();
 $league_category_model = new League_category_model();
 $league_session_model = new League_session_model();
 $enroll_tournament_model = new Enroll_tournament_model();
+$sports_subcategory_model = new Sports_subcategory_model();
 $sessionData = session()->get('loggedPlayerData');
 if ($sessionData) {
     $loggedplayerId = $sessionData['loggedplayerId'];
@@ -98,7 +101,7 @@ if ($sessionData) {
                                             <hr>
                                             <p class="m-0">League : <b><?= $league_session_model->get($tournaments['league_session_id'])['league_name'] ?? '' ?></b></p>
                                             <p class="m-0">Sports : <b><?= $sports_model->get($tournaments['sports_id'])['name'] ?? '' ?></b></p>
-                                            <p class="m-0">League Category : <b></b></p>
+                                            <p class="m-0">Tournament : <b><?= $tournaments['league_for'] ?> <?= $sports_subcategory_model->get($tournaments['sport_subcategory'])['sub_category_name'] ?? '' ?></b></p>
                                             <p class="site-button button-sm radius-sm m-t5"><b>Registration fee : Rs. <?= $tournaments['registration_fee'] ?></b></p>
                                             <?= $tournaments['description'] ?? '' ?>
                                             <h4>Winner Team Rank, Price & Trophy</h4>
