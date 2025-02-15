@@ -80,7 +80,36 @@ if ($sessionData) {
                         }
                         ?>
                         <div class="card-header p-0"><img src="<?= base_url() ?>public/assets/images/background/registration.jpg" alt=""></div>
-
+                        <!-- id="teamRegisterationForm" -->
+                        <?php if ($sessionData) { ?>
+                            <?php if (isset($tournaments)) { ?>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12">
+                                            <h3>Tournament Details</h3>
+                                            <hr>
+                                            <p class="m-0">League : <b><?= $active_league['league_name'] ?></b></p>
+                                            <p class="m-0">Sports : <b><?= $sports['name'] ?></b></p>
+                                            <p class="m-0">League Category : <b><?= $league['name'] . "(" . $league['league_for'] . ")" ?></b></p>
+                                            <p class="site-button button-sm radius-sm m-t5"><b>Registration fee : Rs. <?= $tournament_price ?></b></p>
+                                            <?= $tournaments['description'] ?? '' ?>
+                                            <h4>Winner Team Rank, Price & Trophy</h4>
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <td>Rank</td>
+                                                        <td>Price</td>
+                                                        <td>Trophy</td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
