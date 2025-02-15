@@ -202,6 +202,7 @@ class FrontendController extends BaseController
         $sports_subcategory_model = new Sports_subcategory_model();
         $players_model = new Players_model();
         $enroll_tournament_model = new Enroll_tournament_model();
+        $tournament_model = new Tournament_model();
 
         $sessionData = session()->get('loggedPlayerData');
         if ($sessionData) {
@@ -210,14 +211,14 @@ class FrontendController extends BaseController
         
         $find_tournament_id = $enroll_tournament_model->get($enroll_tournament_id);
 
-        print_r($find_tournament_id); die;
+        $tournaments = $tournament_model->get($find_tournament_id['tournament_id']);
 
         $player = $players_model->get($loggedplayerId);
         $player_name = $player['first_name'];
         $player_email = $player['email_address'];
-        $sport = $sports_model->get($find_tournament_id['sports_id'])['name'] ?? '';
-        $sport_subcat = $sports_subcategory_model->get($find_tournament_id['sport_subcategory'])['sub_category_name'] ?? '';
-        $game_for = $find_tournament_id['league_for'];
+        $sport = $sports_model->get($tournaments['sports_id'])['name'] ?? '';
+        $sport_subcat = $sports_subcategory_model->get($tournaments['sport_subcategory'])['sub_category_name'] ?? '';
+        $game_for = $tournaments['league_for'];
 
         $payment_screenshot = $this->request->getFile('payment_screenshot');
         if ($payment_screenshot->isValid() && ! $payment_screenshot->hasMoved()) {
