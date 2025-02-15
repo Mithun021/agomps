@@ -108,11 +108,15 @@ $sports_subcategory_model = new Sports_subcategory_model();
                                         foreach ($tournament as $key => $tournament) { ?>
                                             <div class="col-lg-4 col-md-6">
                                                 <div class="card p-0">
-                                                    <?php if (!empty($tournament['featured_image']) && file_exists('public/admin/uploads/tournament/' . $tournament['featured_image'])): ?>
-                                                        <img src="<?= base_url() ?>public/admin/uploads/tournament/<?= $tournament['featured_image'] ?>" alt="" class="card-img-top">
-                                                    <?php else: ?>
-                                                        <img src="<?= base_url() ?>public/admin/uploads/invalid_image.jpg" alt="" class="card-img-top">
-                                                    <?php endif; ?>
+                                                    <div class="image_with_price">
+                                                        <?php if (!empty($tournament['featured_image']) && file_exists('public/admin/uploads/tournament/' . $tournament['featured_image'])): ?>
+                                                            <img src="<?= base_url() ?>public/admin/uploads/tournament/<?= $tournament['featured_image'] ?>" alt="" class="card-img-top">
+                                                        <?php else: ?>
+                                                            <img src="<?= base_url() ?>public/admin/uploads/invalid_image.jpg" alt="" class="card-img-top">
+                                                        <?php endif; ?>
+
+                                                        <p class="winColor m-0"><i class="fa fa-trophy"></i> Win : <i class="fa fa-inr"></i> <?= $tournament['first_rank_price'] ?></p>
+                                                    </div>
                                                     <div class="card-body py-1">
                                                         <div class="d-flex justify-content-between mb-1">
                                                             <p class="joinColor m-0"><i class="fa fa-user-plus"></i> Join : <i class="fa fa-inr"></i>
@@ -138,8 +142,6 @@ $sports_subcategory_model = new Sports_subcategory_model();
                                                             </p>
 
                                                             <p class="tournamentDateColor m-0"><i class="fa fa-calendar"></i> End : <?php echo date("d-M-y", strtotime($league_session['end_date'])); ?></p>
-
-                                                            <p class="winColor m-0"><i class="fa fa-trophy"></i> Win : <i class="fa fa-inr"></i> <?= $tournament['first_rank_price'] ?></p>
                                                         </div>
                                                         <hr class="divider m-0">
                                                         <h5 class="card-title text-center"><?= $tournament['league_for'] ?? '#NA' ?> <?= $sports_subcategory_model->get($tournament['sport_subcategory'])['sub_category_name'] ?? '' ?> <?= $value['name'] ?></h5>
