@@ -165,9 +165,10 @@ $find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayer
                                     </div>
                                 </div>
 
-                                <form id="teamRegisterationForm" method="post" action="<?= base_url() ?>enroll-tournament/<?= $tournament_id ?>" enctype="multipart/form-data">
+                                
                                     <div class="card-body">
                                         <div class="row">
+                                        <form id="teamRegisterationForm" method="post" action="<?= base_url() ?>enroll-tournament/<?= $tournament_id ?>" enctype="multipart/form-data">
                                             <div class="col-lg-12 col-md-12">
                                                 <input type="text" class="form-controller" name="player_id" value="<?= $loggedplayerId ?>">
                                                 <hr>
@@ -222,6 +223,8 @@ $find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayer
                                             <div class="col-lg-12 col-md-12">
                                                 <button type="submit" class="btn site-button">Submit</button>
                                             </div>
+                                            
+                                </form>
                                             <?php }else{ if(empty($find_tournament_id['payment_status'])){ ?>
                                                 <form action="<?= base_url() ?>enroll_tournament_payment/<?= $find_tournament_id['id'] ?> ?>" method="post" enctype="multipart/form-data">
                                                     <div class="card-body">
@@ -253,7 +256,6 @@ $find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayer
                                             <?php }else{ ?> <div class="card-body"><button type="button" class="btn site-button">Tournament Already Enrolled</button></div> <?php } } ?>
                                         </div>
                                     </div>
-                                </form>
 
 
                             <?php } ?> <!-- end check tournament condition -->
