@@ -119,7 +119,7 @@ $find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayer
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12">
-                                            <h3>Tournament Details <?= $find_tournament_id['id'] ?></h3>
+                                            <h3>Tournament Details <?php if($find_tournament_id){ echo $find_tournament_id['id']; } ?></h3>
                                             <hr>
                                             <p class="m-0">League : <b><?= $league_session_model->get($tournaments['league_session_id'])['league_name'] ?? '' ?></b></p>
                                             <p class="m-0">Sports : <b><?= $sports_model->get($tournaments['sports_id'])['name'] ?? '' ?></b></p>
