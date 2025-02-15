@@ -2,6 +2,14 @@
 <?= $this->section("body-content"); ?>
 <?= view('layouts/breadcumbs') ?>
 <?php
+use App\Models\Enroll_tournament_model;
+use App\Models\League_category_model;
+use App\Models\League_session_model;
+use App\Models\Sports_model;
+$sports_model = new Sports_model();
+$league_category_model = new League_category_model();
+$league_session_model = new League_session_model();
+$enroll_tournament_model = new Enroll_tournament_model();
 $sessionData = session()->get('loggedPlayerData');
 if ($sessionData) {
     $loggedplayerId = $sessionData['loggedplayerId'];
@@ -88,10 +96,10 @@ if ($sessionData) {
                                         <div class="col-lg-12 col-md-12">
                                             <h3>Tournament Details</h3>
                                             <hr>
-                                            <p class="m-0">League : <b><?= $active_league['league_name'] ?></b></p>
-                                            <p class="m-0">Sports : <b><?= $sports['name'] ?></b></p>
-                                            <p class="m-0">League Category : <b><?= $league['name'] . "(" . $league['league_for'] . ")" ?></b></p>
-                                            <p class="site-button button-sm radius-sm m-t5"><b>Registration fee : Rs. <?= $tournament_price ?></b></p>
+                                            <p class="m-0">League : <b><?= $tournaments['league_session_id'] ?></b></p>
+                                            <p class="m-0">Sports : <b><?= $tournaments['sports_id'] ?></b></p>
+                                            <p class="m-0">League Category : <b></b></p>
+                                            <p class="site-button button-sm radius-sm m-t5"><b>Registration fee : Rs. <?= $tournaments['registration_fee'] ?></b></p>
                                             <?= $tournaments['description'] ?? '' ?>
                                             <h4>Winner Team Rank, Price & Trophy</h4>
                                             <table>

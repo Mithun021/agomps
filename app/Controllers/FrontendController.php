@@ -46,8 +46,9 @@ class FrontendController extends BaseController
             $result = $players_model->add($data);
             if ($result === true) {
                 // Assuming the user ID is generated after insertion, so you can fetch it like this (if auto-incremented).
-                $userid = $players_model->getInsertID();  // Or however you retrieve the user ID
-                return redirect()->to('user-registration')->with('status', 
+                //$userid = $players_model->getInsertID();  // Or however you retrieve the user ID
+                return redirect()->to('user-registration')->with(
+                    'status',
                     '<div class="alert alert-success" role="alert"> 
                         <h4>Thank you for registering. <br> Below are your login credentials: <br> 
                         User ID: ' . $userid . '<br> 
@@ -55,7 +56,8 @@ class FrontendController extends BaseController
                     </div>'
                 );
             } else {
-                return redirect()->to('user-registration')->with('status', 
+                return redirect()->to('user-registration')->with(
+                    'status',
                     '<div class="alert alert-danger" role="alert"> 
                         <h4>' . $result . ' </h4>
                     </div>'
@@ -98,26 +100,26 @@ class FrontendController extends BaseController
             // print_r($data['enroll_tournament']); die;
             return view('enroll-tournament', $data);
         } else if ($this->request->is('post')) {
-           
         }
     }
 
-    public function enroll_tournament_payment($sports_id, $league_id){
+    public function enroll_tournament_payment($sports_id, $league_id)
+    {
         $enroll_tournament_model = new Enroll_tournament_model();
         $tournament_id = $this->request->getPost('tournament_id');
         $payment_screenshot = $this->request->getFile('payment_screenshot');
         if ($payment_screenshot->isValid() && ! $payment_screenshot->hasMoved()) {
-            $payment_screenshotImageName = "payment".$payment_screenshot->getRandomName();
-            $payment_screenshot->move(ROOTPATH . 'public/assets/images/payment', $payment_screenshotImageName);    
-        }else{
-         $payment_screenshotImageName = "";
+            $payment_screenshotImageName = "payment" . $payment_screenshot->getRandomName();
+            $payment_screenshot->move(ROOTPATH . 'public/assets/images/payment', $payment_screenshotImageName);
+        } else {
+            $payment_screenshotImageName = "";
         }
         $data = [
             'payment_screenshot' => $payment_screenshotImageName,
             'enroll_payment' => $this->request->getPost('tournament_payment'),
             'payment_status' => 1
         ];
-        $result = $enroll_tournament_model->add($data,$tournament_id);
+        $result = $enroll_tournament_model->add($data, $tournament_id);
         if ($result === true) {
             return redirect()->to('enroll-tournament/' . $sports_id . "/" . $league_id)->with('status', '<div class="alert alert-success" role="alert"> Thank you for successfully completing your payment and enrolling in the tournament. Your registration has been confirmed, and our team will be in touch with you shortly. </div>');
         } else {
