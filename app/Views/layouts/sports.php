@@ -130,6 +130,7 @@ $sports_subcategory_model = new Sports_subcategory_model();
                                                                     if (!empty($discount_registration_fee) && $discount_registration_fee < $registration_fee) {
                                                                         $tournament_price = $discount_registration_fee;
                                                                     }
+                                                                    echo $tournament_price;
                                                                 }
                                                                 ?>
                                                             </p>
