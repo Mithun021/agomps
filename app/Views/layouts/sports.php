@@ -46,12 +46,12 @@ $sports_subcategory_model = new Sports_subcategory_model();
         position: absolute;
         left: 0;
         bottom: 0;
-        background-color:rgba(54, 173, 227, 0.58);
+        background-color:rgba(255, 255, 255, 0.58);
         width: 100%;
-        color: #20d307;
+        color: #7307d3;
         font-weight: bold;
         font-style: italic;
-        font-size: 12px;
+        font-size: 14px;
         text-align: center;
     }
 
