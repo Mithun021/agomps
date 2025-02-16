@@ -21,14 +21,14 @@ $investment_model = new Investment_model();
                         <div class="row">
                         <?php foreach ($investment as $key => $value) { ?>
                             <div class="col-md-6 col-lg-4">
-                                <div class="card p-0">
+                                <div class="card p-0 mb-3">
                                     <?php if (!empty($value['featured_image']) && file_exists('public/admin/uploads/investment/' . $value['featured_image'])): ?>
                                         <img src="<?= base_url() ?>public/admin/uploads/investment/<?= $value['featured_image'] ?>" alt="" class="card-img-top">
                                     <?php else: ?>
                                         <img src="<?= base_url() ?>public/admin/uploads/invalid_image.jpg" alt="" class="card-img-top">
                                     <?php endif; ?>
                                     <div class="card-body">
-                                        <h5 class="card-title"><?= $value['title'] ?></h5>
+                                        <h5 class="card-title"><?= $value['title'] ?> - <?= $value['min_amount'] ?> Investment</h5>
                                         <div class="d-flex justify-content-between">
                                             <p class="card-text m-0 fw-bold">Invest : <?= $value['min_amount'] ?></p>
                                             <p class="card-text m-0 fw-bold">Profit : <?= $value['expected_return'] ?></p>  
