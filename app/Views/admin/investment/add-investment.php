@@ -144,7 +144,7 @@
             }
 
             $('#expected_return').val(expectedReturn.toFixed(2) * invest_duration);
-            $('#expected_profit').val(expectedProfit.toFixed(2));
+            $('#expected_profit').val(expectedProfit.toFixed(2) * invest_duration);
         }
 
         // Trigger calculation on input change
