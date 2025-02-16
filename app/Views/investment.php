@@ -22,7 +22,7 @@ $investment_model = new Investment_model();
                         <?php foreach ($investment as $key => $value) { ?>
                             <div class="col-md-6 col-lg-4">
                                 <div class="card p-0">
-                                    <?php if (!empty($value['featured_image']) && file_exists('public/admin/uploads/investment/' . $tournament['featured_image'])): ?>
+                                    <?php if (!empty($value['featured_image']) && file_exists('public/admin/uploads/investment/' . $value['featured_image'])): ?>
                                         <img src="<?= base_url() ?>public/admin/uploads/investment/<?= $value['featured_image'] ?>" alt="" class="card-img-top">
                                     <?php else: ?>
                                         <img src="<?= base_url() ?>public/admin/uploads/invalid_image.jpg" alt="" class="card-img-top">
