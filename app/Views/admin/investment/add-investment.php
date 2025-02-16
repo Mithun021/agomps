@@ -113,6 +113,9 @@
                             $('#profit').val(response.profit);
                         }else{
                             $('#profit').val('Fixed');
+                            $('#expected_return').val('');
+                            $('#expected_profit').val('');
+                            $('#min_amount').val('');
                         }
                         calculateProfit();
                     } else {
