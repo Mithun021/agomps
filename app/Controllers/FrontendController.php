@@ -269,6 +269,12 @@ class FrontendController extends BaseController
         }
     }
 
+    public function investment()
+    {
+        $data = ['title' => 'Investment'];
+        return view('investment', $data);
+    }
+
     public function privacy_policy()
     {
         $data = ['title' => 'Privacy Policy'];
