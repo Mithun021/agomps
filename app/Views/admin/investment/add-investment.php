@@ -35,7 +35,8 @@
                         </div>
                         <div class="form-group col-lg-4">
                             <span>Profit(%)</span>
-                            <input type="number" class="form-control" id="profit" name="profit" required>
+                            <input type="number" class="form-control" id="profit" name="profit" readonly required>
+                            <input type="number" class="form-control" id="invest_duration" name="invest_duration" readonly required>
                         </div>
                         <div class="form-group col-lg-4">
                             <span>Minimum Investment Amount</span>
@@ -101,7 +102,13 @@
                 success: function (response) {
                     console.log(response.profit);
                     if (response) {
-                        $('#profit').val(response.profit);
+                        $('#invest_duration').val(response.duration)
+                        profit_per = response.profit
+                        if(!empty(profit_per)){
+                            $('#profit').val(response.profit);
+                        }else{
+                            $('#profit').val('Fixed');
+                        }
                     } else {
                         $('#profit').val('');
                     }
