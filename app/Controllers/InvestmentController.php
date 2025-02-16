@@ -27,8 +27,8 @@ class InvestmentController extends BaseController
             $data = [
                 'title' => $this->request->getPost('title'),
                 'description' => $this->request->getPost('description'),
-                'plan_type_id' => $this->request->getPost('plan_type_id'),
-                'duration_id' => $this->request->getPost('duration_id'),
+                'plan_type_id' => $this->request->getPost('plan_type'),
+                'duration_id' => $this->request->getPost('duration'),
                 'profit' => $this->request->getPost('profit'),
                 'invest_duration' => $this->request->getPost('invest_duration'),
                 'durantion_type' => $this->request->getPost('durantion_type'),
