@@ -128,7 +128,7 @@ class FrontendController extends BaseController
         if ($this->request->is('get')) {
             $title['title'] = 'Home';
             if(!isset($sessionData)){
-                session()->setFlashdata('alert', '<div class="alert alert-success" role="alert">Account not found! Please log in again.</div>');
+                session()->setFlashdata('alert', '<div class="alert alert-success" role="alert">Account not found! Please log in you account first.</div>');
                 return view('index',$title);
             }
 
