@@ -33,10 +33,10 @@ $routes->group('admin',['filter'=>'adminLogin'], static function($routes){
     $routes->match(['get','post'],'league-category','LeagueController::league_category');
     $routes->match(['get','post'],'teams','AdminController::teams');
 
-    $routes->match(['get','post'],'investment-list','AdminController::investment_list');
-    $routes->match(['get','post'],'add-investment','AdminController::add_investment');
-    $routes->match(['get','post'],'investment-plan','AdminController::investment_plan');
-    $routes->match(['get','post'],'investment-duration','AdminController::investment_duration');
+    $routes->match(['get','post'],'investment-list','InvestmentController::investment_list');
+    $routes->match(['get','post'],'add-investment','InvestmentController::add_investment');
+    $routes->match(['get','post'],'investment-plan','InvestmentController::investment_plan');
+    $routes->match(['get','post'],'investment-duration','InvestmentController::investment_duration');
 });
 $routes->get('admin/logout', 'AdminController::admin_logout');
 
