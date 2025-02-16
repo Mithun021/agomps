@@ -74,7 +74,7 @@ $investment_plan_model = new Investment_plan_model();
                             <td><?= ++$key ?></td>
                             <td><?= $investment_plan_model->get($value['investment_type_id'])['plan_type'] ?? '' ?></td>
                             <td><?= $value['duration'] ?> <?= $value['notes'] ?></td>
-                            <td><?php if($value['profit']){ echo $value['profit']."%"; }else{ "Fixed Deposit"; } ?> ?></td>
+                            <td><?php if(!empty($value['profit'])){ echo $value['profit']."%"; }else{ "Fixed Deposit"; } ?></td>
                             <td>
                                 <a href="<?= base_url() ?>admin/edit-investment-plan" class="btn btn-sm btn-circle btn-danger"><span class="fa fa-times"></span></a>
                                 <a href="<?= base_url() ?>admin/delete-investment-plan" class="btn btn-sm btn-circle btn-primary"><span class="fa fa-pencil"></span></a>
