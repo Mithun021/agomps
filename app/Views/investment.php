@@ -28,9 +28,13 @@ $investment_model = new Investment_model();
                                         <img src="<?= base_url() ?>public/admin/uploads/invalid_image.jpg" alt="" class="card-img-top">
                                     <?php endif; ?>
                                     <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        <h5 class="card-title"><?= $value['title'] ?></h5>
+                                        <div class="d-flex justify-content-between">
+                                            <p class="card-text">Invest : <?= $value['min_amount'] ?></p>
+                                            <p class="card-text">Profit : <?= $value['expected_return'] ?></p>  
+                                        </div>
+                                        <p class="card-text">Duration : <?= $value['invest_duration'] ?> <?= $value['durantion_type'] ?></p>
+                                        <a href="#" class="btn btn-primary">View Details</a>
                                     </div>
                                 </div>
                             </div>
