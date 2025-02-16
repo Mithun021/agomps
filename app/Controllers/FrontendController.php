@@ -126,6 +126,11 @@ class FrontendController extends BaseController
             $loggedplayerId = $sessionData['loggedplayerId'];
         }
         if ($this->request->is('get')) {
+
+            if(!isset($sessionData)){
+                return view('index');
+            }
+
             $data['tournaments'] = $tournament_model->get($tournament_id);
             // print_r($data['enroll_tournament']); die;
             return view('enroll-tournament', $data);
