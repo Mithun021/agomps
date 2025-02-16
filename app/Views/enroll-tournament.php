@@ -14,7 +14,7 @@ $sessionData = session()->get('loggedPlayerData');
 if ($sessionData) {
     $loggedplayerId = $sessionData['loggedplayerId'];
 }
-if(!isset($sessionData)){ ?>
+if(!isset($sessionData)){ $title['title'] = 'Home'; ?>
     <script type="text/javascript">
         alert('Session not found! Please log in again.');
     </script>
