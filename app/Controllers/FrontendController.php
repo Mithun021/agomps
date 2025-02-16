@@ -128,7 +128,7 @@ class FrontendController extends BaseController
         if ($this->request->is('get')) {
 
             if(!isset($sessionData)){
-                return view('index');
+                return view('index',$data);
             }
 
             $data['tournaments'] = $tournament_model->get($tournament_id);
