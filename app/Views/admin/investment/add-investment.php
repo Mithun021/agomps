@@ -86,6 +86,13 @@
             });
          })
     });
+    function calculateProfit() {
+        var minAmount = parseFloat($('#min_amount').val()) || 0;
+        var expectedReturn = parseFloat($('#expected_return').val()) || 0;
+        var profit = expectedReturn - minAmount;
+
+        $('#profit').val(profit > 0 ? profit.toFixed(2) : 0);
+    }
 </script>
 
 <?= $this->endSection() ?>
