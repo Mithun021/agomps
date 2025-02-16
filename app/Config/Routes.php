@@ -43,4 +43,4 @@ $routes->get('admin/logout', 'AdminController::admin_logout');
 $routes->post('findcity', 'UniversalController::findcity');
 $routes->post('fetch_sports_subcategory', 'UniversalController::fetch_sports_subcategory');
 $routes->get('test_mail', 'UniversalController::test_mail');
-$routes->get('getDuration', 'UniversalController::getDuration');
+$routes->post('getDuration', 'UniversalController::getDuration');
