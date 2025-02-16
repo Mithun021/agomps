@@ -59,6 +59,7 @@ class InvestmentController extends BaseController
             $data =[
                 'investment_type_id' => $this->request->getPost('plan_type'),
                 'duration' => $this->request->getPost('duration'),
+                'profit' => $this->request->getPost('profit') ?? NULL,
                 'notes' => $this->request->getPost('notes')
             ];
             $result = $investment_duration_model->add($data);
