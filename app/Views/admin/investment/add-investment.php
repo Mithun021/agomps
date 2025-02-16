@@ -35,7 +35,7 @@
                         </div>
                         <div class="form-group col-lg-4">
                             <span>Profit(%)</span>
-                            <input type="number" class="form-control" id="profit" name="profit" readonly required>
+                            <input type="number" class="form-control" id="profit" name="profit" required>
                         </div>
                         <div class="form-group col-lg-4">
                             <span>Minimum Investment Amount</span>
@@ -99,12 +99,12 @@
                 data: {duration_id : duration_id},
                 dataType: "json",
                 success: function (response) {
-                    console.log(response);
-                    if (response) {
-                        $('#profit').val(response.profit);
-                    } else {
-                        $('#profit').val('');
-                    }
+                    console.log(response.profit);
+                    // if (response) {
+                    //     $('#profit').val(response.profit);
+                    // } else {
+                    //     $('#profit').val('');
+                    // }
                 }
             });
          })
