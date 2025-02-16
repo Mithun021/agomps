@@ -30,6 +30,10 @@
         public function getActiveData() {
             return $this->where('status', 1)->findAll();
         }
+
+        public function get_by_plan($plan_id) {
+            return $this->where('status', 1)->where('plan_type_id',$plan_id)->findAll();
+        }
         
     }
 ?>
