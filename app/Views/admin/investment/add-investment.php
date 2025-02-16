@@ -99,7 +99,7 @@
                 data: {duration_id : duration_id},
                 dataType: "json",
                 success: function (response) {
-                    console.log(response); return false;
+                    console.log(response);
                     if (response.length > 0) {
                         $('#profit').empty();
                         $('#profit').val(response.profit);
