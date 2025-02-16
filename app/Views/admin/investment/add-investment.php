@@ -14,7 +14,7 @@
             <form action="<?= base_url() ?>admin/add-investment" method="post" enctype="multipart/form-data">
                 <div class="card-body">
                     <div class="row">
-                        <div class="form-group col-d-4m">
+                        <div class="form-group col-md-4">
                             <span>Investment Type</span>
                             <select class="form-control" name="plan_type" required>
                                 <option value="">--Select--</option>
