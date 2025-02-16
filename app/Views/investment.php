@@ -29,8 +29,8 @@ $investment_model = new Investment_model();
                                     <?php endif; ?>
                                     <div class="card-body">
                                         <h5 class="card-title"><?= $value['title'] ?> - <?= $value['min_amount'] ?> Investment</h5>
-                                        <hr>
-                                        <div class="d-flex justify-content-between">
+                                        <hr class="m-0">
+                                        <div class="d-flex justify-content-between m-0">
                                             <p class="card-text m-0 fw-bold text-danger"><i class="fa fa-bullhorn"></i> Invest : <i class="fa fa-inr"></i><?= $value['min_amount'] ?></p>
                                             <p class="card-text m-0 fw-bold"><i class="fa fa-money"></i> Profit : <i class="fa fa-inr"></i><?= $value['expected_return'] ?></p>  
                                         </div>
