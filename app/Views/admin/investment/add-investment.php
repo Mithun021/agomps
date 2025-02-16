@@ -100,11 +100,11 @@
                 dataType: "json",
                 success: function (response) {
                     console.log(response.profit);
-                    // if (response) {
-                    //     $('#profit').val(response.profit);
-                    // } else {
-                    //     $('#profit').val('');
-                    // }
+                    if (response) {
+                        $('#profit').val(response.profit);
+                    } else {
+                        $('#profit').val('');
+                    }
                 }
             });
          })
