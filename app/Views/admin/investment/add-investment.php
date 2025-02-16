@@ -102,7 +102,7 @@
                     console.log(response); return false;
                     if (response.length > 0) {
                         $('#profit').empty();
-                        
+                        $('#profit').val(response.profit);
                     }else{
                         $('#profit').empty();
                     }
