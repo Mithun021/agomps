@@ -111,6 +111,7 @@
                         }else{
                             $('#profit').val('Fixed');
                         }
+                        calculateProfit();
                     } else {
                         $('#profit').val('');
                     }
@@ -120,21 +121,28 @@
 
 
 
-         $('#min_amount').on('input', function () {
-            var min_amount = parseFloat($(this).val()) || 0;
+         function calculateProfit() {
+            var minAmount = parseFloat($('#min_amount').val()) || 0;
             var profit = $('#profit').val();
-            
-            if (profit === "Fixed") {
-                $('#expected_profit').val(min_amount);
-                $('#expected_return').val(min_amount + min_amount);
-            } else {
-                var profit_per = parseFloat(profit) || 0;
-                var expected_profit = (min_amount * profit_per) / 100;
-                var expected_return = min_amount + expected_profit;
+            var expectedReturn = 0;
+            var expectedProfit = 0;
 
-                $('#expected_profit').val(expected_profit.toFixed(2));
-                $('#expected_return').val(expected_return.toFixed(2));
+            if (profit === "Fixed") {
+                expectedReturn = parseFloat($('#expected_return').val()) || 0;
+                expectedProfit = expectedReturn - minAmount;
+            } else if (!isNaN(profit) && profit !== "") {
+                profit = parseFloat(profit);
+                expectedReturn = minAmount + (minAmount * (profit / 100));
+                expectedProfit = expectedReturn - minAmount;
             }
+
+            $('#expected_return').val(expectedReturn.toFixed(2));
+            $('#expected_profit').val(expectedProfit.toFixed(2));
+        }
+
+        // Trigger calculation on input change
+        $('#min_amount, #expected_return').on('input', function () {
+            calculateProfit();
         });
 
 
