@@ -35,7 +35,7 @@ class InvestmentController extends BaseController
                 'min_amount' => $this->request->getPost('min_amount'),
                 'expected_return' => $this->request->getPost('expected_return'),
                 'expected_profit' => $this->request->getPost('expected_profit'),
-                'expected_profit' => $featured_imageImageName,
+                'featured_image' => $featured_imageImageName,
                 'status' => $this->request->getPost('status'),
             ];
             $result = $investment_model->add($data);
