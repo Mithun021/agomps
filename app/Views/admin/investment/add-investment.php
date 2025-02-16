@@ -100,11 +100,10 @@
                 dataType: "json",
                 success: function (response) {
                     console.log(response);
-                    if (response.length > 0) {
-                        $('#profit').empty();
+                    if (response) {
                         $('#profit').val(response.profit);
-                    }else{
-                        $('#profit').empty();
+                    } else {
+                        $('#profit').val('');
                     }
                 }
             });
