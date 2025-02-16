@@ -26,8 +26,8 @@
             return $result;
         }
 
-        public function getActiveData() {
-            return $this->where('status', 1)->findAll();
+        public function get_by_plan_id($id) {
+            return $this->where('investment_type_id', $id)->findAll();
         }
         
     }

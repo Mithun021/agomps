@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\Investment_duration_model;
 use App\Models\Sports_model;
 use App\Models\Sports_subcategory_model;
 use App\Models\State_city_model;
@@ -19,6 +20,13 @@ class UniversalController extends BaseController
         $sports_subcategory_model = new Sports_subcategory_model();
         $sports_id = $this->request->getPost('sports_id');
         $data = $sports_subcategory_model->find_sports($sports_id);
+        return $this->response->setJSON($data);
+    }
+
+    public function getDuration(){
+        $investment_duration_model = new Investment_duration_model();
+        $plan_type = $this->request->getPost('plan_type');
+        $data = $investment_duration_model->get_by_plan_id($plan_type);
         return $this->response->setJSON($data);
     }
 

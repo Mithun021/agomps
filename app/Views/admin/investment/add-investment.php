@@ -20,7 +20,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <span>Investment Type</span>
-                            <select class="form-control" name="plan_type" required>
+                            <select class="form-control" name="plan_type" id="plan_type" required>
                                 <option value="">--Select--</option>
                                 <?php foreach ($investment_plan as $key => $value) { ?>
                                     <option value="<?= $value['id'] ?>"><?= $value['plan_type'] ?></option>
@@ -29,7 +29,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <span>Investment Duration</span>
-                            <select class="form-control" name="duration" required>
+                            <select class="form-control" name="duration"  id="duration" required>
                                 <option value="">--Select--</option>
                             </select>
                         </div>
@@ -45,6 +45,10 @@
                             <span>Expected Profit</span>
                             <input type="text" class="form-control" id="profit" name="profit" required>
                         </div>
+                        <div class="form-group col-lg-12">
+                            <span>Featured Image</span>
+                            <input type="file" class="form-control" name="featured_image" required>
+                        </div>
                     </div>
                 </div>
                 <div class="card-footer">
@@ -58,7 +62,27 @@
 <script src="<?= base_url() ?>public/admin/js/jquery.min.js"></script>
 
 <script>
-
+    $(document).ready(function () {
+        $('#plan_type').on('change',function () { 
+            var plan_type = $(this).val();
+            $.ajax({
+                type: "post",
+                url: "<?= base_url() ?>getDuration",
+                data: {plan_type : plan_type},
+                dataType: "json",
+                success: function (response) {
+                    console.log(response); return false;
+                    if (response) {
+                        $('#duration').empty();
+                        $('#duration').append('<option>--Select--</option>');
+                    }else{
+                        $('#duration').empty();
+                        $('#duration').append('<option>--Duration not found--</option>');
+                    }
+                }
+            });
+         })
+    });
 </script>
 
 <?= $this->endSection() ?>
