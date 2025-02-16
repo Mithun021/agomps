@@ -29,9 +29,10 @@ $investment_model = new Investment_model();
                                     <?php endif; ?>
                                     <div class="card-body">
                                         <h5 class="card-title"><?= $value['title'] ?> - <?= $value['min_amount'] ?> Investment</h5>
+                                        <hr>
                                         <div class="d-flex justify-content-between">
-                                            <p class="card-text m-0 fw-bold text-danger"><i class="fa fa-bullhorn"></i> Invest : <?= $value['min_amount'] ?></p>
-                                            <p class="card-text m-0 fw-bold"><i class="fa fa-money"></i> Profit : <?= $value['expected_return'] ?></p>  
+                                            <p class="card-text m-0 fw-bold text-danger"><i class="fa fa-bullhorn"></i> Invest : <i class="fa fa-inr"></i><?= $value['min_amount'] ?></p>
+                                            <p class="card-text m-0 fw-bold"><i class="fa fa-money"></i> Profit : <i class="fa fa-inr"></i><?= $value['expected_return'] ?></p>  
                                         </div>
                                         <p class="card-text m-0 fw-bold text-success"><i class="fa fa-clock-o"></i> Duration : <?= $value['invest_duration'] ?> <?= $value['durantion_type'] ?></p>
                                         <a href="#" class="btn btn-primary">View Details</a>
