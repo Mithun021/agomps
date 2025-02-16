@@ -34,6 +34,10 @@
                             </select>
                         </div>
                         <div class="form-group col-lg-4">
+                            <span>Profit(%)</span>
+                            <input type="number" class="form-control" id="profit" name="profit" readonly required>
+                        </div>
+                        <div class="form-group col-lg-4">
                             <span>Minimum Investment Amount</span>
                             <input type="number" class="form-control" id="min_amount" name="min_amount" oninput="calculateProfit()" required>
                         </div>
@@ -41,11 +45,11 @@
                             <span>Expected Return Amount</span>
                             <input type="text" class="form-control" id="expected_return" name="expected_return" oninput="calculateProfit()" required>
                         </div>
-                        <div class="form-group col-lg-4">
+                        <div class="form-group col-lg-6">
                             <span>Expected Profit</span>
                             <input type="text" class="form-control" id="profit" name="profit" required>
                         </div>
-                        <div class="form-group col-lg-12">
+                        <div class="form-group col-lg-6">
                             <span>Featured Image</span>
                             <input type="file" class="form-control" name="featured_image" required>
                         </div>
