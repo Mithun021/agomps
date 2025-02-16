@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\Enroll_tournament_model;
 use App\Models\Enroll_tournament_players_model;
+use App\Models\Investment_plan_model;
 use App\Models\League_category_model;
 use App\Models\League_session_model;
 use App\Models\Players_model;
@@ -271,7 +272,9 @@ class FrontendController extends BaseController
 
     public function investment()
     {
-        $data = ['title' => 'Investment'];
+        $investment_plan_model = new Investment_plan_model();
+        $investment_plan = $investment_plan_model->get();
+        $data = ['title' => 'Investment','investment_plan' =>  $investment_plan];
         return view('investment', $data);
     }
 
