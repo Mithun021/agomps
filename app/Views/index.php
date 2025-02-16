@@ -1,3 +1,9 @@
+<?php if (session()->getFlashdata('alert')): ?>
+    <script type="text/javascript">
+        alert('<?php echo session()->getFlashdata('alert'); ?>');
+    </script>
+<?php endif; ?>
+
 <?= $this->extend("layouts/master") ?>
 <?= $this->section("body-content"); ?>
 <?= view('layouts/slider') ?>
