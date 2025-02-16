@@ -80,7 +80,7 @@
                         $('#duration').empty();
                         $('#duration').html('<option>--Select--</option>');
                         $.each(response, function(index, duration) {
-                            $('#duration').append('<option value="' + duration.duration + '">' + duration.duration + '</option>');
+                            $('#duration').append('<option value="' + duration.id + '">' + duration.duration + " - " +  duration.notes + '</option>');
                         });
                     }else{
                         $('#duration').empty();
@@ -88,15 +88,30 @@
                     }
                 }
             });
-         })
-    });
-    function calculateProfit() {
-        var minAmount = parseFloat($('#min_amount').val()) || 0;
-        var expectedReturn = parseFloat($('#expected_return').val()) || 0;
-        var profit = expectedReturn - minAmount;
+         });
 
-        $('#profit').val(profit > 0 ? profit.toFixed(2) : 0);
-    }
+        //  Find Profit Percentage -------------------
+        $('#duration').on('change',function () { 
+            var duration_id = $(this).val();
+            $.ajax({
+                type: "post",
+                url: "<?= base_url() ?>getprofit",
+                data: {duration_id : duration_id},
+                dataType: "json",
+                success: function (response) {
+                    console.log(response); return false;
+                    if (response.length > 0) {
+                        $('#profit').empty();
+                        
+                    }else{
+                        $('#profit').empty();
+                    }
+                }
+            });
+         })
+
+    });
+    
 </script>
 
 <?= $this->endSection() ?>

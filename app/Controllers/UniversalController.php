@@ -30,6 +30,13 @@ class UniversalController extends BaseController
         return $this->response->setJSON($data);
     }
 
+    public function getprofit(){
+        $investment_duration_model = new Investment_duration_model();
+        $duration_id = $this->request->getPost('duration_id');
+        $data = $investment_duration_model->get($duration_id);
+        return $this->response->setJSON($data);
+    }
+
     public function test_mail(){
         $email = \Config\Services::email();
 
