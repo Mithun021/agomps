@@ -130,6 +130,7 @@
          function calculateProfit() {
             var minAmount = parseFloat($('#min_amount').val()) || 0;
             var profit = $('#profit').val();
+            var invest_duration = $('#invest_duration').val();
             var expectedReturn = 0;
             var expectedProfit = 0;
 
@@ -142,7 +143,7 @@
                 expectedProfit = expectedReturn - minAmount;
             }
 
-            $('#expected_return').val(expectedReturn.toFixed(2));
+            $('#expected_return').val(expectedReturn.toFixed(2) * invest_duration);
             $('#expected_profit').val(expectedProfit.toFixed(2));
         }
 
