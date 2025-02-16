@@ -9,8 +9,10 @@ class InvestmentController extends BaseController
 {
     public function add_investment()
     {
+        $investment_plan_model = new Investment_plan_model();
         $data = ['title' => 'Add Investment'];
         if ($this->request->is('get')) {
+            $data['investment_plan'] = $investment_plan_model->get();
             return view('admin/investment/add-investment', $data);
         } else if ($this->request->is('post')) {
 
