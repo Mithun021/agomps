@@ -143,8 +143,8 @@
                 expectedProfit = expectedReturn - minAmount;
             }
 
-            $('#expected_return').val(expectedReturn.toFixed(2) * invest_duration);
-            $('#expected_profit').val(expectedProfit.toFixed(2) * invest_duration);
+            $('#expected_return').val(expectedReturn.toFixed(2) * invest_duration.toFixed(2));
+            $('#expected_profit').val(expectedProfit.toFixed(2) * invest_duration.toFixed(2));
         }
 
         // Trigger calculation on input change
