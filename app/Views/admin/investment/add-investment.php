@@ -35,7 +35,7 @@
                         </div>
                         <div class="form-group col-lg-4">
                             <span>Profit(%)</span>
-                            <input type="number" class="form-control" id="profit" name="profit" readonly required>
+                            <input type="text" class="form-control" id="profit" name="profit" readonly required>
                             <input type="number" class="form-control" id="invest_duration" name="invest_duration" readonly required>
                         </div>
                         <div class="form-group col-lg-4">
@@ -100,7 +100,7 @@
                 data: {duration_id : duration_id},
                 dataType: "json",
                 success: function (response) {
-                    console.log(response.profit);
+                    // console.log(response.profit);
                     if (response) {
                         $('#invest_duration').val(response.duration)
                         profit_per = response.profit
