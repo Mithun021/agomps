@@ -49,7 +49,7 @@
                         </div>
                         <div class="form-group col-lg-6">
                             <span>Expected Profit</span>
-                            <input type="text" class="form-control" id="profit" name="profit" required>
+                            <input type="text" class="form-control" id="expected_profit" name="expected_profit" required>
                         </div>
                         <div class="form-group col-lg-6">
                             <span>Featured Image</span>
@@ -149,7 +149,7 @@
             console.log(adjusted_duration);
         }
 
-        $('#profit').val(expected_profit.toFixed(2));
+        $('#expected_profit').val(expected_profit.toFixed(2));
     }
 
 
