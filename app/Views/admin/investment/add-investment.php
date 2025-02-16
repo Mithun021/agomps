@@ -36,7 +36,7 @@
                         <div class="form-group col-lg-4">
                             <span>Profit(%)</span>
                             <input type="text" class="form-control" id="profit" name="profit" readonly required>
-                            <input type="number" class="form-control" id="invest_duration" name="invest_duration" readonly required>
+                            <input type="text" class="form-control" id="invest_duration" name="invest_duration" readonly required>
                         </div>
                         <div class="form-group col-lg-4">
                             <span>Minimum Investment Amount</span>
@@ -44,7 +44,7 @@
                         </div>
                         <div class="form-group col-lg-4">
                             <span>Expected Return Amount</span>
-                            <input type="text" class="form-control" id="expected_return" name="expected_return" oninput="calculateProfit()" required>
+                            <input type="text" class="form-control" id="expected_return" name="expected_return" required>
                         </div>
                         <div class="form-group col-lg-6">
                             <span>Expected Profit</span>
@@ -114,9 +114,42 @@
                     }
                 }
             });
-         })
+         });
 
     });
+
+    function calculateProfit() {
+        var planType = $('#plan_type').val();
+        var profit = $('#profit').val();
+        var minAmount = parseFloat($('#min_amount').val()) || 0;
+        var expectedReturn = parseFloat($('#expected_return').val()) || 0;
+        var investDuration = parseFloat($('#invest_duration').val()) || 0;
+
+        if (profit === "Fixed") {
+            // If profit is fixed, use minAmount and expectedReturn to determine expected profit
+            var expectedProfit = expectedReturn - minAmount;
+            $('#expected_profit').val(expectedProfit.toFixed(2));
+        } else {
+            // Convert profit percentage to decimal
+            var profitPercentage = parseFloat(profit) || 0;
+
+            if (planType == "1") { // Monthly
+                expectedReturn = minAmount + (minAmount * (profitPercentage / 100) * investDuration);
+            } else if (planType == "2") { // Yearly
+                expectedReturn = minAmount + (minAmount * (profitPercentage / 100) * (investDuration / 12));
+            } else if (planType == "3") { // Daily
+                expectedReturn = minAmount + (minAmount * (profitPercentage / 100) * (investDuration / 30));
+            }
+
+            var expectedProfit = expectedReturn - minAmount;
+            $('#expected_return').val(expectedReturn.toFixed(2));
+            $('#expected_profit').val(expectedProfit.toFixed(2));
+        }
+    }
+
+    // Attach event listeners for dynamic calculation
+    $('#min_amount, #expected_return, #profit, #invest_duration, #plan_type').on('input change', calculateProfit);
+
     
 </script>
 
