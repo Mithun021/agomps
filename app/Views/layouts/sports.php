@@ -27,14 +27,14 @@ $sports_subcategory_model = new Sports_subcategory_model();
     .joinColor {
         color: #0559db;
         font-weight: bold;
-        font-style: italic;
+        /* font-style: italic; */
         font-size: 12px;
     }
 
     .tournamentDateColor {
         color: #f42b0c;
         font-weight: bold;
-        font-style: italic;
+        /* font-style: italic; */
         font-size: 12px;
     }
 
@@ -50,7 +50,7 @@ $sports_subcategory_model = new Sports_subcategory_model();
         width: 100%;
         color: #7307d3;
         font-weight: bold;
-        font-style: italic;
+        /* font-style: italic; */
         font-size: 14px;
         text-align: center;
     }
