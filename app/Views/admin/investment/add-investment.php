@@ -111,7 +111,7 @@
                         }else{
                             $('#profit').val('Fixed');
                         }
-                        // calculateProfit();
+                        calculateProfit();
                     } else {
                         $('#profit').val('');
                     }
