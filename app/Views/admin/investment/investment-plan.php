@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-primary" type="submit">Add Sports Category</button>
+                    <button class="btn btn-primary" type="submit">Submit</button>
                 </div>
             </form>
         </div>
