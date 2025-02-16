@@ -12,14 +12,14 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#maps" aria-expanded="false" aria-controls="maps">
+            <a class="nav-link" data-toggle="collapse" href="#maps1" aria-expanded="false" aria-controls="maps1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-command link-icon">
                     <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path>
                 </svg>
                 <span class="menu-title">Tournaments</span>
                 <i class="ti-angle-right"></i>
             </a>
-            <div class="collapse" id="maps">
+            <div class="collapse" id="maps1">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/add-tournament">Add Tournaments</a></li>
                     <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/tournament-list">Tournaments List</a></li>
@@ -29,14 +29,14 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#maps" aria-expanded="false" aria-controls="maps">
+            <a class="nav-link" data-toggle="collapse" href="#maps2" aria-expanded="false" aria-controls="maps2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-command link-icon">
                     <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path>
                 </svg>
                 <span class="menu-title">Investment</span>
                 <i class="ti-angle-right"></i>
             </a>
-            <div class="collapse" id="maps">
+            <div class="collapse" id="maps2">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/add-investment">Add Investment</a></li>
                     <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/investment-list">Investment List</a></li>
@@ -46,14 +46,14 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#maps" aria-expanded="false" aria-controls="maps">
+            <a class="nav-link" data-toggle="collapse" href="#maps3" aria-expanded="false" aria-controls="maps3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-command link-icon">
                     <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path>
                 </svg>
                 <span class="menu-title">Master</span>
                 <i class="ti-angle-right"></i>
             </a>
-            <div class="collapse" id="maps">
+            <div class="collapse" id="maps3">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/game-category">Game Category</a></li>
                     <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/sports-category">Sports Category</a></li>
