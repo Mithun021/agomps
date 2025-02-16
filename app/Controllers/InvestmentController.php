@@ -56,7 +56,8 @@ class InvestmentController extends BaseController
         } else if ($this->request->is('post')) {
             $data =[
                 'investment_type_id' => $this->request->getPost('plan_type'),
-                'duration' => $this->request->getPost('duration')
+                'duration' => $this->request->getPost('duration'),
+                'notes' => $this->request->getPost('notes')
             ];
             $result = $investment_duration_model->add($data);
             if ($result === true) {

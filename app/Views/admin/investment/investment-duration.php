@@ -36,6 +36,10 @@ $investment_plan_model = new Investment_plan_model();
                         <span>Duration</span>
                         <input type="number" class="form-control" placeholder="1,2,3,4,5,6........" name="duration" min="1" step="1" required>
                     </div>
+                    <div class="form-group">
+                        <span>Notes</span>
+                        <input type="text" class="form-control" placeholder="year/month/days" name="notes" required>
+                    </div>
                 </div>
                 <div class="card-footer">
                     <button class="btn btn-primary" type="submit">Submit</button>
