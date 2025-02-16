@@ -14,7 +14,7 @@ $sessionData = session()->get('loggedPlayerData');
 if ($sessionData) {
     $loggedplayerId = $sessionData['loggedplayerId'];
 }else{
-    return redirect()->to('/');
+    return redirect()->to(base_url());
 }
 $sports_model = new Sports_model();
 $league_category_model = new League_category_model();
