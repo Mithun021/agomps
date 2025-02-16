@@ -104,7 +104,7 @@
                     if (response) {
                         $('#invest_duration').val(response.duration)
                         profit_per = response.profit
-                        if(!empty(profit_per)){
+                        if(profit_per && profit_per !== ""){
                             $('#profit').val(response.profit);
                         }else{
                             $('#profit').val('Fixed');
