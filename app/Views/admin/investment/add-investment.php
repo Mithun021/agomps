@@ -71,7 +71,7 @@
                 data: {plan_type : plan_type},
                 dataType: "json",
                 success: function (response) {
-                    console.log(response); return false;
+                    console.log(response);
                     if (response > 0) {
                         $('#duration').empty();
                         $('#duration').html('<option>--Select--</option>');
