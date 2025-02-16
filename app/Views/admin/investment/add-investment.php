@@ -72,7 +72,7 @@
                 dataType: "json",
                 success: function (response) {
                     console.log(response);
-                    if (response > 0) {
+                    if (response.length > 0) {
                         $('#duration').empty();
                         $('#duration').html('<option>--Select--</option>');
                         $.each(response, function(index, duration) {
