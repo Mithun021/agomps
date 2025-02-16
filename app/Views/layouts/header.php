@@ -6,6 +6,12 @@
     }
 ?>
 
+<?php
+    if (session()->getFlashdata('alert')) {
+        echo session()->getFlashdata('alert');
+    }
+?>
+
 <!DOCTYPE html>
 <!-- Meta -->
 <html lang="en">
