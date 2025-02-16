@@ -7,11 +7,13 @@
     <div class="container">
         <div class="section-content ">
             <div class="row col-set-block white-block m-lr0">
-                <div class="col-lg-12">
-                    <div class="dez-head-bx m-a-out m-b20 skew-triangle right-top">
-                        <h3 class="m-a0">Latest Match</h3>
+                <?php foreach ($investment_plan as $key => $plan) { ?>
+                    <div class="col-lg-12">
+                        <div class="dez-head-bx m-a-out m-b20 skew-triangle right-top">
+                            <h3 class="m-a0"><?= $plan['plan_type'] ?></h3>
+                        </div>
                     </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
     </div>
