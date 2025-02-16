@@ -127,10 +127,10 @@ class FrontendController extends BaseController
         }
         if ($this->request->is('get')) {
             $title['title'] = 'Home';
-            if(!isset($sessionData)){
-                session()->setFlashdata('alert', 'Session not found! Please log in again.');
-                return view('index',$title);
-            }
+            // if(!isset($sessionData)){
+            //     session()->setFlashdata('alert', 'Session not found! Please log in again.');
+            //     return view('index',$title);
+            // }
 
             $data['tournaments'] = $tournament_model->get($tournament_id);
             // print_r($data['enroll_tournament']); die;
