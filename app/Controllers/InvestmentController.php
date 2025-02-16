@@ -15,7 +15,18 @@ class InvestmentController extends BaseController
             $data['investment_plan'] = $investment_plan_model->get();
             return view('admin/investment/add-investment', $data);
         } else if ($this->request->is('post')) {
-
+            $featured_image = $this->request->getFile('featured_image');
+            if ($featured_image->isValid() && ! $featured_image->hasMoved()) {
+                $featured_imageImageName = rand(0, 9999) . $featured_image->getRandomName();
+                $featured_image->move(ROOTPATH . 'public/admin/uploads/investment', $featured_imageImageName);
+            } else {
+                $featured_imageImageName = "";
+            }
+            $data = [
+                'name' => $this->request->getPost('team_name'),
+                'logo' => $featured_imageImageName,
+                'status' => $this->request->getPost('status')
+            ];
         }
     }
     public function investment_list()

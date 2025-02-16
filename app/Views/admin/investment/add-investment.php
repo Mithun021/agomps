@@ -55,6 +55,10 @@
                             <span>Featured Image</span>
                             <input type="file" class="form-control" name="featured_image" required>
                         </div>
+                        <div class="form-group col-lg-12">
+                            <span>Description</span>
+                            <textarea class="form-control" name="description" id="summernote" required></textarea>
+                        </div>
                     </div>
                 </div>
                 <div class="card-footer">
