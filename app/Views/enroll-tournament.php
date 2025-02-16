@@ -14,13 +14,6 @@ $sessionData = session()->get('loggedPlayerData');
 if ($sessionData) {
     $loggedplayerId = $sessionData['loggedplayerId'];
 }
-if(!isset($sessionData)){ $title['title'] = 'Home'; ?>
-    <script type="text/javascript">
-        alert('Session not found! Please log in again.');
-    </script>
-<?php
-    return view('index',$title);
- }
 $sports_model = new Sports_model();
 $league_category_model = new League_category_model();
 $league_session_model = new League_session_model();
