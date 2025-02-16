@@ -34,7 +34,7 @@
     <div class="col-lg-8 g-0">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title m-0">Sports Category List</h4>
+                <h4 class="card-title m-0"><?= $title ?> List</h4>
             </div>
             <div class="card-body p-2">
                 <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
