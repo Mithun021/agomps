@@ -129,7 +129,7 @@ class FrontendController extends BaseController
             $title['title'] = 'Home';
             if(!isset($sessionData)){
                 session()->setFlashdata('alert', '<div class="alert alert-success" role="alert">Account not found! Please log in you account first.</div>');
-                return view('index',$title);
+                return redirect()->to('index');
             }
 
             $data['tournaments'] = $tournament_model->get($tournament_id);
