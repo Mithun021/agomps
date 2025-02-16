@@ -70,6 +70,9 @@
 <script>
     $(document).ready(function () {
         $('#plan_type').on('change',function () { 
+            $('#expected_return').val('');
+            $('#expected_profit').val('');
+            $('#min_amount').val('');
             var plan_type = $(this).val();
             $.ajax({
                 type: "post",
