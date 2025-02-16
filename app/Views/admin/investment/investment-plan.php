@@ -10,7 +10,7 @@
     <div class="col-lg-4 g-0">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title m-0">Add Sports Category</h4>
+                <h4 class="card-title m-0">Add <?= $title ?></h4>
             </div>
             <?php
             if (session()->getFlashdata('status')) {
@@ -20,24 +20,8 @@
             <form action="<?= base_url() ?>admin/investment-plan" method="post" enctype="multipart/form-data">
                 <div class="card-body">
                     <div class="form-group">
-                        <span>Sports Category Name</span>
-                        <input type="text" class="form-control" placeholder="Enter sports category name" name="sports_category_name" required>
-                    </div>
-                    <div class="form-group">
-                        <span>Sports Category Description</span>
-                        <!-- <textarea class="form-control" placeholder="Enter sports category description" name="sports_category_description" id="summernote"></textarea> -->
-                        <textarea class="form-control" placeholder="Enter sports category description" name="sports_category_description"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <span>Upload Image(JPG,PNG)</span>
-                        <input type="file" class="form-control" name="sports_category_image" accept=".png,.jpg" required>
-                    </div>
-                    <div class="form-group">
-                        <span>Status</span>
-                        <select class="form-control" name="sports_category_status" required>
-                            <option value="1">Active</option>
-                            <option value="0">Inactive</option>
-                        </select>
+                        <span>Plan Type</span>
+                        <input type="text" class="form-control" placeholder="Monthly,Yearly,Daily" name="plan_type" required>
                     </div>
                 </div>
                 <div class="card-footer">
@@ -57,14 +41,21 @@
                     <thead>
                         <tr>
                             <td>#</td>
-                            <td>File</td>
                             <td>Name</td>
-                            <td>Status</td>
                             <td>Action</td>
                         </tr>
                     </thead>
                     <tbody>
-                        
+                    <?php foreach ($investment_plan as $key => $value) { ?>
+                        <tr>
+                            <td><?= ++$key ?></td>
+                            <td><?= $value['plan_type'] ?></td>
+                            <td>
+                                <a href="<?= base_url() ?>admin/edit-investment-plan" class="btn btn-sm btn-circle btn-danger"><span class="fa fa-times"></span></a>
+                                <a href="<?= base_url() ?>admin/delete-investment-plan" class="btn btn-sm btn-circle btn-primary"><span class="fa fa-pencil"></span></a>
+                            </td>
+                        </tr>
+                    <?php } ?>
                     </tbody>
                 </table>
             </div>
