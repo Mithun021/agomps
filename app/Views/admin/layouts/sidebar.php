@@ -40,6 +40,8 @@
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/add-investment">Add Investment</a></li>
                     <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/investment-list">Investment List</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/investment-plan">Investment Plan</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>admin/investment-duration">Investment Duration</a></li>
 
                 </ul>
             </div>
