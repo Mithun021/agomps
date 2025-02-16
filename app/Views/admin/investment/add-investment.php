@@ -136,15 +136,16 @@
             var expected_profit = expected_return - min_amount;
         } else {
             var profit_percentage = parseFloat(profit) || 0;
+            console.log(profit_percentage);
 
-            // Adjust duration for yearly or monthly calculation
-            var adjusted_duration = (duration_type.toLowerCase() === 'year') ? invest_duration : invest_duration / 12;
+            // // Adjust duration for yearly or monthly calculation
+            // var adjusted_duration = (duration_type.toLowerCase() === 'year') ? invest_duration : invest_duration / 12;
 
-            // Calculate expected return based on profit percentage
-            expected_return = min_amount + (min_amount * (profit_percentage / 100) * adjusted_duration);
-            $('#expected_return').val(expected_return.toFixed(2));
+            // // Calculate expected return based on profit percentage
+            // expected_return = min_amount + (min_amount * (profit_percentage / 100) * adjusted_duration);
+            // $('#expected_return').val(expected_return.toFixed(2));
 
-            var expected_profit = expected_return - min_amount;
+            // var expected_profit = expected_return - min_amount;
         }
 
         $('#profit').val(expected_profit.toFixed(2));
