@@ -72,12 +72,15 @@
                 dataType: "json",
                 success: function (response) {
                     console.log(response); return false;
-                    if (response) {
+                    if (response > 0) {
                         $('#duration').empty();
-                        $('#duration').append('<option>--Select--</option>');
+                        $('#duration').html('<option>--Select--</option>');
+                        $.each(response, function(index, duration) {
+                            $('#duration').append('<option value="' + duration.duration + '">' + duration.duration + '</option>');
+                        });
                     }else{
                         $('#duration').empty();
-                        $('#duration').append('<option>--Duration not found--</option>');
+                        $('#duration').html('<option>--Duration not found--</option>');
                     }
                 }
             });
