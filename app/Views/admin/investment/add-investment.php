@@ -36,8 +36,8 @@
                         <div class="form-group col-lg-4">
                             <span>Profit(%)</span>
                             <input type="text" class="form-control" id="profit" name="profit" readonly required>
-                            <input type="text" class="form-control" id="invest_duration" name="invest_duration" readonly required>
-                            <input type="text" class="form-control" id="durantion_type" name="durantion_type" readonly required>
+                            <input type="hidden" class="form-control" id="invest_duration" name="invest_duration" readonly required>
+                            <input type="hidden" class="form-control" id="durantion_type" name="durantion_type" readonly required>
                         </div>
                         <div class="form-group col-lg-4">
                             <span>Minimum Investment Amount</span>
