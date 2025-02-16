@@ -45,7 +45,7 @@
                         </div>
                         <div class="form-group col-lg-4">
                             <span>Expected Return Amount</span>
-                            <input type="text" class="form-control" id="expected_return" name="expected_return" required>
+                            <input type="text" class="form-control" id="expected_return" name="expected_return" oninput="calculateProfit()" required>
                         </div>
                         <div class="form-group col-lg-6">
                             <span>Expected Profit</span>
@@ -111,12 +111,47 @@
                         }else{
                             $('#profit').val('Fixed');
                         }
+                        calculateProfit();
                     } else {
                         $('#profit').val('');
                     }
                 }
             });
          });
+
+
+
+    $('#min_amount, #expected_return').on('input', function () {
+        calculateProfit();
+    });
+
+    function calculateProfit() {
+        var min_amount = parseFloat($('#min_amount').val()) || 0;
+        var expected_return = parseFloat($('#expected_return').val()) || 0;
+        var profit = $('#profit').val();
+        var invest_duration = parseFloat($('#invest_duration').val()) || 1;
+        var duration_type = $('#durantion_type').val(); // Month or Year
+
+        if (profit === "Fixed") {
+            var expected_profit = expected_return - min_amount;
+        } else {
+            var profit_percentage = parseFloat(profit) || 0;
+
+            // Adjust duration for yearly or monthly calculation
+            var adjusted_duration = (duration_type.toLowerCase() === 'year') ? invest_duration : invest_duration / 12;
+
+            // Calculate expected return based on profit percentage
+            expected_return = min_amount + (min_amount * (profit_percentage / 100) * adjusted_duration);
+            $('#expected_return').val(expected_return.toFixed(2));
+
+            var expected_profit = expected_return - min_amount;
+        }
+
+        $('#profit').val(expected_profit.toFixed(2));
+    }
+
+
+
 
     });
 
