@@ -28,7 +28,7 @@ $investment_model = new Investment_model();
                                         <img src="<?= base_url() ?>public/admin/uploads/invalid_image.jpg" alt="" class="card-img-top">
                                     <?php endif; ?>
                                     <div class="card-body">
-                                        <h5 class="card-title"><?= $value['title'] ?> - <?= $value['min_amount'] ?> Investment</h5>
+                                        <h5 class="card-title"><?= $value['title'] ?> - <i class="fa fa-inr"></i> <?= $value['min_amount'] ?> Investment</h5>
                                         <hr class="m-0">
                                         <div class="d-flex justify-content-between m-0">
                                             <p class="card-text m-0 fw-bold text-danger"><i class="fa fa-bullhorn"></i> Invest : <i class="fa fa-inr"></i><?= $value['min_amount'] ?></p>
