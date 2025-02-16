@@ -14,7 +14,11 @@
             <form action="<?= base_url() ?>admin/add-investment" method="post" enctype="multipart/form-data">
                 <div class="card-body">
                     <div class="row">
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-lg-12">
+                            <span>Title</span>
+                            <input type="text" class="form-control" placeholder="Write heading title" name="title" required>
+                        </div>
+                        <div class="form-group col-md-6">
                             <span>Investment Type</span>
                             <select class="form-control" name="plan_type" required>
                                 <option value="">--Select--</option>
@@ -22,6 +26,24 @@
                                     <option value="<?= $value['id'] ?>"><?= $value['plan_type'] ?></option>
                                 <?php } ?>
                             </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <span>Investment Duration</span>
+                            <select class="form-control" name="duration" required>
+                                <option value="">--Select--</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <span>Minimum Investment Amount</span>
+                            <input type="number" class="form-control" id="min_amount" name="min_amount" oninput="calculateProfit()" required>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <span>Expected Return Amount</span>
+                            <input type="text" class="form-control" id="expected_return" name="expected_return" oninput="calculateProfit()" required>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <span>Expected Profit</span>
+                            <input type="text" class="form-control" id="profit" name="profit" required>
                         </div>
                     </div>
                 </div>
@@ -32,4 +54,11 @@
         </div>
     </div>
 </div>
+
+<script src="<?= base_url() ?>public/admin/js/jquery.min.js"></script>
+
+<script>
+
+</script>
+
 <?= $this->endSection() ?>
