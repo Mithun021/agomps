@@ -3,12 +3,14 @@
 namespace App\Controllers;
 
 use App\Models\Investment_duration_model;
+use App\Models\Investment_model;
 use App\Models\Investment_plan_model;
 
 class InvestmentController extends BaseController
 {
     public function add_investment()
     {
+        $investment_model = new Investment_model();
         $investment_plan_model = new Investment_plan_model();
         $data = ['title' => 'Add Investment'];
         if ($this->request->is('get')) {
@@ -23,10 +25,25 @@ class InvestmentController extends BaseController
                 $featured_imageImageName = "";
             }
             $data = [
-                'name' => $this->request->getPost('team_name'),
-                'logo' => $featured_imageImageName,
-                'status' => $this->request->getPost('status')
+                'title' => $this->request->getPost('title'),
+                'description' => $this->request->getPost('description'),
+                'plan_type_id' => $this->request->getPost('plan_type_id'),
+                'duration_id' => $this->request->getPost('duration_id'),
+                'profit' => $this->request->getPost('profit'),
+                'invest_duration' => $this->request->getPost('invest_duration'),
+                'durantion_type' => $this->request->getPost('durantion_type'),
+                'min_amount' => $this->request->getPost('min_amount'),
+                'expected_return' => $this->request->getPost('expected_return'),
+                'expected_profit' => $this->request->getPost('expected_profit'),
+                'expected_profit' => $featured_imageImageName,
+                'status' => $this->request->getPost('status'),
             ];
+            $result = $investment_model->add($data);
+            if ($result === true) {
+                return redirect()->to('admin/add-investment')->with('status', '<div class="alert alert-success" role="alert"> Data Add Successful </div>');
+            } else {
+                return redirect()->to('admin/add-investment')->with('status', '<div class="alert alert-danger" role="alert"> ' . $result . ' </div>');
+            }
         }
     }
     public function investment_list()

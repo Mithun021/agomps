@@ -5,7 +5,8 @@
     {
         protected $table         = 'investment';
         protected $primaryKey = 'id';
-        protected $allowedFields = ['plan_type'];
+        protected $allowedFields = ['title','description','plan_type_id','duration_id','profit','invest_duration','durantion_type','min_amount','expected_return','expected_profit','featured_image','status'];
+        protected $createdField  = 'created_at';
 
         public function add($data, $id = null) {
             if ($id != null) {

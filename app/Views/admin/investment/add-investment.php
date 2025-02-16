@@ -59,6 +59,13 @@
                             <span>Description</span>
                             <textarea class="form-control" name="description" id="summernote" required></textarea>
                         </div>
+                        <div class="form-group col-lg-12">
+                            <span>Status</span>
+                            <select class="form-control" name="status" required>
+                                <option value="1">Active</option>
+                                <option value="0">Inactive</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="card-footer">
