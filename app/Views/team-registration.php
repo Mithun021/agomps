@@ -138,7 +138,7 @@ $sports_subcategory_model = new Sports_subcategory_model();
                                                         <div class="d-flex justify-content-between mb-1">
                                                             <p class="joinColor m-0"><i class="fa fa-user-plus"></i> Join : <i class="fa fa-inr"></i>
                                                                 <?php
-                                                                if ($tournament['game_type'] == "Individual") {
+                                                                if ($tournament['game_type'] == "Single") {
                                                                     $registration_fee = $tournament['registration_fee'];
                                                                     $discount_registration_fee = $tournament['discount_registration_fee'];
                                                                     $tournament_price = $registration_fee;
