@@ -7,11 +7,24 @@
     <div class="container">
         <div class="section-content ">
             <div class="row col-set-block white-block m-lr0">
-                    <div class="col-lg-8">
-                        <div class="dez-head-bx m-a-out m-b20 skew-triangle right-top">
-                            <h3 class="m-a0"><?= $investment['title'] ?> - <i class="fa fa-inr"></i> <?= $investment['min_amount'] ?> Investment</h3>
-                        </div>
+                <div class="col-lg-8">
+                    <div class="dez-head-bx m-a-out m-b20 skew-triangle right-top">
+                        <h3 class="m-a0"><?= $investment['title'] ?> - <i class="fa fa-inr"></i> <?= $investment['min_amount'] ?> Investment</h3>
+                        <?php if (!empty($investment['featured_image']) && file_exists('public/admin/uploads/investment/' . $investment['featured_image'])): ?>
+                            <img src="<?= base_url() ?>public/admin/uploads/investment/<?= $investment['featured_image'] ?>" alt="" class="card-img-top">
+                        <?php else: ?>
+                            <img src="<?= base_url() ?>public/admin/uploads/invalid_image.jpg" alt="" class="card-img-top">
+                        <?php endif; ?>
+                        <p class="card-text m-0 fw-bold"><i class="fa fa-bullhorn"></i> Invest : <i class="fa fa-inr"></i><?= $investment['min_amount'] ?></p>
+                        <p class="card-text m-0 fw-bold"><i class="fa fa-money"></i> Profit : <i class="fa fa-inr"></i><?= $investment['expected_return'] ?> (<?= $investment['profit'] ?>)</p>  
+                        <p class="card-text m-0 fw-bold"><i class="fa fa-clock-o"></i> Duration : <?= $investment['invest_duration'] ?> <?= $value['durantion_type'] ?></p>
                     </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="advertisment">
+                        <img src="<?= base_url() ?>public/admin/uploads/advertisment/advertisment.jpg" alt="">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
