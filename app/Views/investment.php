@@ -35,7 +35,7 @@ $investment_model = new Investment_model();
                                             <p class="card-text m-0 fw-bold"><i class="fa fa-money"></i> Profit : <i class="fa fa-inr"></i><?= $value['expected_return'] ?></p>  
                                         </div>
                                         <p class="card-text m-0 fw-bold text-success"><i class="fa fa-clock-o"></i> Duration : <?= $value['invest_duration'] ?> <?= $value['durantion_type'] ?></p>
-                                        <a href="#" class="btn btn-primary">View Details</a>
+                                        <a href="<?= base_url() ?>investment-details/<?= $value['id'] ?>" class="btn btn-primary">View Details</a>
                                     </div>
                                 </div>
                             </div>
