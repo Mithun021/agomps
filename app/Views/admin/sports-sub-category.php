@@ -72,7 +72,7 @@ $sports_model = new Sports_model();
                     <?php foreach ($sports_subcat as $key => $value): ?>
                         <tr>
                             <td><?= ++$key ?></td>
-                            <td><?= $sports_model->get($value['id'])['name'] ?? ""  ?></td>
+                            <td><?= $sports_model->get($value['sports_id'])['name'] ?? ""  ?></td>
                             <td><?= $value['sub_category_name'] ?></td>
                             <td><?= ($value['status'] == "0") ? "<span class='badge badge-danger badge-pill'>Inactive</span>" : (($value['status'] == "1") ? "<span class='badge badge-success badge-pill'>Active</span>" : "") ?></td>
                             <td>
