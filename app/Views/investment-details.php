@@ -23,6 +23,13 @@
                         <hr>
                         <h4>Description</h4>
                         <?= $investment['description'] ?>
+
+                        <form action="<?= base_url() ?>investment-details/<?= $investment_id ?>" method="post">
+                            <input type="hidden" name="investment_id" value="<?= $investment_id ?>">
+                            <input type="hidden" name="user_id" value="<?= $user_id ?>">
+                            <button type="button" class="btn btn-primary">Apply Now</button>
+                        </form>
+
                     </div>
                 </div>
                 <div class="col-lg-4">
