@@ -10,6 +10,8 @@
                 <div class="col-lg-8">
                     <div class="dez-head-bx m-a-out m-b20 skew-triangle right-top">
                         <h3 class="m-a0"><?= $investment['title'] ?> - <i class="fa fa-inr"></i> <?= $investment['min_amount'] ?> Investment</h3>
+                    </div>
+                    <div class="investment-details">
                         <?php if (!empty($investment['featured_image']) && file_exists('public/admin/uploads/investment/' . $investment['featured_image'])): ?>
                             <img src="<?= base_url() ?>public/admin/uploads/investment/<?= $investment['featured_image'] ?>" alt="" class="card-img-top">
                         <?php else: ?>
