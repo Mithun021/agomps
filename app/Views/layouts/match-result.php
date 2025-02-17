@@ -31,7 +31,7 @@ $investment_model = new Investment_model();
      <div class="container">
          <div class="row col-set-block white-block">
              <!-- Center Section -->
-             <div class="col-sm-12 col-lg-8 col-12">
+             <div class="col-sm-12 col-lg-8 col-12 g-1">
                  <!-- Latest Match -->
                   <div class="dez-head-bx m-a-out m-b20 skew-triangle right-top">
                      <h3 class="m-a0">Smart Investment Strategies for Maximizing Profit</h3>
