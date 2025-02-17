@@ -65,7 +65,7 @@ $investment_model = new Investment_model();
                             </div>
                             <div class="row">
                             <?php foreach ($investment as $key => $value) { ?>
-                                <div class="col-md-6 col-lg-4">
+                                <div class="col-md-6 col-lg-6">
                                     <div class="card p-0 mb-3">
                                         <?php if (!empty($value['featured_image']) && file_exists('public/admin/uploads/investment/' . $value['featured_image'])): ?>
                                             <img src="<?= base_url() ?>public/admin/uploads/investment/<?= $value['featured_image'] ?>" alt="" class="card-img-top">
