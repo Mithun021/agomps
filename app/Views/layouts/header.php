@@ -162,9 +162,9 @@
                                     <li><a href="<?= base_url() ?>">Live Score</a></li>
                                     <li><a href="<?= base_url() ?>">Archives</a></li>
                                     <li><a href="<?= base_url() ?>">Teams</a></li>
+                                    <li><a href="<?= base_url() ?>investment">Investment</a></li>
                                     <li><a href="javascript:;">Registration<i class="fa fa-chevron-down"></i></a>
                                         <ul class="sub-menu">
-                                            <li><a href="<?= base_url() ?>investment">Investment</a></li>
                                             <li><a href="<?= base_url() ?>team-registration">Team Registration</a></li>
                                         </ul>
                                     </li>
