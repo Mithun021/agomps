@@ -205,7 +205,7 @@ $league_category_model = new League_category_model();
                 $('.individual_fee').prop("disabled",true);
                 $('.individual_fee').val("");
                 $('.team_fee').prop("disabled",false);
-            }else if (game_type == "Individual") {
+            }else if (game_type == "Single") {
                 $('.individual_fee').prop("disabled",false);
                 $('.team_fee').prop("disabled",true);
                 $('.team_fee').val("");
