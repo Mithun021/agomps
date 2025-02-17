@@ -176,7 +176,7 @@
                                             <li><a href="<?= base_url() ?>">Privacy Policy</a></li>
                                             <li><a href="<?= base_url() ?>">Career</a></li>
                                             <li><a href="<?= base_url() ?>">Photos</a></li>
-                                            <li><a href="<?= base_url() ?>">Contact Us</a></li>
+                                            <li><a href="<?= base_url() ?>contact-us">Contact Us</a></li>
                                             <li><a href="<?= base_url() ?>">News & Events</a></li>
                                         </ul>
                                     </li>

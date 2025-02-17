@@ -308,4 +308,9 @@ class FrontendController extends BaseController
         $data = ['title' => 'Refund Policy'];
         return view('refund-policy', $data);
     }
+    public function contact_us()
+    {
+        $data = ['title' => 'Contact US'];
+        return view('contact-us', $data);
+    }
 }

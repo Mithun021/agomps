@@ -20,6 +20,7 @@ $routes->match(['get','post'],'investment-details/(:num)', 'FrontendController::
 $routes->get('privacy-policy', 'FrontendController::privacy_policy');
 $routes->get('term-condition', 'FrontendController::term_condition');
 $routes->get('refund-policy', 'FrontendController::refund_policy');
+$routes->get('contact-us', 'FrontendController::contact_us');
 
 
 $routes->match(['get','post'],'admin/login', 'AdminController::admin_login');
