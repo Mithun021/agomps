@@ -143,7 +143,10 @@ $investment_model = new Investment_model();
                  <!-- Match Overview END -->
                  <!-- Our Gallery -->
                  <div class="dez-card bg-white">
-                     <div class="dez-head-bx m-a-out skew-triangle right-top">
+                    <div class="advertisment">
+                        <img src="<?= base_url() ?>public/admin/uploads/advertisment/advertisment.jpg" alt="">
+                    </div>
+                     <!-- <div class="dez-head-bx m-a-out skew-triangle right-top">
                          <h3 class="m-a0">Our Gallery</h3>
                      </div>
                      <div class="widget  widget_gallery  p-a20 border-1 border-light">
@@ -158,7 +161,7 @@ $investment_model = new Investment_model();
                              <li class="img-effect2"> <a href="javascript:void(0);"><img width="165" height="148" src="<?= base_url() ?>public/assets/images/gallery/small/pic8.jpg" alt=""></a> </li>
                              <li class="img-effect2"> <a href="javascript:void(0);"><img width="165" height="148" src="<?= base_url() ?>public/assets/images/gallery/small/pic9.jpg" alt=""></a> </li>
                          </ul>
-                     </div>
+                     </div> -->
                  </div>
                  <!-- Our Gallery END -->
                  
