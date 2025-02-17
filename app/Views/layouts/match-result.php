@@ -31,7 +31,7 @@ $investment_model = new Investment_model();
      <div class="container">
          <div class="row col-set-block white-block">
              <!-- Center Section -->
-             <div class="col-sm-12 col-lg-8 col-12 g-1">
+             <div class="col-sm-12 col-lg-8 col-12">
                  <!-- Latest Match -->
                   <div class="dez-head-bx m-a-out m-b20 skew-triangle right-top">
                      <h3 class="m-a0">Smart Investment Strategies for Maximizing Profit</h3>
@@ -79,7 +79,7 @@ $investment_model = new Investment_model();
                             </div>
                             <div class="row">
                             <?php foreach ($investment as $key => $value) { ?>
-                                <div class="col-md-6 col-lg-4">
+                                <div class="col-md-6 col-lg-4 p-1">
                                     <div class="card p-0 mb-3">
                                         <?php if (!empty($value['featured_image']) && file_exists('public/admin/uploads/investment/' . $value['featured_image'])): ?>
                                             <img src="<?= base_url() ?>public/admin/uploads/investment/<?= $value['featured_image'] ?>" alt="" class="card-img-top">
