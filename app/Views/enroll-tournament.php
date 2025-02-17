@@ -168,7 +168,7 @@ $find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayer
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12">
                                             <form id="teamRegisterationForm" method="post" action="<?= base_url() ?>enroll-tournament/<?= $tournament_id ?>" enctype="multipart/form-data">
-                                                <input type="text" class="form-controller" name="player_id" value="<?= $loggedplayerId ?>">
+                                                <input type="hidden" class="form-controller" name="player_id" value="<?= $loggedplayerId ?>">
                                                 <hr>
                                                 <?php if ($tournaments['game_type'] == "Team") { if (!$find_tournament_id) { ?>
                                                     <div class="form-group col-md-12">
