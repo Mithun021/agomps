@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\Enroll_tournament_model;
 use App\Models\Enroll_tournament_players_model;
+use App\Models\Investment_model;
 use App\Models\Investment_plan_model;
 use App\Models\League_category_model;
 use App\Models\League_session_model;
@@ -276,6 +277,18 @@ class FrontendController extends BaseController
         $investment_plan = $investment_plan_model->get();
         $data = ['title' => 'Investment','investment_plan' =>  $investment_plan];
         return view('investment', $data);
+    }
+
+    public function investment_details($id) {
+        $investment_model = new Investment_model();
+        $data = ['title' => 'Investment Datils', 'investment_id' => $id];
+        if ($this->request->is('get')) {
+            $data['investment'] = $investment_model->get($id);
+            return view('investment-details', $data);
+        }else if ($this->request->is('post')) {
+            # code...
+        }
+
     }
 
     public function privacy_policy()
