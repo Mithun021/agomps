@@ -101,7 +101,7 @@ $find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayer
                             <?php if (isset($tournaments)) { ?>
 
                                 <?php
-                                if ($tournaments['game_type'] == "Individual") {
+                                if ($tournaments['game_type'] == "Single") {
                                     $registration_fee = $tournaments['registration_fee'];
                                     $discount_registration_fee = $tournaments['discount_registration_fee'];
                                     $tournament_price = $registration_fee;
