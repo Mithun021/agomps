@@ -118,14 +118,14 @@
                             <div class="row justify-content-between">
                                 <div class="dez-topbar-left">
                                     <ul class="social-line text-center pull-right">
-                                        <li><a href="javascript:void(0);"><i class="fa fa-envelope-o"></i> <span> Companyname@mail.com </span> </a></li>
-                                        <li><a href="javascript:void(0);"><i class="fa fa-phone"></i> <span> (732) 803-010-03 </span> </a></li>
+                                        <li><a href="javascript:void(0);"><i class="fa fa-envelope-o"></i> <span> contact@agomps.com </span> </a></li>
+                                        <li><a href="javascript:void(0);"><i class="fa fa-phone"></i> <span> +91-9559034901 </span> </a></li>
                                     </ul>
                                 </div>
                                 <div class="dez-topbar-right social_media_btn">
                                     <ul class="social-line text-center pull-right">
-                                        <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-instagram"></a></li>
+                                        <li><a href="https://www.facebook.com/share/149rFeegUk/" class="fa fa-facebook"></a></li>
+                                        <li><a href="https://www.instagram.com/4465_agomps/?next=%2F4465_agomps%2F" class="fa fa-instagram"></a></li>
                                         <li><a href="javascript:void(0);" class="fa fa-youtube"></a></li>
                                         <li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
                                     </ul>
