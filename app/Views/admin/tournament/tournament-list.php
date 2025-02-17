@@ -43,7 +43,7 @@ $league_session_model = new League_session_model();
                                         <?php endif; ?>
                                     </td>
                                     <td><?= $league_session_model->get($value['league_session_id'])['league_name'] ?? '__' ?></td>
-                                    <td></td>
+                                    <td><?= $value['league_for'] ?> (<?= $value['game_type'] ?>)</td>
                                     <td><?= $sports_model->get($value['sports_id'])['name'] ?? '__' ?></td>
                                     <td><?= $value['registration_fee'] ?>/<?= $value['discount_registration_fee'] ?> (Dis. Amt.)</td>
                                     <td><?= $value['team_entry_fee'] ?></td>
