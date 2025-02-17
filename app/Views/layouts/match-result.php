@@ -11,6 +11,18 @@ $investment_plan_model = new Investment_plan_model();
 $investment_plan = $investment_plan_model->get();
 $investment_model = new Investment_model();
 ?>
+
+<style>
+    .investmentBox{
+        position: relative;
+    }
+    .investmentBox h5.card-title{
+        font-size: 14px !important;
+    }
+    .investmentBox p.card-text{
+        font-size: 12px;
+    }
+</style>
  
  <!-- Latest Result -->
  <div class="section-full bg-gray content-inner">
@@ -65,22 +77,22 @@ $investment_model = new Investment_model();
                             </div>
                             <div class="row">
                             <?php foreach ($investment as $key => $value) { ?>
-                                <div class="col-md-6 col-lg-6">
+                                <div class="col-md-6 col-lg-4">
                                     <div class="card p-0 mb-3">
                                         <?php if (!empty($value['featured_image']) && file_exists('public/admin/uploads/investment/' . $value['featured_image'])): ?>
                                             <img src="<?= base_url() ?>public/admin/uploads/investment/<?= $value['featured_image'] ?>" alt="" class="card-img-top">
                                         <?php else: ?>
                                             <img src="<?= base_url() ?>public/admin/uploads/invalid_image.jpg" alt="" class="card-img-top">
                                         <?php endif; ?>
-                                        <div class="card-body">
-                                            <h5 class="card-title" style="font-size: 18px;"><?= $value['title'] ?> - <i class="fa fa-inr"></i> <?= $value['min_amount'] ?> Investment</h5>
+                                        <div class="card-body investmentBox">
+                                            <h5 class="card-title"><?= $value['title'] ?> - <i class="fa fa-inr"></i> <?= $value['min_amount'] ?> Investment</h5>
                                             <hr class="m-0">
                                             <div class="d-flex justify-content-between m-0">
                                                 <p class="card-text m-0 fw-bold text-danger"><i class="fa fa-bullhorn"></i> Invest : <i class="fa fa-inr"></i><?= $value['min_amount'] ?></p>
                                                 <p class="card-text m-0 fw-bold"><i class="fa fa-money"></i> Profit : <i class="fa fa-inr"></i><?= $value['expected_return'] ?></p>  
                                             </div>
                                             <p class="card-text m-0 fw-bold text-success"><i class="fa fa-clock-o"></i> Duration : <?= $value['invest_duration'] ?> <?= $value['durantion_type'] ?></p>
-                                            <a href="<?= base_url() ?>investment-details/<?= $value['id'] ?>" class="btn btn-primary">View Details</a>
+                                            <a href="<?= base_url() ?>investment-details/<?= $value['id'] ?>" class="btn btn-sm btn-primary">View Details</a>
                                         </div>
                                     </div>
                                 </div>
