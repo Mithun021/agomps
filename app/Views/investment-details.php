@@ -20,6 +20,8 @@
                         <p class="card-text m-0 fw-bold"><i class="fa fa-bullhorn"></i> Invest : <i class="fa fa-inr"></i><?= $investment['min_amount'] ?></p>
                         <p class="card-text m-0 fw-bold"><i class="fa fa-money"></i> Profit : <i class="fa fa-inr"></i><?= $investment['expected_return'] ?> (<?php if (is_numeric($investment['profit'])) { echo $investment['profit']."%"; }else{ echo $investment['profit']; } ?>)</p>  
                         <p class="card-text m-0 fw-bold"><i class="fa fa-clock-o"></i> Duration : <?= $investment['invest_duration'] ?> <?= $investment['durantion_type'] ?></p>
+                        <hr>
+                        <h4>Description</h4>
                         <?= $investment['description'] ?>
                     </div>
                 </div>
