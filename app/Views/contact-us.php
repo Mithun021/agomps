@@ -75,7 +75,7 @@
                             <div class="icon-bx-xs bg-primary"> <a href="javascript:void(0);" class="icon-cell"><i class="ti-location-pin"></i></a> </div>
                             <div class="icon-content">
                                 <h6 class="text-uppercase m-tb0 dlab-tilte">Address:</h6>
-                                <p>123 West Street, Melbourne Victoria 3000 Australia</p>
+                                <p>Vill + Post : Seuta, Sitapur UP-261205</p>
                             </div>
                         </li>
                         <li class="icon-bx-wraper left  m-b30">
