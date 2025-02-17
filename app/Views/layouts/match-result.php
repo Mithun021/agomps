@@ -18,6 +18,8 @@ $investment_model = new Investment_model();
     }
     .investmentBox h5.card-title{
         font-size: 14px !important;
+        margin: 0;
+        padding: 0;
     }
     .investmentBox p.card-text{
         font-size: 12px;
