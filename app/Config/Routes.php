@@ -24,7 +24,8 @@ $routes->get('contact-us', 'FrontendController::contact_us');
 
 $routes->post('razorpay/success', 'Enroll_tournamentController::success');
 $routes->get('razorpay/failed', 'Enroll_tournamentController::failed');
-// $routes->post('verify-payment', 'PaymentController::verify_payment');
+$routes->post('verify-payment', 'Enroll_tournamentController::verify_payment');
+
 
 $routes->match(['get','post'],'admin/login', 'AdminController::admin_login');
 $routes->group('admin',['filter'=>'adminLogin'], static function($routes){
