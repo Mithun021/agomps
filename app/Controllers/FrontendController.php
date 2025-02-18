@@ -15,6 +15,7 @@ use App\Models\State_city_model;
 use App\Models\Tournament_model;
 use Exception;
 use Razorpay\Api\Api;
+helper('dotenv');
 
 class FrontendController extends BaseController
 {
