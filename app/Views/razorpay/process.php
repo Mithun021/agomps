@@ -29,7 +29,8 @@
                 var paymentData = {
                     razorpay_order_id: response.razorpay_order_id,
                     razorpay_payment_id: response.razorpay_payment_id,
-                    razorpay_signature: response.razorpay_signature
+                    razorpay_signature: response.razorpay_signature,
+                    enroll_tournament_id: "<?= $enroll_tournament_id ?>" // Pass tournament ID
                 };
 
                 // Submit payment data to verify_payment method

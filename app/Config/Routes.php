@@ -22,7 +22,7 @@ $routes->get('term-condition', 'FrontendController::term_condition');
 $routes->get('refund-policy', 'FrontendController::refund_policy');
 $routes->get('contact-us', 'FrontendController::contact_us');
 
-$routes->post('razorpay/success', 'Enroll_tournamentController::success');
+$routes->post('razorpay/success(:num)', 'Enroll_tournamentController::success/$1');
 $routes->get('razorpay/failed', 'Enroll_tournamentController::failed');
 $routes->post('verify-payment', 'Enroll_tournamentController::verify_payment');
 

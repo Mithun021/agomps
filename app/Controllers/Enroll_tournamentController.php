@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
@@ -58,7 +57,8 @@ class Enroll_tournamentController extends BaseController
                 'amount' => $this->request->getPost('tournament_payment'),
                 'key' => getenv('RAZORPAY_KEY'),
                 'player_email' => $player['email_address'],
-                'player_phone' => $player['mobile_number']
+                'player_phone' => $player['mobile_number'],
+                'enroll_tournament_id' => $enroll_tournament_id
             ]);
         } catch (Exception $e) {
             return redirect()->to('/error')->with('status', 'Error in Razorpay Order Creation');
@@ -74,6 +74,7 @@ class Enroll_tournamentController extends BaseController
         $razorpay_order_id = $this->request->getPost('razorpay_order_id');
         $razorpay_payment_id = $this->request->getPost('razorpay_payment_id');
         $razorpay_signature = $this->request->getPost('razorpay_signature');
+        $enroll_tournament_id = $this->request->getPost('enroll_tournament_id'); // Retrieve the ID
 
         $attributes = [
             'razorpay_order_id' => $razorpay_order_id,
@@ -89,10 +90,11 @@ class Enroll_tournamentController extends BaseController
                 'payment_status' => 1
             ];
             $enroll_tournament_model->updatePaymentStatus($razorpay_order_id, $updateData);
-            return view('razorpay/success');
+            return view('razorpay/success', ['enroll_tournament_id' => $enroll_tournament_id]); // Pass ID to success view
         } catch (Exception $e) {
             return view('razorpay/failed', ['error' => $e->getMessage()]);
         }
     }
 }
+
 ?>
