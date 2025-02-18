@@ -61,7 +61,7 @@
             <h1>Success!</h1>
             <p>Your action was completed successfully.</p>
             <button class="button" onclick="<?= base_url() ?>">Go Home</button>
-            <a href="#" target="_blank" rel="noopener noreferrer">Tournament is : <?= $enroll_tournament_id ?></a>
+            <!-- <a href="#" target="_blank" rel="noopener noreferrer">Tournament is : <?= ""//$enroll_tournament_id ?></a> -->
         </div>
     </div>
 </body>
