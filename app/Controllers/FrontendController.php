@@ -206,6 +206,7 @@ class FrontendController extends BaseController
 
     public function enroll_tournament_payment($enroll_tournament_id)
     {
+        echo getenv('RAZORPAY_KEY_ID'); die;
         $sports_model = new Sports_model();
         $sports_subcategory_model = new Sports_subcategory_model();
         $players_model = new Players_model();
@@ -224,6 +225,7 @@ class FrontendController extends BaseController
         $player = $players_model->get($loggedplayerId);
         $player_name = $player['first_name'];
         $player_email = $player['email_address'];
+        $player_phone = $player['mobile_number'];
         $sport = $sports_model->get($tournaments['sports_id'])['name'] ?? '';
         $sport_subcat = $sports_subcategory_model->get($tournaments['sport_subcategory'])['sub_category_name'] ?? '';
         $game_for = $tournaments['league_for'];
@@ -235,6 +237,7 @@ class FrontendController extends BaseController
         } else {
             $payment_screenshotImageName = "";
         }
+        $amount = $this->request->getPost('tournament_payment');
         $data = [
             'payment_screenshot' => $payment_screenshotImageName,
             'enroll_payment' => $this->request->getPost('tournament_payment'),
