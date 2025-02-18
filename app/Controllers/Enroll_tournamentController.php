@@ -85,9 +85,9 @@ exit;
                 'payment_status' => 1
             ];
             $enroll_tournament_model->updatePaymentStatus($razorpay_order_id, $updateData);
-            return view('payment_success');
+            return view('payment/success');
         } catch (Exception $e) {
-            return view('payment_failed', ['error' => $e->getMessage()]);
+            return view('payment/failed', ['error' => $e->getMessage()]);
         }
     }
 }
