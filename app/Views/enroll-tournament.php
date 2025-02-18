@@ -242,7 +242,7 @@ $find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayer
                                                             <div class="col-lg-4 col-md-4">
                                                                 <div class="form-group">
                                                                     <span>Registration Payment<span class="text-danger">*</span></span>
-                                                                    <input type="tel" name="tournament_payment" class="form-control" value="<?= $tournament_price ?>" required readonly>
+                                                                    <input type="tel" name="tournament_payment" class="form-control" value="<?= "1"//$tournament_price ?>" required readonly>
                                                                 </div>
                                                             </div>
 

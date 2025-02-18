@@ -13,6 +13,8 @@ use App\Models\Sports_model;
 use App\Models\Sports_subcategory_model;
 use App\Models\State_city_model;
 use App\Models\Tournament_model;
+use Exception;
+use Razorpay\Api\Api;
 
 class FrontendController extends BaseController
 {
@@ -206,7 +208,6 @@ class FrontendController extends BaseController
 
     public function enroll_tournament_payment($enroll_tournament_id)
     {
-        echo getenv('RAZORPAY_KEY_ID'); die;
         $sports_model = new Sports_model();
         $sports_subcategory_model = new Sports_subcategory_model();
         $players_model = new Players_model();
@@ -219,9 +220,8 @@ class FrontendController extends BaseController
         }
         
         $find_tournament_id = $enroll_tournament_model->get($enroll_tournament_id);
-
         $tournaments = $tournament_model->get($find_tournament_id['tournament_id']);
-
+        
         $player = $players_model->get($loggedplayerId);
         $player_name = $player['first_name'];
         $player_email = $player['email_address'];
@@ -229,49 +229,44 @@ class FrontendController extends BaseController
         $sport = $sports_model->get($tournaments['sports_id'])['name'] ?? '';
         $sport_subcat = $sports_subcategory_model->get($tournaments['sport_subcategory'])['sub_category_name'] ?? '';
         $game_for = $tournaments['league_for'];
-
-        $payment_screenshot = $this->request->getFile('payment_screenshot');
-        if ($payment_screenshot->isValid() && ! $payment_screenshot->hasMoved()) {
-            $payment_screenshotImageName = "payment" . $payment_screenshot->getRandomName();
-            $payment_screenshot->move(ROOTPATH . 'public/admin/uploads/payment', $payment_screenshotImageName);
-        } else {
-            $payment_screenshotImageName = "";
+        
+        $amount = $this->request->getPost('tournament_payment') * 100; // Convert to paise
+        
+        $api_key = getenv('RAZORPAY_KEY_ID');
+        $api_secret = getenv('RAZORPAY_SECRET_KEY');
+        
+        $api = new \Razorpay\Api\Api($api_key, $api_secret);
+        
+        try {
+            $order = $api->order->create([
+                'receipt' => "order_$enroll_tournament_id",
+                'amount' => $amount,
+                'currency' => 'INR',
+                'payment_capture' => 1
+            ]);
+        } catch (Exception $e) {
+            return redirect()->to('enroll-tournament/' . $find_tournament_id['tournament_id'])
+                ->with('status', '<div class="alert alert-danger">Payment failed: ' . $e->getMessage() . '</div>');
         }
-        $amount = $this->request->getPost('tournament_payment');
+        
         $data = [
-            'payment_screenshot' => $payment_screenshotImageName,
-            'enroll_payment' => $this->request->getPost('tournament_payment'),
-            'payment_status' => 1
+            'order_id' => $order['id'],
+            'enroll_payment' => $amount / 100, // Convert back to INR
+            'payment_status' => 0
         ];
-        $result = $enroll_tournament_model->add($data, $enroll_tournament_id);
-        if ($result === true) {
-            $email = \Config\Services::email();
-
-            // Set SMTP configuration (if not configured globally)
-            $email->setFrom('contact@agomps.com', 'AGOMPS');
-            $email->setTo($player_email);
-            $email->setSubject('Successfully Payment - Team Enrollment Confirmation');
-
-            // HTML message with embedded content
-            $email->setMessage('
-                <html>
-                <body>
-                    <strong>Team Enrollment Confirmation</strong>
-                    <p>Dear '.$player_name.',</p>
-                    <p>We are happy to confirm that your payment has been successfully processed, and your team has been officially enrolled in the <strong>AGOMPS '.$sport. ' ' . $sport_subcat .'Tournament for ' . $game_for .'</strong>!</p>
-                    <p>Our team is currently reviewing your provided details. We will verify everything shortly and notify you once everything is confirmed. We aim to ensure all details are accurate to provide a smooth tournament experience.</p>
-                    <p>If you have any questions or concerns in the meantime, feel free to contact us. Thank you for your cooperation and participation!</p>
-                    <br>
-                    <p>Best regards,</p>
-                    <p><strong>AGOMPS Team</strong></p>
-                </body>
-                </html>
-            ');
-            $email->send();
-            return redirect()->to('enroll-tournament/' . $find_tournament_id['tournament_id'])->with('status', '<div class="alert alert-success" role="alert"> Thank you for successfully completing your payment and enrolling in the tournament. Your registration has been confirmed, and our team will be in touch with you shortly. </div>');
-        } else {
-            return redirect()->to('enroll-tournament/' . $find_tournament_id['tournament_id'])->with('status', '<div class="alert alert-danger" role="alert"> ' . $result . ' </div>');
-        }
+        $enroll_tournament_model->add($data, $enroll_tournament_id);
+        
+        return view('razorpay_payment', [
+            'order_id' => $order['id'],
+            'amount' => $amount / 100,
+            'player_email' => $player_email,
+            'player_phone' => $player_phone,
+            'player_name' => $player_name,
+            'sport' => $sport,
+            'sport_subcat' => $sport_subcat,
+            'game_for' => $game_for,
+            'tournament_id' => $find_tournament_id['tournament_id']
+        ]);
     }
 
     public function investment()
