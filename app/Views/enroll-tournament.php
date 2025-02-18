@@ -228,7 +228,7 @@ $find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayer
                                                 <form action="<?= base_url() ?>enroll_tournament_payment/<?= $find_tournament_id['id'] ?> ?>" method="post" enctype="multipart/form-data">
                                                     <div class="card-body">
                                                         <div class="row">
-                                                            <div class="col-lg-4 col-md-4">
+                                                            <!-- <div class="col-lg-4 col-md-4">
                                                                 <div class="form-group">
                                                                     <img src="<?= base_url() ?>public/assets/images/background/payment_qr.jpg" alt="" class="payment_qrcode">
                                                                 </div>
@@ -238,7 +238,7 @@ $find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayer
                                                                     <label for="team_name">Attached Payment Screenshot after pay</label>
                                                                     <input type="file" class="form-control" name="payment_screenshot">
                                                                 </div>
-                                                            </div>
+                                                            </div> -->
                                                             <div class="col-lg-4 col-md-4">
                                                                 <div class="form-group">
                                                                     <span>Registration Payment<span class="text-danger">*</span></span>
