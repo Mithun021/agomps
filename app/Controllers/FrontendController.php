@@ -13,9 +13,6 @@ use App\Models\Sports_model;
 use App\Models\Sports_subcategory_model;
 use App\Models\State_city_model;
 use App\Models\Tournament_model;
-use Exception;
-use Razorpay\Api\Api;
-helper('dotenv');
 
 class FrontendController extends BaseController
 {
@@ -206,108 +203,6 @@ class FrontendController extends BaseController
 
         }
     }
-
-
-    public function enroll_tournament_payment($enroll_tournament_id)
-    {
-        // Load necessary models
-        $sports_model = new \App\Models\Sports_model();
-        $sports_subcategory_model = new \App\Models\Sports_subcategory_model();
-        $players_model = new \App\Models\Players_model();
-        $enroll_tournament_model = new \App\Models\Enroll_tournament_model();
-        $tournament_model = new \App\Models\Tournament_model();
-
-        // Get logged-in player session data
-        $sessionData = session()->get('loggedPlayerData');
-        if (!$sessionData) {
-            return redirect()->to('login')->with('status', '<div class="alert alert-danger">Please login to proceed.</div>');
-        }
-
-        $loggedplayerId = $sessionData['loggedplayerId'];
-
-        // Fetch tournament details
-        $find_tournament = $enroll_tournament_model->get($enroll_tournament_id);
-        if (!$find_tournament) {
-            return redirect()->to('tournaments')->with('status', '<div class="alert alert-danger">Invalid tournament.</div>');
-        }
-
-        $tournament = $tournament_model->get($find_tournament['tournament_id']);
-
-        // Fetch player details
-        $player = $players_model->get($loggedplayerId);
-        if (!$player) {
-            return redirect()->to('profile')->with('status', '<div class="alert alert-danger">Player not found.</div>');
-        }
-
-        $player_name = $player['first_name'];
-        $player_email = $player['email_address'];
-        $player_phone = $player['mobile_number'];
-
-        // Fetch sports details
-        $sport = $sports_model->get($tournament['sports_id'])['name'] ?? '';
-        $sport_subcat = $sports_subcategory_model->get($tournament['sport_subcategory'])['sub_category_name'] ?? '';
-        $game_for = $tournament['league_for'];
-
-        // Get the amount (converted to paise)
-        $amount = intval($this->request->getPost('tournament_payment')) * 100;
-
-        // Get Razorpay API credentials from .env
-        $api_key = getenv('RAZORPAY_KEY_ID');
-        $api_secret = getenv('RAZORPAY_SECRET_KEY');
-
-        // Initialize cURL
-        $url = 'https://api.razorpay.com/v1/orders';
-        $data = [
-            'amount' => $amount,
-            'currency' => 'INR',
-            'receipt' => "order_$enroll_tournament_id",
-            'payment_capture' => 1
-        ];
-
-        // Set up cURL options
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_USERPWD, $api_key . ':' . $api_secret);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-        curl_setopt($ch, CURLOPT_HTTPHEADER, [
-            'Content-Type: application/x-www-form-urlencoded'
-        ]);
-
-        // Execute cURL request
-        $response = curl_exec($ch);
-        curl_close($ch);
-
-        // Decode the JSON response from Razorpay
-        $order = json_decode($response, true);
-
-        if (isset($order['error'])) {
-            return redirect()->to('enroll-tournament/' . $find_tournament['tournament_id'])
-                ->with('status', '<div class="alert alert-danger">Payment failed: ' . $order['error']['description'] . '</div>');
-        }
-
-        // Save the Razorpay order details in the DB
-        $enroll_tournament_model->add([
-            'order_id' => $order['id'],
-            'enroll_payment' => $amount / 100, // Convert back to INR for DB
-            'payment_status' => 0
-        ], $enroll_tournament_id);
-
-        // Load Razorpay payment view
-        return view('razorpay_payment', [
-            'order_id' => $order['id'],
-            'amount' => $amount / 100, // Display in INR
-            'player_email' => $player_email,
-            'player_phone' => $player_phone,
-            'player_name' => $player_name,
-            'sport' => $sport,
-            'sport_subcat' => $sport_subcat,
-            'game_for' => $game_for,
-            'tournament_id' => $find_tournament['tournament_id']
-        ]);
-    }
-
-
 
     public function investment()
     {

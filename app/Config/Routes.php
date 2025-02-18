@@ -13,7 +13,7 @@ $routes->get('userlogout', 'AuthController::userlogout');
 $routes->match(['get','post'],'user-registration', 'FrontendController::user_registration');
 $routes->match(['get','post'],'team-registration', 'FrontendController::team_registration');
 $routes->get('select-league/(:num)', 'FrontendController::select_league/$1');
-$routes->match(['get','post'],'enroll-tournament/(:num)', 'FrontendController::enroll_tournament/$1');
+$routes->match(['get','post'],'enroll-tournament/(:num)', 'Enroll_tournamentController::enroll_tournament/$1');
 $routes->post('enroll_tournament_payment/(:num)','FrontendController::enroll_tournament_payment/$1');
 $routes->get('investment', 'FrontendController::investment');
 $routes->match(['get','post'],'investment-details/(:num)', 'FrontendController::investment_details/$1');
@@ -22,6 +22,9 @@ $routes->get('term-condition', 'FrontendController::term_condition');
 $routes->get('refund-policy', 'FrontendController::refund_policy');
 $routes->get('contact-us', 'FrontendController::contact_us');
 
+$routes->post('razorpay/success', 'Enroll_tournamentController::success');
+$routes->get('razorpay/failed', 'Enroll_tournamentController::failed');
+// $routes->post('verify-payment', 'PaymentController::verify_payment');
 
 $routes->match(['get','post'],'admin/login', 'AdminController::admin_login');
 $routes->group('admin',['filter'=>'adminLogin'], static function($routes){

@@ -5,7 +5,9 @@
     {
         protected $table         = 'enroll_tournament';
         protected $primaryKey = 'id';
-        protected $allowedFields = ['player_id','tournament_id','team_name','registration_status','payment_status','enroll_payment','payment_screenshot'];
+        protected $allowedFields = ['player_id','tournament_id','team_name','registration_status','payment_status','enroll_payment','payment_screenshot','razorpay_order_id','razorpay_payment_id','razorpay_signature'];
+
+        protected $createdField  = 'created_at';
 
         public function add($data, $id = null) {
             if ($id != null) {
@@ -41,6 +43,16 @@
                         ->where('registration_status',1)
                         ->first();
         }
+
+         // Update payment status and save Razorpay data after payment verification
+            public function updatePaymentStatus($order_id, $data)
+            {
+                return $this->where('razorpay_order_id', $order_id)
+                            ->set($data)
+                            ->update();
+            }
+
+           
         
     }
 ?>
