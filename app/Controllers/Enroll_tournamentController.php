@@ -15,6 +15,9 @@ class Enroll_tournamentController extends BaseController
 {
     public function enroll_tournament_payment($enroll_tournament_id)
     {
+        echo getenv('RAZORPAY_KEY');
+echo getenv('RAZORPAY_SECRET');
+exit;
         $enroll_tournament_model = new Enroll_tournament_model();
         $players_model = new Players_model();
         $tournament_model = new Tournament_model();
