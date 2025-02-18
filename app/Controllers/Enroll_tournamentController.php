@@ -15,13 +15,11 @@ class Enroll_tournamentController extends BaseController
 {
     public function enroll_tournament_payment($enroll_tournament_id)
     {
-//         echo getenv('RAZORPAY_KEY');
-// echo getenv('RAZORPAY_SECRET');
-// exit;
         $enroll_tournament_model = new Enroll_tournament_model();
         $players_model = new Players_model();
         $tournament_model = new Tournament_model();
         
+        // Check if the user is logged in
         $sessionData = session()->get('loggedPlayerData');
         if (!$sessionData) {
             return redirect()->to('/login')->with('status', 'Please log in to proceed.');
@@ -35,6 +33,7 @@ class Enroll_tournamentController extends BaseController
         // Razorpay API Configuration
         $api = new Api(getenv('RAZORPAY_KEY'), getenv('RAZORPAY_SECRET'));
         
+        // Razorpay Order Data
         $orderData = [
             'receipt' => 'order_rcptid_' . time(),
             'amount' => $this->request->getPost('tournament_payment') * 100, // Amount in paise
@@ -42,23 +41,28 @@ class Enroll_tournamentController extends BaseController
             'payment_capture' => 1 // Auto capture
         ];
         
-        $razorpayOrder = $api->order->create($orderData);
-        
-        // Save order details in DB
-        $data = [
-            'enroll_payment' => $this->request->getPost('tournament_payment'),
-            'payment_status' => 0,
-            'razorpay_order_id' => $razorpayOrder['id']
-        ];
-        $enroll_tournament_model->add($data, $enroll_tournament_id);
-        
-        return view('razorpay/process', [
-            'order_id' => $razorpayOrder['id'],
-            'amount' => $this->request->getPost('tournament_payment'),
-            'key' => getenv('RAZORPAY_KEY'),
-            'player_email' => $player['email_address'],
-            'player_phone' => $player['mobile_number']
-        ]);
+        try {
+            $razorpayOrder = $api->order->create($orderData);
+            
+            // Save order details in DB
+            $data = [
+                'enroll_payment' => $this->request->getPost('tournament_payment'),
+                'payment_status' => 0,
+                'razorpay_order_id' => $razorpayOrder['id']
+            ];
+            $enroll_tournament_model->add($data, $enroll_tournament_id);
+            
+            // Redirect to Razorpay payment page
+            return view('razorpay/process', [
+                'order_id' => $razorpayOrder['id'],
+                'amount' => $this->request->getPost('tournament_payment'),
+                'key' => getenv('RAZORPAY_KEY'),
+                'player_email' => $player['email_address'],
+                'player_phone' => $player['mobile_number']
+            ]);
+        } catch (Exception $e) {
+            return redirect()->to('/error')->with('status', 'Error in Razorpay Order Creation');
+        }
     }
 
     public function verify_payment()
@@ -91,3 +95,4 @@ class Enroll_tournamentController extends BaseController
         }
     }
 }
+?>
