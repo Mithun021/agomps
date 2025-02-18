@@ -60,7 +60,7 @@
         <div class="message-box">
             <h1>Success!</h1>
             <p>Your action was completed successfully.</p>
-            <button class="button" onclick="window.location.href='index.html'">Go Home</button>
+            <button class="button" onclick="<?= base_url() ?>">Go Home</button>
         </div>
     </div>
 </body>
