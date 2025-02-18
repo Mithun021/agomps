@@ -52,7 +52,7 @@ class Enroll_tournamentController extends BaseController
         ];
         $enroll_tournament_model->add($data, $enroll_tournament_id);
         
-        return view('process_payment', [
+        return view('razorpay/process', [
             'order_id' => $razorpayOrder['id'],
             'amount' => $this->request->getPost('tournament_payment'),
             'key' => getenv('RAZORPAY_KEY'),
@@ -85,9 +85,9 @@ class Enroll_tournamentController extends BaseController
                 'payment_status' => 1
             ];
             $enroll_tournament_model->updatePaymentStatus($razorpay_order_id, $updateData);
-            return view('payment/success');
+            return view('razorpay/success');
         } catch (Exception $e) {
-            return view('payment/failed', ['error' => $e->getMessage()]);
+            return view('razorpay/failed', ['error' => $e->getMessage()]);
         }
     }
 }
