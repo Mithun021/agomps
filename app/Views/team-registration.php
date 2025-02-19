@@ -158,7 +158,7 @@ $sports_subcategory_model = new Sports_subcategory_model();
                                                                 ?>
                                                             </p>
 
-                                                            <p class="tournamentDateColor m-0"><i class="fa fa-calendar"></i> End : <?php echo date("d-M-y", strtotime($league_session['end_date'])); ?></p>
+                                                            <p class="tournamentDateColor m-0"><i class="fa fa-calendar"></i> Reg. End : <?php echo date("d-M-y", strtotime($league_session['end_date'])); ?></p>
                                                         </div>
                                                         <hr class="divider m-0">
                                                         <h5 class="card-title text-center"><?= $tournament['league_for'] ?? '#NA' ?> <?= $sports_subcategory_model->get($tournament['sport_subcategory'])['sub_category_name'] ?? '' ?> <?= $value['name'] ?></h5>
