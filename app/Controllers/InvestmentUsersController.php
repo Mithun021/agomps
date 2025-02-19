@@ -18,6 +18,7 @@ class InvestmentUsersController extends BaseController
         $data = ['title' => 'Investment Details', 'investment_id' => $id];
 
         if ($this->request->getMethod() === 'get') {
+            echo "ok"; die;
             $data['investment'] = $investment_model->get($id);
             return view('investment-details', $data);
         } elseif ($this->request->getMethod() === 'post') {
