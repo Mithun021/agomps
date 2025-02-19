@@ -27,7 +27,7 @@
             "handler": function (response) {
                 var form = document.createElement('form');
                 form.method = 'POST';
-                form.action = '<?= base_url('verify-payment') ?>';
+                form.action = '<?= base_url('invest-verify-payment') ?>';
 
                 for (var key in response) {
                     var input = document.createElement('input');

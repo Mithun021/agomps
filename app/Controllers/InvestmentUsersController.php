@@ -81,7 +81,7 @@ class InvestmentUsersController extends BaseController
         $request = $this->request->getPost();
 
         if (!$request) {
-            return redirect()->to('investment/failed')->with('status', '<div class="alert alert-danger">Invalid Payment Attempt.</div>');
+            return redirect()->to('razorpay/investment/failed')->with('status', '<div class="alert alert-danger">Invalid Payment Attempt.</div>');
         }
 
         try {

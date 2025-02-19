@@ -26,6 +26,10 @@ $routes->post('razorpay/success(:num)', 'Enroll_tournamentController::success/$1
 $routes->get('razorpay/failed', 'Enroll_tournamentController::failed');
 $routes->post('verify-payment', 'Enroll_tournamentController::verify_payment');
 
+$routes->post('invest-verify-payment', 'InvestmentUsersController::verify_payment');
+$routes->get('razorpay/investment/failed', 'InvestmentUsersController::failed');
+$routes->get('razorpay/investment/failed', 'InvestmentUsersController::failed');
+
 
 $routes->match(['get','post'],'admin/login', 'AdminController::admin_login');
 $routes->group('admin',['filter'=>'adminLogin'], static function($routes){
