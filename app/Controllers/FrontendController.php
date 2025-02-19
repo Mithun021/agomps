@@ -212,18 +212,6 @@ class FrontendController extends BaseController
         return view('investment', $data);
     }
 
-    public function investment_details($id) {
-        $investment_model = new Investment_model();
-        $data = ['title' => 'Investment Datils', 'investment_id' => $id];
-        if ($this->request->is('get')) {
-            $data['investment'] = $investment_model->get($id);
-            return view('investment-details', $data);
-        }else if ($this->request->is('post')) {
-            # code...
-        }
-
-    }
-
     public function privacy_policy()
     {
         $data = ['title' => 'Privacy Policy'];

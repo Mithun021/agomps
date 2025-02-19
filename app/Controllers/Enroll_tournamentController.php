@@ -21,7 +21,7 @@ class Enroll_tournamentController extends BaseController
         // Check if the user is logged in
         $sessionData = session()->get('loggedPlayerData');
         if (!$sessionData) {
-            return redirect()->to('/login')->with('status', 'Please log in to proceed.');
+            return redirect()->to('/')->with('alert', 'Please log in to proceed.');
         }
         
         $loggedplayerId = $sessionData['loggedplayerId'];

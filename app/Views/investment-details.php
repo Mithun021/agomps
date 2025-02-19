@@ -25,8 +25,8 @@
                         <?= $investment['description'] ?>
 
                         <form action="<?= base_url() ?>investment-details/<?= $investment_id ?>" method="post">
-                            <input type="hidden" name="investment_id" value="<?= $investment_id ?>">
-                            <input type="hidden" name="user_id" value="<?= ""//$user_id ?>">
+                            <input type="text" name="investment_amount" value="<?= $investment['min_amount'] ?>" readonly>
+                            <input type="text" name="investment_id" value="<?= $investment_id ?>" readonly>
                             <button type="button" class="btn btn-primary">Apply Now</button>
                         </form>
 

@@ -60,7 +60,7 @@
         <div class="message-box">
             <h1>Oops! Something went wrong</h1>
             <p>Your action couldn't be completed. Please try again later.</p>
-            <button class="button" onclick="<?= base_url() ?>">Go Back</button>
+            <button class="button" onclick="window.location.href='<?= base_url() ?>'">Go Back</button>
         </div>
     </div>
 </body>
