@@ -65,7 +65,7 @@ class InvestmentUsersController extends BaseController
             $investment_users_model->add($data);
 
             // Redirect to payment page
-            return view('investment/process', [
+            return view('razorpay/investment/process', [
                 'key'         => getenv('RAZORPAY_KEY'),
                 'amount'      => $investment_amount,
                 'order_id'    => $razorpayOrder['id'],
@@ -99,9 +99,9 @@ class InvestmentUsersController extends BaseController
 
             $investment_users_model->updatePaymentStatus($request['razorpay_order_id'], $updateData);
 
-            return redirect()->to('investment/success')->with('status', '<div class="alert alert-success">Payment successful! Your investment is confirmed.</div>');
+            return view('razorpay/investment/success', ['invest_id' => 1]); // Pass ID to success view;
         } catch (Exception $e) {
-            return redirect()->to('investment/failed')->with('status', '<div class="alert alert-danger">Payment verification failed: ' . $e->getMessage() . '</div>');
+            return view('razorpay/investment/failed', ['error' => $e->getMessage()]);
         }
     }
 }
