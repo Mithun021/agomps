@@ -21,6 +21,7 @@ class InvestmentUsersController extends BaseController
             $investment_amount = $this->request->getPost('investment_amount');
             $investment_id = $this->request->getPost('investment_id');
             $player = $players_model->get($loggedplayerId);
+            echo "Userid : ".$loggedplayerId. " Amount : ".$investment_amount. " id : ".$id;
         }
 
     }
