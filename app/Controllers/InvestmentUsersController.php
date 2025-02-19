@@ -12,6 +12,11 @@ class InvestmentUsersController extends BaseController
 {
     public function investment_details($id)
     {
+        // Check if the user is logged in
+        $sessionData = session()->get('loggedPlayerData');
+        if (!$sessionData) {
+            return redirect()->to('/login')->with('status', 'Please log in to proceed your investment.');
+        }
         $investment_users_model = new Investment_users_model();
         $players_model = new Players_model();
         $investment_model = new Investment_model();
