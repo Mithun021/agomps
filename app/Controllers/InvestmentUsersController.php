@@ -12,10 +12,6 @@ class InvestmentUsersController extends BaseController
 {
     public function investment_details($id)
     {
-        if(!isset($sessionData)){
-            session()->setFlashdata('alert', '<div class="alert alert-success" role="alert">Account not found! Please log in you account first.</div>');
-            return redirect()->to('/');
-        }
         $investment_users_model = new Investment_users_model();
         $players_model = new Players_model();
         $investment_model = new Investment_model();
@@ -27,8 +23,9 @@ class InvestmentUsersController extends BaseController
             return view('investment-details', $data);
         } elseif ($this->request->is('post')) {
             $sessionData = session()->get('loggedPlayerData');
-            if (!$sessionData) {
-                return redirect()->to('/')->with('alert', 'Please log in to proceed.');
+            if(!isset($sessionData)){
+                session()->setFlashdata('alert', '<div class="alert alert-success" role="alert">Account not found! Please log in you account first.</div>');
+                return redirect()->to('/');
             }
 
             $loggedplayerId = $sessionData['loggedplayerId'];
