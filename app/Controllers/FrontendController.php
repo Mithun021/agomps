@@ -32,18 +32,18 @@ class FrontendController extends BaseController
 
             $data = [
                 'first_name' => $this->request->getPost('first_name'),
-                'middle_name' => $this->request->getPost('middle_name'),
-                'last_name' => $this->request->getPost('last_name'),
+                // 'middle_name' => $this->request->getPost('middle_name'),
+                'last_name' => $this->request->getPost('last_name') ?? '',
                 'mobile_number' => $this->request->getPost('mobile_number'),
-                'whatsapp_number' => $this->request->getPost('whatsapp_number'),
+                // 'whatsapp_number' => $this->request->getPost('whatsapp_number'),
                 'email_address' => $this->request->getPost('email_address'),
-                'age' => $this->request->getPost('age'),
+                // 'age' => $this->request->getPost('age'),
                 'gender' => $this->request->getPost('gender'),
                 'aadhar' => $this->request->getPost('aadhar'),
                 'state' => $this->request->getPost('state'),
                 'city' => $this->request->getPost('city'),
                 'pincode' => $this->request->getPost('pincode'),
-                'full_address' => $this->request->getPost('full_address'),
+                'full_address' => $this->request->getPost('full_address') ?? '',
                 'password' => password_hash($password, PASSWORD_DEFAULT),
                 'status' => 1
             ];

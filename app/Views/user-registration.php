@@ -38,42 +38,42 @@
                                         <input type="text" name="first_name" class="form-control">
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4">
+                                <!-- <div class="col-lg-4 col-md-4">
                                     <div class="form-group">
                                         <span>Middle Name</span>
                                         <input type="text" name="middle_name" class="form-control">
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="col-lg-4 col-md-4">
                                     <div class="form-group">
-                                        <span>Last Name<span class="text-danger">*</span></span>
+                                        <span>Last Name</span>
                                         <input type="text" name="last_name" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4">
                                     <div class="form-group">
-                                        <span>Mobile Number<span class="text-danger">*</span></span>
+                                        <span>WhatsApp Number<span class="text-danger">*</span></span>
                                         <input type="text" name="mobile_number" class="form-control" maxlength="10">
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4">
+                                <!-- <div class="col-lg-4 col-md-4">
                                     <div class="form-group">
                                         <span>WhatsApp Number<span class="text-danger">*</span></span>
                                         <input type="text" name="whatsapp_number" class="form-control" maxlength="10">
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="col-lg-4 col-md-4">
                                     <div class="form-group">
                                         <span>Email Address<span class="text-danger">*</span></span>
                                         <input type="text" name="email_address" class="form-control">
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4">
+                                <!-- <div class="col-lg-4 col-md-4">
                                     <div class="form-group">
                                         <span>Age<span class="text-danger">*</span></span>
                                         <input type="text" name="age" class="form-control">
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="col-lg-4 col-md-4">
                                     <div class="form-group">
                                         <span>Gender<span class="text-danger">*</span></span>
@@ -116,7 +116,7 @@
                                 </div>
                                 <div class="col-lg-12 col-md-12">
                                     <div class="form-group">
-                                        <span>Full Address<span class="text-danger">*</span></span>
+                                        <span>Full Address</span>
                                         <textarea name="full_address" class="form-control"></textarea>
                                     </div>
                                 </div>
@@ -173,31 +173,31 @@
                     required: true,
                     minlength: 2
                 },
-                last_name: {
-                    required: true,
-                    minlength: 2
-                },
+                // last_name: {
+                //     required: true,
+                //     minlength: 2
+                // },
                 mobile_number: {
                     required: true,
                     digits: true,
                     minlength: 10,
                     maxlength: 10
                 },
-                whatsapp_number: {
-                    required: true,
-                    digits: true,
-                    minlength: 10,
-                    maxlength: 10
-                },
+                // whatsapp_number: {
+                //     required: true,
+                //     digits: true,
+                //     minlength: 10,
+                //     maxlength: 10
+                // },
                 email_address: {
                     required: true,
                     email: true
                 },
-                age: {
-                    required: true,
-                    digits: true,
-                    min: 18
-                },
+                // age: {
+                //     required: true,
+                //     digits: true,
+                //     min: 18
+                // },
                 gender: {
                     required: true
                 },
@@ -219,9 +219,9 @@
                     minlength: 6,
                     maxlength: 6
                 },
-                full_address: {
-                    required: true
-                }
+                // full_address: {
+                //     required: true
+                // }
             },
             submitHandler: function(form) {
                 // Only if the form is valid, it will submit to PHP
