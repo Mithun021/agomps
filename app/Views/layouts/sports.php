@@ -64,6 +64,11 @@ $sports_subcategory_model = new Sports_subcategory_model();
         font-weight: bold;
         margin-top: 5px;
     }
+    @media(max-width: 768px){
+        .sports-tab span.title-head {
+            display: none;
+        }
+    }
 </style>
 <!-- Our Achievements -->
 <div class="section-full bg-white content-inner our-achievements">
@@ -80,7 +85,7 @@ $sports_subcategory_model = new Sports_subcategory_model();
 
                 <div class="dez-tabs border bg-tabs">
 
-                    <ul class="nav nav-tabs" id="myTabContent" role="tablist">
+                    <ul class="nav nav-tabs sports-tab" id="myTabContent" role="tablist">
                         <?php
                         $isFirst = true;
                         foreach ($sports as $value) {
