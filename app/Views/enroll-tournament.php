@@ -65,6 +65,10 @@ $find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayer
         height: 240px !important;
         object-fit: cover;
     }
+    ul, ol {
+        margin-bottom: 24px;
+        padding-left: 30px;
+    }
 </style>
 
 <!-- contact area -->
