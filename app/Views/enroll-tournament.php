@@ -200,9 +200,9 @@ $find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayer
                                                                 <?php for ($i = 1; $i <= $tournaments['max_players']; $i++) { ?>
                                                                     <tr id="teamRow<?= $i ?>">
                                                                         <td><?= $i ?></td>
-                                                                        <td><input type="text" class="form-control player_name" name="player_name[]" placeholder="Enter Player Name" minlength="3"></td>
-                                                                        <td><input type="number" name="player_age[]" class="form-control player_age" placeholder="Player Age"></td>
-                                                                        <td><input type="text" name="player_mobileno[]" class="form-control player_mobileno" placeholder="Player Mobile no." maxlength="10" pattern="^[6-9][0-9]{9}$"></td>
+                                                                        <td><input type="text" class="form-control player_name" name="player_name[]" placeholder="Participant Name" minlength="3"></td>
+                                                                        <td><input type="number" name="player_age[]" class="form-control player_age" placeholder="Age"></td>
+                                                                        <td><input type="text" name="player_mobileno[]" class="form-control player_mobileno" placeholder="Mobile no." maxlength="10" pattern="^[6-9][0-9]{9}$"></td>
                                                                     </tr>
                                                                 <?php } ?>
                                                             <?php } else { $enroll_tournament_players = $enroll_tournament_players_model->get_by_tournament_id($find_tournament_id['id']); ?>
