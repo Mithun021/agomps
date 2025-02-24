@@ -65,7 +65,7 @@ $sports_subcategory_model = new Sports_subcategory_model();
         margin-top: 5px;
     }
     @media(max-width: 768px){
-        .sports-tab span.title-head {
+        span.title-head.sports-name {
             display: none;
         }
     }
@@ -99,7 +99,7 @@ $sports_subcategory_model = new Sports_subcategory_model();
                                     aria-controls="sports-<?= $value['id'] ?>"
                                     aria-selected="<?= $isFirst ? 'true' : 'false' ?>">
                                     <img src="<?= base_url() ?>public/admin/uploads/sports/<?= $value['sports_image'] ?>" alt="<?= $value['name'] ?> Icon" class="sports_icon">
-                                    <span class="title-head"><?= $value['name'] ?></span>
+                                    <span class="title-head sports-name"><?= $value['name'] ?></span>
                                 </button>
                             </li>
                             <?php $isFirst = false; ?> <!-- Once the first tab is rendered, the flag is set to false -->
