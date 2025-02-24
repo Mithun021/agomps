@@ -99,7 +99,7 @@ $find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayer
                         <?php
                         }
                         ?>
-                        <div class="card-header p-0"><img src="<?= base_url() ?>public/assets/images/background/registration.jpg" alt=""></div>
+                        <div class="card-header p-0"><img src="<?= base_url() ?>public/assets/images/background/enrollment.png" alt=""></div>
                         <!-- id="teamRegisterationForm" -->
                         <?php if ($sessionData) { ?>
                             <?php if (isset($tournaments)) { ?>
