@@ -69,6 +69,12 @@ $sports_subcategory_model = new Sports_subcategory_model();
         font-weight: bold;
         margin-top: 5px;
     }
+    @media (max-width: 768px) {
+        span.title-head.sports-name {
+            display: block !important;
+            font-size: 10px;
+        }
+    }
 </style>
 
 <!-- Our Achievements -->
