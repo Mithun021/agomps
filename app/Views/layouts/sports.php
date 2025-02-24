@@ -67,6 +67,7 @@ $sports_subcategory_model = new Sports_subcategory_model();
     @media (max-width: 768px) {
         span.title-head.sports-name {
             display: block !important;
+            font-size: 10px;
         }
     }
 
