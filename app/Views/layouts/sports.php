@@ -71,7 +71,7 @@ $sports_subcategory_model = new Sports_subcategory_model();
         }
     }
     .tournament_title{
-        font-size: 16px;
+        font-size: 14px;
     }
 
 
