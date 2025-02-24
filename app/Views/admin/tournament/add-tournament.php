@@ -40,6 +40,7 @@ $league_category_model = new League_category_model();
                                     <option value="">Select League Name</option>
                                     <option value="Men">Men</option>
                                     <option value="Women">Women</option>
+                                    <option value="All">All</option>
                                 </select>
                             </div>
                         </div>
