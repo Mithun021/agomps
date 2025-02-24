@@ -64,11 +64,13 @@ $sports_subcategory_model = new Sports_subcategory_model();
         font-weight: bold;
         margin-top: 5px;
     }
-    @media(max-width: 768px){
+    @media (max-width: 768px) {
         span.title-head.sports-name {
-            display: none;
+            display: block !important;
         }
     }
+
+
 </style>
 <!-- Our Achievements -->
 <div class="section-full bg-white content-inner our-achievements">
