@@ -185,7 +185,7 @@ $find_tournament_id = $enroll_tournament_model->find_tournament_id($loggedplayer
                                                     <input type="text">
                                                 </div> -->
                                                 <div class="form-group">
-                                                    <h3>Team Details<span class="text-danger">* Note :  कम से कम <?= $tournaments['min_players'] ?> प्रतिभागी का विवरण भरें </span></h3>
+                                                    <h3>Team Details<span class="text-danger">* Note :  कम से कम <?= $tournaments['min_players'] ?> प्रतिभागी का विवरण भरना अनिवार्य है। </span></h3>
                                                     <table id="addTeamTable">
                                                         <thead>
                                                             <tr>
