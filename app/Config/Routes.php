@@ -30,6 +30,9 @@ $routes->post('invest-verify-payment', 'InvestmentUsersController::verify_paymen
 $routes->get('razorpay/investment/failed', 'InvestmentUsersController::failed');
 $routes->get('razorpay/investment/failed', 'InvestmentUsersController::failed');
 
+$routes->group('users',['filter'=>'playerLogin'], static function($routes){
+    $routes->get('/','UserController::index');
+});
 
 $routes->match(['get','post'],'admin/login', 'AdminController::admin_login');
 $routes->group('admin',['filter'=>'adminLogin'], static function($routes){

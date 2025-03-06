@@ -22,6 +22,7 @@ class AuthController extends BaseController
                 'player_login' => "player_login"
             ];
 
+            
             if (password_verify($userpassword, $data['password'])) {
                 $this->session->set('loggedPlayerData', $session_data);
                 return $this->response->setJSON(['status' => true]); 
